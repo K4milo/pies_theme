@@ -1,7 +1,7 @@
 <?php 
 
 /*
-  Template Name: Not Found
+  Template Name: We Do
 */
 
 get_template_part('includes/header'); ?>
