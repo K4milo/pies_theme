@@ -1,0 +1,20 @@
+@charset "utf-8";
+//-----{{<------ Font Awesome ------->}}------//
+@import "../node_modules/font-awesome/scss/font-awesome";
+
+//pages
+@import "_fonts";
+@import "_variables";
+@import "_general";
+@import "_header";
+
+//components
+@import "_grid";
+
+//components
+@import "_sidebar";
+
+//sections
+@import "_home";
+@import "_single";
+@import "_footer";

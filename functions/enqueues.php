@@ -10,6 +10,9 @@ function bst_enqueues() {
   	wp_register_style('bst-css', get_template_directory_uri() . '/css/bst.css', false, null);
 	wp_enqueue_style('bst-css');
 
+	wp_register_style('styles-css', get_template_directory_uri() . '/css/styles.css', false, null);
+	wp_enqueue_style('styles-css');
+
 	/* Scripts */
 	
 	wp_enqueue_script( 'jquery' );
