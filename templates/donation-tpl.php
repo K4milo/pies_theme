@@ -10,7 +10,10 @@ get_template_part('includes/header');
 
 ?>
 
-<div class="container-fluid">
+<div class="container-fluid donation-page">
+  <header class="page-head">
+  		<?php the_content(); ?>
+  </header>	
   <div class="row">
   	<div class="container">
 		<ul class="nav nav-tabs">

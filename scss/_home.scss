@@ -1,6 +1,249 @@
 body{
 	&.home {
 		//Video component
-		
+		#video-container {
+			height: 100vh;
+			width: 100%;
+			position: relative;
+			box-shadow: inset 0 0 40em $black;
+			background-image: url('../img/bgs/bg_6.jpg');
+			@include bgcover;
+			//Copy
+			.copy-video {
+				margin-top: 400px;
+				img {
+					display: block;
+					max-width: 100%;
+					@include mobile{
+						margin: 1em auto;
+					}
+				}
+			}
+			@include mobile{
+				height: auto;
+				min-height: 100vh;
+			}
+		}
+		//Infographics container
+		#infographics-container{
+			height: 760px;
+			width: 100%;
+			position: relative;
+			box-shadow: inset 0 0 60em $black;
+			background-image: url('../img/bgs/bg_14.jpg');
+			@include bgparallax;
+			.text {
+				position: relative;
+				z-index: 1;
+				padding-top: 5em;
+				img {
+					max-width: 100%;
+					display: block;
+					margin: 1em auto;
+				}
+				.text-body {
+					color: $white;
+					font-size: em(25);
+					text-align: center;
+				}
+			}
+			.image{
+				position: relative;
+				z-index: 1;
+				max-width: 100%;
+				padding-top: 10em;
+				img{
+					display: block;
+					margin: 1em auto;
+					max-width: 100%;
+				}
+			}
+			@include mobile{
+				height: auto;
+				min-height: 100vh;
+			}
+			@include overlay($black,0.5);
+		}
+
+		//Items value container
+		#items-value-container {
+			.head-body {
+				text-align: center;
+				h2 {
+					line-height: 0;
+					font-size: em(40);
+					font-family: $rale;
+					text-transform: uppercase;
+					margin-top: 2em;
+				}
+				h3 {
+					line-height: 1;
+					font-size: em(65);
+					color: $yellow;
+					text-transform: uppercase;
+					margin-bottom: 0.5em;
+				}
+				p {
+					font-size: em(25); 
+				}
+			}
+			//items
+			.value-items {
+				overflow: hidden;
+				margin-top: 2em;
+				.item {
+					position: relative;
+					height: 490px;
+					.back,
+					.front {
+						position: absolute;
+						top: 0;
+						left:0;
+						width: 100%;
+						height: 100%;
+						z-index: 0;
+						@include bgcover;
+					}
+					.front {
+						display: none;
+					}
+					figure{
+						position: relative;
+						z-index: 2;
+						transition: all 0.5s;
+						padding: 80% 0 0;
+						img {
+							display: block;
+							margin: 1em auto;
+						}
+					}
+					.text-body {
+						position: relative;
+						z-index: 2;
+						color: white;
+						text-align: center;
+						h3 {
+							text-transform: uppercase;
+							font-family: $rale;
+							font-size: em(24);
+							line-height: 0;
+						}
+						h4{
+							text-transform: uppercase;
+							font-size: em(24);
+							font-family: $openebd;
+							line-height: 1;
+						}
+					}
+					&:hover {
+						.back{
+							display: none;
+						}
+						.front{
+							display: block;
+						}
+						figure {
+							padding: 10% 0 40%;
+						}
+					}
+					@include overlay($black,0.5);
+				}
+			}
+		}
+		//impact bs
+		#impact-value-container {
+			.head-body {
+				text-align: center;
+				h2 {
+					line-height: 0;
+					font-size: em(40);
+					font-family: $rale;
+					text-transform: uppercase;
+					margin-top: 2em;
+				}
+				h3 {
+					line-height: 1;
+					font-size: em(65);
+					color: $yellow;
+					text-transform: uppercase;
+					margin-bottom: 1.5em;
+				}
+				p {
+					display: none; 
+				}
+			}
+			//Impact bs items
+			.impact-items {
+				.item {
+					figure{
+						display: inline-block;
+						vertical-align: middle;
+						width: 30%;
+						img {
+							max-width: 100%;
+						}
+					}
+					.text-body{
+						display: inline-block;
+						vertical-align: middle;
+						width: 68%;
+						p {
+							font-family: $rale;
+							font-size: em(17);
+							line-height: 1;
+							text-transform: uppercase;
+							margin: 22px 0 5px;
+							strong,b {
+								font-size: em(54);
+								font-family: $raleebd;
+								color: $yellow;
+								line-height: 0;
+							}
+						}
+					}
+				}
+			}
+		}
+
+		//Brainpop
+		#brainpop-container {
+			text-align: center;
+			padding-top: 5em;
+			@include mobile{
+				display: none;
+			}
+			h2 {
+				line-height: 0;
+				font-size: em(40);
+				font-family: $rale;
+				text-transform: uppercase;
+				margin-top: 2em;
+			}
+			h3 {
+				line-height: 1;
+				font-size: em(65);
+				color: $yellow;
+				text-transform: uppercase;
+				margin-bottom: 1.5em;
+			}
+			object {
+				margin: 1em auto;
+				display: block;
+			}
+		}
+
+		//partners
+		#partners-container {
+			text-align: center;
+			padding-top: 5em;
+			.item { 
+				display: inline-block;
+				margin: 1em;
+				width: 12%;
+				img { 
+					max-width: 100%;
+				}
+			}
+		}
 	}
 }

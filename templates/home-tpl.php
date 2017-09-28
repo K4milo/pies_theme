@@ -11,9 +11,11 @@ get_template_part('includes/header');
 
 	<div class="container-fluid">
 	  <div class="row" id="video-container">
-	    <div class="copy-video">
-	    	<img src="<?php the_field('copy_video');?>" alt="<?php the_title(); ?>">
-	    </div>
+	    <div class="container">
+			<div class="copy-video">
+				<img src="<?php the_field('copy_video');?>" alt="<?php the_title(); ?>">
+			</div>
+		</div>
 	  </div><!-- /.row -->
 	</div><!-- /.container -->
 
@@ -38,7 +40,7 @@ get_template_part('includes/header');
 	<div class="container-fluid">
 	  <div class="row" id="items-value-container">
 	    <div class="container">
-	    	<div class="text-body">
+	    	<div class="head-body">
 	    		<?php the_field('texto_hover_main');?>
 	    	</div>
 	    	<div class="value-items no-gutter">
@@ -50,16 +52,9 @@ get_template_part('includes/header');
 	    				$init = get_sub_field('imagen_color');
 	    				$hover = get_sub_field('imagen_bn');
 	    		?>
-	    			<style type="text/css">
-	    				#items-value-container .value-items .item{
-	    					background-image:url(<?php echo $init; ?>);	
-	    				}
-	    				#items-value-container .value-items .item:hover{
-	    					background-image:url(<?php echo $hover; ?>);	
-	    				}
-	    			</style>
-
 	    			<div class="col-md-3 item">
+	    				<div class="front" style="background-image:url(<?php echo $init; ?>);"></div>
+	    				<div class="back" style="background-image:url(<?php echo $hover; ?>);"></div>
 	    				<figure><img src="<?php the_sub_field('pictograma'); ?>" alt="shakira"></figure>
 	    				<div class="text-body">
 	    					<?php the_sub_field('texto_imagen'); ?>
@@ -76,7 +71,7 @@ get_template_part('includes/header');
 	<div class="container-fluid">
 	  <div class="row" id="impact-value-container">
 	    <div class="container">
-	    	<div class="text-body">
+	    	<div class="head-body">
 	    		<header>
 	    			<?php the_field('titulo_impacto');?>
 	    		</header>

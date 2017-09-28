@@ -1,0 +1,8 @@
+//donations
+body{
+	&.page-template-donation-tpl{
+		background-image: url('../img/bgs/bg_4.jpg');
+		@include bgcover;
+		
+	}
+}
