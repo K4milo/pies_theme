@@ -2457,7 +2457,7 @@ body.home #video-container {
   background-size: cover;
   background-position: center center; }
   body.home #video-container .copy-video {
-    margin-top: 400px; }
+    margin-top: 300px; }
     body.home #video-container .copy-video img {
       display: block;
       max-width: 100%; }
