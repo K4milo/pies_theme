@@ -2662,3 +2662,228 @@ body.home #partners-container {
     width: 12%; }
     body.home #partners-container .item img {
       max-width: 100%; }
+
+body.page-template-donation-tpl {
+  background-image: url("../img/bgs/bg_4.jpg");
+  background-size: cover;
+  background-position: center center; }
+  body.page-template-donation-tpl .page-head {
+    max-width: 580px;
+    margin: 1em auto; }
+    body.page-template-donation-tpl .page-head h1 {
+      font-family: "Raleway Extra Bold";
+      font-size: 6.25em;
+      color: white;
+      display: block; }
+    body.page-template-donation-tpl .page-head p {
+      display: inline-block;
+      vertical-align: top;
+      margin: 0; }
+      body.page-template-donation-tpl .page-head p b {
+        font-family: "Raleway Extra Bold";
+        font-size: 4em;
+        color: #ffffff; }
+    body.page-template-donation-tpl .page-head h2 {
+      display: inline-block;
+      vertical-align: top;
+      font-family: "Raleway Extra Bold";
+      color: #ffbb01;
+      font-size: 7.75em;
+      margin-top: 0; }
+  body.page-template-donation-tpl .container-fluid > .row > .container {
+    background-color: #ffffff; }
+    body.page-template-donation-tpl .container-fluid > .row > .container .nav-tabs {
+      text-align: center;
+      padding-top: 50px;
+      border: none; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .nav-tabs li {
+        float: none;
+        display: inline-block;
+        text-align: center;
+        width: 23%;
+        position: relative; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .nav-tabs li a {
+          border: none;
+          color: #3c3c3c;
+          text-transform: uppercase;
+          font-size: 1.125em;
+          font-family: "Raleway Medium";
+          line-height: 1; }
+          body.page-template-donation-tpl .container-fluid > .row > .container .nav-tabs li a strong {
+            font-family: "Raleway Black"; }
+          body.page-template-donation-tpl .container-fluid > .row > .container .nav-tabs li a::before {
+            content: "";
+            display: block;
+            margin: 1em auto;
+            width: 114px;
+            height: 114px;
+            background-image: url("../img/icons/sprite-hands.png"); }
+        body.page-template-donation-tpl .container-fluid > .row > .container .nav-tabs li:first-child a::before {
+          background-position: 0 0; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .nav-tabs li:nth-child(2) a::before {
+          background-position: -232px 0; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .nav-tabs li:nth-child(3) a::before {
+          background-position: -467px 0; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .nav-tabs li:nth-child(4) a::before {
+          background-position: -700px 0; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .nav-tabs li.active a {
+          color: #CC0B3C; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .nav-tabs li.active:first-child a::before {
+          background-position: 0 -119px; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .nav-tabs li.active:nth-child(2) a::before {
+          background-position: -232px -119px; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .nav-tabs li.active:nth-child(3) a::before {
+          background-position: -467px -119px; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .nav-tabs li.active:nth-child(4) a::before {
+          background-position: -700px -119px; }
+    body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .text-body.first {
+      width: 70%;
+      padding: 50px 0 0;
+      margin: 0 auto;
+      text-align: center; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .text-body.first p {
+        font-family: "Open Sans Light";
+        text-align: center;
+        font-size: 1.5625em; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .text-body.first p strong, body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .text-body.first p b {
+          font-family: "Open Sans Bold"; }
+    body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .impact-items {
+      position: relative;
+      padding: 0 4em; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .impact-items .item {
+        position: relative;
+        min-height: 190px; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .impact-items .item .tmb {
+          display: inline-block;
+          vertical-align: middle;
+          width: 30%; }
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .impact-items .item .tmb img {
+            display: block;
+            max-width: 100%; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .impact-items .item .text-body {
+          display: inline-block;
+          vertical-align: middle;
+          width: 68%; }
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .impact-items .item .text-body h3 {
+            font-size: 4.0625em;
+            text-transform: uppercase;
+            line-height: 1;
+            font-family: "Raleway Bold";
+            text-align: left;
+            color: #ffbb01;
+            margin: 0; }
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .impact-items .item .text-body p {
+            font-family: "Open Sans Light";
+            text-align: left;
+            font-size: 0.875em; }
+            body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .impact-items .item .text-body p strong, body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .impact-items .item .text-body p b {
+              font-family: "Open Sans Bold"; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .impact-items:after {
+        content: "";
+        display: table;
+        clear: both; }
+    body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns {
+      position: relative;
+      text-align: center; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns header h3 {
+        color: #ffbb01;
+        text-align: center;
+        font-size: 2.5em;
+        font-family: "Raleway Extra Bold";
+        text-transform: uppercase; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item {
+        display: inline-block;
+        width: 205px;
+        height: 205px;
+        border: 5px solid #CC0B3C;
+        position: relative;
+        margin: 30px;
+        position: relative;
+        border-radius: 100%; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item figure img {
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%); }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns:after {
+        content: "";
+        display: table;
+        clear: both; }
+    body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .text-body.first h2, body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .text-body.first h3 {
+      color: #ffbb01;
+      text-align: center;
+      font-size: 2.5em;
+      font-family: "Raleway Extra Bold";
+      text-transform: uppercase;
+      margin: 1.3em 0; }
+    body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .text-body.first ul {
+      text-align: left; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .text-body.first ul li {
+        list-style: none;
+        line-height: 3;
+        font-size: 1.5625em; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .text-body.first ul li::before {
+          content: "";
+          display: inline-block;
+          width: 43px;
+          height: 38px;
+          background-image: url("../img/icons/checked.png"); }
+    body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .voluntier-items {
+      text-align: center; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .voluntier-items .item {
+        display: inline-block;
+        float: none;
+        margin: 20px;
+        position: relative; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .voluntier-items .item header h3 {
+          text-align: center;
+          color: #CC0B3C;
+          text-transform: uppercase;
+          font-family: "Raleway Bold"; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .voluntier-items .item .tmb {
+          position: relative;
+          margin: 0 auto;
+          width: 232px;
+          height: 232px;
+          overflow: hidden;
+          border-radius: 100%; }
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .voluntier-items .item .tmb img {
+            display: block;
+            width: 100%;
+            height: 100%; }
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .voluntier-items .item .tmb .text-body {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            color: #000000;
+            background-color: #ffbb01;
+            opacity: 0;
+            z-index: 1;
+            transition: all 0.5s; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .voluntier-items .item:hover .tmb .text-body {
+          opacity: 1; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .voluntier-items:after {
+        content: "";
+        display: table;
+        clear: both; }
+    body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .aditional {
+      position: relative;
+      text-align: center; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .aditional h3 {
+        color: #ffbb01;
+        font-size: 2.5em;
+        font-family: "Raleway Extra Bold";
+        text-transform: uppercase;
+        margin: 1.3em 0; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .aditional p {
+        font-family: "Open Sans Light";
+        font-size: 1.5625em; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .aditional p strong, body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .aditional p b {
+          font-family: "Open Sans Bold"; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .aditional img {
+        display: block;
+        margin: 1em auto; }

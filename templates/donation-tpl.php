@@ -24,12 +24,12 @@ get_template_part('includes/header');
 			</li>
 			<li>
 				<a data-toggle="tab" href="#menu1">
-					Dejar mi <br/> <strong>Huella Mensualmente</strong>
+					Dejar mi Huella<br/> <strong>Mensualmente</strong>
 				</a>
 			</li>
 			<li>
 				<a data-toggle="tab" href="#menu2">
-					Compartir mi <br/> <strong>Huella</strong>
+					Compartir<br/> <strong>mi Huella</strong>
 				</a>
 			</li>
 			<li>
@@ -62,6 +62,25 @@ get_template_part('includes/header');
 	  					endwhile;
 	  				?>
 	  			</div>
+	  			<div class="pay-btns">
+	  				<header>
+	  					<h3>Elige como dejar tu huella</h3>	
+	  				</header>
+	  				<?php
+	  					//loop impact items
+	  					while( have_rows('metodos_pago') ): the_row();
+	  				?>
+	  					<div class="item">
+	  						<figure class="logo">
+	  							<a href="<?php the_sub_field('vinculo');?>" target="_blank">
+	  								<img src="<?php the_sub_field('logo');?>" alt="<?php the_title(); ?>">
+	  							</a>
+	  						</figure>
+	  					</div>
+	  				<?php
+	  					endwhile;
+	  				?>
+	  			</div>
 			</div>
 			<div id="menu1" class="tab-pane fade">
 				<div class="first text-body">
@@ -85,6 +104,25 @@ get_template_part('includes/header');
 	  					endwhile;
 	  				?>
 	  			</div><!--/eof items impact-->
+	  			<div class="pay-btns">
+	  				<header>
+	  					<h3>Elige como dejar tu huella</h3>	
+	  				</header>
+	  				<?php
+	  					//loop impact items
+	  					while( have_rows('metodos_pago') ): the_row();
+	  				?>
+	  					<div class="item">
+	  						<figure class="logo">
+	  							<a href="<?php the_sub_field('vinculo');?>" target="_blank">
+	  								<img src="<?php the_sub_field('logo');?>" alt="<?php the_title(); ?>">
+	  							</a>
+	  						</figure>
+	  					</div>
+	  				<?php
+	  					endwhile;
+	  				?>
+	  			</div>
 			</div>
 			<div id="menu2" class="tab-pane fade">
 				<div class="first text-body">
@@ -95,16 +133,16 @@ get_template_part('includes/header');
 	  					//loop impact items
 	  					while( have_rows('items_voluntariado') ): the_row();
 	  				?>
-	  					<div class="col-md-3 item">
+	  					<div class="item">
 	  						<header>
 	  							<h3><?php the_sub_field('titulo');?></h3>
 	  						</header>
 	  						<figure class="tmb">
 	  							<img src="<?php the_sub_field('icono');?>" alt="<?php the_title(); ?>">
+	  							<div class="text-body">
+		  							<?php the_sub_field('texto');?>
+		  						</div>
 	  						</figure>
-	  						<div class="text-body">
-	  							<?php the_sub_field('texto');?>
-	  						</div>
 	  					</div>
 	  				<?php
 	  					endwhile;
@@ -254,6 +292,25 @@ get_template_part('includes/header');
 		  				?>
 	  				</ul>
 	  			</div><!--/eof card items-->
+	  			<div class="pay-btns">
+	  				<header>
+	  					<h3>Elige como dejar tu huella</h3>	
+	  				</header>
+	  				<?php
+	  					//loop impact items
+	  					while( have_rows('metodos_pago') ): the_row();
+	  				?>
+	  					<div class="item">
+	  						<figure class="logo">
+	  							<a href="<?php the_sub_field('vinculo');?>" target="_blank">
+	  								<img src="<?php the_sub_field('logo');?>" alt="<?php the_title(); ?>">
+	  							</a>
+	  						</figure>
+	  					</div>
+	  				<?php
+	  					endwhile;
+	  				?>
+	  			</div>
 			</div><!--/eof tab 4-->
 		</div><!--/tab content-->
 	</div><!--centered-->

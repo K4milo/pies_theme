@@ -3,6 +3,346 @@ body{
 	&.page-template-donation-tpl{
 		background-image: url('../img/bgs/bg_4.jpg');
 		@include bgcover;
+		//top title
+		.page-head {
+			max-width: 580px;
+			margin: 1em auto;
+			h1{
+				font-family: $raleebd;
+				font-size: em(100);
+				color: white;
+				display: block;
+			}
+			p {
+				display: inline-block;
+				vertical-align: top;
+				margin: 0;
+				b {
+					font-family: $raleebd;
+					font-size: em(64);
+					color: $white;
+				}
+			}
+			h2{
+				display: inline-block;
+				vertical-align: top;
+				font-family: $raleebd;
+				color: $yellow;
+				font-size: em(124);
+				margin-top: 0;
+			}
+		}
 		
+		.container-fluid {
+			//The body of tabs
+			> .row{
+				> .container{
+					background-color: $white;
+					.nav-tabs {
+						text-align: center;
+						padding-top: 50px;
+						border: none;
+						li {
+							float: none;
+							display: inline-block;
+							text-align: center;
+							width: 23%;
+							position: relative;
+							a {
+								border: none;
+								color: $grey;
+								text-transform: uppercase;
+								font-size: em(18);
+								font-family: $ralemd;
+								line-height: 1;
+								strong{
+									font-family: $ralebk;
+								}
+								&::before {
+									content: "";
+									display: block;
+									margin: 1em auto; 
+									width: 114px;
+									height: 114px;
+									background-image: url('../img/icons/sprite-hands.png');
+								}
+							}
+							//Set icons
+							&:first-child {
+								a{
+									&::before {
+										background-position: 0 0;
+									}
+								}
+							}
+
+							&:nth-child(2) {
+								a {
+									&::before {
+										background-position: -232px 0;
+									}
+								}
+							}
+
+							&:nth-child(3) {
+								a {
+									&::before {
+										background-position: -467px 0;
+									}
+								}
+							}
+
+							&:nth-child(4) {
+								a {
+									&::before {
+										background-position: -700px 0;
+									}
+								}
+							}
+
+							&.active {
+								a {
+									color: $red;
+								}
+								//Set icons
+								&:first-child {
+									a {
+										&::before {
+											background-position: 0 -119px;
+										}
+									}
+								}
+
+								&:nth-child(2) {
+									a {
+										&::before {
+											background-position: -232px -119px;
+										}
+									}
+								}
+
+								&:nth-child(3) {
+									a {
+										&::before {
+											background-position: -467px -119px;
+										}
+									}
+								}
+
+								&:nth-child(4) {
+									a {
+										&::before {
+											background-position: -700px -119px;
+										}
+									}
+								}
+							}
+						}
+					} //EOF TABS
+
+					.tab-content{
+						//general tab elements
+						.text-body {
+							// intro text
+							&.first{
+								width: 70%;
+								padding: 50px 0 0;
+								margin: 0 auto;
+								text-align: center;
+								p {
+									font-family: $openlt;
+									text-align: center;
+									font-size: em(25);
+									strong, b {
+										font-family: $openbd;
+									}
+								}
+							}
+						}
+						//impact items
+						.impact-items {
+							position: relative;
+							padding: 0 4em;
+							.item {
+								position: relative;
+								min-height: 190px;
+								.tmb {
+									display: inline-block;
+									vertical-align: middle;
+									width: 30%;
+									img {
+										display: block;
+										max-width: 100%;
+									}
+								}
+								.text-body {
+									display: inline-block;
+									vertical-align: middle;
+									width: 68%;
+									h3 {
+										font-size: em(65);
+										text-transform: uppercase;
+										line-height: 1;
+										font-family: $raleBd;
+										text-align: left;
+										color: $yellow;
+										margin: 0;
+									}
+									p {
+										font-family: $openlt;
+										text-align: left;
+										font-size: em(14);
+										strong, b {
+											font-family: $openbd;
+										}
+									}
+								}
+							}
+							@include clearfix;
+						}
+
+						//Pay items
+						.pay-btns {
+							position: relative;
+							text-align: center;
+							header {
+								h3 {
+									color: $yellow;
+									text-align: center;
+									font-size: em(40);
+									font-family: $raleebd;
+									text-transform: uppercase;
+								}
+							}
+							
+							.item{
+								display: inline-block;
+								width: 205px;
+								height: 205px;
+								border: 5px solid $red;
+								position: relative;
+								margin: 30px;
+								position: relative;
+								border-radius: 100%;
+								figure {
+									img {
+										display: block;
+										@include centerer;
+									}
+								}
+							}
+
+							@include clearfix;	
+						}
+
+						//Third tab
+						#menu2 {
+							//intro text
+							.text-body.first {
+								h2, h3 {
+									color: $yellow;
+									text-align: center;
+									font-size: em(40);
+									font-family: $raleebd;
+									text-transform: uppercase;
+									margin: 1.3em 0;
+								}
+
+								ul {
+									text-align: left;
+									li {
+										list-style: none;
+										line-height: 3;
+										font-size: em(25);
+										&::before {
+											content: "";
+											display: inline-block;
+											width: 43px;
+											height: 38px;
+											background-image: url('../img/icons/checked.png');
+										}
+									}	
+								}
+							}
+							//voluntier
+							.voluntier-items {
+								text-align: center;
+								.item {
+									display: inline-block;
+									float: none;
+									margin: 20px;
+									position: relative;
+									header{
+										h3{
+											text-align: center;
+											color: $red;
+											text-transform: uppercase;
+											font-family: $raleBd;
+										}
+									}
+									.tmb {
+										position: relative;
+										margin: 0 auto;
+										width: 232px;
+										height: 232px;
+										overflow: hidden;
+										border-radius: 100%;
+										img {
+											display: block;
+											width: 100%;
+											height: 100%;
+										}
+										.text-body{
+											position: absolute;
+											top: 0;
+											left: 0;
+											width: 100%;
+											height: 100%;
+											text-align: center;
+											color: $black;
+											background-color: $yellow;
+											opacity: 0;
+											z-index: 1;
+											transition: all 0.5s;
+										}
+									}
+									&:hover{
+										.tmb {
+											.text-body {
+												opacity: 1;
+											}
+										}
+									}
+								}
+								@include clearfix;
+							}
+							//aditional 
+							.aditional {
+								position: relative;
+								text-align: center;
+								 h3 {
+									color: $yellow;
+									font-size: em(40);
+									font-family: $raleebd;
+									text-transform: uppercase;
+									margin: 1.3em 0;
+								}
+								p {
+									font-family: $openlt;
+									font-size: em(25);
+									strong, b {
+										font-family: $openbd;
+									}
+								}
+								img{
+									display: block;
+									margin: 1em auto;
+								}
+							}
+						}
+					} //EOF TAB CONTENTS
+				}
+			}
+		}
 	}
 }

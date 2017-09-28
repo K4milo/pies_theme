@@ -74,6 +74,21 @@ $browser-context: 16; // Default
   }
 }
 
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 body {
 	font-family: $open;
   h1,h2,h3,strong{
