@@ -20,25 +20,7 @@ get_template_part('includes/header');
 				//loop impact items
 				while( have_rows('eventos_historicos')): the_row();
 			?>
-				<li style="background-image: url(<?php the_sub_field('imagen_fondo'); ?>)">
-				</li>
-			<?php
-				endwhile;
-			?>
-		</ul>
-
-		<ul class="history-pager">
-			<?php
-				//loop impact items
-				while( have_rows('eventos_historicos') ): the_row();
-			?>
-				<li>
-					<div class="text-body">
-						<?php the_sub_field('texto_detalle'); ?>
-					</div>
-					<div class="date">
-						<?php the_sub_field('fecha'); ?>
-					</div>
+				<li style="background-image: url(<?php the_sub_field('imagen_fondo'); ?>)" data-date="<?php the_sub_field('fecha'); ?>" data-text="<?php the_sub_field('texto_detalle'); ?>">
 				</li>
 			<?php
 				endwhile;

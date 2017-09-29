@@ -2447,6 +2447,46 @@ body {
   body .no-gutter > [class*='col-'] {
     padding-right: 0;
     padding-left: 0; }
+  body.page-template-contact-tpl {
+    background-image: url("../img/bgs/contaco-01.jpg");
+    background-size: cover;
+    background-position: center center;
+    box-shadow: inset 0 0 40em #000000; }
+    body.page-template-contact-tpl header.main-header {
+      z-index: 3;
+      text-align: center;
+      width: 100%;
+      margin-top: 2.4em; }
+      body.page-template-contact-tpl header.main-header h3 {
+        display: inline-block;
+        color: #ffbb01;
+        font-size: 4.375em;
+        font-family: "Raleway Black";
+        text-transform: uppercase; }
+    body.page-template-contact-tpl .container p, body.page-template-contact-tpl .container a, body.page-template-contact-tpl .container h3 {
+      color: #ffffff;
+      text-align: center; }
+    body.page-template-contact-tpl .container .wpcf7-form {
+      max-width: 600px;
+      margin: 1em auto;
+      background-color: transparent; }
+      body.page-template-contact-tpl .container .wpcf7-form p input.wpcf7-text, body.page-template-contact-tpl .container .wpcf7-form p input.wpcf7-email, body.page-template-contact-tpl .container .wpcf7-form p input.wpcf7-textarea {
+        padding: 1.5em;
+        background-color: #f8f8f8;
+        color: #3c3c3c;
+        text-transform: uppercase;
+        font-family: "Raleway Extra Bold"; }
+      body.page-template-contact-tpl .container .wpcf7-form p input.wpcf7-submit {
+        display: block;
+        margin: 1em auto;
+        border: none;
+        padding: 0.5em 1.7em;
+        text-transform: uppercase;
+        font-size: 1.125em;
+        font-family: "Open Sans Bold";
+        color: #000000;
+        background-color: #ffbb01;
+        border-radius: 0.3em; }
 
 body.home #video-container {
   height: 100vh;
@@ -2873,6 +2913,15 @@ body.page-template-donation-tpl {
     body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .aditional {
       position: relative;
       text-align: center; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .aditional a {
+        display: inline-block;
+        padding: 0.5em 0.7em;
+        text-transform: uppercase;
+        font-size: 1.125em;
+        font-family: "Open Sans Bold";
+        color: #ffffff;
+        background-color: #CC0B3C;
+        border-radius: 0.5em; }
       body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .aditional h3 {
         color: #ffbb01;
         font-size: 2.5em;
@@ -2887,3 +2936,204 @@ body.page-template-donation-tpl {
       body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .aditional img {
         display: block;
         margin: 1em auto; }
+    body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .ubication-lst {
+      display: none; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .ubication-lst header h3 {
+        color: #ffbb01;
+        text-align: center;
+        font-size: 2.5em;
+        font-family: "Raleway Extra Bold";
+        text-transform: uppercase;
+        margin: 1.3em 0; }
+    body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .tab-form header h3 {
+      color: #ffbb01;
+      text-align: center;
+      font-size: 2.5em;
+      font-family: "Raleway Extra Bold";
+      text-transform: uppercase;
+      margin: 1.3em 0; }
+    body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .tab-form .wpcf7-form {
+      max-width: 600px;
+      margin: 1em auto; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .tab-form .wpcf7-form p input.wpcf7-text, body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .tab-form .wpcf7-form p input.wpcf7-email, body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .tab-form .wpcf7-form p input.wpcf7-textarea {
+        padding: 1.5em;
+        background-color: #f8f8f8;
+        color: #3c3c3c;
+        text-transform: uppercase;
+        font-family: "Raleway Extra Bold"; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .tab-form .wpcf7-form p input.wpcf7-submit {
+        display: block;
+        margin: 1em auto;
+        padding: 0.5em 0.7em;
+        text-transform: uppercase;
+        font-size: 1.125em;
+        font-family: "Open Sans Bold";
+        color: #ffffff;
+        background-color: #CC0B3C;
+        border-radius: 0.5em; }
+    body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .faqs header h3 {
+      color: #ffbb01;
+      text-align: center;
+      font-size: 2.5em;
+      font-family: "Raleway Extra Bold";
+      text-transform: uppercase;
+      margin: 1.3em 0; }
+    body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .faqs .panel-group .panel-default {
+      border: none; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .faqs .panel-group .panel-default .panel-heading {
+        border: none;
+        background: transparent;
+        margin: 1em 0 0; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .faqs .panel-group .panel-default .panel-heading::before {
+          content: "";
+          display: inline-block;
+          vertical-align: middle;
+          background-image: url("../img/icons/play.png");
+          width: 15px;
+          height: 18px;
+          margin: 0 1em; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .faqs .panel-group .panel-default .panel-heading .panel-title {
+          display: inline-block;
+          vertical-align: middle;
+          color: #3c3c3c;
+          font-size: 1.5625em;
+          font-family: "Open Sans Bold"; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .faqs .panel-group .panel-default .panel-collapse {
+        padding: 1em 2em;
+        font-size: "Open Sans Light";
+        font-size: 1.5625em; }
+  body.page-template-donation-tpl .container-fluid > .row #menu3 .card-items:after,
+  body.page-template-donation-tpl .container-fluid > .row #menu3 .bonus-items:after {
+    content: "";
+    display: table;
+    clear: both; }
+  body.page-template-donation-tpl .container-fluid > .row #menu3 .card-items .icon img,
+  body.page-template-donation-tpl .container-fluid > .row #menu3 .bonus-items .icon img {
+    max-width: 100%;
+    display: block;
+    margin: 1em auto; }
+  body.page-template-donation-tpl .container-fluid > .row #menu3 .card-items .info h3,
+  body.page-template-donation-tpl .container-fluid > .row #menu3 .bonus-items .info h3 {
+    text-align: center;
+    font-size: 0.875em;
+    font-family: "Raleway Medium";
+    text-transform: uppercase; }
+  body.page-template-donation-tpl .container-fluid > .row #menu3 .card-items .info h4,
+  body.page-template-donation-tpl .container-fluid > .row #menu3 .bonus-items .info h4 {
+    text-align: center;
+    font-size: 0.875em;
+    font-family: "Raleway Black";
+    color: #ffbb01;
+    text-transform: uppercase; }
+  body.page-template-donation-tpl .container-fluid > .row #menu3 .card-items .info h5,
+  body.page-template-donation-tpl .container-fluid > .row #menu3 .bonus-items .info h5 {
+    text-align: center;
+    font-size: 0.875em;
+    font-family: "Raleway Medium"; }
+  body.page-template-donation-tpl .container-fluid > .row #menu3 .card-items .info ul,
+  body.page-template-donation-tpl .container-fluid > .row #menu3 .bonus-items .info ul {
+    padding-left: 0; }
+    body.page-template-donation-tpl .container-fluid > .row #menu3 .card-items .info ul li,
+    body.page-template-donation-tpl .container-fluid > .row #menu3 .bonus-items .info ul li {
+      list-style: none;
+      text-align: center; }
+  body.page-template-donation-tpl .container-fluid > .row #menu3 .bonus-timeline {
+    text-align: center;
+    padding: 2em 0; }
+    body.page-template-donation-tpl .container-fluid > .row #menu3 .bonus-timeline li {
+      display: inline-block;
+      list-style: none;
+      width: 20%;
+      vertical-align: top; }
+
+body.page-template-history-tpl header.main-header {
+  position: absolute;
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+  top: 15%;
+  left: 0; }
+  body.page-template-history-tpl header.main-header h3 {
+    display: inline-block;
+    color: #ffbb01;
+    font-size: 4.375em;
+    font-family: "Raleway Black";
+    text-transform: uppercase; }
+
+body.page-template-history-tpl #history-slider {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  z-index: 0;
+  padding: 0; }
+  body.page-template-history-tpl #history-slider .slick-track li {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center center;
+    box-shadow: inset 0 0 60em #000000; }
+  body.page-template-history-tpl #history-slider .slick-dots {
+    position: absolute;
+    z-index: 3;
+    text-align: center;
+    width: 100%;
+    bottom: 15%;
+    left: 0; }
+    body.page-template-history-tpl #history-slider .slick-dots::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 3em;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background-color: #ffbb01;
+      z-index: -1; }
+    body.page-template-history-tpl #history-slider .slick-dots li {
+      position: relative;
+      display: inline-block;
+      width: inherit;
+      height: inherit;
+      vertical-align: bottom;
+      color: white;
+      max-width: 20%; }
+      body.page-template-history-tpl #history-slider .slick-dots li i {
+        display: block;
+        width: 20px;
+        height: 20px;
+        margin: 0 auto;
+        background-color: #ffbb01;
+        border-radius: 100%; }
+      body.page-template-history-tpl #history-slider .slick-dots li .history-item h5 {
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: #ffffff; }
+      body.page-template-history-tpl #history-slider .slick-dots li .history-item .text-cond {
+        display: none;
+        color: #ffffff; }
+        body.page-template-history-tpl #history-slider .slick-dots li .history-item .text-cond p {
+          font-size: 1.125em;
+          color: #ffffff; }
+      body.page-template-history-tpl #history-slider .slick-dots li.slick-active i {
+        width: 60px;
+        height: 60px;
+        background-color: #ffffff;
+        border: 1em solid #ffbb01;
+        position: absolute;
+        bottom: 1em;
+        left: 39%; }
+      body.page-template-history-tpl #history-slider .slick-dots li.slick-active .history-item {
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: #ffffff; }
+        body.page-template-history-tpl #history-slider .slick-dots li.slick-active .history-item h3 {
+          padding-bottom: 3.3em; }
+        body.page-template-history-tpl #history-slider .slick-dots li.slick-active .history-item h5 {
+          display: none; }
+        body.page-template-history-tpl #history-slider .slick-dots li.slick-active .history-item .text-cond {
+          display: block; }

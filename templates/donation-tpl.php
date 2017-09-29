@@ -152,6 +152,9 @@ get_template_part('includes/header');
 	  				<?php the_field('contenido_adicional');?>
 	  			</div><!--/eof aditional-->
 	  			<div class="ubication-lst">
+	  				<header>
+	  					<h3>Dónde puedes apoyar<br/>como voluntario</h3>	
+	  				</header>
 	  				<ul>
 	  				<?php
 	  					//loop ubications
@@ -169,14 +172,20 @@ get_template_part('includes/header');
 	  				</ul>
 	  			</div><!--/eof ubication-->
 	  			<div class="tab-form">
+	  				<header>
+	  					<h3>Formulario<br/>de inscripción</h3>	
+	  				</header>
 	  				<?php
 	  					$the_form = get_field('shortcode_formulario');
 	  					if($the_form){
-	  						echo do_shortcode('$the_form');
+	  						echo do_shortcode($the_form);
 	  					}
 	  				?>
 	  			</div><!--/eof form-->
 	  			<div class="faqs">
+	  				<header>
+	  					<h3>Preguntas Frecuentes</h3>	
+	  				</header>
 					<div class="panel-group">
 						<div class="panel panel-default">
 							<?php 
