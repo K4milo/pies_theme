@@ -2488,6 +2488,69 @@ body {
         background-color: #ffbb01;
         border-radius: 0.3em; }
 
+body.open-menu .side-menu .nav-header .navbar-side-btn {
+  left: 227px; }
+
+body.open-menu .side-menu .nav-collapse {
+  display: block; }
+
+body .side-menu {
+  position: fixed;
+  height: 100%;
+  z-index: 10;
+  top: 0;
+  left: 0; }
+  body .side-menu .nav-header .navbar-side-btn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+    border: none;
+    background-color: #ffbb01;
+    top: 50%;
+    left: 0;
+    margin-top: -30px; }
+    body .side-menu .nav-header .navbar-side-btn span {
+      display: block;
+      width: 90%;
+      height: 4px;
+      margin: 7px auto;
+      background-color: #000000; }
+  body .side-menu .nav-collapse {
+    display: none;
+    width: 227px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(151, 151, 151, 0.6); }
+    body .side-menu .nav-collapse .navbar-brand {
+      display: none;
+      position: relative;
+      z-index: 20; }
+      body .side-menu .nav-collapse .navbar-brand img {
+        display: block;
+        max-width: 100%;
+        margin: 2em auto 0; }
+    body .side-menu .nav-collapse ul#menu-main-menu {
+      padding: 30% 0 0;
+      float: none;
+      width: 100%; }
+      body .side-menu .nav-collapse ul#menu-main-menu li {
+        display: block;
+        width: 100%;
+        float: none; }
+        body .side-menu .nav-collapse ul#menu-main-menu li a {
+          text-align: center;
+          text-transform: uppercase;
+          color: #ffffff;
+          display: block;
+          width: 100%;
+          font-size: 1.125em;
+          font-family: "Raleway Extra Bold"; }
+          body .side-menu .nav-collapse ul#menu-main-menu li a:hover {
+            background-color: transparent; }
+
 body.home #video-container {
   height: 100vh;
   width: 100%;

@@ -12,7 +12,19 @@
 		$('select, input[type=text], input[type=email], input[type=password], textarea').addClass('form-control');
 		$('input[type=submit]').addClass('btn btn-primary');
 		
-		// You can put your own code in here
+		// side menu
+		if($('.side-menu .nav-collapse').hasClass('collapsed')){
+			$('body').addClass('open-menu');
+		}
+
+		$('.navbar-side-btn').on('click', function(event) {
+			event.preventDefault();
+			event.stopPropagation();
+			/* Act on the event */
+			$('body').toggleClass('open-menu');
+			$('.side-menu .nav-collapse').toggleClass('collapsed');
+			//$('.side-menu .nav-collapse').toggle("slide");
+		});
 
 		//Slick slider
 

@@ -16,39 +16,26 @@
 </div>
 <![endif]-->
 
-<nav class="navbar navbar-default navbar-static-top" style="display: none;">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a>
-    </div>
-    <div class="collapse navbar-collapse" id="navbar">
-      <?php
-            wp_nav_menu( array(
-                'theme_location'    => 'navbar-left',
-                'depth'             => 2,
-                'menu_class'        => 'nav navbar-nav',
-                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                'walker'            => new wp_bootstrap_navwalker())
-            );
-        ?>
-        <?php get_template_part('includes/navbar-search'); ?>
-        <?php
-            wp_nav_menu( array(
-                'theme_location'    => 'navbar-right',
-                'depth'             => 2,
-                'menu_class'        => 'nav navbar-nav navbar-right',
-                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                'walker'            => new wp_bootstrap_navwalker())
-            );
-        ?>
-    </div><!-- /.navbar-collapse -->
-  </div><!-- /.container -->
+<nav class="side-menu">
+  <div class="nav-header">
+    <button type="button" class="navbar-side-btn">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+  </div>
+  <div class="nav-collapse" id="navbar-side">
+    <a class="navbar-brand" href="<?php echo home_url('/'); ?>">
+      <img src="<?php bloginfo('template_url'); ?>/img/logos/logo.png" alt="Fundación Pies Descalzos">
+    </a>
+    <?php
+        wp_nav_menu( array(
+            'theme_location'    => 'navbar-left',
+            'depth'             => 2,
+            'menu_class'        => 'nav navbar-nav'));
+      ?>
+  </div><!-- /.navbar-collapse -->
 </nav>
   
 <!--
