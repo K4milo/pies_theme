@@ -1,5 +1,4 @@
 body {
-
 	//when is opened
 	&.open-menu {
 		.side-menu {
@@ -7,10 +6,12 @@ body {
 			.nav-header{
 				.navbar-side-btn {
 					left: 227px;
+					transition: all ease-in 0.3s;
 				}
 			}
 			.nav-collapse {
-				display: block;
+				left: 0;
+				transition: all ease-in 0.3s;
 			}
 		}
 	}
@@ -33,6 +34,7 @@ body {
 				top: 50%;
 				left: 0;
 				margin-top: -30px;
+				transition: all ease-out 0.5s;
 				span {
 					display: block;
 					width: 90%;
@@ -43,15 +45,15 @@ body {
 			}
 		}
 		.nav-collapse {
-			display: none;
 			width: 227px;
 			height: 100%;
 			position: fixed;
 			top: 0;
-			left: 0;
+			left: -227px;
+			transition: all ease-out 0.5s;
 			background-color: $opGrey;
 			.navbar-brand {
-				display: none;
+				float: none;
 				position: relative; 
 				z-index: 20;
 				img {
@@ -76,8 +78,10 @@ body {
 						width: 100%;
 						font-size: em(18);
 						font-family: $raleebd;
+						transition: all 0.4s;
 						&:hover{
 							background-color: transparent;
+							color: $yellow;
 
 						}
 					}
