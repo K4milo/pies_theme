@@ -1,0 +1,164 @@
+//Page about
+body {
+	&.page-template-about-tpl {
+		box-shadow: inset 0 0 40em $black;
+		background-image: url('../img/bgs/bg_12.jpg');
+		@include bgcover;
+		//cabera
+		header {
+			&.main-header {
+				position: relative;
+				z-index: 3;
+				text-align: center;
+				width: 100%;
+				padding: 2em 0;
+				h3 {
+					display: inline-block;
+					color: $yellow;
+					font-size: em(50);
+					font-family: $ralebk;
+					text-transform: uppercase;
+				}
+			}
+		} // EOF HEADER
+
+		.text-main {
+			p {
+				color: $white;
+				font-family: $openlt;
+				font-size: em(25);
+				text-align: center;
+			}
+		}
+
+		//the tabs
+		.content-tabs {
+			ul {
+				&.nav.nav-tabs {
+					position: relative;
+					border: none;
+					text-align: center;
+					li {
+						float: none;
+						display: inline-block; 
+						a {
+							text-transform: uppercase;
+							font-size: em(25);
+							color: $white;
+							font-family: $ralemd;
+						}
+						&.active {
+							background-color: transparent;
+							a {
+								color: $yellow;
+								background-color: transparent;
+							}
+						}
+					}
+				}
+			}//EOF Nav
+			.tab-content {
+				#menu1,
+				#menu2 {
+					ul.items-photos {
+						li {
+							display: block;
+							.item-carr {
+								width: 300px;
+								height: 300px;
+								position: relative;
+								border-radius: 100%;
+								overflow: hidden;
+								figure {
+									position: absolute;
+									top: 0;
+									left: 0;
+									width: 100%;
+									height: 100%;
+									img {
+										transition: all 0.5s;
+										&.color{
+											display: block;
+											width: 100%;
+											height: auto;
+										}
+										&.bn {
+											opacity: 0;
+											position: relative;
+											z-index: 2;
+										}
+									}
+								}
+								.body-text {
+									opacity: 0;
+									position: absolute;
+									top: 0;
+									left: 0;
+									width: 100%;
+									height: 100%;
+									z-index: 3;
+									background-color: $opYellow;
+									color: $black;
+									text-align: center;
+									padding: 2em;
+									transition: all 0.5s;
+								}
+							}
+							
+							&:hover {
+								figure {
+									img {
+										&.color{
+											opacity: 0;
+											display: none;
+										}
+										&.bn {
+											opacity: 1;
+										}
+									}
+								}
+								.body-text {
+									opacity: 1;
+								}
+							}
+						}
+					}
+				}
+				#menu3 {
+					.founder {
+						figure{
+							display: inline-block;
+							vertical-align: middle;
+							img {
+								display: block;
+								margin: 0 auto;
+								max-width: 90%;
+							}
+						}
+						.text-founder {
+							display: inline-block;
+							vertical-align: middle;
+							color: $white;
+						}
+					}
+				}
+				.content-aditional {
+					text-align: center;
+					h2 {
+						text-align: center;
+						text-transform: uppercase;
+						color: $yellow;
+						display: inline-block;
+						font-size: em(40);
+					}
+					p {
+						color: $white;
+						font-family: $openlt;
+						font-size: em(25);
+						text-align: center;
+					}
+				}
+			}// EOF tabs contents
+		}
+	}
+}

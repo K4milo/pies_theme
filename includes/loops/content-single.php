@@ -10,9 +10,15 @@ The Single Posts Loop
         <h2><?php the_title()?></h2>
     </header>
     <article role="article" id="post_<?php the_ID()?>" <?php post_class()?>>
-        <section>
-<?php the_post_thumbnail();?>
-            <?php the_content()?>
+        <section class="post-head">
+<?php the_post_thumbnail('full');?>
+<div class="intro">
+<?php the_excerpt();?>
+</div>
+        </section>
+        <section class="text-body">
+
+<?php the_content()?>
 </section>
     </article>
 <?php //comments_template('/includes/loops/comments.php'); ?>
