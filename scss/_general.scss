@@ -66,6 +66,16 @@ $browser-context: 16; // Default
 }
 
 
+@mixin fa-icon($ico,$col,$siz) {
+  font-size: $siz;
+  color: $col;
+  content: $ico;
+  font-family: FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 
 @mixin overlay($color,$op){
   &::after{

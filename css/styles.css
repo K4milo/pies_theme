@@ -2776,114 +2776,258 @@ body.page-template-about-tpl {
   background-image: url("../img/bgs/bg_12.jpg");
   background-size: cover;
   background-position: center center; }
+  body.page-template-about-tpl::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.5;
+    z-index: 0; }
   body.page-template-about-tpl header.main-header {
     position: relative;
     z-index: 3;
     text-align: center;
     width: 100%;
-    padding: 2em 0; }
+    padding: 2em 0;
+    z-index: 2; }
     body.page-template-about-tpl header.main-header h3 {
       display: inline-block;
       color: #ffbb01;
       font-size: 3.125em;
       font-family: "Raleway Black";
       text-transform: uppercase; }
-  body.page-template-about-tpl .text-main p {
-    color: #ffffff;
-    font-family: "Open Sans Light";
-    font-size: 1.5625em;
-    text-align: center; }
-  body.page-template-about-tpl .content-tabs ul.nav.nav-tabs {
+  body.page-template-about-tpl .text-main {
+    display: block;
+    max-width: 700px;
+    margin: 1em auto; }
+    body.page-template-about-tpl .text-main p {
+      color: #ffffff;
+      font-family: "Open Sans Light";
+      font-size: 1.5625em;
+      text-align: center; }
+  body.page-template-about-tpl .content-tabs {
     position: relative;
-    border: none;
-    text-align: center; }
-    body.page-template-about-tpl .content-tabs ul.nav.nav-tabs li {
-      float: none;
-      display: inline-block; }
-      body.page-template-about-tpl .content-tabs ul.nav.nav-tabs li a {
-        text-transform: uppercase;
+    z-index: 3; }
+    body.page-template-about-tpl .content-tabs ul.nav.nav-tabs {
+      position: relative;
+      border: none;
+      text-align: center; }
+      body.page-template-about-tpl .content-tabs ul.nav.nav-tabs li {
+        position: relative;
+        border: none;
+        float: none;
+        display: inline-block;
+        width: 30%; }
+        body.page-template-about-tpl .content-tabs ul.nav.nav-tabs li:nth-child(2)::after, body.page-template-about-tpl .content-tabs ul.nav.nav-tabs li:first-child::after {
+          content: "";
+          display: block;
+          width: 2px;
+          height: 100%;
+          background-color: #ffffff;
+          position: absolute;
+          top: 0;
+          right: 0; }
+        body.page-template-about-tpl .content-tabs ul.nav.nav-tabs li a {
+          text-transform: uppercase;
+          font-size: 1.5625em;
+          color: #ffffff;
+          font-family: "Raleway Medium";
+          border: none;
+          transition: all 0.5s; }
+        body.page-template-about-tpl .content-tabs ul.nav.nav-tabs li:hover, body.page-template-about-tpl .content-tabs ul.nav.nav-tabs li.active {
+          background-color: transparent;
+          border: none; }
+          body.page-template-about-tpl .content-tabs ul.nav.nav-tabs li:hover a, body.page-template-about-tpl .content-tabs ul.nav.nav-tabs li.active a {
+            color: #ffbb01;
+            background-color: transparent; }
+    body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos,
+    body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos {
+      padding: 4em 0; }
+      body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li,
+      body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li {
+        display: block; }
+        body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li .item-carr,
+        body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li .item-carr {
+          width: 300px;
+          height: 300px;
+          position: relative;
+          border-radius: 100%;
+          overflow: hidden;
+          margin: 1em auto; }
+          body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li .item-carr figure,
+          body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li .item-carr figure {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%; }
+            body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li .item-carr figure img,
+            body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li .item-carr figure img {
+              width: 100%; }
+              body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li .item-carr figure img.color,
+              body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li .item-carr figure img.color {
+                display: block;
+                height: auto;
+                opacity: 1; }
+              body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li .item-carr figure img.bn,
+              body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li .item-carr figure img.bn {
+                opacity: 0;
+                position: relative;
+                z-index: 2; }
+          body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li .item-carr .body-text,
+          body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li .item-carr .body-text {
+            opacity: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 3;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #ffffff;
+            text-align: center;
+            padding: 3em;
+            transition: all 0.5s; }
+            body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li .item-carr .body-text h4, body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li .item-carr .body-text h5,
+            body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li .item-carr .body-text h4,
+            body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li .item-carr .body-text h5 {
+              color: #ffbb01; }
+        body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li:hover figure img.color,
+        body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li:hover figure img.color {
+          opacity: 0;
+          display: none; }
+        body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li:hover figure img.bn,
+        body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li:hover figure img.bn {
+          opacity: 1; }
+        body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li:hover .body-text,
+        body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li:hover .body-text {
+          opacity: 1; }
+    body.page-template-about-tpl .content-tabs .tab-content #menu3 .founder figure {
+      display: inline-block;
+      vertical-align: middle;
+      width: 50%; }
+      body.page-template-about-tpl .content-tabs .tab-content #menu3 .founder figure img {
+        display: block;
+        margin: 0 auto;
+        max-width: 90%; }
+    body.page-template-about-tpl .content-tabs .tab-content #menu3 .founder .text-founder {
+      width: 48%;
+      display: inline-block;
+      vertical-align: middle; }
+      body.page-template-about-tpl .content-tabs .tab-content #menu3 .founder .text-founder h3 {
+        font-family: "Raleway Bold";
+        font-size: 3.75em;
+        text-align: center;
+        color: #ffbb01; }
+      body.page-template-about-tpl .content-tabs .tab-content #menu3 .founder .text-founder h4 {
+        font-family: "Merriweather Ultra Bold Italic";
+        color: #ffffff;
+        font-size: 2.5em;
+        text-align: center; }
+      body.page-template-about-tpl .content-tabs .tab-content #menu3 .founder .text-founder blockquote {
+        font-family: "Open Sans Light";
         font-size: 1.5625em;
         color: #ffffff;
-        font-family: "Raleway Medium"; }
-      body.page-template-about-tpl .content-tabs ul.nav.nav-tabs li.active {
-        background-color: transparent; }
-        body.page-template-about-tpl .content-tabs ul.nav.nav-tabs li.active a {
-          color: #ffbb01;
-          background-color: transparent; }
-  body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li,
-  body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li {
-    display: block; }
-    body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li .item-carr,
-    body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li .item-carr {
-      width: 300px;
-      height: 300px;
-      position: relative;
-      border-radius: 100%;
-      overflow: hidden; }
-      body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li .item-carr figure,
-      body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li .item-carr figure {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%; }
-        body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li .item-carr figure img,
-        body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li .item-carr figure img {
-          transition: all 0.5s; }
-          body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li .item-carr figure img.color,
-          body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li .item-carr figure img.color {
-            display: block;
-            width: 100%;
-            height: auto; }
-          body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li .item-carr figure img.bn,
-          body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li .item-carr figure img.bn {
-            opacity: 0;
-            position: relative;
-            z-index: 2; }
-      body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li .item-carr .body-text,
-      body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li .item-carr .body-text {
-        opacity: 0;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 3;
-        background-color: rgba(255, 187, 1, 0.7);
-        color: #000000;
-        text-align: center;
-        padding: 2em;
-        transition: all 0.5s; }
-    body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li:hover figure img.color,
-    body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li:hover figure img.color {
-      opacity: 0;
-      display: none; }
-    body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li:hover figure img.bn,
-    body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li:hover figure img.bn {
-      opacity: 1; }
-    body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li:hover .body-text,
-    body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li:hover .body-text {
-      opacity: 1; }
-  body.page-template-about-tpl .content-tabs .tab-content #menu3 .founder figure {
-    display: inline-block;
-    vertical-align: middle; }
-    body.page-template-about-tpl .content-tabs .tab-content #menu3 .founder figure img {
+        font-style: italic; }
+    body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano {
       display: block;
-      margin: 0 auto;
-      max-width: 90%; }
-  body.page-template-about-tpl .content-tabs .tab-content #menu3 .founder .text-founder {
-    display: inline-block;
-    vertical-align: middle;
-    color: #ffffff; }
-  body.page-template-about-tpl .content-tabs .tab-content .content-aditional {
-    text-align: center; }
-    body.page-template-about-tpl .content-tabs .tab-content .content-aditional h2 {
+      position: relative;
+      min-height: 300px;
+      margin: 2em 0; }
+      body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 6px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: #ffffff;
+        z-index: -1; }
+      body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li {
+        display: inline-block;
+        width: 8%;
+        cursor: pointer; }
+        body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li .ano-small {
+          position: relative;
+          text-align: center;
+          color: #ffffff;
+          font-size: 0.75em;
+          padding: 3em 0 0;
+          display: block;
+          width: 100%; }
+          body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li .ano-small::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 14px;
+            height: 14px;
+            border-radius: 100%;
+            background-color: #ffbb01;
+            margin-left: -7px; }
+        body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li .body-date {
+          display: none;
+          width: 100%;
+          position: absolute;
+          top: 70px;
+          left: 0;
+          padding: 1em;
+          background-color: rgba(0, 0, 0, 0.5); }
+          body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li .body-date h3, body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li .body-date p {
+            display: inline-block;
+            vertical-align: middle;
+            padding: 0 1em; }
+          body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li .body-date h3 {
+            width: 20%;
+            color: #ffbb01;
+            font-family: "Raleway Black";
+            text-align: center;
+            font-size: 2.5em;
+            border-right: 1px solid #ffffff; }
+          body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li .body-date p {
+            width: 78%;
+            color: #ffffff;
+            font-size: 1.125em;
+            margin: 0; }
+        body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li.active .ano-small::after {
+          font-size: 3.125em;
+          color: rgba(0, 0, 0, 0.5);
+          content: "";
+          font-family: FontAwesome;
+          text-rendering: auto;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          display: block;
+          position: absolute;
+          bottom: -42px;
+          left: 35%; }
+        body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li.active .body-date {
+          display: block; }
+  body.page-template-about-tpl .content-aditional {
+    text-align: center;
+    position: relative;
+    z-index: 3; }
+    body.page-template-about-tpl .content-aditional h2 {
       text-align: center;
       text-transform: uppercase;
       color: #ffbb01;
       display: inline-block;
       font-size: 2.5em; }
-    body.page-template-about-tpl .content-tabs .tab-content .content-aditional p {
+      body.page-template-about-tpl .content-aditional h2::before {
+        content: "";
+        width: 2px;
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        background-color: #ffbb01;
+        margin-right: 1em; }
+    body.page-template-about-tpl .content-aditional p {
       color: #ffffff;
       font-family: "Open Sans Light";
       font-size: 1.5625em;

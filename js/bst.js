@@ -26,6 +26,26 @@
 			//$('.side-menu .nav-collapse').toggle("slide");
 		});
 
+		//Items timeline
+
+		var timelineItem = $('.items-ano li');
+
+			timelineItem.each(function(index, el) {
+				var $this = $(this);
+
+				if(index == 0){
+					$this.addClass('active');	
+				}
+				
+				$this.on('click',function(e){
+					e.preventDefault();
+					//Reset timeline class
+					timelineItem.removeClass('active');
+					$this.addClass('active');
+				});				
+			});
+
+
 		//Slick slider
 
 		var heroSlider = $('#history-slider');

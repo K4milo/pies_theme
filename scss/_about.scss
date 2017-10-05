@@ -4,6 +4,7 @@ body {
 		box-shadow: inset 0 0 40em $black;
 		background-image: url('../img/bgs/bg_12.jpg');
 		@include bgcover;
+		@include overlay($black,0.5);
 		//cabera
 		header {
 			&.main-header {
@@ -12,6 +13,7 @@ body {
 				text-align: center;
 				width: 100%;
 				padding: 2em 0;
+				z-index: 2;
 				h3 {
 					display: inline-block;
 					color: $yellow;
@@ -23,6 +25,9 @@ body {
 		} // EOF HEADER
 
 		.text-main {
+			display: block;
+			max-width: 700px;
+			margin: 1em auto;
 			p {
 				color: $white;
 				font-family: $openlt;
@@ -33,22 +38,44 @@ body {
 
 		//the tabs
 		.content-tabs {
+			position: relative;
+			z-index: 3;
 			ul {
 				&.nav.nav-tabs {
 					position: relative;
 					border: none;
 					text-align: center;
 					li {
+						position: relative;
+						border: none;
 						float: none;
-						display: inline-block; 
+						display: inline-block;
+						width: 30%;
+						&:nth-child(2),
+						&:first-child {
+							&::after{
+								content: "";
+								display: block;
+								width: 2px;
+								height: 100%;
+								background-color: $white;
+								position: absolute;
+								top: 0;
+								right: 0;
+							}	
+						} 
 						a {
 							text-transform: uppercase;
 							font-size: em(25);
 							color: $white;
 							font-family: $ralemd;
+							border: none;
+							transition: all 0.5s;
 						}
+						&:hover,
 						&.active {
 							background-color: transparent;
+							border: none;
 							a {
 								color: $yellow;
 								background-color: transparent;
@@ -61,6 +88,7 @@ body {
 				#menu1,
 				#menu2 {
 					ul.items-photos {
+						padding: 4em 0;
 						li {
 							display: block;
 							.item-carr {
@@ -69,6 +97,7 @@ body {
 								position: relative;
 								border-radius: 100%;
 								overflow: hidden;
+								margin: 1em auto;
 								figure {
 									position: absolute;
 									top: 0;
@@ -76,11 +105,11 @@ body {
 									width: 100%;
 									height: 100%;
 									img {
-										transition: all 0.5s;
+										width: 100%;
 										&.color{
 											display: block;
-											width: 100%;
 											height: auto;
+											opacity: 1;
 										}
 										&.bn {
 											opacity: 0;
@@ -97,11 +126,14 @@ body {
 									width: 100%;
 									height: 100%;
 									z-index: 3;
-									background-color: $opYellow;
-									color: $black;
+									background-color: $opBlack;
+									color: $white;
 									text-align: center;
-									padding: 2em;
+									padding: 3em;
 									transition: all 0.5s;
+									h4,h5 {
+										color: $yellow;
+									}
 								}
 							}
 							
@@ -129,6 +161,7 @@ body {
 						figure{
 							display: inline-block;
 							vertical-align: middle;
+							width: 50%;
 							img {
 								display: block;
 								margin: 0 auto;
@@ -136,29 +169,144 @@ body {
 							}
 						}
 						.text-founder {
+							width: 48%;
 							display: inline-block;
 							vertical-align: middle;
-							color: $white;
+							h3 {
+								font-family: $raleBd;
+								font-size: em(60);
+								text-align: center;
+								color: $yellow;	
+							}
+							h4 {
+								font-family: $merryubd;
+								color: $white;
+								font-size: em(40);
+								text-align: center;
+							}
+							blockquote {
+								font-family: $openlt;
+								font-size: em(25);
+								color: $white;
+								font-style: italic;
+							}
+						}
+					}
+					.items-ano {
+						display: block;
+						position: relative;
+						min-height: 300px;
+						margin: 2em 0;
+						&::after {
+							content: "";
+							display: block;
+							position: absolute;
+							top: 6px;
+							left: 0;
+							width: 100%;
+							height: 3px;
+							background-color: $white;
+							z-index: -1;
+						}
+						li {
+							display: inline-block;
+							width: 8%;
+							cursor: pointer;
+							.ano-small {
+								position: relative;
+								text-align: center;
+								color: $white;
+								font-size: em(12);
+								padding: 3em 0 0;
+								display: block;
+								width: 100%;
+								&::before {
+									content:"";
+									display: block;
+									position: absolute;
+									top: 0;
+									left: 50%;
+									width: 14px;
+									height: 14px;
+									border-radius: 100%;
+									background-color: $yellow;
+									margin-left: -7px;
+								}
+							}
+							.body-date {
+								display: none;
+								width: 100%;
+								position: absolute;
+								top: 70px;
+								left: 0;
+								padding: 1em;
+								background-color: $opBlack;
+								h3, p {
+									display: inline-block;
+									vertical-align: middle; 
+									padding: 0 1em;
+								}
+								h3{
+									width: 20%;
+									color: $yellow;
+									font-family: $ralebk;
+									text-align: center;
+									font-size: em(40);
+									border-right: 1px solid $white;
+								}
+								p {
+									width: 78%;
+									color: $white;
+									font-size: em(18);
+									margin: 0;
+								}
+							}
+							&.active {
+								.ano-small {
+									&::after {
+										@include fa-icon("\f0d8",$opBlack,em(50));
+										display: block;
+										position: absolute;
+										bottom: -42px; 
+										left: 35%;
+									}
+								}
+								.body-date {
+									display: block;
+								}
+							}
 						}
 					}
 				}
-				.content-aditional {
-					text-align: center;
-					h2 {
-						text-align: center;
-						text-transform: uppercase;
-						color: $yellow;
-						display: inline-block;
-						font-size: em(40);
-					}
-					p {
-						color: $white;
-						font-family: $openlt;
-						font-size: em(25);
-						text-align: center;
-					}
-				}
 			}// EOF tabs contents
+		}
+		//Aditional stuff
+		.content-aditional {
+			text-align: center;
+			position: relative;
+			z-index: 3;
+			h2 {
+				text-align: center;
+				text-transform: uppercase;
+				color: $yellow;
+				display: inline-block;
+				font-size: em(40);
+				&::before{
+					content: "";
+					width: 2px;
+					height: 100%;
+					display: inline-block;
+					vertical-align: middle;
+					background-color: $yellow;
+					margin-right: 1em;
+				}
+			}
+			p {
+				color: $white;
+				font-family: $openlt;
+				font-size: em(25);
+				text-align: center;
+			}
 		}
 	}
 }
