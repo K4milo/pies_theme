@@ -34,6 +34,9 @@ function bst_enqueues() {
 	wp_register_script('slick-js', get_template_directory_uri() . '/js/slick.min.js', false, null, true);
 	wp_enqueue_script('slick-js');
 
+	wp_register_script('knob-js', get_template_directory_uri() . '/js/jquery.knob.min.js', false, null, true);
+	wp_enqueue_script('knob-js');
+
 	wp_register_script('bst-js', get_template_directory_uri() . '/js/bst.js', false, null, true);
 	wp_enqueue_script('bst-js');
 

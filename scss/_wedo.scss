@@ -1,0 +1,435 @@
+//we do
+body {
+	&.page-template-what-we-do-tpl{
+		box-shadow: inset 0 0 40em $black;
+		background-image: url('../img/bgs/bg_10.jpg');
+		@include bgcover;
+		@include overlay($black,0.5);
+		&::after{
+			position: fixed;
+			z-index: -1;
+		}
+		//cabera
+		header {
+			&.main-header {
+				position: relative;
+				z-index: 3;
+				text-align: center;
+				width: 100%;
+				padding: 2em 0;
+				z-index: 2;
+				h2 {
+					display: inline-block;
+					color: $yellow;
+					font-size: em(70);
+					font-family: $ralebk;
+					text-transform: uppercase;
+				}
+			}
+		} // EOF HEADER
+
+		//The infographics
+		.infographics {
+			//cabera
+			header {
+				&.main-header {
+					width: 100%;
+					padding: 1em 0;
+					h3 {
+						display: inline-block;
+						color: $yellow;
+						font-size: em(40);
+						font-family: $raleBd;
+						text-transform: uppercase;
+					}
+				}
+			} // EOF HEADER
+
+			#cd-timeline {
+				position: relative;
+				padding: 2em 0;
+				margin-top: 2em;
+				margin-bottom: 2em;
+				z-index: 2;
+				&::before {
+					/* this is the vertical line */
+					content: '';
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 18px;
+					height: 100%;
+					width: 4px;
+					background: $blue;
+					z-index: 0;
+					@include desktop {
+						left: 50%;
+						margin-left: -2px;
+					}
+				}
+
+				.cd-timeline-block {
+					position: relative;
+					margin: 2em 0;
+					&:first-child {
+						margin-top: 0;
+					}
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+					//conditional left
+					@include desktop {
+						&:nth-child(even) {
+							@include clearfix;
+							.cd-timeline-content {
+								float: right;
+								&::before {
+									top: 24px;
+									left: auto;
+									right: 100%;
+									border-color: transparent;
+									border-right-color: $white;
+								}
+							}
+						}
+					}
+
+					.cd-timeline-img {
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 60px;
+						height: 60px;
+						border-radius: 50%;
+						box-shadow: 0 0 0 4px $yellow;
+						background-color: $white;
+
+						img {
+							display: block;
+							width: 44px;
+							height: 44px;
+							position: relative;
+							left: 50%;
+							top: 50%;
+							margin-left: -22px;
+							margin-top: -22px;
+						}
+
+						@include desktop {
+							width: 60px;
+							height: 60px;
+							left: 50%;
+							margin-left: -30px;
+
+							/* Force Hardware Acceleration in WebKit */
+							-webkit-transform: translateZ(0);
+							-webkit-backface-visibility: hidden;
+
+							.cssanimations &.is-hidden {
+								visibility: hidden;
+							}
+
+							.cssanimations &.bounce-in {
+								visibility: visible;
+								animation: cd-bounce-1 0.6s;
+							}
+						}
+					}
+					//Content timeline
+					.cd-timeline-content {
+						position: relative;
+						margin-left: 60px;
+						background: $opBlack;
+						padding: 1em;
+						box-shadow: 0 3px 0 $black;
+						@include clearfix;
+
+						h3 {
+							color: $green;
+						}
+
+						p {
+							color: $white;
+							margin: 1em 0;
+							line-height: 1.6;
+						}
+
+						&::before {
+							content: '';
+							position: absolute;
+							top: 16px;
+							right: 100%;
+							height: 0;
+							width: 0;
+							border: 7px solid transparent;
+							border-right: 7px solid $white;
+						}
+
+						@include mobile {
+							h2 {
+								font-size: em(20);
+							}
+
+							p {
+								font-size: em(16);
+							}
+
+							.cd-read-more, .cd-date {
+								font-size: em(14);
+							}
+						}
+
+						@include desktop {
+							margin-left: 0;
+							padding: 1.6em;
+							width: 45%;
+
+							&::before {
+								top: 24px;
+								left: 100%;
+								border-color: transparent;
+								border-left-color: $green;
+							}
+
+							.cssanimations &.is-hidden {
+								visibility: hidden;
+							}
+
+							.cssanimations &.bounce-in {
+								visibility: visible;
+								animation: cd-bounce-1 0.6s;
+							}
+						}
+					}//EOF Animation
+				}
+			}
+		}
+
+		//Ubication
+		.ubication {
+			//cabera
+			header {
+				&.main-header {
+					width: 100%;
+					padding: 5em 0;
+					h3 {
+						display: inline-block;
+						color: $yellow;
+						font-size: em(50);
+						font-family: $ralebk;
+						text-transform: uppercase;
+					}
+				}
+			} // EOF HEADER
+			.ubi-items {
+				.ubi-block {
+					padding: 1em 0;
+					.cd-content {
+						display: inline-block;
+						vertical-align: middle;
+						width: 77%;
+						text-align: right;
+						h3,h4 {
+							color:$yellow;
+							text-transform: uppercase;
+						}
+						p {
+							color: $white;
+						}
+					}
+					.cd-img	{
+						display: inline-block;
+						vertical-align: middle;
+						width: 20%;
+						img {
+							display: block;
+							max-width: 90%;
+							margin: 0 auto;
+						}
+					}
+				}
+			}
+			.img-map {
+				img {
+					display: block;
+					margin: 1em auto;
+					max-width: 100%; 
+				}
+			}
+		}// EOF ub
+		
+		//gest info
+		.gestion {
+			#cd-gestion {
+				//cabera
+				header {
+					&.main-header {
+						width: 100%;
+						padding: 5em 0;
+						h3 {
+							display: inline-block;
+							color: $yellow;
+							font-size: em(50);
+							font-family: $ralebk;
+							text-transform: uppercase;
+						}
+					}
+				} // EOF HEADER
+
+				ul {
+					&.nav.nav-tabs {
+						position: relative;
+						border: none;
+						text-align: center;
+						li {
+							position: relative;
+							border: none;
+							float: none;
+							display: inline-block;
+							width: 20%;
+							&:nth-child(2),
+							&:nth-child(3),
+							&:first-child {
+								&::after{
+									content: "";
+									display: block;
+									width: 2px;
+									height: 100%;
+									background-color: $white;
+									position: absolute;
+									top: 0;
+									right: 0;
+								}	
+							} 
+							a {
+								text-transform: uppercase;
+								font-size: em(20);
+								color: $white;
+								font-family: $ralemd;
+								border: none;
+								transition: all 0.5s;
+							}
+							&:hover,
+							&.active {
+								background-color: transparent;
+								border: none;
+								a {
+									color: $yellow;
+									background-color: transparent;
+								}
+							}
+						}
+					}
+				}//EOF Nav
+				//content
+				.tab-content {
+					.tab-pane {
+						@include clearfix;
+						.text-info {
+							padding-top: 9em;
+							.text-item {
+								margin: 2em;
+								text-align: right;
+								p {
+									color: $white;
+									font-family: $openbd;
+									font-size: em(18);
+								}
+							}
+						}
+						.graph-info { 
+							position: relative;
+							padding-top: 6em;
+							max-height: 420px;
+							.kn-cont {
+								position: relative;
+								margin: 0 auto;
+								text-align: center;
+								span {
+									display: inline-block;
+									position: absolute;
+									left: 47%;
+									bottom: 6px;
+									color: $white;
+									font-family: $openbd;
+								}
+								&:nth-child(1){
+									top: 0px;
+								}
+								&:nth-child(2){
+									top: -266px;
+								}
+								&:nth-child(3){
+									top: -421px;
+								}
+							}
+						}
+					}
+				}
+			}
+			#inf-gestion {
+				//cabera
+				header {
+					&.main-header {
+						width: 100%;
+						padding: 5em 0;
+						h3 {
+							display: inline-block;
+							color: $yellow;
+							font-size: em(50);
+							font-family: $ralebk;
+							text-transform: uppercase;
+						}
+					}
+				} // EOF HEADER
+
+				ul{
+					position: relative;
+					border: none;
+					text-align: center;
+					padding: 2em 0;
+					li {
+						position: relative;
+						border: none;
+						float: none;
+						display: inline-block;
+						width: 10%;
+						&::after{
+							content: "";
+							display: block;
+							width: 2px;
+							height: 100%;
+							background-color: $white;
+							position: absolute;
+							top: 0;
+							right: 0;
+						}	
+						&:last-child {
+							&::after {
+								display: none;
+							}
+						} 
+						a {
+							text-transform: uppercase;
+							font-size: em(18);
+							color: $white;
+							font-family: $ralemd;
+							border: none;
+							transition: all 0.5s;
+						}
+						&:hover,
+						&.active {
+							background-color: transparent;
+							border: none;
+							a {
+								color: $yellow;
+								background-color: transparent;
+							}
+						}
+					}
+			}
+			}
+		}
+	}
+}

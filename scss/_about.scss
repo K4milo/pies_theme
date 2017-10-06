@@ -5,6 +5,10 @@ body {
 		background-image: url('../img/bgs/bg_12.jpg');
 		@include bgcover;
 		@include overlay($black,0.5);
+		&::after{
+			position: fixed;
+			z-index: -1;
+		}
 		//cabera
 		header {
 			&.main-header {
@@ -28,6 +32,8 @@ body {
 			display: block;
 			max-width: 700px;
 			margin: 1em auto;
+			position: relative;
+			z-index: 2;
 			p {
 				color: $white;
 				font-family: $openlt;
@@ -195,7 +201,7 @@ body {
 					.items-ano {
 						display: block;
 						position: relative;
-						min-height: 300px;
+						min-height: 220px;
 						margin: 2em 0;
 						&::after {
 							content: "";
@@ -237,7 +243,7 @@ body {
 								display: none;
 								width: 100%;
 								position: absolute;
-								top: 70px;
+								top: 72px;
 								left: 0;
 								padding: 1em;
 								background-color: $opBlack;
@@ -250,7 +256,7 @@ body {
 									width: 20%;
 									color: $yellow;
 									font-family: $ralebk;
-									text-align: center;
+									text-align: right;
 									font-size: em(40);
 									border-right: 1px solid $white;
 								}
