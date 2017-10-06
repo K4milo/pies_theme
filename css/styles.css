@@ -2552,7 +2552,7 @@ body .side-menu {
         margin: 2em auto 0; }
     body .side-menu .nav-collapse #menu-menu-en-ingles,
     body .side-menu .nav-collapse #menu-menu-espanol {
-      padding: 30% 0 0;
+      padding: 0;
       float: none;
       width: 100%; }
       body .side-menu .nav-collapse #menu-menu-en-ingles li,
@@ -2570,7 +2570,9 @@ body .side-menu {
           font-size: 1.125em;
           font-family: "Raleway Extra Bold";
           transition: all 0.4s; }
-          body .side-menu .nav-collapse #menu-menu-en-ingles li a:hover,
+          body .side-menu .nav-collapse #menu-menu-en-ingles li a.active, body .side-menu .nav-collapse #menu-menu-en-ingles li a:active, body .side-menu .nav-collapse #menu-menu-en-ingles li a:hover,
+          body .side-menu .nav-collapse #menu-menu-espanol li a.active,
+          body .side-menu .nav-collapse #menu-menu-espanol li a:active,
           body .side-menu .nav-collapse #menu-menu-espanol li a:hover {
             background-color: transparent;
             color: #ffbb01; }
@@ -2581,10 +2583,27 @@ body.page-template-home-tpl #video-container {
   position: relative;
   box-shadow: inset 0 0 40em #000000;
   background-image: url("../img/bgs/bg_6.jpg");
+  position: relative;
+  overflow: hidden;
   background-size: cover;
   background-position: center center; }
+  body.page-template-home-tpl #video-container #video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    z-index: 0;
+    transform: translateX(-50%) translateY(-50%);
+    background: black;
+    background-size: auto auto;
+    background-size: cover;
+    transition: 1s opacity; }
   body.page-template-home-tpl #video-container .copy-video {
-    margin-top: 300px; }
+    margin-top: 250px;
+    position: relative;
+    z-index: 2; }
     body.page-template-home-tpl #video-container .copy-video img {
       display: block;
       max-width: 100%; }
