@@ -60,16 +60,17 @@
       contentTab = $('.gestion .tab-content .tab-pane');
 
     listTime.each(function(index, el) {
+
+      $(this).on('click', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+          triggerKnobs(contentTab);
+      }); 
+
       if (index == 0) {
         $(this).addClass('active');
 
-        triggerKnobs(contentTab);
-
-        $(this).on('click', function(event) {
-          event.preventDefault();
-          /* Act on the event */
-            triggerKnobs(contentTab);
-        });    
+        triggerKnobs(contentTab);   
       }
     });
 
@@ -252,7 +253,26 @@
     $('ul.items-photos').slick({
       infinite: true,
       slidesToShow: 3,
-      slidesToScroll: 3
+      slidesToScroll: 3,
+       responsive: [
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
     });
 
 		new WOW().init();

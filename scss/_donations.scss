@@ -7,11 +7,18 @@ body{
 		.page-head {
 			max-width: 580px;
 			margin: 1em auto;
+			@include mobile{
+				text-align: center;
+			}
 			h1{
 				font-family: $raleebd;
 				font-size: em(100);
 				color: white;
 				display: block;
+				@include mobile{
+					display: inline-block;
+					font-size: em(50);
+				}
 			}
 			p {
 				display: inline-block;
@@ -21,6 +28,11 @@ body{
 					font-family: $raleebd;
 					font-size: em(64);
 					color: $white;
+					@include mobile{
+						display: inline-block;
+						font-size: em(50);
+						margin-top: 12px;
+					}
 				}
 			}
 			h2{
@@ -30,6 +42,10 @@ body{
 				color: $yellow;
 				font-size: em(124);
 				margin-top: 0;
+				@include mobile{
+					display: inline-block;
+					font-size: em(50);
+				}
 			}
 		}
 		
@@ -48,6 +64,10 @@ body{
 							text-align: center;
 							width: 23%;
 							position: relative;
+							@include mobile{
+								width: 100%;
+								display: block;
+							}
 							a {
 								border: none;
 								color: $grey;
@@ -65,6 +85,9 @@ body{
 									width: 114px;
 									height: 114px;
 									background-image: url('../img/icons/sprite-hands.png');
+									@include mobile{
+										display: none;
+									}
 								}
 							}
 							//Set icons
@@ -149,6 +172,9 @@ body{
 								padding: 50px 0 0;
 								margin: 0 auto;
 								text-align: center;
+								@include mobile {
+									width: 100%;
+								}
 								p {
 									font-family: $openlt;
 									text-align: center;
@@ -163,6 +189,9 @@ body{
 						.impact-items {
 							position: relative;
 							padding: 0 4em;
+							@include mobile {
+								padding: 2em 0;
+							}
 							.item {
 								position: relative;
 								min-height: 190px;
@@ -170,6 +199,12 @@ body{
 									display: inline-block;
 									vertical-align: middle;
 									width: 30%;
+									@include mobile {
+										width: 100%;
+										img {
+											margin: 1em auto;
+										}
+									}
 									img {
 										display: block;
 										max-width: 100%;
@@ -179,6 +214,10 @@ body{
 									display: inline-block;
 									vertical-align: middle;
 									width: 68%;
+									@include mobile {
+										width: 100%;
+										text-align: center;
+									}
 									h3 {
 										font-size: em(65);
 										text-transform: uppercase;
@@ -187,11 +226,19 @@ body{
 										text-align: left;
 										color: $yellow;
 										margin: 0;
+										@include mobile {
+											width: 100%;
+											text-align: center;
+										}
 									}
 									p {
 										font-family: $openlt;
 										text-align: left;
 										font-size: em(14);
+										@include mobile {
+											width: 100%;
+											text-align: center;
+										}
 										strong, b {
 											font-family: $openbd;
 										}
@@ -254,6 +301,9 @@ body{
 										list-style: none;
 										line-height: 3;
 										font-size: em(25);
+										@include mobile {
+											font-size: em(16);
+										}
 										&::before {
 											content: "";
 											display: inline-block;
@@ -407,12 +457,18 @@ body{
 											color: $grey;
 											font-size: em(25);
 											font-family: $openbd;
+											@include mobile {
+												font-size: em(16);
+											}
 										}
 									}
 									.panel-collapse{
 										padding: 1em 2em;
 										font-size: $openlt;
 										font-size: em(25);
+										@include mobile {
+											font-size: em(16);
+										}
 									}
 								}
 							}
@@ -462,11 +518,17 @@ body{
 					.bonus-timeline {
 						text-align: center;
 						padding: 2em 0;
-						li {
-							display: inline-block;
-							list-style: none;
-							width: 20%;
-							vertical-align: top;
+						ul{
+							padding: 0;
+							li {
+								display: inline-block;
+								list-style: none;
+								width: 20%;
+								vertical-align: top;
+								@include mobile {
+									width: 100%;
+								}
+							}
 						}
 					}		
 				}//EOF TAB 4

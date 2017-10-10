@@ -57,6 +57,10 @@ body {
 						float: none;
 						display: inline-block;
 						width: 30%;
+						@include mobile{
+							width: 100%;
+							text-align: center;
+						}
 						&:nth-child(2),
 						&:first-child {
 							&::after{
@@ -104,6 +108,9 @@ body {
 								border-radius: 100%;
 								overflow: hidden;
 								margin: 1em auto;
+								@include mobile{
+									width: auto;
+								}
 								figure {
 									position: absolute;
 									top: 0;
@@ -168,6 +175,9 @@ body {
 							display: inline-block;
 							vertical-align: middle;
 							width: 50%;
+							@include mobile{
+								width: 100%;
+							}
 							img {
 								display: block;
 								margin: 0 auto;
@@ -178,6 +188,9 @@ body {
 							width: 48%;
 							display: inline-block;
 							vertical-align: middle;
+							@include mobile{
+								width: 100%;
+							}
 							h3 {
 								font-family: $raleBd;
 								font-size: em(60);
@@ -203,6 +216,9 @@ body {
 						position: relative;
 						min-height: 220px;
 						margin: 2em 0;
+						@include mobile{
+							padding: 0;
+						}
 						&::after {
 							content: "";
 							display: block;
@@ -213,11 +229,19 @@ body {
 							height: 3px;
 							background-color: $white;
 							z-index: -1;
+							@include mobile{
+								width: 3px;
+								height: 100%;
+								left: 50%;
+							}
 						}
 						li {
 							display: inline-block;
 							width: 8%;
 							cursor: pointer;
+							@include mobile{
+								width: 100%;
+							}
 							.ano-small {
 								position: relative;
 								text-align: center;
@@ -247,6 +271,10 @@ body {
 								left: 0;
 								padding: 1em;
 								background-color: $opBlack;
+								@include mobile{
+									position: relative;
+									top: 0;
+								}
 								h3, p {
 									display: inline-block;
 									vertical-align: middle; 
@@ -259,12 +287,20 @@ body {
 									text-align: right;
 									font-size: em(40);
 									border-right: 1px solid $white;
+									@include mobile{
+										width: 100%;
+										text-align: center;
+									}
 								}
 								p {
 									width: 78%;
 									color: $white;
 									font-size: em(18);
 									margin: 0;
+									@include mobile{
+										width: 100%;
+										text-align: center;
+									}
 								}
 							}
 							&.active {
@@ -305,6 +341,9 @@ body {
 					vertical-align: middle;
 					background-color: $yellow;
 					margin-right: 1em;
+					@include mobile{
+						display: none;
+					}
 				}
 			}
 			p {

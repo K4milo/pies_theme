@@ -52,6 +52,9 @@ body {
 						&.text-body {
 							column-count: 2;
 							column-gap: em(40);
+							@include mobile{
+								column-count: 1;
+							}
 							p {
 								color: $white;
 								font-family: $openlt;

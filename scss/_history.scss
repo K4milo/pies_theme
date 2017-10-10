@@ -27,6 +27,10 @@ body {
 			height: 100vh;
 			z-index:0;
 			padding: 0;
+			@include mobile{
+				position: relative;
+				min-height: 600px;
+			}
 			.slick-track{
 				li{
 					display: block;
@@ -43,6 +47,9 @@ body {
 				width: 100%;
 				bottom: 15%;
 				left: 0;
+				@include mobile{
+					padding: 0;
+				}
 				&::after{
 					content: "";
 					display: block;
@@ -62,6 +69,25 @@ body {
 					vertical-align: bottom;
 					color: white;
 					max-width: 20%;
+					@include mobile{
+						.history-item{
+							&:nth-child(2){
+								.text-cond{
+									left: -114%;
+								}
+							}
+							&:nth-child(3){
+								.text-cond{
+									left: -236%;
+								}
+							}
+							&:nth-child(3){
+								.text-cond{
+									left: -352%;
+								}
+							}
+						}
+					}
 					i{
 						display: block;
 						width: 20px;
@@ -83,6 +109,12 @@ body {
 							p {
 								font-size: em(18);
 								color: $white;
+							}
+							@include mobile {
+								position: absolute;
+								bottom: 17%;
+								left: 5%;
+								width: 90vw;
 							}
 						}
 					}

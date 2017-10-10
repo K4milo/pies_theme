@@ -1,0 +1,231 @@
+.site-footer {
+	position: relative;
+	box-shadow: inset 0 0 40em $black;
+	background-image: url('../img/bgs/bg_8.jpg');
+	@include bgcover;
+	background-position: center bottom;
+	@include overlay($black,0.2);
+	.follow {
+		text-align: center;
+		padding: 1em 0;
+		span,
+		ul {
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		span {
+			font-family: $rale;
+			font-size: em(26);
+			color: white;
+			padding: 0 1em;
+			text-transform: uppercase;
+		}
+		ul{
+			padding: 0;
+			margin: 0;
+			li{
+				display: inline-block;
+				margin: 0 1em;
+				@include mobile{
+					margin: 0 0.4em;
+				}
+				a {
+					transition: all 0.3s;
+					&.social-icn{
+						display: block;
+						width: 32px;
+						height: 32px;
+						background-image: url('../img/icons/sprite-social.png');
+						text-indent: -9999999999em;
+						//list of social icons
+						&.fb {
+							background-position: 0 0;
+							&:hover {
+								background-position: 0 -32px;
+							}
+						}
+						&.tw {
+							background-position: -56px 0;
+							&:hover {
+								background-position: -56px -32px;
+							}
+						}
+						&.in {
+							background-position: -111px 0;
+							&:hover {
+								background-position: -111px -32px;
+							}
+						}
+						&.yt {
+							background-position: -166px 0;
+							&:hover {
+								background-position: -166px -32px;
+							}
+						}
+						&.lin {
+							background-position: -221px 0;
+							&:hover {
+								background-position: -221px -32px;
+							}
+						}
+						&.let {
+							background-position: -275px 0;
+							&:hover {
+								background-position: -275px -32px;
+							}
+						}
+					}
+				}
+			}
+		}
+	}//EOF FOLLOW
+	.yellow-footer{
+		background-color: $yellow;
+		padding: 2em 0 0;
+		@include clearfix;
+		.col1{
+			.location-item{
+				position: relative;
+				padding: 0.5em 1em;
+				text-align: center;
+				p,a {
+					text-align: right;
+					font-size: em(14);
+					font-family: $openbd;
+					color: $grey;
+					display: inline-block;
+					vertical-align: middle;
+					width: 82%;
+					margin: 0;
+					@include mobile{
+						text-align: center;
+					}
+				}
+				span {
+					display: inline-block;
+					vertical-align: middle;
+					margin-left: 2%;
+					&.pointer{
+						width: 22px;
+						height: 23px;
+						background-image: url('../img/icons/pointer.png');
+					}
+					&.sm-mail{
+						width: 23px;
+						height: 17px;
+						background-image: url('../img/icons/sm-card.png');
+					}
+					&.sm-phone{
+						width: 15px;
+						height: 25px;
+						background-image: url('../img/icons/sm-phone.png');
+					}
+				}
+			}
+		}
+		.col2{
+			position: relative;
+			border-right: 2px solid $grey;
+			a {
+				display: block;
+				padding: 0.5em 1.3em;
+				background-color: $red;
+				color: $white;
+				font-family: $rale;
+				font-size: em(17);
+				text-transform: uppercase;
+				margin: 20px auto;
+				border-radius: 1em;
+				@include mobile{
+					text-align: center;
+				}
+				&:hover{
+					background-color: $grey;
+					text-decoration: none;
+				}
+			}
+		}
+		.col3{
+			a {
+				width: 29%;
+				display: inline-block;
+				vertical-align: middle;
+				margin: 0 0 0 1em;
+				&.huella{
+					text-align: right;
+					font-size: em(24);
+					text-transform: uppercase;
+					font-family: $raleBd;
+					color: $grey;
+					display: inline-block;
+					vertical-align: middle;
+					width: 55%;
+					margin: 0;
+				}
+				img {
+					display: block;
+					max-width: 100%; 
+				}
+			}
+		}
+		.col4{
+			position: relative;
+			p {
+				max-width: 67%;
+				text-align: left;
+				@include mobile{
+					text-align: center;
+					width: 100%;
+					max-width: 100%;
+				}
+				.wpcf7-list-item-label {
+					font-size: 12px;
+					display: inline-block;
+					vertical-align: middle;
+				}
+				input{
+					&[type="submit"] {
+						background-color: $red;
+						border: none;
+						position: absolute;
+						top: 16%;
+						right: 5%;
+						color: $white;
+						font-family: $rale;
+						font-size: em(17);
+						text-transform: uppercase;
+						border-radius: 1em;
+						&:hover{
+							background-color: $grey;
+							text-decoration: none;
+						}
+						@include mobile {
+							top: inherit;
+							right: inherit;
+							position: relative;
+							text-align: center;
+							margin: 1em auto;
+						}
+					}
+					&[type="checkbox"] {
+						margin-top: 0;
+						display: inline-block;
+						vertical-align: middle;
+					}
+				}
+			}
+		}
+	}// EOF YELLOW
+	.copyright {
+		padding: 2em 0;
+		text-align: center;
+		color: white;
+		font-family: $raleBd;
+		p,a {
+			text-align: center;
+			color: white;
+			font-family: $raleBd;
+		}
+	}	
+}

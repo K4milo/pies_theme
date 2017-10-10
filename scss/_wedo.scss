@@ -24,6 +24,9 @@ body {
 					font-size: em(70);
 					font-family: $ralebk;
 					text-transform: uppercase;
+					@include mobile {
+						font-size: em(35);
+					}
 				}
 			}
 		} // EOF HEADER
@@ -41,6 +44,9 @@ body {
 						font-size: em(40);
 						font-family: $raleBd;
 						text-transform: uppercase;
+						@include mobile {
+							font-size: em(20);
+						}
 					}
 				}
 			} // EOF HEADER
@@ -104,7 +110,10 @@ body {
 						border-radius: 50%;
 						box-shadow: 0 0 0 4px $yellow;
 						background-color: $white;
-
+						@include mobile{
+							width: 30px;
+							height: 30px;
+						}
 						img {
 							display: block;
 							width: 44px;
@@ -114,6 +123,12 @@ body {
 							top: 50%;
 							margin-left: -22px;
 							margin-top: -22px;
+							@include mobile{
+								width: 24px;
+								height: 24px;
+								margin-top: -12px;
+								margin-left: -12px;
+							}
 						}
 
 						@include desktop {
@@ -213,12 +228,18 @@ body {
 				&.main-header {
 					width: 100%;
 					padding: 5em 0;
+					@include mobile {
+						padding: 1em 0;
+					}
 					h3 {
 						display: inline-block;
 						color: $yellow;
 						font-size: em(50);
 						font-family: $ralebk;
 						text-transform: uppercase;
+						@include mobile{
+							font-size: em(25);
+						}
 					}
 				}
 			} // EOF HEADER
@@ -230,6 +251,10 @@ body {
 						vertical-align: middle;
 						width: 77%;
 						text-align: right;
+						@include mobile {
+							width: 100%;
+							text-align: center;
+						}
 						h3,h4 {
 							color:$yellow;
 							text-transform: uppercase;
@@ -242,6 +267,9 @@ body {
 						display: inline-block;
 						vertical-align: middle;
 						width: 20%;
+						@include mobile {
+							width: 100%;
+						}
 						img {
 							display: block;
 							max-width: 90%;
@@ -267,12 +295,18 @@ body {
 					&.main-header {
 						width: 100%;
 						padding: 5em 0;
+						@include mobile {
+							padding: 1em 0;
+						}
 						h3 {
 							display: inline-block;
 							color: $yellow;
 							font-size: em(50);
 							font-family: $ralebk;
 							text-transform: uppercase;
+							@include mobile{
+								font-size: em(25);
+							}
 						}
 					}
 				} // EOF HEADER
@@ -288,6 +322,10 @@ body {
 							float: none;
 							display: inline-block;
 							width: 20%;
+							@include mobile {
+								width: 100%;
+								display: block;
+							}
 							&:nth-child(2),
 							&:nth-child(3),
 							&:first-child {
@@ -328,13 +366,50 @@ body {
 						@include clearfix;
 						.text-info {
 							padding-top: 9em;
+							@include mobile {
+								padding-top: 2em;
+							}
 							.text-item {
 								margin: 2em;
 								text-align: right;
+								@include mobile {
+									text-align: center;
+								}
 								p {
 									color: $white;
 									font-family: $openbd;
 									font-size: em(18);
+									display: inline-block;
+									vertical-align: middle;
+									&::after{
+										content: "";
+										display: inline-block;
+										margin: 0 1em;
+										width: 20px;
+										height: 20px;
+										border-radius: 100%;
+									}
+								}
+								&:first-child{
+									p{
+										&::after{
+											background-color: $red;
+										}
+									}
+								}
+								&:nth-child(2){
+									p{
+										&::after{
+											background-color: $blue;
+										}
+									}
+								}
+								&:last-child{
+									p{
+										&::after{
+											background-color: $green;
+										}
+									}
 								}
 							}
 						}
@@ -342,6 +417,9 @@ body {
 							position: relative;
 							padding-top: 6em;
 							max-height: 420px;
+							@include mobile {
+								padding-top: 2em;
+							}
 							.kn-cont {
 								position: relative;
 								margin: 0 auto;
@@ -356,6 +434,13 @@ body {
 								}
 								&:nth-child(1){
 									top: 0px;
+									@include mobile {
+										top: -2px;
+    									left: -30px;
+    									span {
+    										left: 56%;
+    									}
+									}
 								}
 								&:nth-child(2){
 									top: -266px;
@@ -374,12 +459,18 @@ body {
 					&.main-header {
 						width: 100%;
 						padding: 5em 0;
+						@include mobile {
+							padding: 1em 0;
+						}
 						h3 {
 							display: inline-block;
 							color: $yellow;
 							font-size: em(50);
 							font-family: $ralebk;
 							text-transform: uppercase;
+							@include mobile{
+								font-size: em(25);
+							}
 						}
 					}
 				} // EOF HEADER
@@ -395,6 +486,14 @@ body {
 						float: none;
 						display: inline-block;
 						width: 10%;
+						@include mobile {
+							width: 100%;
+							display: block;
+							padding: 0.5em 0;
+							&::after{
+								display: none;
+							}
+						}
 						&::after{
 							content: "";
 							display: block;
@@ -428,7 +527,7 @@ body {
 							}
 						}
 					}
-			}
+				}
 			}
 		}
 	}

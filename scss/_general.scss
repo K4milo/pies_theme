@@ -115,7 +115,7 @@ $browser-context: 16; // Default
     height: 100%;
     background-color: $color;
     opacity: $op;
-    z-index: 0;
+    z-index: -1;
   }
 }
 
@@ -130,6 +130,9 @@ body {
 	font-family: $open;
   h1,h2,h3,strong{
     font-family: $ralebk;
+  }
+  a {
+    transition: all 0.3s;
   }
   .container-fluid{
     margin: 0;
@@ -186,6 +189,9 @@ body {
           font-size: em(70);
           font-family: $ralebk;
           text-transform: uppercase;
+          @include mobile{
+            font-size: em(35);
+          }
         }
       }
     } // EOF HEADER
