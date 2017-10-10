@@ -80,15 +80,17 @@ get_template_part( 'includes/header');
             <?php //loop impact items
 				$counter2 = 0; 
 	            while (have_rows( 'items_gestion')):the_row(); ?>
-	                <div id="menu<?php echo $counter; ?>" class="tab-pane fade">
-	                	<?php while (have_rows('informacion_por_ano')):the_row(); ?>
+	                <div id="menu<?php echo $counter2; ?>" class="tab-pane fade">
+	                	<?php 
+	                	$counter3 = 0;
+	                	while (have_rows('informacion_por_ano')):the_row(); ?>
 							<div class="text-item"><?php the_sub_field('texto');?></div>
 							<div class="kn-cont">
-								<input class="knob knob-<?php echo $counter2; ?>" value="<?php the_sub_field('cifra_grafico');?>" data-readOnly="true">
+								<input class="knob knob-<?php echo $counter3; ?>" value="<?php the_sub_field('cifra_grafico');?>" data-readOnly="true" data-perc="<?php the_sub_field('cifra_grafico');?>">
 								<span><?php the_sub_field('cifra_numeros');?></span>
 							</div>
 
-						<?php endwhile; ?>
+						<?php $counter3++; endwhile; ?>
 	                </div>
 			<?php $counter2++; endwhile; ?>
          </div>
