@@ -54,7 +54,7 @@ body {
 			background-color: $opGrey;
 			.navbar-brand {
 				float: none;
-				position: relative; 
+				position: relative;
 				z-index: 20;
 				img {
 					display: block;
@@ -64,7 +64,7 @@ body {
 			}
 			#menu-menu-en-ingles,
 			#menu-menu-espanol{
-				padding: 30% 0 0;
+				padding: 0;
 				float: none;
 				width: 100%;
 				li{
@@ -80,6 +80,8 @@ body {
 						font-size: em(18);
 						font-family: $raleebd;
 						transition: all 0.4s;
+						&.active,
+						&:active,
 						&:hover{
 							background-color: transparent;
 							color: $yellow;
@@ -91,5 +93,3 @@ body {
 		}
 	}
 }
-
-

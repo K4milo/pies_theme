@@ -69,9 +69,7 @@
           event.preventDefault();
           /* Act on the event */
             triggerKnobs(contentTab);
-          
-        });
-        
+        });    
       }
     });
 

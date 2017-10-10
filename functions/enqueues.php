@@ -3,7 +3,7 @@
 function bst_enqueues() {
 
 	/* Styles */
-	
+
 	wp_register_style('bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css', false, '3.3.4', null);
 	wp_enqueue_style('bootstrap-css');
 
@@ -16,11 +16,14 @@ function bst_enqueues() {
 	wp_register_style('slick-theme-css', get_template_directory_uri() . '/css/slick-theme.css', false, null);
 	wp_enqueue_style('slick-theme-css');
 
+	wp_register_style('animate-css', get_template_directory_uri() . '/css/animate.css', false, null);
+	wp_enqueue_style('animate-css');
+
 	wp_register_style('styles-css', get_template_directory_uri() . '/css/styles.css', false, null);
 	wp_enqueue_style('styles-css');
 
 	/* Scripts */
-	
+
 	wp_enqueue_script( 'jquery' );
 	/* Note: this above uses WordPress's onboard jQuery. You can enqueue other pre-registered scripts from WordPress too. See:
 	https://developer.wordpress.org/reference/functions/wp_enqueue_script/#Default_Scripts_Included_and_Registered_by_WordPress */
@@ -36,6 +39,9 @@ function bst_enqueues() {
 
 	wp_register_script('knob-js', get_template_directory_uri() . '/js/jquery.knob.min.js', false, null, true);
 	wp_enqueue_script('knob-js');
+
+	wp_register_script('wow-js', get_template_directory_uri() . '/js/wow.js', false, null, true);
+	wp_enqueue_script('wow-js');
 
 	wp_register_script('bst-js', get_template_directory_uri() . '/js/bst.js', false, null, true);
 	wp_enqueue_script('bst-js');
