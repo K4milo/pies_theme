@@ -16,6 +16,14 @@
 </div>
 <![endif]-->
 
+<a class="the-logo" href="<?php echo home_url('/'); ?>">
+  <img src="<?php bloginfo('template_url')?>/img/logos/logo.png" alt="Fundación Pies Descalzos"/>
+</a>
+
+<a class="the-fly" href="/donaciones/">
+  <img src="<?php bloginfo('template_url')?>/img/misc/huella.png" alt="Fundación Pies Descalzos"/>
+</a>
+
 <nav class="side-menu">
   <div class="nav-header">
     <button type="button" class="navbar-side-btn">

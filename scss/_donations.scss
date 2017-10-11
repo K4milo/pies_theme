@@ -2,12 +2,16 @@
 body{
 	&.page-template-donation-tpl{
 		background-image: url('../img/bgs/bg_4.jpg');
+		.the-fly{
+			display: none;
+		} 
 		@include bgcover;
 		//top title
 		.page-head {
 			max-width: 580px;
 			margin: 1em auto;
 			@include mobile{
+				margin: 4em auto;
 				text-align: center;
 			}
 			h1{
@@ -45,6 +49,7 @@ body{
 				@include mobile{
 					display: inline-block;
 					font-size: em(50);
+					margin-top: 18px;
 				}
 			}
 		}

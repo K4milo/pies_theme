@@ -18,12 +18,18 @@ body {
 				width: 100%;
 				padding: 2em 0;
 				z-index: 2;
+				@include mobile {
+					padding: 6em 0 0;
+				}
 				h3 {
 					display: inline-block;
 					color: $yellow;
 					font-size: em(50);
 					font-family: $ralebk;
 					text-transform: uppercase;
+					@include mobile {
+						font-size: em(35);
+					}
 				}
 			}
 		} // EOF HEADER
@@ -39,6 +45,9 @@ body {
 				font-family: $openlt;
 				font-size: em(25);
 				text-align: center;
+				@include mobile {
+					font-size: em(18);
+				}
 			}
 		}
 
@@ -108,9 +117,6 @@ body {
 								border-radius: 100%;
 								overflow: hidden;
 								margin: 1em auto;
-								@include mobile{
-									width: auto;
-								}
 								figure {
 									position: absolute;
 									top: 0;
@@ -196,18 +202,27 @@ body {
 								font-size: em(60);
 								text-align: center;
 								color: $yellow;	
+								@include mobile {
+									font-size: em(30);
+								}
 							}
 							h4 {
 								font-family: $merryubd;
 								color: $white;
 								font-size: em(40);
 								text-align: center;
+								@include mobile {
+									font-size: em(20);
+								}
 							}
 							blockquote {
 								font-family: $openlt;
 								font-size: em(25);
 								color: $white;
 								font-style: italic;
+								@include mobile {
+									font-size: em(18);
+								}
 							}
 						}
 					}
@@ -230,9 +245,10 @@ body {
 							background-color: $white;
 							z-index: -1;
 							@include mobile{
-								width: 3px;
+								width: 1px;
 								height: 100%;
 								left: 50%;
+								opacity: 0.4;
 							}
 						}
 						li {
@@ -250,6 +266,7 @@ body {
 								padding: 3em 0 0;
 								display: block;
 								width: 100%;
+								
 								&::before {
 									content:"";
 									display: block;
@@ -274,6 +291,7 @@ body {
 								@include mobile{
 									position: relative;
 									top: 0;
+									background-color: $grey;
 								}
 								h3, p {
 									display: inline-block;
@@ -327,6 +345,7 @@ body {
 			text-align: center;
 			position: relative;
 			z-index: 3;
+			padding: 1em 0 5em;
 			h2 {
 				text-align: center;
 				text-transform: uppercase;

@@ -5,6 +5,9 @@
 	@include bgcover;
 	background-position: center bottom;
 	@include overlay($black,0.2);
+	.container {
+		background-color: transparent !important;
+	}
 	.follow {
 		text-align: center;
 		padding: 1em 0;

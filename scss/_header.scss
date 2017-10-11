@@ -7,12 +7,41 @@ body {
 				.navbar-side-btn {
 					left: 227px;
 					transition: all ease-in 0.3s;
+					@include mobile{
+						left: 0;
+					}
 				}
 			}
 			.nav-collapse {
 				left: 0;
 				transition: all ease-in 0.3s;
 			}
+		}
+	}
+	//brand
+	.the-logo {
+		position: absolute;
+		z-index: 10;
+		top: 57px;
+		left: 53px;
+		img{
+			max-width: 100%;
+		}
+		@include mobile {
+			position: fixed;
+			z-index: 14;
+			top: 10px;
+			left: 44%;
+			width: 46px;
+		}
+	}
+	.the-fly{
+		position: fixed;
+		z-index: 10;
+		top: 65px;
+		right: 0;
+		img{
+			max-width: 100%;
 		}
 	}
 	//The menu default
@@ -38,13 +67,18 @@ body {
 				@include mobile{
 					top: 0;
 					margin-top: 0; 
+					width: 100%;
 				}
 				span {
 					display: block;
 					width: 90%;
+					max-width: 34px;
 					height: 4px;
 					margin: 7px auto;
 					background-color: $black;
+					@include mobile {
+						margin: 7px;
+					}
 				}
 			}
 		}
@@ -69,6 +103,7 @@ body {
 			#menu-menu-en-ingles,
 			#menu-menu-espanol{
 				padding: 0;
+				margin: 0;
 				float: none;
 				width: 100%;
 				li{

@@ -26,6 +26,17 @@
       //$('.side-menu .nav-collapse').toggle("slide");
     });
 
+    // Javascript to enable link to tab
+    var url = document.location.toString();
+    if (url.match('#')) {
+        $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+    } 
+
+    // Change hash for page-reload
+    $('.nav-tabs a').on('shown.bs.tab', function (e) {
+        window.location.hash = e.target.hash;
+    })
+
 
     //Timeline
     var timelineBlocks = $('.cd-timeline-block'),
@@ -234,7 +245,16 @@
 
     //Slick slider
 
-    var heroSlider = $('#history-slider');
+    var heroSlider = $('#history-slider'),
+        herolist = $('#history-slider li');
+
+        herolist.each(function(index, el) {
+          var $this = $(this),
+              $date = $(this).data('date'),
+              $text = $(this).data('text');
+
+          $this.append('<div class="history-content"><div class="text-cond"><p>' + $text + '</p></div><i></i></div>');
+        });        
 
     heroSlider.slick({
       dots: true,
@@ -242,8 +262,8 @@
       slidesToScroll: 1,
       customPaging: function(slider, i) {
         var date = $(slider.$slides[i]).data('date'),
-          text = $(slider.$slides[i]).data('text');
-        return '<div class="history-item"><div class="text-cond"><p>' + text + '</p><h3>' + date + '</h3></div><i></i><h5>' + date + '</h5></div>';
+            text = $(slider.$slides[i]).data('text');
+        return '<div class="history-item"><h3>' + date + '</h3><i></i><h5>' + date + '</h5></div>';
       },
       infinite: true
     });
@@ -269,9 +289,6 @@
             slidesToScroll: 1
           }
         }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
       ]
     });
 

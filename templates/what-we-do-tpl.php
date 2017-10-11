@@ -16,6 +16,11 @@ get_template_part( 'includes/header');
   	<header class="main-header">
 		<h3>Modelo de Intervención Integral</h3>
 	</header>
+	<div class="the-infographics">
+		<figure>
+			<?php the_post_thumbnail('full'); ?>	
+		</figure>	
+	</div>
 	<section id="cd-timeline" class="container">
 		<?php //loop impact items 
             while (have_rows( 'items_infografia')):the_row(); ?>

@@ -16,8 +16,11 @@ body {
 				z-index: 3;
 				text-align: center;
 				width: 100%;
-				padding: 2em 0;
+				padding: 2em 0 0;
 				z-index: 2;
+				@include mobile {
+					padding: 6em 0 0;
+				}
 				h2 {
 					display: inline-block;
 					color: $yellow;
@@ -51,12 +54,28 @@ body {
 				}
 			} // EOF HEADER
 
+			.the-infographics {
+				@include mobile {
+					display: none;
+				}
+				img {
+					max-width: 100%;
+					height: auto;
+					display: block;
+					margin: 1em auto 2em;
+				}
+			}
+
 			#cd-timeline {
+				display: none;
 				position: relative;
 				padding: 2em 0;
 				margin-top: 2em;
 				margin-bottom: 2em;
 				z-index: 2;
+				@include mobile {
+					display: block;
+				}
 				&::before {
 					/* this is the vertical line */
 					content: '';
@@ -419,6 +438,8 @@ body {
 							max-height: 420px;
 							@include mobile {
 								padding-top: 2em;
+								max-width: 320px;
+								margin: 1em auto;
 							}
 							.kn-cont {
 								position: relative;
@@ -435,6 +456,13 @@ body {
 								&:nth-child(1){
 									top: 0px;
 									@include mobile {
+										top: -1px;
+										left: -14px;
+										span {
+    										left: 50%;
+    									}
+									}
+									@include iphoneV {
 										top: -2px;
     									left: -30px;
     									span {
