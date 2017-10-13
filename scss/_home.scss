@@ -67,6 +67,19 @@ body{
 					color: $white;
 					font-size: em(25);
 					text-align: center;
+					a {
+						display: block;
+						width: 165px;
+						height: 44px;
+						line-height: 44px;
+						font-family: $ralemd;
+						text-transform: uppercase;
+						font-size: em(14);
+						color: $black;
+						background: $yellow;
+						border-radius: em(5);
+						margin: 1em auto;
+					}
 				}
 			}
 			.image{
@@ -183,6 +196,9 @@ body{
 						}
 					}
 					&:hover {
+						figure{
+							padding: 30% 0 0;
+						}
 						.back{
 							display: none;
 						}
@@ -289,15 +305,15 @@ body{
 			text-align: center;
 			padding-top: 5em;
 			.item {
-				display: inline-block;
 				margin: 1em;
-				width: 12%;
 				@include mobile{
 					width: 100%;
 					margin: 0;
 				}
 				img {
 					max-width: 100%;
+					display: block;
+					margin: 0 auto;
 				}
 			}
 		}

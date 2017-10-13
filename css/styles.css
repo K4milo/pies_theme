@@ -2590,17 +2590,20 @@ body .side-menu {
         display: block;
         max-width: 100%;
         margin: 2em auto 0; }
+    body .side-menu .nav-collapse .nav.navbar-nav,
     body .side-menu .nav-collapse #menu-menu-en-ingles,
     body .side-menu .nav-collapse #menu-menu-espanol {
       padding: 0;
       margin: 0;
       float: none;
       width: 100%; }
+      body .side-menu .nav-collapse .nav.navbar-nav li,
       body .side-menu .nav-collapse #menu-menu-en-ingles li,
       body .side-menu .nav-collapse #menu-menu-espanol li {
         display: block;
         width: 100%;
         float: none; }
+        body .side-menu .nav-collapse .nav.navbar-nav li a,
         body .side-menu .nav-collapse #menu-menu-en-ingles li a,
         body .side-menu .nav-collapse #menu-menu-espanol li a {
           text-align: center;
@@ -2611,7 +2614,10 @@ body .side-menu {
           font-size: 1.125em;
           font-family: "Raleway Extra Bold";
           transition: all 0.4s; }
-          body .side-menu .nav-collapse #menu-menu-en-ingles li a.active, body .side-menu .nav-collapse #menu-menu-en-ingles li a:active, body .side-menu .nav-collapse #menu-menu-en-ingles li a:hover,
+          body .side-menu .nav-collapse .nav.navbar-nav li a.active, body .side-menu .nav-collapse .nav.navbar-nav li a:active, body .side-menu .nav-collapse .nav.navbar-nav li a:hover,
+          body .side-menu .nav-collapse #menu-menu-en-ingles li a.active,
+          body .side-menu .nav-collapse #menu-menu-en-ingles li a:active,
+          body .side-menu .nav-collapse #menu-menu-en-ingles li a:hover,
           body .side-menu .nav-collapse #menu-menu-espanol li a.active,
           body .side-menu .nav-collapse #menu-menu-espanol li a:active,
           body .side-menu .nav-collapse #menu-menu-espanol li a:hover {
@@ -2680,6 +2686,18 @@ body.page-template-home-tpl #infographics-container {
       color: #ffffff;
       font-size: 1.5625em;
       text-align: center; }
+      body.page-template-home-tpl #infographics-container .text .text-body a {
+        display: block;
+        width: 165px;
+        height: 44px;
+        line-height: 44px;
+        font-family: "Raleway Medium";
+        text-transform: uppercase;
+        font-size: 0.875em;
+        color: #000000;
+        background: #ffbb01;
+        border-radius: 0.3125em;
+        margin: 1em auto; }
   body.page-template-home-tpl #infographics-container .image {
     position: relative;
     z-index: 1;
@@ -2794,6 +2812,8 @@ body.page-template-home-tpl #items-value-container .value-items {
           color: #ffffff; }
       body.page-template-home-tpl #items-value-container .value-items .item .text-body p {
         display: none; }
+    body.page-template-home-tpl #items-value-container .value-items .item:hover figure {
+      padding: 30% 0 0; }
     body.page-template-home-tpl #items-value-container .value-items .item:hover .back {
       display: none; }
     body.page-template-home-tpl #items-value-container .value-items .item:hover .front {
@@ -2881,15 +2901,15 @@ body.page-template-home-tpl #partners-container {
   text-align: center;
   padding-top: 5em; }
   body.page-template-home-tpl #partners-container .item {
-    display: inline-block;
-    margin: 1em;
-    width: 12%; }
+    margin: 1em; }
     @media (max-width: 767px) {
       body.page-template-home-tpl #partners-container .item {
         width: 100%;
         margin: 0; } }
     body.page-template-home-tpl #partners-container .item img {
-      max-width: 100%; }
+      max-width: 100%;
+      display: block;
+      margin: 0 auto; }
 
 body.page-template-about-tpl {
   box-shadow: inset 0 0 40em #000000;
@@ -4501,6 +4521,8 @@ body.page-template-what-we-do-tpl {
             width: 100%;
             max-width: 100%; } }
         .site-footer .yellow-footer .col4 p .wpcf7-list-item-label {
+          display: none; }
+        .site-footer .yellow-footer .col4 p a {
           font-size: 12px;
           display: inline-block;
           vertical-align: middle; }

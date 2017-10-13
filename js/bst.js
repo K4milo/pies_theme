@@ -268,6 +268,30 @@
       infinite: true
     });
 
+    //Slick sponsors
+    $('#partners-container .impact-items').slick({
+      dots: true,
+      slidesToShow: 4,
+      slidesToScroll: 1,
+      infinite: true,
+      responsive: [
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+
     //Trigger slider;
 
     $('ul.items-photos').slick({

@@ -31,6 +31,7 @@ get_template_part('includes/header');
 	    		</h2>
 	    		<div class="text-body wow fadeInLeft">
 	    			<?php the_field('texto_infografia');?>
+	    			<a href="/que-hacemos/" class="wow bounceIn" data-wow-duration="0.5s" data-wow-delay="1s">Conoce más ></a>
 	    		</div>
 	    	</div>
 	    	<div class="col-md-6 image wow slideInOut" data-wow-duration="1s" data-wow-delay="1s">
@@ -59,8 +60,10 @@ get_template_part('includes/header');
 	    				<div class="front" style="background-image:url(<?php echo $init; ?>);"></div>
 	    				<div class="back" style="background-image:url(<?php echo $hover; ?>);"></div>
 	    				<figure class="wow bounceIn" data-wow-duration="0.5s" data-wow-delay="1s">
+							<a href="<?php the_sub_field('vinculo'); ?>">
 								<img lass="wow zoomIn" data-wow-duration="0.5s" data-wow-delay="1s" src="<?php the_sub_field('pictograma'); ?>" alt="shakira">
-							</figure>
+							</a>
+						</figure>
 	    				<div class="text-body">
 	    					<?php the_sub_field('texto_imagen'); ?>
 	    				</div>
