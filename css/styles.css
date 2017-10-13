@@ -2790,7 +2790,8 @@ body.page-template-home-tpl #items-value-container .value-items {
       padding: 80% 0 0; }
       body.page-template-home-tpl #items-value-container .value-items .item figure img {
         display: block;
-        margin: 1em auto; }
+        margin: 1em auto;
+        transition: all 0.5s; }
     body.page-template-home-tpl #items-value-container .value-items .item .text-body {
       position: relative;
       z-index: 2;
@@ -2814,6 +2815,8 @@ body.page-template-home-tpl #items-value-container .value-items {
         display: none; }
     body.page-template-home-tpl #items-value-container .value-items .item:hover figure {
       padding: 30% 0 0; }
+      body.page-template-home-tpl #items-value-container .value-items .item:hover figure img {
+        margin-bottom: 50%; }
     body.page-template-home-tpl #items-value-container .value-items .item:hover .back {
       display: none; }
     body.page-template-home-tpl #items-value-container .value-items .item:hover .front {
@@ -3004,10 +3007,22 @@ body.page-template-about-tpl {
             background-color: transparent; }
     body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos,
     body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos {
-      padding: 4em 0; }
+      padding: 4em 0;
+      text-align: center; }
       body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li,
       body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li {
-        display: block; }
+        display: block;
+        outline: none; }
+        body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li h4,
+        body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li h4 {
+          text-transform: uppercase;
+          text-align: center; }
+        @media (min-width: 1282px) {
+          body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li,
+          body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li {
+            display: inline-block;
+            width: 30%;
+            vertical-align: top; } }
         body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li .item-carr,
         body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li .item-carr {
           width: 300px;
@@ -3064,6 +3079,8 @@ body.page-template-about-tpl {
         body.page-template-about-tpl .content-tabs .tab-content #menu1 ul.items-photos li:hover .body-text,
         body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li:hover .body-text {
           opacity: 1; }
+    body.page-template-about-tpl .content-tabs .tab-content #menu2 ul.items-photos li {
+      font-size: 86%; }
     body.page-template-about-tpl .content-tabs .tab-content #menu3 .founder figure {
       display: inline-block;
       vertical-align: middle;
@@ -3151,11 +3168,12 @@ body.page-template-about-tpl {
             position: absolute;
             top: 0;
             left: 50%;
-            width: 14px;
-            height: 14px;
+            width: 18px;
+            height: 18px;
             border-radius: 100%;
             background-color: #ffbb01;
-            margin-left: -7px; }
+            margin-left: -10px;
+            transition: all 0.5s; }
         body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li .body-date {
           display: none;
           width: 100%;
@@ -3193,6 +3211,10 @@ body.page-template-about-tpl {
               body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li .body-date p {
                 width: 100%;
                 text-align: center; } }
+        body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li.active .ano-small::before {
+          width: 24px;
+          height: 24px;
+          margin-left: -12px; }
         body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li.active .ano-small::after {
           font-size: 3.125em;
           color: rgba(0, 0, 0, 0.5);
@@ -3672,19 +3694,6 @@ body.page-template-history-tpl {
     z-index: 0;
     padding: 0;
     margin: 0; }
-    body.page-template-history-tpl #history-slider::after {
-      content: "";
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #000000;
-      opacity: 0.5;
-      z-index: -1; }
-    body.page-template-history-tpl #history-slider::after {
-      z-index: 1 !important; }
     @media (max-width: 767px) {
       body.page-template-history-tpl #history-slider {
         min-height: 600px; } }
@@ -3694,16 +3703,28 @@ body.page-template-history-tpl {
       body.page-template-history-tpl #history-slider .slick-track li {
         display: block;
         width: 100%;
-        height: 100vh;
+        min-height: 100vh;
+        height: auto;
         background-size: cover;
         background-position: center center;
         box-shadow: inset 0 0 60em #000000; }
+        body.page-template-history-tpl #history-slider .slick-track li::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #000000;
+          opacity: 0.5;
+          z-index: -1; }
         body.page-template-history-tpl #history-slider .slick-track li .history-content {
           position: relative;
           z-index: 2;
           display: block;
           width: 90%;
-          max-width: 650px;
+          max-width: 960px;
           margin: 20% auto 0;
           text-align: center; }
           @media (max-width: 767px) {
@@ -3717,7 +3738,7 @@ body.page-template-history-tpl {
           body.page-template-history-tpl #history-slider .slick-track li .history-content .text-cond {
             color: #ffffff; }
             body.page-template-history-tpl #history-slider .slick-track li .history-content .text-cond p {
-              font-size: 1.5625em;
+              font-size: 1.125em;
               color: #ffffff; }
               @media (max-width: 767px) {
                 body.page-template-history-tpl #history-slider .slick-track li .history-content .text-cond p {
@@ -3743,11 +3764,10 @@ body.page-template-history-tpl {
       body.page-template-history-tpl #history-slider .slick-dots li {
         position: relative;
         display: inline-block;
-        width: inherit;
+        width: 93px;
         height: inherit;
         vertical-align: bottom;
-        color: white;
-        max-width: 20%; }
+        color: white; }
         body.page-template-history-tpl #history-slider .slick-dots li i {
           display: block;
           width: 20px;
@@ -3781,7 +3801,8 @@ body.page-template-history-tpl {
           border: 1em solid #ffbb01;
           position: absolute;
           bottom: 1em;
-          left: 39%; }
+          left: 50%;
+          margin-left: -30px; }
         body.page-template-history-tpl #history-slider .slick-dots li.slick-active .history-item {
           display: block;
           width: 100%;
@@ -4012,7 +4033,7 @@ body.page-template-what-we-do-tpl {
     body.page-template-what-we-do-tpl .infographics #cd-timeline::before {
       /* this is the vertical line */
       content: '';
-      display: block;
+      display: none;
       position: absolute;
       top: 0;
       left: 18px;
@@ -4050,13 +4071,11 @@ body.page-template-what-we-do-tpl {
         left: 0;
         width: 60px;
         height: 60px;
-        border-radius: 50%;
-        box-shadow: 0 0 0 4px #ffbb01;
-        background-color: #ffffff; }
+        border-radius: 50%; }
         @media (max-width: 767px) {
           body.page-template-what-we-do-tpl .infographics #cd-timeline .cd-timeline-block .cd-timeline-img {
-            width: 30px;
-            height: 30px; } }
+            width: 50px;
+            height: 50px; } }
         body.page-template-what-we-do-tpl .infographics #cd-timeline .cd-timeline-block .cd-timeline-img img {
           display: block;
           width: 44px;
@@ -4068,8 +4087,8 @@ body.page-template-what-we-do-tpl {
           margin-top: -22px; }
           @media (max-width: 767px) {
             body.page-template-what-we-do-tpl .infographics #cd-timeline .cd-timeline-block .cd-timeline-img img {
-              width: 24px;
-              height: 24px;
+              width: 40px;
+              height: 40px;
               margin-top: -12px;
               margin-left: -12px; } }
         @media (min-width: 1282px) {
@@ -4235,7 +4254,7 @@ body.page-template-what-we-do-tpl {
     display: table;
     clear: both; }
   body.page-template-what-we-do-tpl .gestion #cd-gestion .tab-content .tab-pane .text-info {
-    padding-top: 9em; }
+    padding-top: 4em; }
     @media (max-width: 767px) {
       body.page-template-what-we-do-tpl .gestion #cd-gestion .tab-content .tab-pane .text-info {
         padding-top: 2em; } }
@@ -4250,11 +4269,17 @@ body.page-template-what-we-do-tpl {
         font-family: "Open Sans Bold";
         font-size: 1.125em;
         display: inline-block;
-        vertical-align: middle; }
+        vertical-align: middle;
+        text-align: right;
+        position: relative;
+        padding-right: 15%; }
         body.page-template-what-we-do-tpl .gestion #cd-gestion .tab-content .tab-pane .text-info .text-item p::after {
           content: "";
-          display: inline-block;
-          margin: 0 1em;
+          display: block;
+          position: absolute;
+          right: 0;
+          top: 50%;
+          margin-top: -10px;
           width: 20px;
           height: 20px;
           border-radius: 100%; }
@@ -4266,7 +4291,7 @@ body.page-template-what-we-do-tpl {
         background-color: #C9CB00; }
   body.page-template-what-we-do-tpl .gestion #cd-gestion .tab-content .tab-pane .graph-info {
     position: relative;
-    padding-top: 6em;
+    padding-top: 3em;
     max-height: 420px; }
     @media (max-width: 767px) {
       body.page-template-what-we-do-tpl .gestion #cd-gestion .tab-content .tab-pane .graph-info {

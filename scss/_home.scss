@@ -166,6 +166,7 @@ body{
 						img {
 							display: block;
 							margin: 1em auto;
+							transition: all 0.5s;
 						}
 					}
 					.text-body {
@@ -198,6 +199,9 @@ body{
 					&:hover {
 						figure{
 							padding: 30% 0 0;
+							img {
+								margin-bottom: 50%;
+							}
 						}
 						.back{
 							display: none;
