@@ -3546,15 +3546,81 @@ body.page-template-donation-tpl {
       body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .aditional img {
         display: block;
         margin: 1em auto; }
-    body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .ubication-lst {
-      display: none; }
-      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .ubication-lst header h3 {
-        color: #ffbb01;
+    body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .ubication-lst header h3 {
+      color: #ffbb01;
+      text-align: center;
+      font-size: 2.5em;
+      font-family: "Raleway Extra Bold";
+      text-transform: uppercase;
+      margin: 1.3em 0; }
+    body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .ubication-lst ul {
+      display: block;
+      padding: 0;
+      margin: 1em 0; }
+      body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .ubication-lst ul li {
+        display: inline-block;
+        width: 30%;
+        min-height: 400px;
+        position: relative;
+        box-shadow: inset 0 0 20em #000000;
+        transition: all 0.5s;
+        vertical-align: top;
         text-align: center;
-        font-size: 2.5em;
-        font-family: "Raleway Extra Bold";
-        text-transform: uppercase;
-        margin: 1.3em 0; }
+        margin: 1%;
+        background-size: cover;
+        background-position: center center; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .ubication-lst ul li::after {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #000000;
+          opacity: 0.5;
+          z-index: -1; }
+        @media (max-width: 767px) {
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .ubication-lst ul li {
+            display: block;
+            margin: 1em auto;
+            width: 90%; } }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .ubication-lst ul li::after {
+          z-index: 0; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .ubication-lst ul li .text-body {
+          color: #ffffff;
+          margin: 1em auto;
+          font-size: 1.125em;
+          position: relative;
+          z-index: 2;
+          padding: 1em; }
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .ubication-lst ul li .text-body h3 {
+            color: #ffbb01;
+            text-transform: uppercase; }
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .ubication-lst ul li .text-body a {
+            color: #ffffff;
+            background-color: #ffbb01;
+            display: inline-block;
+            margin: 1em 0;
+            padding: 0.5em 1em;
+            border-radius: 0.625em;
+            text-transform: uppercase;
+            font-family: "Raleway Bold"; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .ubication-lst ul li:hover {
+          box-shadow: inset 0 0 5em #000000; }
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .ubication-lst ul li:hover::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            opacity: 0.2;
+            z-index: -1; }
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .ubication-lst ul li:hover::after {
+            z-index: 0; }
     body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .tab-form header h3 {
       color: #ffbb01;
       text-align: center;

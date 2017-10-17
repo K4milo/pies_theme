@@ -1,10 +1,10 @@
-<?php 
+<?php
 
 /*
   Template Name: Donation
 */
 
-get_template_part('includes/header'); 
+get_template_part('includes/header');
 
 	while(have_posts()):the_post();
 
@@ -13,7 +13,7 @@ get_template_part('includes/header');
 <div class="container-fluid donation-page">
   <header class="page-head">
   		<?php the_content(); ?>
-  </header>	
+  </header>
   <div class="row">
   	<div class="container">
 		<ul class="nav nav-tabs">
@@ -64,7 +64,7 @@ get_template_part('includes/header');
 	  			</div>
 	  			<div class="pay-btns">
 	  				<header>
-	  					<h3>Elige como dejar tu huella</h3>	
+	  					<h3>Elige como dejar tu huella</h3>
 	  				</header>
 	  				<?php
 	  					//loop impact items
@@ -106,7 +106,7 @@ get_template_part('includes/header');
 	  			</div><!--/eof items impact-->
 	  			<div class="pay-btns">
 	  				<header>
-	  					<h3>Elige como dejar tu huella</h3>	
+	  					<h3>Elige como dejar tu huella</h3>
 	  				</header>
 	  				<?php
 	  					//loop impact items
@@ -153,12 +153,12 @@ get_template_part('includes/header');
 	  			</div><!--/eof aditional-->
 	  			<div class="ubication-lst">
 	  				<header>
-	  					<h3>Dónde puedes apoyar<br/>como voluntario</h3>	
+	  					<h3>Dónde puedes apoyar<br/>como voluntario</h3>
 	  				</header>
 	  				<ul>
 	  				<?php
 	  					//loop ubications
-	  					while( have_rows('items_de_impacto_2') ): the_row();
+	  					while( have_rows('ubicaciones') ): the_row();
 	  				?>
 	  					<li style="background-image: url(<?php the_sub_field('imagen_fondo'); ?>)">
 	  						<div class="text-body">
@@ -173,7 +173,7 @@ get_template_part('includes/header');
 	  			</div><!--/eof ubication-->
 	  			<div class="tab-form">
 	  				<header>
-	  					<h3>Formulario<br/>de inscripción</h3>	
+	  					<h3>Formulario<br/>de inscripción</h3>
 	  				</header>
 	  				<?php
 	  					$the_form = get_field('shortcode_formulario');
@@ -184,18 +184,18 @@ get_template_part('includes/header');
 	  			</div><!--/eof form-->
 	  			<div class="faqs">
 	  				<header>
-	  					<h3>Preguntas Frecuentes</h3>	
+	  					<h3>Preguntas Frecuentes</h3>
 	  				</header>
 					<div class="panel-group">
 						<div class="panel panel-default">
-							<?php 
+							<?php
 								$counter = 0;
-								while( have_rows('preguntas_frecuentes') ): the_row(); 
+								while( have_rows('preguntas_frecuentes') ): the_row();
 							?>
 							<div class="panel-heading">
 								<h4 class="panel-title">
 									<a data-toggle="collapse" href="#collapse<?php echo $counter; ?>">
-										<?php the_sub_field('encabezado');?>	
+										<?php the_sub_field('encabezado');?>
 									</a>
 								</h4>
 							</div>
@@ -303,7 +303,7 @@ get_template_part('includes/header');
 	  			</div><!--/eof card items-->
 	  			<div class="pay-btns">
 	  				<header>
-	  					<h3>Elige como dejar tu huella</h3>	
+	  					<h3>Elige como dejar tu huella</h3>
 	  				</header>
 	  				<?php
 	  					//loop impact items
@@ -326,7 +326,7 @@ get_template_part('includes/header');
   </div><!-- /.row -->
 </div><!-- /.container -->
 
-<?php 
+<?php
 	endwhile;
 
 get_template_part('includes/footer'); ?>

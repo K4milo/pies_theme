@@ -4,7 +4,7 @@ body{
 		background-image: url('../img/bgs/bg_4.jpg');
 		.the-fly{
 			display: none;
-		} 
+		}
 		@include bgcover;
 		//top title
 		.page-head {
@@ -53,7 +53,7 @@ body{
 				}
 			}
 		}
-		
+
 		.container-fluid {
 			//The body of tabs
 			> .row{
@@ -86,7 +86,7 @@ body{
 								&::before {
 									content: "";
 									display: block;
-									margin: 1em auto; 
+									margin: 1em auto;
 									width: 114px;
 									height: 114px;
 									background-image: url('../img/icons/sprite-hands.png');
@@ -266,7 +266,7 @@ body{
 									text-transform: uppercase;
 								}
 							}
-							
+
 							.item{
 								display: inline-block;
 								width: 205px;
@@ -284,7 +284,7 @@ body{
 								}
 							}
 
-							@include clearfix;	
+							@include clearfix;
 						}
 
 						//Third tab
@@ -316,7 +316,7 @@ body{
 											height: 38px;
 											background-image: url('../img/icons/checked.png');
 										}
-									}	
+									}
 								}
 							}
 							//voluntier
@@ -364,7 +364,7 @@ body{
 								}
 								@include clearfix;
 							}
-							//aditional 
+							//aditional
 							.aditional {
 								position: relative;
 								text-align: center;
@@ -400,7 +400,61 @@ body{
 							//Sedes
 							.ubication-lst{
 								@include defTitle;
-								display: none;
+								ul {
+									display: block;
+									padding: 0;
+									margin: 1em 0;
+									li {
+										display: inline-block;
+										width: 30%;
+										min-height: 400px;
+										position: relative;
+										box-shadow: inset 0 0 20em $black;
+										transition: all 0.5s;
+										vertical-align: top;
+										text-align: center;
+										margin: 1%;
+										@include bgcover;
+										@include overlay($black,0.5);
+										@include mobile{
+											display: block;
+											margin: 1em auto;
+											width: 90%;
+										}
+										&::after {
+											z-index: 0;
+										}
+										.text-body{
+											color: $white;
+											margin: 1em auto;
+											font-size: em(18);
+											position: relative;
+											z-index: 2;
+											padding: 1em;
+											h3{
+												color: $yellow;
+												text-transform: uppercase;
+											}
+											a{
+												color: $white;
+												background-color: $yellow;
+												display: inline-block;
+												margin: 1em 0;
+												padding: 0.5em 1em;
+												border-radius: em(10);
+												text-transform: uppercase;
+												font-family: $raleBd;
+											}
+										}
+										&:hover {
+											box-shadow: inset 0 0 5em $black;
+											@include overlay($black,0.2);
+											&::after {
+												z-index: 0;
+											}
+										}
+									}
+								}
 							}
 							//Form
 							.tab-form{
@@ -481,7 +535,7 @@ body{
 					} //EOF TAB CONTENTS
 				}
 				#menu3 {
-					
+
 					.card-items,
 					.bonus-items {
 						@include clearfix;
@@ -535,7 +589,7 @@ body{
 								}
 							}
 						}
-					}		
+					}
 				}//EOF TAB 4
 			}
 		}
