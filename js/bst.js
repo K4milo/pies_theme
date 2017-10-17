@@ -225,7 +225,7 @@
 
     //Items timeline
 
-    var timelineItem = $('.items-ano li');
+    var timelineItem = $('.items-ano li, #history-slider-mobile li');
 
     timelineItem.each(function(index, el) {
       var $this = $(this);
@@ -241,6 +241,7 @@
         $this.addClass('active');
       });
     });
+
 
 
     //Slick slider

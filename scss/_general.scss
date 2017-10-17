@@ -183,6 +183,9 @@ body {
         text-align: center;
         width: 100%;
         margin-top: 2.4em;
+        @include mobile {
+          padding: 9em 0 0;
+        }
         h3 {
           display: inline-block;
           color: $yellow;

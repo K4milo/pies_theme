@@ -26,6 +26,19 @@ get_template_part('includes/header');
 				endwhile;
 			?>
 		</ul>
+		<ul id="history-slider-mobile">
+			<?php
+				//loop impact items
+				while( have_rows('eventos_historicos')): the_row();
+			?>
+				<li data-text="<?php the_sub_field('texto_detalle'); ?>">
+					<header><?php the_sub_field('fecha'); ?></header>
+					<div class="body-text"><?php the_sub_field('texto_detalle'); ?></div>
+				</li>
+			<?php
+				endwhile;
+			?>
+		</ul>
 	</div><!--/eof card items-->   
   </div><!-- /.row -->
 </div><!-- /.container -->

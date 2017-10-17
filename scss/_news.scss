@@ -1,5 +1,6 @@
 //Home noticias
 body {
+	&.search-results,
 	&.page-template-news-tpl {
 		box-shadow: inset 0 0 40em $black;
 		background-image: url('../img/bgs/bg_16.jpg');
@@ -12,15 +13,55 @@ body {
 				text-align: center;
 				width: 100%;
 				padding: 2em 0;
+				@include mobile {
+					padding: 9em 0 0;
+				}
 				h2 {
 					display: inline-block;
 					color: $yellow;
-					font-size: em(70);
+					font-size: em(55);
 					font-family: $ralebk;
 					text-transform: uppercase;
+					@include mobile {
+						font-size: em(35);
+					}
 				}
 			}
 		} // EOF HEADER
+
+		//Search form
+		.the-search {
+			background-color: $opBlack;
+			padding: 1em;
+			form {
+				margin: 0 auto;
+				width: 90%;
+				max-width: 720px;
+				position: relative;
+				input{
+					&[type="text"]{
+						background-color: $opBlack;
+						border-radius: 1em;
+						color: $white;
+					}
+					&[type="submit"] {
+						position: absolute;
+						top: 0;
+						right: 0;
+						background-color: transparent;
+						border: none;
+						z-index: 1;
+					}
+				}
+				&::after {
+					@include fa-icon ("\f002", $white, em(17));
+					position: absolute; 
+					z-index:0;
+					top: 5px;
+					right: 12px; 
+				}
+			}
+		}
 
 		.news-list {
 			@include clearfix;
