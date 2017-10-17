@@ -3739,7 +3739,7 @@ body.page-template-history-tpl {
           display: block;
           width: 90%;
           max-width: 960px;
-          margin: 7em auto 0;
+          margin: 13em auto 0;
           text-align: center; }
           @media (max-width: 767px) {
             body.page-template-history-tpl #history-slider .slick-track li .history-content {
