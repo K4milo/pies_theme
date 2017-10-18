@@ -61,8 +61,11 @@ body{
 					background-color: $white;
 					.nav-tabs {
 						text-align: center;
-						padding-top: 50px;
+						padding: 50px 0 0;
 						border: none;
+						@include mobile{
+							padding: 0;
+						}
 						li {
 							float: none;
 							display: inline-block;
@@ -72,6 +75,8 @@ body{
 							@include mobile{
 								width: 100%;
 								display: block;
+								min-height: 65px;
+								border-bottom: 1px solid $lgrey;
 							}
 							a {
 								border: none;
@@ -80,6 +85,11 @@ body{
 								font-size: em(18);
 								font-family: $ralemd;
 								line-height: 1;
+								position: relative;
+								@include mobile {
+									padding-left: 70px;
+									text-align: left;
+								}
 								strong{
 									font-family: $ralebk;
 								}
@@ -90,8 +100,14 @@ body{
 									width: 114px;
 									height: 114px;
 									background-image: url('../img/icons/sprite-hands.png');
-									@include mobile{
-										display: none;
+									@include mobile {
+										position: absolute;
+										top: 4px;
+										left: 0;
+										margin: 0;
+										width: 57px;
+										height: 57px;
+										background-image: url('../img/icons/sprite-hands-mobile.png');
 									}
 								}
 							}
@@ -108,6 +124,9 @@ body{
 								a {
 									&::before {
 										background-position: -232px 0;
+										@include mobile{
+											background-position: -116px 0;
+										}
 									}
 								}
 							}
@@ -116,6 +135,9 @@ body{
 								a {
 									&::before {
 										background-position: -467px 0;
+										@include mobile{
+											background-position: -233.5px 0;
+										}
 									}
 								}
 							}
@@ -124,6 +146,9 @@ body{
 								a {
 									&::before {
 										background-position: -700px 0;
+										@include mobile{
+											background-position: -350px 0;
+										}
 									}
 								}
 							}
@@ -137,6 +162,9 @@ body{
 									a {
 										&::before {
 											background-position: 0 -119px;
+											@include mobile{
+												background-position: 0 -59.5px;
+											}
 										}
 									}
 								}
@@ -145,6 +173,9 @@ body{
 									a {
 										&::before {
 											background-position: -232px -119px;
+											@include mobile{
+												background-position: -116px -59.5px;
+											}
 										}
 									}
 								}
@@ -153,6 +184,9 @@ body{
 									a {
 										&::before {
 											background-position: -467px -119px;
+											@include mobile{
+												background-position: -233.5px -59.5px;
+											}
 										}
 									}
 								}
@@ -161,6 +195,9 @@ body{
 									a {
 										&::before {
 											background-position: -700px -119px;
+											@include mobile{
+												background-position: -350px -59.5px;
+											}
 										}
 									}
 								}
@@ -186,6 +223,9 @@ body{
 									font-size: em(25);
 									strong, b {
 										font-family: $openbd;
+									}
+									@include mobile {
+										font-size: em(18);
 									}
 								}
 							}
@@ -302,12 +342,14 @@ body{
 
 								ul {
 									text-align: left;
+									padding: 0;
 									li {
 										list-style: none;
 										line-height: 3;
 										font-size: em(25);
 										@include mobile {
-											font-size: em(16);
+											font-size: em(14);
+											margin: 1em 0;
 										}
 										&::before {
 											content: "";
@@ -315,6 +357,12 @@ body{
 											width: 43px;
 											height: 38px;
 											background-image: url('../img/icons/checked.png');
+											@include mobile {
+												width: 31px;
+												height: 28px;
+												vertical-align: middle;
+												background-size: contain;
+											}
 										}
 									}
 								}
@@ -518,6 +566,7 @@ body{
 											font-family: $openbd;
 											@include mobile {
 												font-size: em(16);
+												width: 75%;
 											}
 										}
 									}

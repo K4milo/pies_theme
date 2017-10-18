@@ -10,7 +10,7 @@
           <li><a href="https://www.youtube.com/user/fundpiesdescalzos" class="social-icn yt" target="_blank">Youtube</a></li>
           <li><a href="https://www.instagram.com/fpiesdescalzos/" class="social-icn in" target="_blank">Instagram</a></li>
           <li><a href="https://www.linkedin.com/company/10414649/" class="social-icn lin" target="_blank">LinkedIn</a></li>
-          <li><a href="https://www.linkedin.com/company/10414649/" class="social-icn let" target="_blank">LinkedIn</a></li>
+          <li><a href="https://piesdescalzoslive.wordpress.com" class="social-icn let" target="_blank">LinkedIn</a></li>
         </ul>
       </div>
       <div class="yellow-footer">
