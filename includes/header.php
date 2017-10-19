@@ -43,6 +43,16 @@
             'depth'             => 2,
             'menu_class'        => 'nav navbar-nav'));
       ?>
+      <div class="follow">
+        <ul>
+          <li><a href="https://www.facebook.com/fpiesdescalzos/?ref=ts" class="social-icn fb" target="_blank">Facebook</a></li>
+          <li><a href="https://twitter.com/fpiesdescalzos" class="social-icn tw" target="_blank">Twitter</a></li>
+          <li><a href="https://www.youtube.com/user/fundpiesdescalzos" class="social-icn yt" target="_blank">Youtube</a></li>
+          <li><a href="https://www.instagram.com/fpiesdescalzos/" class="social-icn in" target="_blank">Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/10414649/" class="social-icn lin" target="_blank">LinkedIn</a></li>
+          <li><a href="https://piesdescalzoslive.wordpress.com" class="social-icn let" target="_blank">LinkedIn</a></li>
+        </ul>
+      </div>
   </div><!-- /.navbar-collapse -->
 </nav>
   

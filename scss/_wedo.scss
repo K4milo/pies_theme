@@ -5,6 +5,7 @@ body {
 		background-image: url('../img/bgs/bg_10.jpg');
 		@include bgcover;
 		@include overlay($black,0.5);
+		background-attachment: fixed;
 		&::after{
 			position: fixed;
 			z-index: -1;
@@ -421,7 +422,7 @@ body {
 								&:first-child{
 									p{
 										&::after{
-											background-color: $red;
+											background-color: $green;
 										}
 									}
 								}
@@ -432,10 +433,10 @@ body {
 										}
 									}
 								}
-								&:last-child{
+								&:nth-child(3){
 									p{
 										&::after{
-											background-color: $green;
+											background-color: $red;
 										}
 									}
 								}
