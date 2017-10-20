@@ -43,6 +43,12 @@ function bst_enqueues() {
 	wp_register_script('wow-js', get_template_directory_uri() . '/js/wow.js', false, null, true);
 	wp_enqueue_script('wow-js');
 
+	wp_register_script('waypoints-js', get_template_directory_uri() . '/js/waypoints.js', false, null, true);
+	wp_enqueue_script('waypoints-js');
+
+	wp_register_script('counterup-js', get_template_directory_uri() . '/js/counterup.js', false, null, true);
+	wp_enqueue_script('counterup-js');
+
 	wp_register_script('bst-js', get_template_directory_uri() . '/js/bst.js', false, null, true);
 	wp_enqueue_script('bst-js');
 

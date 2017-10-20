@@ -64,22 +64,31 @@ get_template_part('includes/header');
 	  			</div>
 	  			<div class="pay-btns">
 	  				<header>
-	  					<h3>Elige como dejar tu huella</h3>
+	  					<h3>Elige cómo dejar tu huella</h3>
 	  				</header>
 	  				<?php
+	  					$counter = 1;
 	  					//loop impact items
 	  					while( have_rows('metodos_pago') ): the_row();
 	  				?>
-	  					<div class="item">
-	  						<figure class="logo">
+	  					<div class="item logo-<?php echo $counter; ?>">
+	  						<figure class="logo logo-<?php echo $counter; ?>">
 	  							<a href="<?php the_sub_field('vinculo');?>" target="_blank">
 	  								<img src="<?php the_sub_field('logo');?>" alt="<?php the_title(); ?>">
 	  							</a>
 	  						</figure>
 	  					</div>
 	  				<?php
+	  					$counter ++;
 	  					endwhile;
 	  				?>
+	  				<div class="item">
+  						<figure class="logo logo-cons">
+  							<a href="#modalCon" data-toggle="modal" data-target="#modalCon" >
+  								<img src="<?php bloginfo('template_url'); ?>/img/icons/the-red-mail.png" alt="<?php the_title(); ?>">
+  							</a>
+  						</figure>
+  					</div>
 	  			</div>
 			</div>
 			<div id="menu1" class="tab-pane fade">
@@ -106,22 +115,31 @@ get_template_part('includes/header');
 	  			</div><!--/eof items impact-->
 	  			<div class="pay-btns">
 	  				<header>
-	  					<h3>Elige como dejar tu huella</h3>
+	  					<h3>Elige cómo dejar tu huella</h3>
 	  				</header>
 	  				<?php
+	  					$counter = 1;
 	  					//loop impact items
 	  					while( have_rows('metodos_pago') ): the_row();
 	  				?>
 	  					<div class="item">
-	  						<figure class="logo">
+	  						<figure class="logo logo-<?php echo $counter; ?>">
 	  							<a href="<?php the_sub_field('vinculo');?>" target="_blank">
 	  								<img src="<?php the_sub_field('logo');?>" alt="<?php the_title(); ?>">
 	  							</a>
 	  						</figure>
 	  					</div>
 	  				<?php
+	  					$counter ++;
 	  					endwhile;
 	  				?>
+	  				<div class="item">
+  						<figure class="logo logo-cons">
+  							<a href="#modalCon" data-toggle="modal" data-target="#modalCon" >
+  								<img src="<?php bloginfo('template_url'); ?>/img/icons/the-red-mail.png" alt="<?php the_title(); ?>">
+  							</a>
+  						</figure>
+  					</div>
 	  			</div>
 			</div>
 			<div id="menu2" class="tab-pane fade">
@@ -303,28 +321,71 @@ get_template_part('includes/header');
 	  			</div><!--/eof card items-->
 	  			<div class="pay-btns">
 	  				<header>
-	  					<h3>Elige como dejar tu huella</h3>
+	  					<h3>Elige cómo dejar tu huella</h3>
 	  				</header>
 	  				<?php
+	  					$counter = 1;
 	  					//loop impact items
 	  					while( have_rows('metodos_pago') ): the_row();
 	  				?>
-	  					<div class="item">
-	  						<figure class="logo">
+	  					<div class="item logo-<?php echo $counter; ?>">
+	  						<figure class="logo logo-<?php echo $counter; ?>">
 	  							<a href="<?php the_sub_field('vinculo');?>" target="_blank">
 	  								<img src="<?php the_sub_field('logo');?>" alt="<?php the_title(); ?>">
 	  							</a>
 	  						</figure>
 	  					</div>
 	  				<?php
+	  					$counter ++;
 	  					endwhile;
 	  				?>
+	  				<div class="item">
+  						<figure class="logo logo-cons">
+  							<a href="#modalCon" data-toggle="modal" data-target="#modalCon" >
+  								<img src="<?php bloginfo('template_url'); ?>/img/icons/the-red-mail.png" alt="<?php the_title(); ?>">
+  							</a>
+  						</figure>
+  					</div>
 	  			</div>
 			</div><!--/eof tab 4-->
 		</div><!--/tab content-->
 	</div><!--centered-->
   </div><!-- /.row -->
 </div><!-- /.container -->
+
+<!-- Modal -->
+<div id="modalCon" class="modal fade" role="dialog">
+	<div class="modal-dialog">
+
+		<!-- Modal content-->
+		<div class="modal-content">
+			<div class="modal-header">
+				<img src="<?php bloginfo('template_url'); ?>/img/icons/letter-small.png" alt="<?php the_title(); ?>">
+				<h4 class="modal-title">Consignación</h4>
+			</div>
+			<div class="modal-body">
+				<p>
+					Para donaciones en efectivo
+				</p>
+				<p>
+					<b>
+					Puedes consignar en Bancolombia 
+					Cuenta de Ahorros No. 209 658065-20 
+					Fundación Pies Descalzos
+					</b>
+				</p>
+				<p>
+					*No olvides enviar el comprobante
+					de consignación al correo electrónico:
+					<a href="mailto:webmaster@fpd.ong">webmaster@fpd.ong</a>
+				</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Cerrar X</button>
+			</div>
+		</div>
+	</div>
+</div>
 
 <?php
 	endwhile;

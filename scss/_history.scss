@@ -81,8 +81,12 @@ body {
 						.text-cond{
 							color: $white;
 							p {
-								font-size: em(18);
+								font-size: em(20);
 								color: $white;
+								strong,
+								b {
+									font-family: $raleBd;
+								}
 								@include mobile {
 									font-size: em(18);
 								}
@@ -172,6 +176,10 @@ body {
 							h3 {
 								padding-bottom: 3.3em;
 								display: block;
+								@include desktop {
+									width: 183%;
+									margin-left: -46%;
+								}
 							}
 							h5 {
 								display: none;

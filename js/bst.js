@@ -33,9 +33,32 @@
     } 
 
     // Change hash for page-reload
-    $('.nav-tabs a').on('shown.bs.tab', function (e) {
+    $('.page-template-donation-tpl .nav-tabs a').on('shown.bs.tab', function (e) {
         window.location.hash = e.target.hash;
-    })
+    });
+
+    //add support to small slider
+    if ($(window).width() <= 760 ){
+      //Trigger slider;
+      setTimeout(function(){
+        $('ul.items-photos').slick({
+          slidesToShow: 1,
+          slidesToScroll: 1
+        });
+
+      },600)
+    }
+
+    //counterscript
+    $('body.page-template-home-tpl #impact-value-container .impact-items .item .text-body p strong').counterUp({
+        delay: 10,
+        time: 1000
+    });
+
+    $('body.page-template-home-tpl #impact-value-container .impact-items .item .text-body p b').counterUp({
+        delay: 10,
+        time: 1000
+    });
 
 
     //Timeline
@@ -293,33 +316,7 @@
       ]
     });
 
-    //Trigger slider;
-
-    $('ul.items-photos').slick({
-      infinite: true,
-      slidesToShow: 3,
-      slidesToScroll: 3,
-       responsive: [
-        {
-          breakpoint: 60000,
-          settings: "unslick"
-        },
-        {
-          breakpoint: 760,
-          settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2
-          }
-        },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
-      ]
-    });
+    
 
 		new WOW().init();
 

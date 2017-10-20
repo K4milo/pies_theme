@@ -226,9 +226,12 @@ body {
               text-transform: uppercase;
               font-size: em(18);
               font-family: $openbd;
-              color: $black;
-              background-color: $yellow;
+              color: $white;
+              background-color: $red;
               border-radius: 0.3em;
+              &:hover {
+                background-color: $grey;
+              }
             }
           }
         }

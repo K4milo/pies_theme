@@ -17,10 +17,11 @@
 <![endif]-->
 
 <a class="the-logo" href="<?php echo home_url('/'); ?>">
-  <img src="<?php bloginfo('template_url')?>/img/logos/logo.png" alt="Fundación Pies Descalzos"/>
+  <img src="<?php bloginfo('template_url'); ?>/img/logos/logo.png" class="hidden-xs" alt="Fundación Pies Descalzos" />
+  <img src="<?php bloginfo('template_url'); ?>/img/logos/logo-mobile.png" class="visible-xs" alt="Fundación Pies Descalzos" />
 </a>
 
-<a class="the-fly" href="/donaciones/">
+<a class="the-fly" href="http://londonojp.com/pies-descalzos/donaciones/">
   <img src="<?php bloginfo('template_url')?>/img/misc/huella.png" alt="Fundación Pies Descalzos"/>
 </a>
 
@@ -35,7 +36,7 @@
   </div>
   <div class="nav-collapse" id="navbar-side">
     <a class="navbar-brand" href="<?php echo home_url('/'); ?>">
-      <img src="<?php bloginfo('template_url'); ?>/img/logos/logo.png" alt="Fundación Pies Descalzos">
+      <img src="<?php bloginfo('template_url')?>/img/logos/logo.png" alt="Fundación Pies Descalzos"/>
     </a>
     <?php
         wp_nav_menu( array(

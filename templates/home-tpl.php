@@ -90,7 +90,7 @@ get_template_part('includes/header');
 	    			while( have_rows('items_informativos') ): the_row();
 	    		?>
 
-	    			<div class="col-md-3 item wow bounceIn" data-wow-duration="0.5s" data-wow-delay="1.2s">
+	    			<div class="col-md-3 item wow bounceIn">
 	    				<figure><img src="<?php the_sub_field('pictograma'); ?>" alt="shakira impacto"></figure>
 	    				<div class="text-body">
 	    					<?php the_sub_field('texto_informativo'); ?>

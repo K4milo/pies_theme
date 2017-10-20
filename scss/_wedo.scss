@@ -99,10 +99,20 @@ body {
 					margin: 2em 0;
 					&:first-child {
 						margin-top: 0;
+						.cd-timeline-content {
+							h3 {
+								color: $blue;
+							}
+						}
 					}
 
 					&:last-child {
 						margin-bottom: 0;
+						.cd-timeline-content {
+							h3 {
+								color: $yellow;
+							}
+						}
 					}
 					//conditional left
 					@include desktop {
@@ -306,6 +316,9 @@ body {
 					display: block;
 					margin: 1em auto;
 					max-width: 100%; 
+					@include desktop {
+						margin-top: 6em;
+					}
 				}
 			}
 		}// EOF ub

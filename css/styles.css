@@ -2507,9 +2507,11 @@ body {
         text-transform: uppercase;
         font-size: 1.125em;
         font-family: "Open Sans Bold";
-        color: #000000;
-        background-color: #ffbb01;
+        color: #ffffff;
+        background-color: #CC0B3C;
         border-radius: 0.3em; }
+        body.page-template-contact-tpl .container .wpcf7-form p input.wpcf7-submit:hover {
+          background-color: #3c3c3c; }
 
 body.open-menu .side-menu .nav-header .navbar-side-btn {
   left: 227px;
@@ -3408,6 +3410,8 @@ body.page-template-donation-tpl {
                 width: 57px;
                 height: 57px;
                 background-image: url("../img/icons/sprite-hands-mobile.png"); } }
+          body.page-template-donation-tpl .container-fluid > .row > .container .nav-tabs li a:hover {
+            background-color: transparent; }
         body.page-template-donation-tpl .container-fluid > .row > .container .nav-tabs li:first-child a::before {
           background-position: 0 0; }
         body.page-template-donation-tpl .container-fluid > .row > .container .nav-tabs li:nth-child(2) a::before {
@@ -3473,6 +3477,9 @@ body.page-template-donation-tpl {
       body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .impact-items .item {
         position: relative;
         min-height: 190px; }
+        @media (min-width: 1282px) {
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .impact-items .item {
+            padding: 0.625em 2.5em; } }
         body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .impact-items .item .tmb {
           display: inline-block;
           vertical-align: middle;
@@ -3547,6 +3554,8 @@ body.page-template-donation-tpl {
         content: "";
         display: table;
         clear: both; }
+    body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #home .pay-btns .item.logo-1, body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #home .pay-btns .item:first-child {
+      display: none; }
     body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .text-body.first h2, body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .text-body.first h3 {
       color: #ffbb01;
       text-align: center;
@@ -3604,6 +3613,7 @@ body.page-template-donation-tpl {
             position: absolute;
             top: 0;
             left: 0;
+            padding: 3.3125em 1.5625em 0;
             width: 100%;
             height: 100%;
             text-align: center;
@@ -3831,6 +3841,37 @@ body.page-template-donation-tpl {
         @media (max-width: 767px) {
           body.page-template-donation-tpl .container-fluid > .row #menu3 .bonus-timeline ul li {
             width: 100%; } }
+  body.page-template-donation-tpl .container-fluid > .row #menu3 .pay-btns .item.logo-1, body.page-template-donation-tpl .container-fluid > .row #menu3 .pay-btns .item:first-child {
+    display: none; }
+
+body #modalCon .modal-dialog .modal-content {
+  background-color: #ffbb01;
+  border-color: #000000; }
+  body #modalCon .modal-dialog .modal-content .modal-header,
+  body #modalCon .modal-dialog .modal-content .modal-body {
+    border-color: #000000;
+    text-align: center; }
+    body #modalCon .modal-dialog .modal-content .modal-header a,
+    body #modalCon .modal-dialog .modal-content .modal-body a {
+      font-weight: bold;
+      color: #000000; }
+  body #modalCon .modal-dialog .modal-content .modal-footer {
+    border-color: #000000; }
+    body #modalCon .modal-dialog .modal-content .modal-footer button {
+      display: block;
+      margin: 1em auto;
+      border: none;
+      opacity: 0.7;
+      font-family: "Raleway Extra Bold"; }
+  @media (min-width: 1282px) {
+    body #modalCon .modal-dialog .modal-content {
+      overflow: hidden;
+      border-radius: 100%;
+      height: 437px;
+      width: 437px;
+      margin: 1em auto; }
+      body #modalCon .modal-dialog .modal-content .modal-header {
+        padding-top: 3.75em; } }
 
 body.page-template-history-tpl {
   width: 103%;
@@ -3916,8 +3957,11 @@ body.page-template-history-tpl {
           body.page-template-history-tpl #history-slider .slick-track li .history-content .text-cond {
             color: #ffffff; }
             body.page-template-history-tpl #history-slider .slick-track li .history-content .text-cond p {
-              font-size: 1.125em;
+              font-size: 1.25em;
               color: #ffffff; }
+              body.page-template-history-tpl #history-slider .slick-track li .history-content .text-cond p strong,
+              body.page-template-history-tpl #history-slider .slick-track li .history-content .text-cond p b {
+                font-family: "Raleway Bold"; }
               @media (max-width: 767px) {
                 body.page-template-history-tpl #history-slider .slick-track li .history-content .text-cond p {
                   font-size: 1.125em; } }
@@ -3990,6 +4034,10 @@ body.page-template-history-tpl {
           body.page-template-history-tpl #history-slider .slick-dots li.slick-active .history-item h3 {
             padding-bottom: 3.3em;
             display: block; }
+            @media (min-width: 1282px) {
+              body.page-template-history-tpl #history-slider .slick-dots li.slick-active .history-item h3 {
+                width: 183%;
+                margin-left: -46%; } }
           body.page-template-history-tpl #history-slider .slick-dots li.slick-active .history-item h5 {
             display: none; }
           body.page-template-history-tpl #history-slider .slick-dots li.slick-active .history-item .text-cond {
@@ -4243,7 +4291,25 @@ body.single-post {
       font-size: 3.125em;
       font-family: "Raleway Black";
       text-transform: uppercase;
-      text-shadow: 0 0 10px #000000; }
+      text-shadow: 0 0 10px #000000;
+      position: relative; }
+      body.single-post #content header h2 a {
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        border-radius: 100%;
+        border: 1px solid #ffffff; }
+        body.single-post #content header h2 a i {
+          font-size: 20px;
+          padding: 0;
+          position: relative;
+          margin: 10px 0 0 -3px;
+          display: block;
+          color: #ffbb01; }
+        body.single-post #content header h2 a:hover {
+          text-decoration: none; }
   body.single-post #content article.post {
     position: relative;
     padding: 2em;
@@ -4362,8 +4428,12 @@ body.page-template-what-we-do-tpl {
       margin: 2em 0; }
       body.page-template-what-we-do-tpl .infographics #cd-timeline .cd-timeline-block:first-child {
         margin-top: 0; }
+        body.page-template-what-we-do-tpl .infographics #cd-timeline .cd-timeline-block:first-child .cd-timeline-content h3 {
+          color: #00A2A6; }
       body.page-template-what-we-do-tpl .infographics #cd-timeline .cd-timeline-block:last-child {
         margin-bottom: 0; }
+        body.page-template-what-we-do-tpl .infographics #cd-timeline .cd-timeline-block:last-child .cd-timeline-content h3 {
+          color: #ffbb01; }
       @media (min-width: 1282px) {
         body.page-template-what-we-do-tpl .infographics #cd-timeline .cd-timeline-block:nth-child(even):after {
           content: "";
@@ -4514,6 +4584,9 @@ body.page-template-what-we-do-tpl {
     display: block;
     margin: 1em auto;
     max-width: 100%; }
+    @media (min-width: 1282px) {
+      body.page-template-what-we-do-tpl .ubication .img-map img {
+        margin-top: 6em; } }
   body.page-template-what-we-do-tpl .gestion #cd-gestion header.main-header {
     width: 100%;
     padding: 5em 0; }
