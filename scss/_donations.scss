@@ -678,10 +678,10 @@ body{
 		.modal-dialog {
 			.modal-content{
 				background-color: $yellow;
-				border-color: $black;
+				border-color: $yellow;
 				.modal-header,
 				.modal-body {
-					border-color: $black;
+					border-color: $yellow;
 					text-align: center;
 					a {
 						font-weight: bold;
@@ -689,7 +689,7 @@ body{
 					}
 				}
 				.modal-footer {
-					border-color: $black;
+					border-color: $yellow;
 					button {
 						display: block;
 						margin: 1em auto;

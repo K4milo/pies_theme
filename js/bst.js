@@ -43,10 +43,16 @@
       setTimeout(function(){
         $('ul.items-photos').slick({
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          infinite: false,
+
         });
 
-      },600)
+      },600);
+
+      $('.page-template-about-tpl .nav-tabs li').on('click', function(event) {
+        $('ul.items-photos .slick-next ').trigger('click');
+      });
     }
 
     //counterscript

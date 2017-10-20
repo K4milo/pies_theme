@@ -110,9 +110,32 @@ body {
 					ul.items-photos {
 						padding: 4em 0;
 						text-align: center;
+						@include clearfix;
+						
+						.slick-prev,
+						.slick-next {
+							width: em(30);
+							height: em(30);
+							z-index: 30;
+							&::before {
+								font-size: 30px;
+								color: $yellow;
+							}
+						}
+
+						.slick-prev {
+							left: 0;
+						}
+
+						.slick-next {
+							right: 30px;
+						}
+
 						li {
 							display: block;
 							outline: none;
+							height: 325px;
+							width: 325px;
 							h4 {
 								text-transform: uppercase;
 								text-align: center;
@@ -120,6 +143,7 @@ body {
 							@include desktop{
 								display: inline-block;
 								width: 30%;
+								height: auto;
 								vertical-align: top;
 							}
 							.item-carr {
@@ -129,6 +153,7 @@ body {
 								border-radius: 100%;
 								overflow: hidden;
 								margin: 1em auto;
+								
 								figure {
 									position: absolute;
 									top: 0;
@@ -250,10 +275,8 @@ body {
 						display: block;
 						position: relative;
 						min-height: 220px;
-						margin: 2em 0;
-						@include mobile{
-							padding: 0;
-						}
+						margin: 2em auto;
+						padding: 0;
 						&::after {
 							content: "";
 							display: block;

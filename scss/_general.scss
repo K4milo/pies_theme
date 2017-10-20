@@ -140,6 +140,10 @@ body {
     .row{
       margin: 0;
       padding: 0;
+      .container {
+        margin: 0 auto;
+        padding: 0;
+      }
     }
   }
   //Gutter fix
@@ -199,6 +203,7 @@ body {
       }
     } // EOF HEADER
     .container{
+      padding: 0;
       p,a,h3{
         color:$white;
         text-align: center;
