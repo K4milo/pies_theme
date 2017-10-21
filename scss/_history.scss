@@ -80,9 +80,15 @@ body {
 						}
 						.text-cond{
 							color: $white;
+							@include desktop {
+								text-align: left;
+								column-count: 2;
+								column-gap: em(10);
+							}
 							p {
 								font-size: em(20);
 								color: $white;
+								margin: 0;
 								strong,
 								b {
 									font-family: $raleBd;

@@ -121,8 +121,8 @@
         $this.removeClass('fade');
       }
 
-      $this.find('.text-item').wrapAll('<div class="col-md-6 text-info"></div>');
-      $this.find('.kn-cont').wrapAll('<div class="col-md-6 graph-info"></div>');
+      $this.find('.text-item').wrapAll('<div class="col-md-3 col-md-push-2 text-info"></div>');
+      $this.find('.kn-cont').wrapAll('<div class="col-md-4 col-md-push-2 graph-info"></div>');
 
     });
 
@@ -153,7 +153,7 @@
               'min': 0,
               'max': 100,
               'displayInput': false,
-              'bgColor': '#5a5d66',
+              'bgColor': 'rgba(0,0,0,0.3)',
               'fgColor': '#C9CB00',
               'width': 320,
               'height': 320,
@@ -188,7 +188,7 @@
               'max':100,
               'displayInput': false,
               'fgColor': '#00A2A6',
-              'bgColor': '#5a5d66',
+              'bgColor': 'rgba(0,0,0,0.3)',
               'width': 200,
               'height': 200,
               'dynamicDraw': true
@@ -219,7 +219,7 @@
             
             $the_knob2.knob({
               'displayInput': false,
-              'bgColor': '#5a5d66',
+              'bgColor': 'rgba(0,0,0,0.3)',
               'fgColor': '#CA3516',
               'width': 100,
               'min': 0,
@@ -301,7 +301,7 @@
     //Slick sponsors
     $('#partners-container .impact-items').slick({
       dots: true,
-      slidesToShow: 4,
+      slidesToShow: 6,
       slidesToScroll: 1,
       infinite: true,
       responsive: [

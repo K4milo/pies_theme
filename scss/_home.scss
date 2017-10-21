@@ -53,6 +53,10 @@ body{
 			position: relative;
 			box-shadow: inset 0 0 60em $black;
 			background-image: url('../img/bgs/bg_14.jpg');
+			@include overlay($black,0.2);
+			&::after {
+				z-index: 0 !important;
+			}
 			@include bgparallax;
 			.text {
 				position: relative;
@@ -128,6 +132,9 @@ body{
 					}
 				}
 				p {
+					@include desktop {
+						padding: 0 8%;
+					}
 					font-size: em(25);
 				}
 			}
@@ -138,6 +145,7 @@ body{
 				.item {
 					position: relative;
 					height: 490px;
+					padding: 0 em(30);
 					@include overlay($black,0.5);
 					&::after {
 						z-index: 1 !important;
@@ -315,7 +323,8 @@ body{
 					margin: 0;
 				}
 				img {
-					max-width: 100%;
+					width: auto;
+					height: 70px;
 					display: block;
 					margin: 0 auto;
 				}

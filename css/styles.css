@@ -2489,22 +2489,22 @@ body {
         @media (max-width: 767px) {
           body.page-template-contact-tpl header.main-header h3 {
             font-size: 2.1875em; } }
-    body.page-template-contact-tpl .container {
+    body.page-template-contact-tpl .container-fluid {
       padding: 0; }
-      body.page-template-contact-tpl .container p, body.page-template-contact-tpl .container a, body.page-template-contact-tpl .container h3 {
+      body.page-template-contact-tpl .container-fluid p, body.page-template-contact-tpl .container-fluid a, body.page-template-contact-tpl .container-fluid h3 {
         color: #ffffff;
         text-align: center; }
-      body.page-template-contact-tpl .container .wpcf7-form {
+      body.page-template-contact-tpl .container-fluid #wpcf7-f266-p269-o1 .wpcf7-form {
         max-width: 600px;
         margin: 1em auto;
         background-color: transparent; }
-        body.page-template-contact-tpl .container .wpcf7-form p input.wpcf7-text, body.page-template-contact-tpl .container .wpcf7-form p input.wpcf7-email, body.page-template-contact-tpl .container .wpcf7-form p input.wpcf7-textarea {
+        body.page-template-contact-tpl .container-fluid #wpcf7-f266-p269-o1 .wpcf7-form p input.wpcf7-text, body.page-template-contact-tpl .container-fluid #wpcf7-f266-p269-o1 .wpcf7-form p input.wpcf7-email, body.page-template-contact-tpl .container-fluid #wpcf7-f266-p269-o1 .wpcf7-form p input.wpcf7-textarea {
           padding: 1.5em;
           background-color: #f8f8f8;
           color: #3c3c3c;
           text-transform: uppercase;
           font-family: "Raleway Extra Bold"; }
-        body.page-template-contact-tpl .container .wpcf7-form p input.wpcf7-submit {
+        body.page-template-contact-tpl .container-fluid #wpcf7-f266-p269-o1 .wpcf7-form p input.wpcf7-submit {
           display: block;
           margin: 1em auto;
           border: none;
@@ -2515,7 +2515,7 @@ body {
           color: #ffffff;
           background-color: #CC0B3C;
           border-radius: 0.3em; }
-          body.page-template-contact-tpl .container .wpcf7-form p input.wpcf7-submit:hover {
+          body.page-template-contact-tpl .container-fluid #wpcf7-f266-p269-o1 .wpcf7-form p input.wpcf7-submit:hover {
             background-color: #3c3c3c; }
 
 body.open-menu .side-menu .nav-header .navbar-side-btn {
@@ -2733,6 +2733,19 @@ body.page-template-home-tpl #infographics-container {
   background-attachment: fixed;
   background-size: cover;
   background-position: center top; }
+  body.page-template-home-tpl #infographics-container::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000;
+    opacity: 0.2;
+    z-index: -1; }
+  body.page-template-home-tpl #infographics-container::after {
+    z-index: 0 !important; }
   body.page-template-home-tpl #infographics-container .text {
     position: relative;
     z-index: 1;
@@ -2807,13 +2820,17 @@ body.page-template-home-tpl #items-value-container .head-body {
         font-size: 2.1875em; } }
   body.page-template-home-tpl #items-value-container .head-body p {
     font-size: 1.5625em; }
+    @media (min-width: 1200px) {
+      body.page-template-home-tpl #items-value-container .head-body p {
+        padding: 0 8%; } }
 
 body.page-template-home-tpl #items-value-container .value-items {
   overflow: hidden;
   margin-top: 2em; }
   body.page-template-home-tpl #items-value-container .value-items .item {
     position: relative;
-    height: 490px; }
+    height: 490px;
+    padding: 0 1.875em; }
     body.page-template-home-tpl #items-value-container .value-items .item::after {
       content: "";
       display: block;
@@ -2969,7 +2986,8 @@ body.page-template-home-tpl #partners-container {
         width: 100%;
         margin: 0; } }
     body.page-template-home-tpl #partners-container .item img {
-      max-width: 100%;
+      width: auto;
+      height: 70px;
       display: block;
       margin: 0 auto; }
 
@@ -3299,7 +3317,7 @@ body.page-template-about-tpl {
         body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li.active .ano-small::before {
           width: 24px;
           height: 24px;
-          margin-left: -12px; }
+          margin: -5px 0 0 -12px; }
         body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li.active .ano-small::after {
           font-size: 3.125em;
           color: rgba(0, 0, 0, 0.5);
@@ -3584,8 +3602,6 @@ body.page-template-donation-tpl {
         content: "";
         display: table;
         clear: both; }
-    body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #home .pay-btns .item.logo-1, body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #home .pay-btns .item:first-child {
-      display: none; }
     body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .text-body.first h2, body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .text-body.first h3 {
       color: #ffbb01;
       text-align: center;
@@ -3628,6 +3644,12 @@ body.page-template-donation-tpl {
           color: #CC0B3C;
           text-transform: uppercase;
           font-family: "Raleway Bold"; }
+        @media (min-width: 1200px) {
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .voluntier-items .item:first-child header h3::after, body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .voluntier-items .item:nth-child(2) header h3::after {
+            content: "/";
+            display: inline-block;
+            position: relative;
+            left: 2em; } }
         body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .voluntier-items .item .tmb {
           position: relative;
           margin: 0 auto;
@@ -3679,6 +3701,9 @@ body.page-template-donation-tpl {
       body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .aditional p {
         font-family: "Open Sans Light";
         font-size: 1.5625em; }
+        @media (min-width: 1200px) {
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .aditional p {
+            padding: 0 8%; } }
         body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .aditional p strong, body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .aditional p b {
           font-family: "Open Sans Bold"; }
       body.page-template-donation-tpl .container-fluid > .row > .container .tab-content #menu2 .aditional img {
@@ -3801,14 +3826,14 @@ body.page-template-donation-tpl {
         body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .faqs .panel-group .panel-default .panel-heading::before {
           content: "";
           display: inline-block;
-          vertical-align: middle;
+          vertical-align: top;
           background-image: url("../img/icons/play.png");
           width: 15px;
           height: 18px;
           margin: 0 1em; }
         body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .faqs .panel-group .panel-default .panel-heading .panel-title {
           display: inline-block;
-          vertical-align: middle;
+          vertical-align: top;
           color: #3c3c3c;
           font-size: 1.5625em;
           font-family: "Open Sans Bold"; }
@@ -3986,9 +4011,15 @@ body.page-template-history-tpl {
             color: #ffffff; }
           body.page-template-history-tpl #history-slider .slick-track li .history-content .text-cond {
             color: #ffffff; }
+            @media (min-width: 1200px) {
+              body.page-template-history-tpl #history-slider .slick-track li .history-content .text-cond {
+                text-align: left;
+                column-count: 2;
+                column-gap: 0.625em; } }
             body.page-template-history-tpl #history-slider .slick-track li .history-content .text-cond p {
               font-size: 1.25em;
-              color: #ffffff; }
+              color: #ffffff;
+              margin: 0; }
               body.page-template-history-tpl #history-slider .slick-track li .history-content .text-cond p strong,
               body.page-template-history-tpl #history-slider .slick-track li .history-content .text-cond p b {
                 font-family: "Raleway Bold"; }
@@ -4154,8 +4185,11 @@ body.search-results, body.page-template-news-tpl {
       margin: 0 auto;
       width: 90%;
       max-width: 720px;
-      position: relative; }
+      position: relative;
+      text-align: right; }
       body.search-results .the-search form input[type="text"], body.page-template-news-tpl .the-search form input[type="text"] {
+        display: inline-block;
+        max-width: 320px;
         background-color: rgba(0, 0, 0, 0.5);
         border-radius: 1em;
         color: #ffffff; }
@@ -4182,6 +4216,8 @@ body.search-results, body.page-template-news-tpl {
     content: "";
     display: table;
     clear: both; }
+  body.search-results .news-list a, body.page-template-news-tpl .news-list a {
+    color: #ffffff; }
   body.search-results .news-list .new-item, body.page-template-news-tpl .news-list .new-item {
     position: relative;
     height: 350px;
@@ -4204,6 +4240,8 @@ body.search-results, body.page-template-news-tpl {
       background-color: #000000;
       opacity: 0.2;
       z-index: -1; }
+    body.search-results .news-list .new-item a, body.page-template-news-tpl .news-list .new-item a {
+      color: #000000; }
     body.search-results .news-list .new-item h3, body.page-template-news-tpl .news-list .new-item h3 {
       padding-top: 3em;
       font-family: "Raleway Bold";
@@ -4596,9 +4634,15 @@ body.page-template-what-we-do-tpl {
       body.page-template-what-we-do-tpl .ubication .ubi-items .ubi-block .cd-content p {
         color: #ffffff; }
       body.page-template-what-we-do-tpl .ubication .ubi-items .ubi-block .cd-content a {
-        color: #ffbb01;
+        color: #ffffff;
+        background-color: #ffbb01;
         text-transform: uppercase;
-        font-family: "Raleway Bold"; }
+        font-family: "Raleway Bold";
+        padding: 0.625em 1em;
+        border-radius: 0.3125em;
+        margin-top: 0.625em; }
+        body.page-template-what-we-do-tpl .ubication .ubi-items .ubi-block .cd-content a:hover {
+          background-color: #3c3c3c; }
     body.page-template-what-we-do-tpl .ubication .ubi-items .ubi-block .cd-img {
       display: inline-block;
       vertical-align: middle;
@@ -4672,11 +4716,22 @@ body.page-template-what-we-do-tpl {
     content: "";
     display: table;
     clear: both; }
+  body.page-template-what-we-do-tpl .gestion #cd-gestion .tab-content .tab-pane h3 {
+    display: inline-block;
+    color: #ffbb01;
+    font-size: 1.875em;
+    font-family: "Raleway Extra Bold";
+    text-align: center;
+    text-transform: uppercase;
+    margin: 1.125em 0; }
+    @media (max-width: 767px) {
+      body.page-template-what-we-do-tpl .gestion #cd-gestion .tab-content .tab-pane h3 {
+        font-size: 1.25em; } }
   body.page-template-what-we-do-tpl .gestion #cd-gestion .tab-content .tab-pane .text-info {
-    padding-top: 4em; }
+    padding-top: 9em; }
     @media (max-width: 767px) {
       body.page-template-what-we-do-tpl .gestion #cd-gestion .tab-content .tab-pane .text-info {
-        padding-top: 2em; } }
+        padding-top: 4em; } }
     body.page-template-what-we-do-tpl .gestion #cd-gestion .tab-content .tab-pane .text-info .text-item {
       margin: 2em;
       text-align: right; }
@@ -4969,7 +5024,8 @@ body.page-template-what-we-do-tpl {
         .site-footer .yellow-footer .col4 p a {
           font-size: 12px;
           display: inline-block;
-          vertical-align: middle; }
+          vertical-align: middle;
+          color: #000000; }
         .site-footer .yellow-footer .col4 p input[type="submit"] {
           background-color: #CC0B3C;
           border: none;

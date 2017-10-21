@@ -291,9 +291,16 @@ body {
 							color: $white;
 						}
 						a{
-							color: $yellow;
+							color: $white;
+							background-color: $yellow;
 							text-transform: uppercase;
 							font-family: $raleBd;
+							padding: em(10) em(16);
+							border-radius: em(5);
+							margin-top: em(10);
+							&:hover{
+								background-color: $grey;
+							}
 						}
 					}
 					.cd-img	{
@@ -400,10 +407,22 @@ body {
 				.tab-content {
 					.tab-pane {
 						@include clearfix;
+						h3 {
+							display: inline-block;
+							color: $yellow;
+							font-size: em(30);
+							font-family: $raleebd;
+							text-align: center;
+							text-transform: uppercase;
+							margin: em(18) 0;
+							@include mobile{
+								font-size: em(20);
+							}
+						}
 						.text-info {
-							padding-top: 4em;
+							padding-top: 9em;
 							@include mobile {
-								padding-top: 2em;
+								padding-top: 4em;
 							}
 							.text-item {
 								margin: 2em;

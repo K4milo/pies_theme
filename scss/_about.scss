@@ -370,7 +370,7 @@ body {
 									&::before {
 										width: 24px;
 										height: 24px;
-										margin-left: -12px;
+										margin: -5px 0 0 -12px;
 									}
 									&::after {
 										@include fa-icon("\f0d8",$opBlack,em(50));

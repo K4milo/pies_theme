@@ -44,13 +44,17 @@ while (have_posts()):the_post()?>
 										<?php the_sub_field('text_body');?>
 										</div> <!-- cd-timeline-content -->
 										<div class="cd-img">
-											<img src="<?php the_sub_field('pictograma');?>" class="color" alt="<?php the_title();?>" />
+											<a href="<?php the_sub_field('vinculo');?>" target="_blank">
+												<img src="<?php the_sub_field('pictograma');?>" class="color" alt="<?php the_title();?>" />
+											</a>
 											</div> <!-- cd-timeline-img -->
 											</div> <!-- cd-timeline-block -->
 											<?php endwhile;?>
 										</div>
 										<div class="col-md-5 img-map">
-											<img src="<?php bloginfo('template_url')?>/img/misc/mapa-colombia.png" alt="Mapa de colombia ">
+											
+												<img src="<?php bloginfo('template_url')?>/img/misc/mapa-colombia.png" alt="Mapa de colombia ">
+											
 										</div>
 									</section>
 								</div>
@@ -75,10 +79,13 @@ while (have_posts()):the_post()?>
 											$counter2 = 0;
 											while (have_rows('items_gestion')):the_row();?>
 											<div id="menu<?php echo $counter2;?>" class="tab-pane fade">
+												<h3>Niños y jóvenes beneficiados por año</h3>
 												<?php
 												$counter3 = 0;
 												while (have_rows('informacion_por_ano')):the_row();?>
-												<div class="text-item"><p><?php the_sub_field('texto');?></p></div>
+												<div class="text-item">
+													<p><?php the_sub_field('texto');?></p>
+												</div>
 												<div class="kn-cont">
 													<input class="knob knob-<?php echo $counter3;?>" value="<?php the_sub_field('cifra_grafico');?>" data-readOnly="true" data-perc="<?php the_sub_field('cifra_grafico');?>">
 													<span><?php the_sub_field('cifra_numeros');?></span>

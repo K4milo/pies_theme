@@ -333,18 +333,6 @@ body{
 							@include clearfix;
 						}
 
-						//first one
-						#home {
-							.pay-btns {
-								.item{
-									&.logo-1,
-									&:first-child {
-										display: none;
-									}
-								}
-							}
-						}
-
 						//Third tab
 						#menu2 {
 							//intro text
@@ -394,6 +382,21 @@ body{
 									margin: 20px;
 									position: relative;
 									@include redTitle;
+									@include desktop {
+										&:first-child,
+										&:nth-child(2){
+											header {
+												h3{
+													&::after {
+														content: "/";
+														display: inline-block;
+														position: relative;
+														left: em(32);
+													}	
+												}
+											}
+										}
+									}
 									.tmb {
 										position: relative;
 										margin: 0 auto;
@@ -455,6 +458,9 @@ body{
 								p {
 									font-family: $openlt;
 									font-size: em(25);
+									@include desktop {
+										padding: 0 8%;
+									}
 									strong, b {
 										font-family: $openbd;
 									}
@@ -571,7 +577,7 @@ body{
 										&::before{
 											content: "";
 											display: inline-block;
-											vertical-align: middle;
+											vertical-align: top;
 											background-image: url('../img/icons/play.png');
 											width: 15px;
 											height: 18px;
@@ -579,7 +585,7 @@ body{
 										}
 										.panel-title{
 											display: inline-block;
-											vertical-align: middle;
+											vertical-align: top;
 											color: $grey;
 											font-size: em(25);
 											font-family: $openbd;

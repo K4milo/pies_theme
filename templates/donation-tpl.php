@@ -286,7 +286,7 @@ endwhile;
 	  			</div><!--/eof card items-->
 	  			<div class="bonus-items">
 
-	  				<div class="col-md-3 item icon">
+	  				<div class="col-md-3 item icon bounceIn" data-wow-duration="0.5s" data-wow-delay="1s">
 	  					<img src="<?php the_field('icono_bonos');?>">
 	  				</div>
 
@@ -309,7 +309,7 @@ endwhile;
 while (have_rows('adquisicion_bonos')):the_row();
 ?>
 		  					<li>
-		  						<img src="<?php the_sub_field('icono');?>">
+		  						<img src="<?php the_sub_field('icono');?>" class="bounceIn" data-wow-duration="0.5s" data-wow-delay="1s">
 		  						<div class="text-body">
 <?php the_sub_field('texto');?>
 </div>
