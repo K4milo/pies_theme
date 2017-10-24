@@ -52,9 +52,9 @@ while (have_posts()):the_post()?>
 											<?php endwhile;?>
 										</div>
 										<div class="col-md-5 img-map">
-											
+
 												<img src="<?php bloginfo('template_url')?>/img/misc/mapa-colombia.png" alt="Mapa de colombia ">
-											
+
 										</div>
 									</section>
 								</div>
@@ -62,6 +62,7 @@ while (have_posts()):the_post()?>
 									<section id="cd-gestion" class="container">
 										<header class="main-header">
 											<h3>Informe de Gestión</h3>
+											<h4>Niños y jóvenes beneficiados por año</h4>
 										</header>
 										<ul class="nav nav-tabs">
 											<?php //loop impact items
@@ -79,7 +80,6 @@ while (have_posts()):the_post()?>
 											$counter2 = 0;
 											while (have_rows('items_gestion')):the_row();?>
 											<div id="menu<?php echo $counter2;?>" class="tab-pane fade">
-												<h3>Niños y jóvenes beneficiados por año</h3>
 												<?php
 												$counter3 = 0;
 												while (have_rows('informacion_por_ano')):the_row();?>

@@ -57,13 +57,13 @@ get_template_part('includes/header');
 	    				$hover = get_sub_field('imagen_bn');
 	    		?>
 	    			<div class="col-md-3 item wow slideInOut" data-wow-duration="1.5s" data-wow-delay="1s">
-	    				<div class="front" style="background-image:url(<?php echo $init; ?>);"></div>
-	    				<div class="back" style="background-image:url(<?php echo $hover; ?>);"></div>
-	    				<figure class="wow bounceIn" data-wow-duration="0.5s" data-wow-delay="1s">
 							<a href="<?php the_sub_field('vinculo'); ?>">
-								<img lass="wow zoomIn" data-wow-duration="0.5s" data-wow-delay="1s" src="<?php the_sub_field('pictograma'); ?>" alt="shakira">
+								<div class="front" style="background-image:url(<?php echo $init; ?>);"></div>
+		    				<div class="back" style="background-image:url(<?php echo $hover; ?>);"></div>
+		    				<figure class="wow bounceIn" data-wow-duration="0.5s" data-wow-delay="1s">
+									<img lass="wow zoomIn" data-wow-duration="0.5s" data-wow-delay="1s" src="<?php the_sub_field('pictograma'); ?>" alt="shakira">
+								</figure>
 							</a>
-						</figure>
 	    				<div class="text-body">
 	    					<?php the_sub_field('texto_imagen'); ?>
 	    				</div>

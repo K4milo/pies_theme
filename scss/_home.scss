@@ -146,6 +146,7 @@ body{
 					position: relative;
 					height: 490px;
 					padding: 0 em(30);
+					cursor: pointer;
 					@include overlay($black,0.5);
 					&::after {
 						z-index: 1 !important;

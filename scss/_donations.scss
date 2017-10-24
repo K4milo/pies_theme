@@ -388,11 +388,11 @@ body{
 											header {
 												h3{
 													&::after {
-														content: "/";
+														content: "";
 														display: inline-block;
 														position: relative;
 														left: em(32);
-													}	
+													}
 												}
 											}
 										}
@@ -537,10 +537,16 @@ body{
 									max-width: 600px;
 									margin: 1em auto;
 									p{
-										input{
+										select{
+											background-color: $lgrey;
+											color: $grey;
+											text-transform: uppercase;
+											font-family: $raleebd;
+										}
+										input {
 											&.wpcf7-text,
 											&.wpcf7-email,
-											&.wpcf7-textarea{
+											&.wpcf7-textarea {
 												padding: 1.5em;
 												background-color: $lgrey;
 												color: $grey;
@@ -664,7 +670,7 @@ body{
 							}
 						}
 					}
-					
+
 					.pay-btns {
 						.item{
 							&.logo-1,
@@ -679,7 +685,7 @@ body{
 		}
 	}
 
-	//styles in modal 
+	//styles in modal
 	#modalCon {
 		.modal-dialog {
 			.modal-content{

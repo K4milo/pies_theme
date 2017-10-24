@@ -30,7 +30,7 @@
     var url = document.location.toString();
     if (url.match('#')) {
         $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
-    } 
+    }
 
     // Change hash for page-reload
     $('.page-template-donation-tpl .nav-tabs a').on('shown.bs.tab', function (e) {
@@ -105,12 +105,12 @@
         event.preventDefault();
         /* Act on the event */
           triggerKnobs(contentTab);
-      }); 
+      });
 
       if (index == 0) {
         $(this).addClass('active');
 
-        triggerKnobs(contentTab);   
+        triggerKnobs(contentTab);
       }
     });
 
@@ -143,17 +143,17 @@
             $the_knob2;
 
         $knob.each(function(index, el) {
-          
+
           if (index == 0) {
-          
+
             $the_knob = $(this).find('.knob.knob-0');
             $val = $(this).find('.knob.knob-0').val();
-            
+
             $the_knob.knob({
               'min': 0,
               'max': 100,
               'displayInput': false,
-              'bgColor': 'rgba(0,0,0,0.3)',
+              'bgColor': 'rgba(0,0,0,0)',
               'fgColor': '#C9CB00',
               'width': 320,
               'height': 320,
@@ -166,7 +166,7 @@
           var tmr = self.setInterval(function () {
               myDelay();
             }, 50);
-            
+
             var m = 0;
 
             function myDelay() {
@@ -188,7 +188,7 @@
               'max':100,
               'displayInput': false,
               'fgColor': '#00A2A6',
-              'bgColor': 'rgba(0,0,0,0.3)',
+              'bgColor': 'rgba(0,0,0,0)',
               'width': 200,
               'height': 200,
               'dynamicDraw': true
@@ -200,7 +200,7 @@
           var tmr = self.setInterval(function () {
               myDelay();
             }, 50);
-            
+
             var m = 0;
 
             function myDelay() {
@@ -216,10 +216,10 @@
 
             $the_knob2 = $(this).find('.knob.knob-2');
             $val2 = $(this).find('.knob.knob-2').val();
-            
+
             $the_knob2.knob({
               'displayInput': false,
-              'bgColor': 'rgba(0,0,0,0.3)',
+              'bgColor': 'rgba(0,0,0,0)',
               'fgColor': '#CA3516',
               'width': 100,
               'min': 0,
@@ -227,14 +227,14 @@
               'height': 100,
               'dynamicDraw': true
             });
-            
+
             //the function of delay
           $the_knob2.val(0).trigger('change').delay(0);
 
           var tmr = self.setInterval(function () {
               myDelay();
             }, 50);
-            
+
             var m = 0;
 
             function myDelay() {
@@ -250,7 +250,7 @@
         });
       });
     }
-  
+
 
     //Items timeline
 
@@ -284,7 +284,7 @@
               $text = $(this).data('text');
 
           $this.append('<div class="history-content"><div class="text-cond"><p>' + $text + '</p></div><i></i></div>');
-        });        
+        });
 
     heroSlider.slick({
       dots: true,
@@ -302,7 +302,8 @@
     $('#partners-container .impact-items').slick({
       dots: true,
       slidesToShow: 6,
-      slidesToScroll: 1,
+      slidesToScroll: 6,
+      speed: 200,
       infinite: true,
       responsive: [
         {
@@ -322,7 +323,7 @@
       ]
     });
 
-    
+
 
 		new WOW().init();
 

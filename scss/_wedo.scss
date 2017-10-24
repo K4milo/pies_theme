@@ -322,14 +322,14 @@ body {
 				img {
 					display: block;
 					margin: 1em auto;
-					max-width: 100%; 
+					max-width: 100%;
 					@include desktop {
 						margin-top: 6em;
 					}
 				}
 			}
 		}// EOF ub
-		
+
 		//gest info
 		.gestion {
 			#cd-gestion {
@@ -345,10 +345,22 @@ body {
 							display: inline-block;
 							color: $yellow;
 							font-size: em(50);
+							width: 100%;
 							font-family: $ralebk;
 							text-transform: uppercase;
 							@include mobile{
 								font-size: em(25);
+							}
+						}
+						h4{
+							display: block;
+							text-align: center;;
+							font-size: em(28);
+							font-family: $ralemd;
+							text-transform: uppercase;
+							color: $yellow;
+							@include mobile{
+								font-size: em(18);
 							}
 						}
 					}
@@ -381,8 +393,8 @@ body {
 									position: absolute;
 									top: 0;
 									right: 0;
-								}	
-							} 
+								}
+							}
 							a {
 								text-transform: uppercase;
 								font-size: em(20);
@@ -474,7 +486,7 @@ body {
 								}
 							}
 						}
-						.graph-info { 
+						.graph-info {
 							position: relative;
 							padding-top: 3em;
 							max-height: 420px;
@@ -573,12 +585,12 @@ body {
 							position: absolute;
 							top: 0;
 							right: 0;
-						}	
+						}
 						&:last-child {
 							&::after {
 								display: none;
 							}
-						} 
+						}
 						a {
 							text-transform: uppercase;
 							font-size: em(18);
