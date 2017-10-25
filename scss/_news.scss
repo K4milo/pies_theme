@@ -31,18 +31,17 @@ body {
 
 		//Search form
 		.the-search {
-			background-color: $opBlack;
-			padding: 1em;
+			padding-bottom: 1em;
 			form {
 				margin: 0 auto;
 				width: 90%;
-				max-width: 720px;
+				max-width: 1170px;
 				position: relative;
 				text-align: right;
 				input{
 					&[type="text"]{
 						display: inline-block;
-						max-width: 320px;
+						max-width: 280px;
 						background-color: $opBlack;
 						border-radius: 1em;
 						color: $white;

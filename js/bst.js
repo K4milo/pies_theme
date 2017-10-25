@@ -221,10 +221,11 @@
               'displayInput': false,
               'bgColor': 'rgba(0,0,0,0)',
               'fgColor': '#CA3516',
-              'width': 100,
               'min': 0,
               'max': 100,
-              'height': 100,
+              'width': 110,
+              'height': 110,
+              'thickness': 0.7,
               'dynamicDraw': true
             });
 

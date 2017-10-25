@@ -487,6 +487,8 @@ body{
 										vertical-align: top;
 										text-align: center;
 										margin: 1%;
+										position: relative;
+										padding-bottom: 25px;
 										@include bgcover;
 										@include overlay($black,0.5);
 										@include mobile{
@@ -504,6 +506,7 @@ body{
 											position: relative;
 											z-index: 2;
 											padding: 1em;
+											min-height: 320px;
 											h3{
 												color: $yellow;
 												text-transform: uppercase;
@@ -511,12 +514,17 @@ body{
 											a{
 												color: $white;
 												background-color: $yellow;
-												display: inline-block;
-												margin: 1em 0;
+												display: block;
+												margin: 1em 0 0 -60px;
 												padding: 0.5em 1em;
 												border-radius: em(10);
 												text-transform: uppercase;
+												text-align: center;
 												font-family: $raleBd;
+												width: 120px;
+												position: absolute;
+												bottom: em(15);
+												left: 50%;
 											}
 										}
 										&:hover {
@@ -580,6 +588,9 @@ body{
 										border: none;
 										background: transparent;
 										margin: 1em 0 0;
+										@include desktop {
+											padding: 1em 6em;
+										}
 										&::before{
 											content: "";
 											display: inline-block;
@@ -593,7 +604,7 @@ body{
 											display: inline-block;
 											vertical-align: top;
 											color: $grey;
-											font-size: em(25);
+											font-size: em(20);
 											font-family: $openbd;
 											@include mobile {
 												font-size: em(16);
@@ -666,6 +677,11 @@ body{
 								vertical-align: top;
 								@include mobile {
 									width: 100%;
+								}
+								img {
+									width: em(105);
+									height: em(105);
+									margin-bottom: em(12);
 								}
 							}
 						}

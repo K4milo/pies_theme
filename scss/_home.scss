@@ -33,11 +33,15 @@ body{
 				margin-top: 250px;
 				position: relative;
 				z-index: 2;
+				@include mobile {
+					margin-top: 370px;
+				}
 				img {
 					display: block;
 					max-width: 100%;
 					@include mobile{
 						margin: 1em auto;
+						max-width: 80%;
 					}
 				}
 			}
@@ -328,6 +332,12 @@ body{
 					height: 70px;
 					display: block;
 					margin: 0 auto;
+				}
+			}
+
+			.slick-dots {
+				@include mobile {
+					display: none;
 				}
 			}
 		}

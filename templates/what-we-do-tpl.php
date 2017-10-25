@@ -40,18 +40,23 @@ while (have_posts()):the_post()?>
 								<?php //loop impact items
 								while (have_rows('items_ubicacion')):the_row();?>
 								<div class="ubi-block">
-									<div class="cd-content">
-										<?php the_sub_field('text_body');?>
-										</div> <!-- cd-timeline-content -->
-										<div class="cd-img">
+									<div class="cd-img visible-xs">
 											<a href="<?php the_sub_field('vinculo');?>" target="_blank">
 												<img src="<?php the_sub_field('pictograma');?>" class="color" alt="<?php the_title();?>" />
 											</a>
-											</div> <!-- cd-timeline-img -->
+										</div> <!-- cd-timeline-img -->
+									<div class="cd-content">
+										<?php the_sub_field('text_body');?>
+									</div> <!-- cd-timeline-content -->
+										<div class="cd-img hidden-xs">
+											<a href="<?php the_sub_field('vinculo');?>" target="_blank">
+												<img src="<?php the_sub_field('pictograma');?>" class="color" alt="<?php the_title();?>" />
+											</a>
+										</div> <!-- cd-timeline-img -->
 											</div> <!-- cd-timeline-block -->
 											<?php endwhile;?>
 										</div>
-										<div class="col-md-5 img-map">
+										<div class="col-md-5 img-map hidden-xs">
 
 												<img src="<?php bloginfo('template_url')?>/img/misc/mapa-colombia.png" alt="Mapa de colombia ">
 

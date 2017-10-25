@@ -31,7 +31,10 @@ body {
 						color: $yellow;
 						font-size: em(50);
 						font-family: $ralebk;
-						text-transform: uppercase; 
+						text-transform: uppercase;
+						@include mobile {
+							font-size: em(35);
+						} 
 					}
 				} // EOF HEADER
 			}
@@ -55,6 +58,9 @@ body {
 				padding: 2em 0;
 				margin: 0 auto;
 				z-index: 3;
+				@include mobile {
+					padding: 6em 0 0;
+				}
 				h2 {
 					display: inline-block;
 					color: $yellow;
@@ -63,6 +69,10 @@ body {
 					text-transform: uppercase;
 					text-shadow: 0 0 10px $black;
 					position: relative;
+					@include mobile {
+						font-size: em(35);
+						padding-bottom: 60px;
+					} 
 					a {
 						width: 40px;
 						height: 40px;
@@ -71,6 +81,10 @@ body {
 						left: 0;
 						border-radius: 100%;
 						border: 1px solid $white;
+						@include mobile {
+							left: 50%;
+							margin-left: -20px;
+						}
 						i {
 							font-size: 20px;
 							padding: 0;

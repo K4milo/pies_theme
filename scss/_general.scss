@@ -143,6 +143,9 @@ body {
       .container {
         margin: 0 auto;
         padding: 0;
+        @include mobile {
+          padding: 0 em(18);
+        }
       }
     }
   }
@@ -205,9 +208,10 @@ body {
     .container-fluid {
       padding: 0;
       p,a,h3{
-        color:$white;
         text-align: center;
       }
+      h3, a { color: $yellow; font-family: $raleebd; }
+      p {color: $grey; }
       #wpcf7-f266-p269-o1 {
         .wpcf7-form {
           max-width: 600px;

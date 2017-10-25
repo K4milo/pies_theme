@@ -125,7 +125,7 @@ body {
 									left: auto;
 									right: 100%;
 									border-color: transparent;
-									border-right-color: $white;
+									border-right-color: $opBlack;
 								}
 							}
 						}
@@ -206,7 +206,7 @@ body {
 							height: 0;
 							width: 0;
 							border: 7px solid transparent;
-							border-right: 7px solid $white;
+							border-right: 7px solid $opBlack;
 						}
 
 						@include mobile {
@@ -298,6 +298,7 @@ body {
 							padding: em(10) em(16);
 							border-radius: em(5);
 							margin-top: em(10);
+							display: inline-block;
 							&:hover{
 								background-color: $grey;
 							}
@@ -324,7 +325,7 @@ body {
 					margin: 1em auto;
 					max-width: 100%;
 					@include desktop {
-						margin-top: 6em;
+						margin-top: 9em;
 					}
 				}
 			}
@@ -528,7 +529,7 @@ body {
 									top: -266px;
 								}
 								&:nth-child(3){
-									top: -421px;
+									top: -426px;
 								}
 							}
 						}
@@ -540,7 +541,7 @@ body {
 				header {
 					&.main-header {
 						width: 100%;
-						padding: 5em 0;
+						padding: 0;
 						@include mobile {
 							padding: 1em 0;
 						}
