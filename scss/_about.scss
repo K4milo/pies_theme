@@ -41,6 +41,9 @@ body {
 			margin: 1em auto;
 			position: relative;
 			z-index: 2;
+			@include mobile {
+				padding: 0 em(30);
+			}
 			p {
 				color: $white;
 				font-family: $openlt;
@@ -71,18 +74,20 @@ body {
 							width: 100%;
 							text-align: center;
 						}
-						&:nth-child(2),
-						&:first-child {
-							&::after{
-								content: "";
-								display: block;
-								width: 2px;
-								height: 100%;
-								background-color: $white;
-								position: absolute;
-								top: 0;
-								right: 0;
-							}	
+						@include desktop {
+							&:nth-child(2),
+							&:first-child {
+								&::after{
+									content: "";
+									display: block;
+									width: 2px;
+									height: 100%;
+									background-color: $white;
+									position: absolute;
+									top: 0;
+									right: 0;
+								}	
+							}
 						} 
 						a {
 							text-transform: uppercase;
@@ -124,11 +129,11 @@ body {
 						}
 
 						.slick-prev {
-							left: 0;
+							left: -11px;
 						}
 
 						.slick-next {
-							right: 30px;
+							right: 21px;
 						}
 
 						li {
@@ -419,6 +424,9 @@ body {
 				font-family: $openlt;
 				font-size: em(25);
 				text-align: center;
+				@include mobile {
+					font-size: em(16);
+				}
 			}
 		}
 	}

@@ -8,6 +8,12 @@
     $(".commentlist li").addClass("panel panel-default");
     $(".comment-reply-link").addClass("btn btn-default");
 
+    //header
+    $('.panel-heading').click(function(event) {
+      /* Act on the event */
+      $(this).toggleClass('active');
+    });
+
     // Forms
     $('select, input[type=text], input[type=email], input[type=password], textarea').addClass('form-control');
     $('input[type=submit]').addClass('btn btn-primary');
@@ -220,7 +226,7 @@
             $the_knob2.knob({
               'displayInput': false,
               'bgColor': 'rgba(0,0,0,0)',
-              'fgColor': '#CA3516',
+              'fgColor': '#CC0B3C',
               'min': 0,
               'max': 100,
               'width': 110,

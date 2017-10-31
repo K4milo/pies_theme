@@ -334,10 +334,24 @@ body{
 					margin: 0 auto;
 				}
 			}
+			
+			.slick-prev {
+				left: 0;
+				&::before {
+					color: $yellow;
+				}
+			}
+
+			.slick-next {
+				right: 0;
+				&::before {
+					color: $yellow;
+				}
+			}
 
 			.slick-dots {
 				@include mobile {
-					display: none;
+					display: none !important;
 				}
 			}
 		}

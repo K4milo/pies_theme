@@ -6,6 +6,9 @@ body{
 			display: none;
 		}
 		@include bgcover;
+		@include mobile {
+			background-size: 100%;
+		}
 		//top title
 		.page-head {
 			max-width: 580px;
@@ -64,7 +67,7 @@ body{
 						padding: 50px 0 0;
 						border: none;
 						@include mobile{
-							padding: 0;
+							padding: em(50) 0;
 						}
 						li {
 							float: none;
@@ -353,9 +356,12 @@ body{
 										list-style: none;
 										line-height: 3;
 										font-size: em(25);
+										position: relative;
 										@include mobile {
-											font-size: em(14);
+											font-size: em(16);
 											margin: 1em 0;
+											line-height: 2;
+											padding-left: 40px;
 										}
 										&::before {
 											content: "";
@@ -366,8 +372,9 @@ body{
 											@include mobile {
 												width: 31px;
 												height: 28px;
-												vertical-align: middle;
 												background-size: contain;
+												position: absolute;
+												left: 0;
 											}
 										}
 									}
@@ -413,7 +420,7 @@ body{
 											position: absolute;
 											top: 0;
 											left: 0;
-											padding: em(53) em(25) 0;
+											padding: em(63) em(25) 0;
 											width: 100%;
 											height: 100%;
 											text-align: center;
@@ -546,10 +553,16 @@ body{
 									margin: 1em auto;
 									p{
 										select{
+											color: $grey-1;
 											background-color: $lgrey;
-											color: $grey;
 											text-transform: uppercase;
 											font-family: $raleebd;
+											option {
+												color: $grey-1;
+												&:first-child {
+													color: $grey-1;
+												}
+											}
 										}
 										input {
 											&.wpcf7-text,
@@ -557,9 +570,11 @@ body{
 											&.wpcf7-textarea {
 												padding: 1.5em;
 												background-color: $lgrey;
-												color: $grey;
+												color: $grey-1;
 												text-transform: uppercase;
 												font-family: $raleebd;
+												@include thePlaceholder($grey-1);
+
 											}
 											&.wpcf7-submit {
 												display: block;
@@ -599,7 +614,15 @@ body{
 											width: 15px;
 											height: 18px;
 											margin: 0 1em;
+											transition: all 0.5s;
 										}
+										
+										&.active {
+											&::before{
+												transform: rotate(90deg);
+											}
+										}
+
 										.panel-title{
 											display: inline-block;
 											vertical-align: top;
@@ -615,7 +638,10 @@ body{
 									.panel-collapse{
 										padding: 1em 2em;
 										font-size: $openlt;
-										font-size: em(25);
+										font-size: em(18);
+										@include desktop {
+											padding: 1em 6em;
+										}
 										@include mobile {
 											font-size: em(16);
 										}
@@ -668,6 +694,20 @@ body{
 					.bonus-timeline {
 						text-align: center;
 						padding: 2em 0;
+						position: relative;
+						@include desktop {
+							&::after {
+								content: "";
+								display: block;
+								width: 62%;
+								height: 3px;
+								background-color: $red;
+								position: absolute;
+								top: 76px;
+								left: 20%;
+								z-index: 0;
+							}
+						}
 						ul{
 							padding: 0;
 							li {
@@ -675,13 +715,24 @@ body{
 								list-style: none;
 								width: 20%;
 								vertical-align: top;
+								position: relative;
+								z-index: 1;
 								@include mobile {
-									width: 100%;
+									padding-left: 30%;
+									width: 87%;
+									text-align: left;
+									margin-bottom: em(32);
 								}
 								img {
 									width: em(105);
 									height: em(105);
 									margin-bottom: em(12);
+									@include mobile {
+										position: absolute;
+										left: 0;
+										width: 28%;
+										height: auto;
+									}
 								}
 							}
 						}
