@@ -4,8 +4,17 @@ body {
 	&.search-no-results,
 	&.page-template-news-tpl {
 		box-shadow: inset 0 0 40em $black;
-		background-image: url('../img/bgs/bg_16.jpg');
+		background-image: url('../img/bgs/bg_big_news.jpg');
 		@include bgcover;
+		@include mobile {
+			background-image: url('../img/bgs/bg_news.jpg');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			box-shadow: none;
+			&::after {
+				display: none;
+			}
+		}
 		//cabera
 		header {
 			&.page-head {

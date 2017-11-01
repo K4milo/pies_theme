@@ -10,6 +10,15 @@ body {
 			position: fixed;
 			z-index: -1;
 		}
+		@include mobile {
+			background-image: url('../img/bgs/bg_hacemos.jpg');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			box-shadow: none;
+			&::after {
+				display: none;
+			}
+		}
 		//cabera
 		header {
 			&.main-header {

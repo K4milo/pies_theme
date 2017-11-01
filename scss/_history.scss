@@ -9,6 +9,15 @@ body {
 		.the-fly{
 			display: none;
 		}
+		@include mobile {
+			background-image: url('../img/bgs/bg_historia.jpg');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			box-shadow: none;
+			&::after {
+				display: none;
+			}
+		}
 		header{
 			&.main-header {
 				position: absolute;
