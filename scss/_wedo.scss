@@ -10,6 +10,15 @@ body {
 			position: fixed;
 			z-index: -1;
 		}
+		@include mobile {
+			background-image: url('../img/bgs/bg_hacemos.jpg');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			box-shadow: none;
+			&::after {
+				display: none;
+			}
+		}
 		//cabera
 		header {
 			&.main-header {
@@ -577,19 +586,21 @@ body {
 								display: none;
 							}
 						}
-						&::after{
-							content: "";
-							display: block;
-							width: 2px;
-							height: 100%;
-							background-color: $white;
-							position: absolute;
-							top: 0;
-							right: 0;
-						}
-						&:last-child {
-							&::after {
-								display: none;
+						@include desktop {
+							&::after{
+								content: "";
+								display: block;
+								width: 2px;
+								height: 100%;
+								background-color: $white;
+								position: absolute;
+								top: 0;
+								right: 0;
+							}
+							&:last-child {
+								&::after {
+									display: none;
+								}
 							}
 						}
 						a {
