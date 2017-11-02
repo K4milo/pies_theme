@@ -8,13 +8,14 @@ body{
 		@include bgcover;
 		@include mobile {
 			background-size: 100%;
+			background-position: top center;
 		}
 		//top title
 		.page-head {
 			max-width: 580px;
 			margin: 1em auto;
 			@include mobile{
-				margin: 4em auto;
+				margin: 4em auto 0;
 				text-align: center;
 			}
 			h1{
@@ -25,6 +26,7 @@ body{
 				@include mobile{
 					display: inline-block;
 					font-size: em(50);
+					line-height: 1;
 				}
 			}
 			p {
@@ -52,7 +54,10 @@ body{
 				@include mobile{
 					display: inline-block;
 					font-size: em(50);
-					margin-top: 18px;
+					margin-top: 17px;
+				}
+				@include iphoneV {
+					margin-top: 12px;
 				}
 			}
 		}
@@ -67,7 +72,7 @@ body{
 						padding: 50px 0 0;
 						border: none;
 						@include mobile{
-							padding: em(50) 0;
+							padding: em(50) 0 0;
 						}
 						li {
 							float: none;
@@ -110,7 +115,7 @@ body{
 										margin: 0;
 										width: 57px;
 										height: 57px;
-										background-image: url('../img/icons/sprite-hands-mobile.png');
+										background-size: 411px;
 									}
 								}
 								&:hover {
@@ -217,11 +222,12 @@ body{
 							// intro text
 							&.first{
 								width: 70%;
-								padding: 50px 0 0;
+								padding: em(50) 0 0;
 								margin: 0 auto;
 								text-align: center;
 								@include mobile {
 									width: 100%;
+									padding: em(20) 0 0;
 								}
 								p {
 									font-family: $openlt;
@@ -616,7 +622,7 @@ body{
 											margin: 0 1em;
 											transition: all 0.5s;
 										}
-										
+
 										&.active {
 											&::before{
 												transform: rotate(90deg);

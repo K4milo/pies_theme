@@ -31,14 +31,15 @@ get_template_part('includes/header');?>
 			<?php
 			if ($the_query->have_posts()):while ($the_query->have_posts()):
 			$the_query->the_post();// run the loop ?>
-			<article class="new-item col-md-3" style="background-image:url(<?php the_post_thumbnail_url('full')?>)">
-				<a href="<?php the_permalink();?>">
-					<h3><?php echo the_title();?></h3>
-				</a>
-				<div class="excerpt">
-					<?php the_excerpt();?>
-				</div>
-			</article>
+				<article class="new-item col-md-3" style="background-image:url(<?php the_post_thumbnail_url('full')?>)">
+					<a href="<?php the_permalink();?>" class="full-link"></a>
+					<a href="<?php the_permalink();?>">
+						<h3><?php echo the_title();?></h3>
+					</a>
+					<div class="excerpt">
+						<?php the_excerpt();?>
+					</div>
+				</article>
 			<?php endwhile;?>
 			<?php
 			if (function_exists(custom_pagination)) {

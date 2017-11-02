@@ -71,10 +71,10 @@ body {
 				}
 				&::after {
 					@include fa-icon ("\f002", $white, em(17));
-					position: absolute; 
+					position: absolute;
 					z-index:0;
 					top: 5px;
-					right: 12px; 
+					right: 12px;
 				}
 			}
 		}
@@ -97,6 +97,16 @@ body {
 				@include overlay($black,0.2);
 				a{
 					color: $black;
+					&.full-link {
+						display: block;
+						width: 100%;
+						height: 100%;
+						position: absolute;
+						top: 0;
+						left: 0;
+						z-index: 2;
+						background-color: transparent;
+					}
 				}
 				h3 {
 					padding-top: 3em;
@@ -135,7 +145,7 @@ body {
 			height: 50px;
 			text-align: center;
 			span,
-			a { 
+			a {
 				display: inline-block;
 				color: $white;
 				font-family: $raleBd;
@@ -198,5 +208,5 @@ body {
 				}
 			}
 		}
-	} 
+	}
 } // EOF HEADER

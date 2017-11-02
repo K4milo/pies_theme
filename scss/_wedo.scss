@@ -391,18 +391,20 @@ body {
 								width: 100%;
 								display: block;
 							}
-							&:nth-child(2),
-							&:nth-child(3),
-							&:first-child {
-								&::after{
-									content: "";
-									display: block;
-									width: 2px;
-									height: 100%;
-									background-color: $white;
-									position: absolute;
-									top: 0;
-									right: 0;
+							@include desktop {
+								&:nth-child(2),
+								&:nth-child(3),
+								&:first-child {
+									&::after{
+										content: "";
+										display: block;
+										width: 2px;
+										height: 100%;
+										background-color: $white;
+										position: absolute;
+										top: 0;
+										right: 0;
+									}
 								}
 							}
 							a {

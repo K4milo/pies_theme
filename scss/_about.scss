@@ -95,9 +95,9 @@ body {
 									position: absolute;
 									top: 0;
 									right: 0;
-								}	
+								}
 							}
-						} 
+						}
 						a {
 							text-transform: uppercase;
 							font-size: em(25);
@@ -125,7 +125,7 @@ body {
 						padding: 4em 0;
 						text-align: center;
 						@include clearfix;
-						
+
 						.slick-prev,
 						.slick-next {
 							width: em(30);
@@ -167,7 +167,7 @@ body {
 								border-radius: 100%;
 								overflow: hidden;
 								margin: 1em auto;
-								
+
 								figure {
 									position: absolute;
 									top: 0;
@@ -206,7 +206,7 @@ body {
 									}
 								}
 							}
-							
+
 							&:hover {
 								figure {
 									img {
@@ -226,7 +226,7 @@ body {
 						}
 					}
 				}
-				//Section 
+				//Section
 				#menu2 {
 					ul.items-photos {
 						li {
@@ -260,7 +260,7 @@ body {
 								font-family: $raleBd;
 								font-size: em(60);
 								text-align: center;
-								color: $yellow;	
+								color: $yellow;
 								@include mobile {
 									font-size: em(30);
 								}
@@ -279,6 +279,7 @@ body {
 								font-size: em(25);
 								color: $white;
 								font-style: italic;
+								border: none;
 								@include mobile {
 									font-size: em(18);
 								}
@@ -325,7 +326,7 @@ body {
 								padding: 0;
 								display: block;
 								width: 100%;
-								
+
 								&::before {
 									content:"";
 									display: block;
@@ -356,7 +357,7 @@ body {
 								}
 								h3, p {
 									display: inline-block;
-									vertical-align: middle; 
+									vertical-align: middle;
 									padding: 0 1em;
 								}
 								h3{
@@ -398,7 +399,7 @@ body {
 										@include fa-icon("\f0d8",$opBlack,em(50));
 										display: block;
 										position: absolute;
-										bottom: -73px; 
+										bottom: -73px;
 										left: 35%;
 									}
 								}
