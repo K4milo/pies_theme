@@ -4075,8 +4075,9 @@ body.page-template-history-tpl {
   @media (max-width: 767px) {
     body.page-template-history-tpl {
       background-image: url("../img/bgs/bg_historia.jpg");
-      background-size: 100% auto;
+      background-size: auto 100%;
       background-repeat: no-repeat;
+      background-position: top;
       box-shadow: none; }
       body.page-template-history-tpl::after {
         display: none; } }
