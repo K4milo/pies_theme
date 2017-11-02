@@ -4697,7 +4697,7 @@ body.page-template-what-we-do-tpl {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 1em auto 2em; }
+    margin: 0 auto; }
   body.page-template-what-we-do-tpl .infographics #cd-timeline {
     display: none;
     position: relative;

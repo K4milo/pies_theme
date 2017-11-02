@@ -16,7 +16,14 @@ while (have_posts()):the_post()?>
 			</header>
 			<div class="the-infographics">
 				<figure>
-				<?php the_post_thumbnail('full');?></figure>
+					<?php //loop impact items
+						while (have_rows('modelo_intervencion')):the_row();?>
+							
+							<img src="<?php the_sub_field('imagen_intervencion'); ?>" alt="<?php the_title();?>" class="wow zoomIn" data-wow-duration="1.7s" data-wow-delay="1.5s" />
+
+					<?php endwhile;?>
+					
+				</figure>
 			</div>
 			<section id="cd-timeline" class="container">
 				<?php //loop impact items
