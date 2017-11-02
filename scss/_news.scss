@@ -7,10 +7,11 @@ body {
 		background-image: url('../img/bgs/bg_big_news.jpg');
 		@include bgcover;
 		@include mobile {
-			background-image: url('../img/bgs/bg_news.jpg');
-			background-size: 100% auto;
+			background-image: url(../img/bgs/bg_news.jpg);
+			background-size: contain;
 			background-repeat: no-repeat;
 			box-shadow: none;
+			background-position: top;
 			&::after {
 				display: none;
 			}

@@ -312,7 +312,6 @@ body {
 							display: inline-block;
 							width: 8%;
 							cursor: pointer;
-							transition: all 0.5s;
 							@include mobile {
 								width: 100%;
 								min-height: 96px;
@@ -370,6 +369,7 @@ body {
 									@include mobile{
 										width: 100%;
 										text-align: center;
+										margin: 0;
 									}
 								}
 								p {
@@ -380,12 +380,13 @@ body {
 									@include mobile{
 										width: 100%;
 										text-align: center;
+										font-size: 12px;
 									}
 								}
 							}
 							&.active {
 								@include mobile {
-									min-height: 280px;
+									min-height: 250px;
 								}
 								.ano-small {
 									&::before {

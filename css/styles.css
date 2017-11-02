@@ -3302,8 +3302,7 @@ body.page-template-about-tpl {
       body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li {
         display: inline-block;
         width: 8%;
-        cursor: pointer;
-        transition: all 0.5s; }
+        cursor: pointer; }
         @media (max-width: 767px) {
           body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li {
             width: 100%;
@@ -3357,7 +3356,8 @@ body.page-template-about-tpl {
             @media (max-width: 767px) {
               body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li .body-date h3 {
                 width: 100%;
-                text-align: center; } }
+                text-align: center;
+                margin: 0; } }
           body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li .body-date p {
             width: 78%;
             color: #ffffff;
@@ -3366,10 +3366,11 @@ body.page-template-about-tpl {
             @media (max-width: 767px) {
               body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li .body-date p {
                 width: 100%;
-                text-align: center; } }
+                text-align: center;
+                font-size: 12px; } }
         @media (max-width: 767px) {
           body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li.active {
-            min-height: 280px; } }
+            min-height: 250px; } }
         body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li.active .ano-small::before {
           width: 54px;
           height: 54px;
@@ -4299,17 +4300,15 @@ body.search-results, body.search-no-results, body.page-template-news-tpl {
   background-image: url("../img/bgs/bg_big_news.jpg");
   background-size: cover;
   background-position: center center; }
-<<<<<<< HEAD
-=======
   @media (max-width: 767px) {
     body.search-results, body.search-no-results, body.page-template-news-tpl {
-      background-image: url("../img/bgs/bg_news.jpg");
-      background-size: 100% auto;
+      background-image: url(../img/bgs/bg_news.jpg);
+      background-size: contain;
       background-repeat: no-repeat;
-      box-shadow: none; }
+      box-shadow: none;
+      background-position: top; }
       body.search-results::after, body.search-no-results::after, body.page-template-news-tpl::after {
         display: none; } }
->>>>>>> cd191dc7862f84c99066f399f520fb94663a6864
   body.search-results header.page-head, body.search-no-results header.page-head, body.page-template-news-tpl header.page-head {
     position: relative;
     z-index: 3;
