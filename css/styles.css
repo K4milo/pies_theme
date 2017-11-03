@@ -3057,6 +3057,7 @@ body.page-template-about-tpl {
       background-image: url("../img/bgs/bg_about.jpg");
       background-size: 100% auto;
       background-repeat: no-repeat;
+      background-position: top center;
       box-shadow: none; }
       body.page-template-about-tpl::after {
         display: none; } }
@@ -3362,7 +3363,8 @@ body.page-template-about-tpl {
               body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li .body-date h3 {
                 width: 100%;
                 text-align: center;
-                margin: 0; } }
+                margin: 0;
+                border-right: none; } }
           body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li .body-date p {
             width: 78%;
             color: #ffffff;
@@ -4329,7 +4331,7 @@ body.search-results, body.search-no-results, body.page-template-news-tpl {
     padding: 2em 0; }
     @media (max-width: 767px) {
       body.search-results header.page-head, body.search-no-results header.page-head, body.page-template-news-tpl header.page-head {
-        padding: 6em 0 0; } }
+        padding: 8em 0 0; } }
     body.search-results header.page-head h2, body.search-no-results header.page-head h2, body.page-template-news-tpl header.page-head h2 {
       display: inline-block;
       color: #ffbb01;
@@ -4475,7 +4477,8 @@ body.search-results, body.search-no-results, body.page-template-news-tpl {
     bottom: 0.8125em;
     left: 0;
     border-radius: 100%;
-    border: 1px solid #ffffff; }
+    border: 1px solid #ffffff;
+    z-index: 50; }
     @media (min-width: 1200px) {
       .search-results header.page-head a,
       .search-no-results header.page-head a {
@@ -4585,7 +4588,7 @@ body.single-post {
     z-index: 3; }
     @media (max-width: 767px) {
       body.single-post #content header {
-        padding: 6em 0 0; } }
+        padding: 8em 0 0; } }
     body.single-post #content header h2 {
       display: inline-block;
       color: #ffbb01;
@@ -4619,7 +4622,8 @@ body.single-post {
           position: relative;
           margin: 10px 0 0 -3px;
           display: block;
-          color: #ffbb01; }
+          color: #ffbb01;
+          z-index: 30; }
         body.single-post #content header h2 a:hover {
           text-decoration: none; }
   body.single-post #content article.post {
@@ -4676,7 +4680,8 @@ body.page-template-what-we-do-tpl {
       background-image: url("../img/bgs/bg_hacemos.jpg");
       background-size: 100% auto;
       background-repeat: no-repeat;
-      box-shadow: none; }
+      box-shadow: none;
+      background-position: top center; }
       body.page-template-what-we-do-tpl::after {
         display: none; } }
   body.page-template-what-we-do-tpl header.main-header {

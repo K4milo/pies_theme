@@ -14,6 +14,7 @@ body {
 			background-image: url('../img/bgs/bg_about.jpg');
 			background-size: 100% auto;
 			background-repeat: no-repeat;
+			background-position: top center;
 			box-shadow: none;
 			&::after {
 				display: none;
@@ -371,6 +372,7 @@ body {
 										width: 100%;
 										text-align: center;
 										margin: 0;
+										border-right: none;
 									}
 								}
 								p {
