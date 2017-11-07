@@ -21,9 +21,15 @@
   <img src="<?php bloginfo('template_url'); ?>/img/logos/logo-mobile.png" class="visible-xs" alt="Fundación Pies Descalzos" />
 </a>
 
-<a class="the-fly" href="http://londonojp.com/pies-descalzos/donaciones/">
-  <img src="<?php bloginfo('template_url')?>/img/misc/huella.png" alt="Fundación Pies Descalzos"/>
-</a>
+<?php if(ICL_LANGUAGE_CODE=='es'): ?>
+  <a class="the-fly" href="/donaciones/">
+    <img src="<?php bloginfo('template_url')?>/img/misc/huella.png" alt="Fundación Pies Descalzos"/>
+  </a>
+<?php elseif(ICL_LANGUAGE_CODE=='en'): ?>
+  <a class="the-fly" href="/en/donation/">
+    <img src="<?php bloginfo('template_url')?>/img/misc/fly-en.png" alt="Fundación Pies Descalzos"/>
+  </a>
+<?php endif; ?>
 
 <nav class="side-menu">
   <div class="nav-header">

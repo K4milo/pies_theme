@@ -12,7 +12,11 @@ while (have_posts()):the_post()?>
 		</div><!-- /.row -->
 		<div class="row infographics">
 			<header class="main-header">
-				<h3>Modelo de Intervención Integral</h3>
+				<?php if(ICL_LANGUAGE_CODE=='es'): ?>
+					<h3>Modelo de Intervención Integral</h3>
+				<?php else: ?>
+					<h3>OPEN DOOR SCHOOL STRATEGY</h3>
+				<?php endif;?>
 			</header>
 			<div class="the-infographics">
 				<figure>
@@ -41,7 +45,11 @@ while (have_posts()):the_post()?>
 					<div class="row ubication">
 						<section id="cd-ubication" class="container">
 							<header class="main-header">
-								<h3>Dónde Estamos</h3>
+								<?php if(ICL_LANGUAGE_CODE=='es'): ?>
+									<h3>Dónde Estamos</h3>
+								<?php else: ?>
+									<h3>Where we are?</h3>
+								<?php endif;?>
 							</header>
 							<div class="col-md-7 ubi-items">
 								<?php //loop impact items
@@ -73,8 +81,14 @@ while (have_posts()):the_post()?>
 								<div class="row gestion">
 									<section id="cd-gestion" class="container">
 										<header class="main-header">
-											<h3>Informe de Gestión</h3>
-											<h4>Niños y jóvenes beneficiados por año</h4>
+
+											<?php if(ICL_LANGUAGE_CODE=='es'): ?>
+												<h3>Informe de Gestión</h3>
+												<h4>Niños y jóvenes beneficiados por año</h4>
+											<?php else: ?>
+												<h3>Management report</h3>
+												<h4>Children and young people benefited.</h4>
+											<?php endif;?>
 										</header>
 										<ul class="nav nav-tabs">
 											<?php //loop impact items
@@ -113,7 +127,11 @@ while (have_posts()):the_post()?>
 									</section>
 									<section id="inf-gestion" class="container">
 										<header class="main-header">
+											<?php if(ICL_LANGUAGE_CODE=='es'): ?>
 											<h3>Ver Informes</h3>
+											<?php else:?>
+											<h3>See reports</h3>
+											<?php endif; ?>	
 										</header>
 										<ul class="inform-tabs">
 											<?php //loop impact items

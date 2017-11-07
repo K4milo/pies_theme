@@ -16,15 +16,27 @@ get_template_part( 'includes/header');
     <div class="row content-tabs">
         <div class="container">
             <ul class="nav nav-tabs">
-                <li class="active">
-                    <a data-toggle="tab" href="#menu3">Nuestra Fundadora</a>
-                </li>
-                <li>
-                    <a data-toggle="tab" href="#menu1">Nuestro Equipo</a>
-                </li>
-                <li>
-                    <a data-toggle="tab" href="#menu2">Junta Directiva</a>
-                </li>
+                <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+                    <li class="active">
+                        <a data-toggle="tab" href="#menu3">Nuestra Fundadora</a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="#menu1">Nuestro Equipo</a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="#menu2">Junta Directiva</a>
+                    </li>
+                <?php else: ?>
+                    <li class="active">
+                        <a data-toggle="tab" href="#menu3">Our founder</a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="#menu1">Our team</a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="#menu2">OUR BOARD OF DIRECTORS</a>
+                    </li>   
+                <?php endif; ?>
             </ul>
 
             <div class="tab-content">

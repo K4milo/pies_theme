@@ -435,6 +435,7 @@ body{
 											opacity: 0;
 											z-index: 1;
 											transition: all 0.5s;
+											font-size: em(13);
 										}
 									}
 									&:hover{
@@ -759,7 +760,7 @@ body{
 	}
 
 	//styles in modal
-	#modalCon {
+	.modal {
 		.modal-dialog {
 			.modal-content{
 				background-color: $yellow;

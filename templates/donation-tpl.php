@@ -12,6 +12,7 @@ while (have_posts()):the_post();
   <div class="row">
     <div class="container">
       <ul class="nav nav-tabs">
+        <?php if(ICL_LANGUAGE_CODE=='es'): ?>
         <li class="active">
           <a data-toggle="tab" href="#home">
             <i>
@@ -45,6 +46,44 @@ while (have_posts()):the_post();
             </strong>
           </a>
         </li>
+
+        <?php else:?>
+        
+        <li class="active">
+          <a data-toggle="tab" href="#home">
+            <i>
+            </i>LEAVE A
+            <br/> 
+            <strong>FOOTPRINT
+            </strong>
+          </a>
+        </li>
+        <li>
+          <a data-toggle="tab" href="#menu1">
+            LEAVE MY MONTHLY
+            <br/> 
+            <strong>FOOTPRINT
+            </strong>
+          </a>
+        </li>
+        <li>
+          <a data-toggle="tab" href="#menu2">
+            Share
+            <br/> 
+            <strong>my footprint
+            </strong>
+          </a>
+        </li>
+        <li>
+          <a data-toggle="tab" href="#menu3">
+            Give a
+            <br/> 
+            <strong>footprint
+            </strong>
+          </a>
+        </li>
+        <?php endif;?>
+
       </ul>
       <div class="tab-content">
         <div id="home" class="tab-pane fade in active">
@@ -54,9 +93,9 @@ while (have_posts()):the_post();
           <!--/texto intro-->
           <div class="impact-items">
             <?php
-//loop impact items
-while (have_rows('items_de_impacto_1')):the_row();
-?>
+            //loop impact items
+            while (have_rows('items_de_impacto_1')):the_row();
+            ?>
             <div class="col-md-6 item">
               <figure class="tmb hidden-xs">
                 <img src="<?php the_sub_field('icono');?>" alt="<?php the_title();?>">
@@ -72,19 +111,22 @@ while (have_rows('items_de_impacto_1')):the_row();
               </div>
             </div>
             <?php
-endwhile;
-?>
+            endwhile;
+            ?>
           </div>
           <div class="pay-btns">
             <header>
-              <h3>Elige cómo dejar tu huella
-              </h3>
+              <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+                <h3>Elige cómo dejar tu huella</h3>
+              <?php else:?>
+                <h3>Choose how to leave your footprint</h3>
+              <?php endif; ?>
             </header>
             <?php
-$counter = 1;
-//loop impact items
-while (have_rows('metodos_pago')):the_row();
-?>
+            $counter = 1;
+            //loop impact items
+            while (have_rows('metodos_pago')):the_row();
+            ?>
             <div class="item logo-<?php echo $counter;?>">
               <figure class="logo logo-<?php echo $counter;?>">
                 <a href="<?php the_sub_field('vinculo');?>" target="_blank">
@@ -93,9 +135,9 @@ while (have_rows('metodos_pago')):the_row();
               </figure>
             </div>
             <?php
-$counter++;
-endwhile;
-?>
+            $counter++;
+            endwhile;
+            ?>
             <div class="item">
               <figure class="logo logo-cons">
                 <a href="#modalCon" data-toggle="modal" data-target="#modalCon" >
@@ -112,9 +154,9 @@ endwhile;
           <!--/texto intro-->
           <div class="impact-items">
             <?php
-//loop impact items
-while (have_rows('items_de_impacto_2')):the_row();
-?>
+            //loop impact items
+            while (have_rows('items_de_impacto_2')):the_row();
+            ?>
             <div class="col-md-6 item">
               <figure class="tmb hidden-xs">
                 <img src="<?php the_sub_field('icono');?>" alt="<?php the_title();?>">
@@ -130,20 +172,23 @@ while (have_rows('items_de_impacto_2')):the_row();
               </div>
             </div>
             <?php
-endwhile;
-?>
+          endwhile;
+          ?>
           </div>
           <!--/eof items impact-->
           <div class="pay-btns">
             <header>
-              <h3>Elige cómo dejar tu huella
-              </h3>
+              <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+                <h3>Elige cómo dejar tu huella</h3>
+              <?php else:?>
+                <h3>Choose how to leave your footprint</h3>
+              <?php endif; ?>
             </header>
             <?php
-$counter = 1;
-//loop impact items
-while (have_rows('metodos_pago')):the_row();
-?>
+            $counter = 1;
+            //loop impact items
+            while (have_rows('metodos_pago')):the_row();
+            ?>
             <div class="item">
               <figure class="logo logo-<?php echo $counter;?>">
                 <a href="<?php the_sub_field('vinculo');?>" target="_blank">
@@ -152,9 +197,9 @@ while (have_rows('metodos_pago')):the_row();
               </figure>
             </div>
             <?php
-$counter++;
-endwhile;
-?>
+            $counter++;
+            endwhile;
+            ?>
             <div class="item">
               <figure class="logo logo-cons">
                 <a href="#modalCon" data-toggle="modal" data-target="#modalCon" >
@@ -171,9 +216,9 @@ endwhile;
           <!--/texto intro-->
           <div class="voluntier-items">
             <?php
-//loop impact items
-while (have_rows('items_voluntariado')):the_row();
-?>
+            //loop impact items
+            while (have_rows('items_voluntariado')):the_row();
+            ?>
             <div class="item">
               <header>
                 <h3>
@@ -188,8 +233,8 @@ while (have_rows('items_voluntariado')):the_row();
               </figure>
             </div>
             <?php
-endwhile;
-?>
+            endwhile;
+            ?>
           </div>
           <!--/eof impact-items-->
           <div class="aditional">
@@ -198,51 +243,66 @@ endwhile;
           <!--/eof aditional-->
           <div class="ubication-lst">
             <header>
+              <?php if(ICL_LANGUAGE_CODE=='es'): ?>
               <h3>Dónde puedes apoyar
                 <br/>como voluntario
               </h3>
+            <?php else: ?>
+              <h3>HOW YOU CAN SUPPORT 
+                <br/>AS A VOLUNTEER
+              </h3>
+            <?php endif;?> 
             </header>
             <ul>
               <?php
-//loop ubications
-while (have_rows('ubicaciones')):the_row();
-?>
+            //loop ubications
+            while (have_rows('ubicaciones')):the_row();
+            ?>
               <li style="background-image: url(<?php the_sub_field('imagen_fondo');?>)">
                 <div class="text-body">
                   <?php the_sub_field('texto_detalle');?>
                 </div>
               </li>
               <?php
-endwhile;
-?>
+            endwhile;
+            ?>
             </ul>
           </div>
           <!--/eof ubication-->
           <div class="tab-form">
             <header>
+              <?php if(ICL_LANGUAGE_CODE=='es'): ?>
               <h3>Formulario
                 <br/>de inscripción
               </h3>
+              <?php else:?>
+              <h3>Enrollment
+                <br/>form
+              </h3>
+              <?php endif;?> 
             </header>
             <?php
-$the_form = get_field('shortcode_formulario');
-if ($the_form) {
-echo do_shortcode($the_form);
-}
-?>
+            $the_form = get_field('shortcode_formulario');
+            if ($the_form) {
+            echo do_shortcode($the_form);
+            }
+            ?>
           </div>
           <!--/eof form-->
           <div class="faqs">
             <header>
-              <h3>Preguntas Frecuentes
-              </h3>
+              <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+              <h3>Preguntas Frecuentes</h3>
+              <?php else:?>
+                <h3>FAQS</h3>
+              <?php endif;?> 
             </header>
             <div class="panel-group">
               <div class="panel panel-default">
                 <?php
-$counter = 0;
-while (have_rows('preguntas_frecuentes')):the_row();
-?>
+            $counter = 0;
+            while (have_rows('preguntas_frecuentes')):the_row();
+            ?>
                 <div class="panel-heading">
                   <h4 class="panel-title">
                     <a data-toggle="collapse" href="#collapse<?php echo $counter;?>">
@@ -254,8 +314,8 @@ while (have_rows('preguntas_frecuentes')):the_row();
                   <?php the_sub_field('respuesta');?>
                 </div>
                 <?php $counter++;
-endwhile;
-?>
+            endwhile;
+            ?>
               </div>
             </div>
             <!--/panel group-->
@@ -263,9 +323,9 @@ endwhile;
           <!--EOF FAQS-->
           <div class="impact-items">
             <?php
-//loop impact items
-while (have_rows('items_de_impacto_3')):the_row();
-?>
+            //loop impact items
+            while (have_rows('items_de_impacto_3')):the_row();
+            ?>
             <div class="col-md-6 item">
               <figure class="tmb hidden-xs">
                 <img src="<?php the_sub_field('icono');?>" alt="<?php the_title();?>">
@@ -281,8 +341,8 @@ while (have_rows('items_de_impacto_3')):the_row();
               </div>
             </div>
             <?php
-endwhile;
-?>
+            endwhile;
+            ?>
           </div>
           <!--/eof items impact-->
         </div>
@@ -294,9 +354,9 @@ endwhile;
           <!--/texto intro-->
           <div class="impact-items">
             <?php
-//loop impact items
-while (have_rows('items_de_impacto_4')):the_row();
-?>
+            //loop impact items
+            while (have_rows('items_de_impacto_4')):the_row();
+            ?>
             <div class="col-md-6 item">
               <figure class="tmb hidden-xs">
                 <img src="<?php the_sub_field('icono');?>" alt="<?php the_title();?>">
@@ -312,8 +372,8 @@ while (have_rows('items_de_impacto_4')):the_row();
               </div>
             </div>
             <?php
-endwhile;
-?>
+            endwhile;
+            ?>
           </div>
           <!--/eof impact items-->
           <div class="card-items">
@@ -321,15 +381,15 @@ endwhile;
               <img src="<?php the_field('icono_tarjetas');?>">
             </div>
             <?php
-//loop impact items
-while (have_rows('informacion_tarjetas')):the_row();
-?>
+            //loop impact items
+            while (have_rows('informacion_tarjetas')):the_row();
+            ?>
             <div class="col-md-3 item info">
               <?php the_sub_field('item_informativo');?>
             </div>
             <?php
-endwhile;
-?>
+            endwhile;
+            ?>
           </div>
           <!--/eof card items-->
           <div class="bonus-items">
@@ -337,23 +397,23 @@ endwhile;
               <img src="<?php the_field('icono_bonos');?>">
             </div>
             <?php
-//loop impact items
-while (have_rows('informacion_bonos')):the_row();
-?>
+            //loop impact items
+            while (have_rows('informacion_bonos')):the_row();
+            ?>
             <div class="col-md-3 item info">
               <?php the_sub_field('item_informativo');?>
             </div>
             <?php
-endwhile;
-?>
+            endwhile;
+            ?>
           </div>
           <!--/eof card items-->
           <div class="bonus-timeline">
             <ul>
               <?php
-//loop impact items
-while (have_rows('adquisicion_bonos')):the_row();
-?>
+            //loop impact items
+            while (have_rows('adquisicion_bonos')):the_row();
+            ?>
               <li>
                 <img src="<?php the_sub_field('icono');?>" class="bounceIn" data-wow-duration="0.5s" data-wow-delay="1s">
                 <div class="text-body">
@@ -361,21 +421,24 @@ while (have_rows('adquisicion_bonos')):the_row();
                 </div>
               </li>
               <?php
-endwhile;
-?>
+            endwhile;
+            ?>
             </ul>
           </div>
           <!--/eof card items-->
           <div class="pay-btns">
             <header>
-              <h3>Elige cómo dejar tu huella
-              </h3>
+              <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+                <h3>Elige cómo dejar tu huella</h3>
+              <?php else:?>
+                <h3>Choose how to leave your footprint</h3>
+              <?php endif; ?>  
             </header>
             <?php
-$counter = 1;
-//loop impact items
-while (have_rows('metodos_pago')):the_row();
-?>
+            $counter = 1;
+            //loop impact items
+            while (have_rows('metodos_pago')):the_row();
+            ?>
             <div class="item logo-<?php echo $counter;?>">
               <figure class="logo logo-<?php echo $counter;?>">
                 <a href="<?php the_sub_field('vinculo');?>" target="_blank">
@@ -384,14 +447,20 @@ while (have_rows('metodos_pago')):the_row();
               </figure>
             </div>
             <?php
-$counter++;
-endwhile;
-?>
+            $counter++;
+            endwhile;
+            ?>
             <div class="item">
               <figure class="logo logo-cons">
+                <?php if(ICL_LANGUAGE_CODE=='es'): ?>
                 <a href="#modalCon" data-toggle="modal" data-target="#modalCon" >
                   <img src="<?php bloginfo('template_url');?>/img/icons/the-red-mail.png" alt="<?php the_title();?>">
                 </a>
+              <?php else: ?>
+                <a href="#modalCon-en" data-toggle="modal" data-target="#modalCon-en" >
+                  <img src="<?php bloginfo('template_url');?>/img/icons/the-red-mail-en.png" alt="<?php the_title();?>">
+                </a>
+               <?php endif;?> 
               </figure>
             </div>
           </div>
@@ -441,6 +510,42 @@ endwhile;
     </div>
   </div>
 </div>
+
+<div id="modalCon-en" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="<?php bloginfo('template_url');?>/img/icons/letter-small.png" alt="<?php the_title();?>">
+        <h4 class="modal-title">Deposit
+        </h4>
+      </div>
+      <div class="modal-body">
+        <p>
+           For cash donations:
+        </p>
+        <p>
+          <b>
+            You can register at Bancolombia Savings Account
+            <br/>No. 209 658065-20
+            Fundación Pies Descalzos
+          </b>
+        </p>
+        <p>
+          *Do not forget to send the deposit receipt to emai:
+          <a href="mailto:webmaster@fpd.ong">webmaster@fpd.ong
+          </a>
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close X
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <?php
 endwhile;
 get_template_part('includes/footer');?>

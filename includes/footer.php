@@ -3,7 +3,11 @@
   <div class="row">
     <div class="container">
       <div class="follow">
+        <?php if(ICL_LANGUAGE_CODE=='es'): ?>
         <span>Síguenos</span>
+        <?php else:?>
+        <span>Follow Us</span>
+        <?php endif;?>
         <ul>
           <li><a href="https://www.facebook.com/fpiesdescalzos/?ref=ts" class="social-icn fb" target="_blank">Facebook</a></li>
           <li><a href="https://twitter.com/fpiesdescalzos" class="social-icn tw" target="_blank">Twitter</a></li>
@@ -29,14 +33,26 @@
             </div>
         </div>
         <div class="col-md-2 col2 footer-col bd-left">
-            <a href="/contacto/">¿Tienes dudas?</a>
+            <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+              <a href="/contacto/">¿Tienes dudas?</a>
+            <?php else: ?>
+              <a href="/en/contact-us/">any doubts?</a>  
+            <?php endif;?>
         </div>
         <div class="col-md-2 col3 footer-col">
-            <a href="/contacto/" class="huella">Conoce nuestra huella</a>
+            <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+            <a href="/donaciones/" class="huella">Conoce nuestra huella</a>
+            <?php else: ?>
+            <a href="/en/donation/" class="huella">Know our footprint</a>  
+            <?php endif;?>
             <a href="mailto:webmaster@fpd.ong"><img src="<?php bloginfo( 'template_url' )?>/img/icons/mail.png"></a>
         </div>
         <div class="col-md-5 col4 footer-col">
-            <?php echo do_shortcode('[contact-form-7 id="565" title="Newsletter ES"]'); ?>
+            <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+              <?php echo do_shortcode('[contact-form-7 id="565" title="Newsletter ES"]'); ?>
+            <?php else:?>
+              <?php echo do_shortcode('[contact-form-7 id="751" title="Newsletter EN"]'); ?>
+            <?php endif;?>
         </div>
       </div>
     </div>
