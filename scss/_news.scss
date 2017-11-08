@@ -165,6 +165,7 @@ body {
 	@include bgcover;
 	//cabera
 	header {
+		padding-bottom: em(45);
 		&.page-head {
 			a {
 				width: 40px;
@@ -177,6 +178,7 @@ body {
 				z-index: 50;
 				@include desktop {
 					left: 20%;
+					top: em(57);
 					bottom: em(47);
 				}
 				@include mobile {

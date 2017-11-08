@@ -140,9 +140,15 @@ while (have_posts()):the_post();
             ?>
             <div class="item">
               <figure class="logo logo-cons">
+                <?php if(ICL_LANGUAGE_CODE=='es'): ?>
                 <a href="#modalCon" data-toggle="modal" data-target="#modalCon" >
                   <img src="<?php bloginfo('template_url');?>/img/icons/the-red-mail.png" alt="<?php the_title();?>">
                 </a>
+              <?php else: ?>
+                <a href="#modalCon-en" data-toggle="modal" data-target="#modalCon-en" >
+                  <img src="<?php bloginfo('template_url');?>/img/icons/the-red-mail-en.png" alt="<?php the_title();?>">
+                </a>
+               <?php endif;?> 
               </figure>
             </div>
           </div>
@@ -202,9 +208,15 @@ while (have_posts()):the_post();
             ?>
             <div class="item">
               <figure class="logo logo-cons">
+                <?php if(ICL_LANGUAGE_CODE=='es'): ?>
                 <a href="#modalCon" data-toggle="modal" data-target="#modalCon" >
                   <img src="<?php bloginfo('template_url');?>/img/icons/the-red-mail.png" alt="<?php the_title();?>">
                 </a>
+              <?php else: ?>
+                <a href="#modalCon-en" data-toggle="modal" data-target="#modalCon-en" >
+                  <img src="<?php bloginfo('template_url');?>/img/icons/the-red-mail-en.png" alt="<?php the_title();?>">
+                </a>
+               <?php endif;?> 
               </figure>
             </div>
           </div>
@@ -248,7 +260,7 @@ while (have_posts()):the_post();
                 <br/>como voluntario
               </h3>
             <?php else: ?>
-              <h3>HOW YOU CAN SUPPORT 
+              <h3>WHERE YOU CAN HELP
                 <br/>AS A VOLUNTEER
               </h3>
             <?php endif;?> 
@@ -294,7 +306,7 @@ while (have_posts()):the_post();
               <?php if(ICL_LANGUAGE_CODE=='es'): ?>
               <h3>Preguntas Frecuentes</h3>
               <?php else:?>
-                <h3>FAQS</h3>
+                <h3>FREQUENTLY ASKED QUESTIONS</h3>
               <?php endif;?> 
             </header>
             <div class="panel-group">
@@ -377,14 +389,14 @@ while (have_posts()):the_post();
           </div>
           <!--/eof impact items-->
           <div class="card-items">
-            <div class="col-md-3 item icon">
+            <div class="col-md-2 col-md-offset-3 item icon">
               <img src="<?php the_field('icono_tarjetas');?>">
             </div>
             <?php
             //loop impact items
             while (have_rows('informacion_tarjetas')):the_row();
             ?>
-            <div class="col-md-3 item info">
+            <div class="col-md-2 item info">
               <?php the_sub_field('item_informativo');?>
             </div>
             <?php
@@ -393,14 +405,14 @@ while (have_posts()):the_post();
           </div>
           <!--/eof card items-->
           <div class="bonus-items">
-            <div class="col-md-3 item icon bounceIn" data-wow-duration="0.5s" data-wow-delay="1s">
+            <div class="col-md-2 col-md-offset-3  item icon bounceIn" data-wow-duration="0.5s" data-wow-delay="1s">
               <img src="<?php the_field('icono_bonos');?>">
             </div>
             <?php
             //loop impact items
             while (have_rows('informacion_bonos')):the_row();
             ?>
-            <div class="col-md-3 item info">
+            <div class="col-md-2 item info">
               <?php the_sub_field('item_informativo');?>
             </div>
             <?php

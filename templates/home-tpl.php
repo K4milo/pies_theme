@@ -31,7 +31,11 @@ get_template_part('includes/header');
 	    		</h2>
 	    		<div class="text-body wow fadeInLeft">
 	    			<?php the_field('texto_infografia');?>
-	    			<a href="/que-hacemos/" class="wow bounceIn" data-wow-duration="0.5s" data-wow-delay="1s">Conoce más ></a>
+	    			<?php if(ICL_LANGUAGE_CODE=='es'): ?>
+	    				<a href="/que-hacemos/" class="wow bounceIn" data-wow-duration="0.5s" data-wow-delay="1s">Conoce más ></a>
+	    			<?php else:?>
+	    				<a href="/en/what-we-do/" class="wow bounceIn" data-wow-duration="0.5s" data-wow-delay="1s">Know more ></a>	
+	    			<?php endif; ?>	
 	    		</div>
 	    	</div>
 	    	<div class="col-md-6 image wow slideInOut" data-wow-duration="1s" data-wow-delay="1s">

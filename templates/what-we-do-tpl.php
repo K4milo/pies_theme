@@ -80,16 +80,6 @@ while (have_posts()):the_post()?>
 								</div>
 								<div class="row gestion">
 									<section id="cd-gestion" class="container">
-										<header class="main-header">
-
-											<?php if(ICL_LANGUAGE_CODE=='es'): ?>
-												<h3>Informe de Gestión</h3>
-												<h4>Niños y jóvenes beneficiados por año</h4>
-											<?php else: ?>
-												<h3>Management report</h3>
-												<h4>Children and young people benefited.</h4>
-											<?php endif;?>
-										</header>
 										<ul class="nav nav-tabs">
 											<?php //loop impact items
 											$counter = 0;
@@ -101,6 +91,17 @@ while (have_posts()):the_post()?>
 											<?php $counter++;
 											endwhile;
 										?></ul>
+										
+										<header class="main-header">
+											<?php if(ICL_LANGUAGE_CODE=='es'): ?>
+												<h3>Informe de Gestión</h3>
+												<h4>Niños y jóvenes beneficiados por año</h4>
+											<?php else: ?>
+												<h3>Management report</h3>
+												<h4>Children and young people benefited.</h4>
+											<?php endif;?>
+										</header>
+
 										<div class="tab-content">
 											<?php //loop impact items
 											$counter2 = 0;

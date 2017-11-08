@@ -146,6 +146,24 @@ body {
   h1,h2,h3,strong{
     font-family: $ralebk;
   }
+  
+  //general modal
+  .modal {
+    .modal-content {
+      .modal-body {
+        iframe {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }  
+  }
+
+  //General alerts
+  .alert-warning {
+    margin-top: em(60);
+  }
+  
   a {
     transition: all 0.3s;
   }

@@ -171,7 +171,7 @@
 
           var tmr = self.setInterval(function () {
               myDelay();
-            }, 50);
+            }, 10);
 
             var m = 0;
 
@@ -205,7 +205,7 @@
 
           var tmr = self.setInterval(function () {
               myDelay();
-            }, 50);
+            }, 10);
 
             var m = 0;
 
@@ -240,7 +240,7 @@
 
           var tmr = self.setInterval(function () {
               myDelay();
-            }, 50);
+            }, 10);
 
             var m = 0;
 
@@ -312,6 +312,8 @@
       slidesToScroll: 6,
       speed: 200,
       infinite: true,
+      autoplay: true,
+      autoplaySpeed: 1500,
       responsive: [
         {
           breakpoint: 600,

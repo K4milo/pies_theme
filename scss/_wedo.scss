@@ -348,9 +348,9 @@ body {
 				header {
 					&.main-header {
 						width: 100%;
-						padding: 5em 0;
+						padding: em(16) 0;
 						@include mobile {
-							padding: 1em 0;
+							padding: em(18) 0;
 						}
 						h3 {
 							display: inline-block;
@@ -382,12 +382,16 @@ body {
 						position: relative;
 						border: none;
 						text-align: center;
+						margin-top: em(42);
+						@include mobile {
+							margin-top: em(20);
+						}
 						li {
 							position: relative;
 							border: none;
 							float: none;
 							display: inline-block;
-							width: 20%;
+							width: 15%;
 							@include mobile {
 								width: 100%;
 								display: block;

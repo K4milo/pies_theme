@@ -332,7 +332,7 @@ body {
 									content:"";
 									display: block;
 									position: absolute;
-									top: 0;
+									top: 3px;
 									left: 50%;
 									width: 50px;
 									height: 50px;
@@ -393,9 +393,11 @@ body {
 								}
 								.ano-small {
 									&::before {
-										width: 54px;
-										height: 54px;
+										width: 56px;
+										height: 56px;
+										border: em(7) solid $white;
 										margin: -20px 0 0 -27px;
+										top: 0;
 									}
 									&::after {
 										@include fa-icon("\f0d8",$opBlack,em(50));

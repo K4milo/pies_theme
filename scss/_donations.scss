@@ -613,20 +613,12 @@ body{
 										@include desktop {
 											padding: 1em 6em;
 										}
-										&::before{
-											content: "";
-											display: inline-block;
-											vertical-align: top;
-											background-image: url('../img/icons/play.png');
-											width: 15px;
-											height: 18px;
-											margin: 0 1em;
-											transition: all 0.5s;
-										}
 
 										&.active {
-											&::before{
-												transform: rotate(90deg);
+											a {
+												&::before{
+													transform: rotate(90deg);
+												}
 											}
 										}
 
@@ -639,6 +631,19 @@ body{
 											@include mobile {
 												font-size: em(16);
 												width: 75%;
+											}
+											a {
+												padding-left: em(50);
+												&::before{
+													content: "";
+													display: block;
+													background-image: url('../img/icons/play.png');
+													width: 15px;
+													height: 18px;
+													margin: 0 1em;
+													transition: all 0.5s;
+													position: absolute;
+												}
 											}
 										}
 									}
@@ -734,6 +739,10 @@ body{
 									width: em(105);
 									height: em(105);
 									margin-bottom: em(12);
+									transition: all 0.5s;
+									&:hover {
+										transform: scale(1.1);
+									}
 									@include mobile {
 										position: absolute;
 										left: 0;
@@ -757,45 +766,44 @@ body{
 				}//EOF TAB 4
 			}
 		}
-	}
 
-	//styles in modal
-	.modal {
-		.modal-dialog {
-			.modal-content{
-				background-color: $yellow;
-				border-color: $yellow;
-				.modal-header,
-				.modal-body {
+		//styles in modal
+		.modal {
+			.modal-dialog {
+				.modal-content{
+					background-color: $yellow;
 					border-color: $yellow;
-					text-align: center;
-					a {
-						font-weight: bold;
-						color: $black;
+					.modal-header,
+					.modal-body {
+						border-color: $yellow;
+						text-align: center;
+						a {
+							font-weight: bold;
+							color: $black;
+						}
 					}
-				}
-				.modal-footer {
-					border-color: $yellow;
-					button {
-						display: block;
+					.modal-footer {
+						border-color: $yellow;
+						button {
+							display: block;
+							margin: 1em auto;
+							border: none;
+							opacity: 0.7;
+							font-family: $raleebd;
+						}
+					}
+					@include desktop {
+						overflow: hidden;
+						border-radius: 100%;
+						height: 437px;
+						width: 437px;
 						margin: 1em auto;
-						border: none;
-						opacity: 0.7;
-						font-family: $raleebd;
-					}
-				}
-				@include desktop {
-					overflow: hidden;
-					border-radius: 100%;
-					height: 437px;
-					width: 437px;
-					margin: 1em auto;
-					.modal-header {
-						padding-top: em(60);
+						.modal-header {
+							padding-top: em(60);
+						}
 					}
 				}
 			}
 		}
 	}
-
 }

@@ -2438,6 +2438,11 @@ body {
   font-family: "Open Sans"; }
   body h1, body h2, body h3, body strong {
     font-family: "Raleway Black"; }
+  body .modal .modal-content .modal-body iframe {
+    width: 100%;
+    height: 100%; }
+  body .alert-warning {
+    margin-top: 3.75em; }
   body a {
     transition: all 0.3s; }
   body .container-fluid {
@@ -2589,7 +2594,8 @@ body .side-menu {
     height: 50px;
     z-index: 2;
     border: none;
-    background-color: #ffbb01;
+    background-color: transparent;
+    border: none;
     top: 50%;
     left: 0;
     margin-top: -30px;
@@ -2598,6 +2604,7 @@ body .side-menu {
       body .side-menu .nav-header .navbar-side-btn {
         top: 0;
         margin-top: 0;
+        background-color: #ffbb01;
         width: 100%; } }
     body .side-menu .nav-header .navbar-side-btn span {
       display: block;
@@ -2605,10 +2612,11 @@ body .side-menu {
       max-width: 34px;
       height: 4px;
       margin: 7px auto;
-      background-color: #000000; }
+      background-color: #ffbb01; }
       @media (max-width: 767px) {
         body .side-menu .nav-header .navbar-side-btn span {
-          margin: 7px; } }
+          margin: 7px;
+          background-color: #000000; } }
   body .side-menu .nav-collapse {
     width: 227px;
     height: 100%;
@@ -2625,6 +2633,31 @@ body .side-menu {
         display: block;
         max-width: 100%;
         margin: 2em auto 0; }
+    body .side-menu .nav-collapse .lang-select {
+      width: 100%;
+      text-align: center;
+      color: #ffffff; }
+      @media (min-width: 1200px) {
+        body .side-menu .nav-collapse .lang-select {
+          position: absolute;
+          bottom: 13%; } }
+      body .side-menu .nav-collapse .lang-select ul {
+        padding: 0; }
+        body .side-menu .nav-collapse .lang-select ul li {
+          display: inline-block;
+          vertical-align: middle; }
+          body .side-menu .nav-collapse .lang-select ul li a {
+            color: #ffffff;
+            display: inherit; }
+          body .side-menu .nav-collapse .lang-select ul li .wpml-ls-display {
+            display: none; }
+          body .side-menu .nav-collapse .lang-select ul li:first-child:after {
+            content: "";
+            display: inline-block;
+            vertical-align: middle;
+            width: 2px;
+            height: 30px;
+            background-color: #ffffff; }
     body .side-menu .nav-collapse .nav.navbar-nav,
     body .side-menu .nav-collapse #menu-menu-en-ingles,
     body .side-menu .nav-collapse #menu-menu-espanol {
@@ -2649,15 +2682,24 @@ body .side-menu {
           font-size: 1.125em;
           font-family: "Raleway Extra Bold";
           transition: all 0.4s; }
-          body .side-menu .nav-collapse .nav.navbar-nav li a.active, body .side-menu .nav-collapse .nav.navbar-nav li a:active, body .side-menu .nav-collapse .nav.navbar-nav li a:hover,
+          body .side-menu .nav-collapse .nav.navbar-nav li a.active, body .side-menu .nav-collapse .nav.navbar-nav li a:active, body .side-menu .nav-collapse .nav.navbar-nav li a:focus, body .side-menu .nav-collapse .nav.navbar-nav li a:hover,
           body .side-menu .nav-collapse #menu-menu-en-ingles li a.active,
           body .side-menu .nav-collapse #menu-menu-en-ingles li a:active,
+          body .side-menu .nav-collapse #menu-menu-en-ingles li a:focus,
           body .side-menu .nav-collapse #menu-menu-en-ingles li a:hover,
           body .side-menu .nav-collapse #menu-menu-espanol li a.active,
           body .side-menu .nav-collapse #menu-menu-espanol li a:active,
+          body .side-menu .nav-collapse #menu-menu-espanol li a:focus,
           body .side-menu .nav-collapse #menu-menu-espanol li a:hover {
+            border: none;
             background-color: transparent;
             color: #ffbb01; }
+        body .side-menu .nav-collapse .nav.navbar-nav li.active a,
+        body .side-menu .nav-collapse #menu-menu-en-ingles li.active a,
+        body .side-menu .nav-collapse #menu-menu-espanol li.active a {
+          border: none;
+          background-color: transparent;
+          color: #ffbb01; }
     body .side-menu .nav-collapse .follow {
       position: absolute;
       z-index: 20;
@@ -3021,11 +3063,17 @@ body.page-template-home-tpl #partners-container {
       display: block;
       margin: 0 auto; }
   body.page-template-home-tpl #partners-container .slick-prev {
-    left: 0; }
+    z-index: 60; }
+    @media (max-width: 767px) {
+      body.page-template-home-tpl #partners-container .slick-prev {
+        left: 0; } }
     body.page-template-home-tpl #partners-container .slick-prev::before {
       color: #ffbb01; }
   body.page-template-home-tpl #partners-container .slick-next {
-    right: 0; }
+    z-index: 60; }
+    @media (max-width: 767px) {
+      body.page-template-home-tpl #partners-container .slick-next {
+        right: 0; } }
     body.page-template-home-tpl #partners-container .slick-next::before {
       color: #ffbb01; }
   @media (max-width: 767px) {
@@ -3326,7 +3374,7 @@ body.page-template-about-tpl {
             content: "";
             display: block;
             position: absolute;
-            top: 0;
+            top: 3px;
             left: 50%;
             width: 50px;
             height: 50px;
@@ -3379,9 +3427,11 @@ body.page-template-about-tpl {
           body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li.active {
             min-height: 250px; } }
         body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li.active .ano-small::before {
-          width: 54px;
-          height: 54px;
-          margin: -20px 0 0 -27px; }
+          width: 56px;
+          height: 56px;
+          border: 0.4375em solid #ffffff;
+          margin: -20px 0 0 -27px;
+          top: 0; }
         body.page-template-about-tpl .content-tabs .tab-content #menu3 .items-ano li.active .ano-small::after {
           font-size: 3.125em;
           color: rgba(0, 0, 0, 0.5);
@@ -3939,16 +3989,7 @@ body.page-template-donation-tpl {
         @media (min-width: 1200px) {
           body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .faqs .panel-group .panel-default .panel-heading {
             padding: 1em 6em; } }
-        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .faqs .panel-group .panel-default .panel-heading::before {
-          content: "";
-          display: inline-block;
-          vertical-align: top;
-          background-image: url("../img/icons/play.png");
-          width: 15px;
-          height: 18px;
-          margin: 0 1em;
-          transition: all 0.5s; }
-        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .faqs .panel-group .panel-default .panel-heading.active::before {
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .faqs .panel-group .panel-default .panel-heading.active a::before {
           transform: rotate(90deg); }
         body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .faqs .panel-group .panel-default .panel-heading .panel-title {
           display: inline-block;
@@ -3960,6 +4001,17 @@ body.page-template-donation-tpl {
             body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .faqs .panel-group .panel-default .panel-heading .panel-title {
               font-size: 1em;
               width: 75%; } }
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .faqs .panel-group .panel-default .panel-heading .panel-title a {
+            padding-left: 3.125em; }
+            body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .faqs .panel-group .panel-default .panel-heading .panel-title a::before {
+              content: "";
+              display: block;
+              background-image: url("../img/icons/play.png");
+              width: 15px;
+              height: 18px;
+              margin: 0 1em;
+              transition: all 0.5s;
+              position: absolute; }
       body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .faqs .panel-group .panel-default .panel-collapse {
         padding: 1em 2em;
         font-size: "Open Sans Light";
@@ -4038,7 +4090,10 @@ body.page-template-donation-tpl {
         body.page-template-donation-tpl .container-fluid > .row #menu3 .bonus-timeline ul li img {
           width: 6.5625em;
           height: 6.5625em;
-          margin-bottom: 0.75em; }
+          margin-bottom: 0.75em;
+          transition: all 0.5s; }
+          body.page-template-donation-tpl .container-fluid > .row #menu3 .bonus-timeline ul li img:hover {
+            transform: scale(1.1); }
           @media (max-width: 767px) {
             body.page-template-donation-tpl .container-fluid > .row #menu3 .bonus-timeline ul li img {
               position: absolute;
@@ -4047,35 +4102,34 @@ body.page-template-donation-tpl {
               height: auto; } }
   body.page-template-donation-tpl .container-fluid > .row #menu3 .pay-btns .item.logo-1, body.page-template-donation-tpl .container-fluid > .row #menu3 .pay-btns .item:first-child {
     display: none; }
-
-body .modal .modal-dialog .modal-content {
-  background-color: #ffbb01;
-  border-color: #ffbb01; }
-  body .modal .modal-dialog .modal-content .modal-header,
-  body .modal .modal-dialog .modal-content .modal-body {
-    border-color: #ffbb01;
-    text-align: center; }
-    body .modal .modal-dialog .modal-content .modal-header a,
-    body .modal .modal-dialog .modal-content .modal-body a {
-      font-weight: bold;
-      color: #000000; }
-  body .modal .modal-dialog .modal-content .modal-footer {
+  body.page-template-donation-tpl .modal .modal-dialog .modal-content {
+    background-color: #ffbb01;
     border-color: #ffbb01; }
-    body .modal .modal-dialog .modal-content .modal-footer button {
-      display: block;
-      margin: 1em auto;
-      border: none;
-      opacity: 0.7;
-      font-family: "Raleway Extra Bold"; }
-  @media (min-width: 1200px) {
-    body .modal .modal-dialog .modal-content {
-      overflow: hidden;
-      border-radius: 100%;
-      height: 437px;
-      width: 437px;
-      margin: 1em auto; }
-      body .modal .modal-dialog .modal-content .modal-header {
-        padding-top: 3.75em; } }
+    body.page-template-donation-tpl .modal .modal-dialog .modal-content .modal-header,
+    body.page-template-donation-tpl .modal .modal-dialog .modal-content .modal-body {
+      border-color: #ffbb01;
+      text-align: center; }
+      body.page-template-donation-tpl .modal .modal-dialog .modal-content .modal-header a,
+      body.page-template-donation-tpl .modal .modal-dialog .modal-content .modal-body a {
+        font-weight: bold;
+        color: #000000; }
+    body.page-template-donation-tpl .modal .modal-dialog .modal-content .modal-footer {
+      border-color: #ffbb01; }
+      body.page-template-donation-tpl .modal .modal-dialog .modal-content .modal-footer button {
+        display: block;
+        margin: 1em auto;
+        border: none;
+        opacity: 0.7;
+        font-family: "Raleway Extra Bold"; }
+    @media (min-width: 1200px) {
+      body.page-template-donation-tpl .modal .modal-dialog .modal-content {
+        overflow: hidden;
+        border-radius: 100%;
+        height: 437px;
+        width: 437px;
+        margin: 1em auto; }
+        body.page-template-donation-tpl .modal .modal-dialog .modal-content .modal-header {
+          padding-top: 3.75em; } }
 
 body.page-template-history-tpl {
   width: 103%;
@@ -4470,51 +4524,55 @@ body.search-results, body.search-no-results, body.page-template-news-tpl {
   background-image: url("../img/bgs/bg_16.jpg");
   background-size: cover;
   background-position: center center; }
-  .search-results header.page-head a,
-  .search-no-results header.page-head a {
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    bottom: 0.8125em;
-    left: 0;
-    border-radius: 100%;
-    border: 1px solid #ffffff;
-    z-index: 50; }
-    @media (min-width: 1200px) {
-      .search-results header.page-head a,
-      .search-no-results header.page-head a {
-        left: 20%;
-        bottom: 2.9375em; } }
-    @media (max-width: 767px) {
-      .search-results header.page-head a,
-      .search-no-results header.page-head a {
-        left: 50%;
-        margin-left: -20px; } }
-    .search-results header.page-head a i,
-    .search-no-results header.page-head a i {
-      font-size: 20px;
-      padding: 0;
-      position: relative;
-      margin: 10px 0 0 -3px;
-      display: block;
-      color: #ffbb01; }
-    .search-results header.page-head a:hover,
-    .search-no-results header.page-head a:hover {
-      text-decoration: none; }
-  .search-results header.page-head h2,
-  .search-no-results header.page-head h2 {
-    display: inline-block;
-    color: #ffbb01;
-    font-size: 3.125em;
-    font-family: "Raleway Black";
-    text-transform: uppercase;
-    text-shadow: 0 0 10px #000000;
-    position: relative; }
-    @media (max-width: 767px) {
-      .search-results header.page-head h2,
-      .search-no-results header.page-head h2 {
-        font-size: 2.1875em;
-        padding-bottom: 60px; } }
+  .search-results header,
+  .search-no-results header {
+    padding-bottom: 2.8125em; }
+    .search-results header.page-head a,
+    .search-no-results header.page-head a {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      bottom: 0.8125em;
+      left: 0;
+      border-radius: 100%;
+      border: 1px solid #ffffff;
+      z-index: 50; }
+      @media (min-width: 1200px) {
+        .search-results header.page-head a,
+        .search-no-results header.page-head a {
+          left: 20%;
+          top: 3.5625em;
+          bottom: 2.9375em; } }
+      @media (max-width: 767px) {
+        .search-results header.page-head a,
+        .search-no-results header.page-head a {
+          left: 50%;
+          margin-left: -20px; } }
+      .search-results header.page-head a i,
+      .search-no-results header.page-head a i {
+        font-size: 20px;
+        padding: 0;
+        position: relative;
+        margin: 10px 0 0 -3px;
+        display: block;
+        color: #ffbb01; }
+      .search-results header.page-head a:hover,
+      .search-no-results header.page-head a:hover {
+        text-decoration: none; }
+    .search-results header.page-head h2,
+    .search-no-results header.page-head h2 {
+      display: inline-block;
+      color: #ffbb01;
+      font-size: 3.125em;
+      font-family: "Raleway Black";
+      text-transform: uppercase;
+      text-shadow: 0 0 10px #000000;
+      position: relative; }
+      @media (max-width: 767px) {
+        .search-results header.page-head h2,
+        .search-no-results header.page-head h2 {
+          font-size: 2.1875em;
+          padding-bottom: 60px; } }
 
 body.page-template-default {
   position: relative;
@@ -4922,10 +4980,10 @@ body.page-template-what-we-do-tpl {
         margin-top: 9em; } }
   body.page-template-what-we-do-tpl .gestion #cd-gestion header.main-header {
     width: 100%;
-    padding: 5em 0; }
+    padding: 1em 0; }
     @media (max-width: 767px) {
       body.page-template-what-we-do-tpl .gestion #cd-gestion header.main-header {
-        padding: 1em 0; } }
+        padding: 1.125em 0; } }
     body.page-template-what-we-do-tpl .gestion #cd-gestion header.main-header h3 {
       display: inline-block;
       color: #ffbb01;
@@ -4949,13 +5007,17 @@ body.page-template-what-we-do-tpl {
   body.page-template-what-we-do-tpl .gestion #cd-gestion ul.nav.nav-tabs {
     position: relative;
     border: none;
-    text-align: center; }
+    text-align: center;
+    margin-top: 2.625em; }
+    @media (max-width: 767px) {
+      body.page-template-what-we-do-tpl .gestion #cd-gestion ul.nav.nav-tabs {
+        margin-top: 1.25em; } }
     body.page-template-what-we-do-tpl .gestion #cd-gestion ul.nav.nav-tabs li {
       position: relative;
       border: none;
       float: none;
       display: inline-block;
-      width: 20%; }
+      width: 15%; }
       @media (max-width: 767px) {
         body.page-template-what-we-do-tpl .gestion #cd-gestion ul.nav.nav-tabs li {
           width: 100%;

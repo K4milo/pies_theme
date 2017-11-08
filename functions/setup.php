@@ -17,6 +17,18 @@ function bst_excerpt_readmore() {
 }
 add_filter('excerpt_more', 'bst_excerpt_readmore');
 
+//Support language
+function language_selector(){
+    $languages = icl_get_languages('skip_missing=0&orderby=code');
+    if(!empty($languages)){
+        foreach($languages as $l){
+            if(!$l['active']){ 
+                echo '<a href="'.$l['url'].'">' . $l['translated_name'] . '</a>';
+            }
+        }
+    }
+}
+
 // Browser detection body_class() output
 
 function bst_browser_body_class( $classes ) {

@@ -18,6 +18,10 @@ The Search Loop
 
 <?php endwhile; else: ?>
     <div class="alert alert-warning">
-        <i class="glyphicon glyphicon-exclamation-sign"></i> <?php _e('No existen resultados con ese criterio de búsqueda.', 'bst'); ?>
+        <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+        	<i class="glyphicon glyphicon-exclamation-sign"></i> <?php _e('No existen resultados con ese criterio de búsqueda.', 'bst'); ?>
+    	<?php else:?>
+    		<i class="glyphicon glyphicon-exclamation-sign"></i> <?php _e('There are no results with these search criteria', 'bst'); ?>
+    	<?php endif;?>	
     </div>
 <?php endif; ?>

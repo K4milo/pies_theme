@@ -336,14 +336,20 @@ body{
 			}
 			
 			.slick-prev {
-				left: 0;
+				z-index: 60;
+				@include mobile {
+					left: 0;
+				}
 				&::before {
 					color: $yellow;
 				}
 			}
 
 			.slick-next {
-				right: 0;
+				z-index: 60;
+				@include mobile {
+					right: 0;
+				}
 				&::before {
 					color: $yellow;
 				}

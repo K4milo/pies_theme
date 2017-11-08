@@ -6,7 +6,11 @@
     	<a href="http://londonojp.com/pies-descalzos/noticias/">
 	    	<span class="back-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
 		</a>
-    	<h2>Resultados de Búsqueda</h2>
+    	<?php if(ICL_LANGUAGE_CODE=='es'): ?>
+      <h2>Resultados de Búsqueda</h2>
+    <?php else: ?>
+      <h2>Search Results</h2>
+    <?php endif;?>
     </header>
     <div class="row news-list no-gutter">
       

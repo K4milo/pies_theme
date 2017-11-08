@@ -50,6 +50,18 @@
             'depth'             => 2,
             'menu_class'        => 'nav navbar-nav'));
       ?>
+
+      <div class="lang-select">
+        
+        <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+          <h4>Idioma</h4>
+        <?php else: ?>
+          <h4>Language</h4>
+        <?php endif;?>
+
+        <?php do_action('icl_language_selector'); ?>
+      </div>
+
       <div class="follow">
         <ul>
           <li><a href="https://www.facebook.com/fpiesdescalzos/?ref=ts" class="social-icn fb" target="_blank">Facebook</a></li>
