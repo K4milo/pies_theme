@@ -22,11 +22,11 @@ while (have_posts()):the_post()?>
 				<figure>
 					<?php //loop impact items
 						while (have_rows('modelo_intervencion')):the_row();?>
-							
+
 							<img src="<?php the_sub_field('imagen_intervencion'); ?>" alt="<?php the_title();?>" class="wow zoomIn" data-wow-duration="1.7s" data-wow-delay="1.5s" />
 
 					<?php endwhile;?>
-					
+
 				</figure>
 			</div>
 			<section id="cd-timeline" class="container">
@@ -80,6 +80,13 @@ while (have_posts()):the_post()?>
 								</div>
 								<div class="row gestion">
 									<section id="cd-gestion" class="container">
+										<header class="main-header">
+											<?php if(ICL_LANGUAGE_CODE=='es'): ?>
+												<h3>Informe de Gestión</h3>
+											<?php else: ?>
+												<h3>Management report</h3>
+											<?php endif;?>
+										</header>
 										<ul class="nav nav-tabs">
 											<?php //loop impact items
 											$counter = 0;
@@ -91,13 +98,11 @@ while (have_posts()):the_post()?>
 											<?php $counter++;
 											endwhile;
 										?></ul>
-										
-										<header class="main-header">
+
+										<header class="main-header subtitle">
 											<?php if(ICL_LANGUAGE_CODE=='es'): ?>
-												<h3>Informe de Gestión</h3>
 												<h4>Niños y jóvenes beneficiados por año</h4>
 											<?php else: ?>
-												<h3>Management report</h3>
 												<h4>Children and young people benefited.</h4>
 											<?php endif;?>
 										</header>
@@ -132,7 +137,7 @@ while (have_posts()):the_post()?>
 											<h3>Ver Informes</h3>
 											<?php else:?>
 											<h3>See reports</h3>
-											<?php endif; ?>	
+											<?php endif; ?>
 										</header>
 										<ul class="inform-tabs">
 											<?php //loop impact items

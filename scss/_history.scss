@@ -130,7 +130,7 @@ body {
 				li {
 					position: relative;
 					display: inline-block;
-					width: 75px;
+					width: 55px;
 					height: inherit;
 					vertical-align: bottom;
 					color: white;
@@ -190,7 +190,7 @@ body {
 								padding-bottom: 3.3em;
 								display: block;
 								@include desktop {
-									width: 183%;
+									width: 228%;
 									margin-left: -46%;
 								}
 							}

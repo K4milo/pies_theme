@@ -17,7 +17,7 @@ while (have_posts()):the_post();
           <a data-toggle="tab" href="#home">
             <i>
             </i>Dejar
-            <br/> 
+            <br/>
             <strong>Una Huella
             </strong>
           </a>
@@ -25,7 +25,7 @@ while (have_posts()):the_post();
         <li>
           <a data-toggle="tab" href="#menu1">
             Dejar mi Huella
-            <br/> 
+            <br/>
             <strong>Mensualmente
             </strong>
           </a>
@@ -33,27 +33,27 @@ while (have_posts()):the_post();
         <li>
           <a data-toggle="tab" href="#menu2">
             Compartir
-            <br/> 
+            <br/>
             <strong>mi Huella
             </strong>
           </a>
         </li>
         <li>
           <a data-toggle="tab" href="#menu3">
-            Regalar 
-            <br/> 
+            Regalar
+            <br/>
             <strong>Una Huella
             </strong>
           </a>
         </li>
 
         <?php else:?>
-        
+
         <li class="active">
           <a data-toggle="tab" href="#home">
             <i>
             </i>LEAVE A
-            <br/> 
+            <br/>
             <strong>FOOTPRINT
             </strong>
           </a>
@@ -61,7 +61,7 @@ while (have_posts()):the_post();
         <li>
           <a data-toggle="tab" href="#menu1">
             LEAVE MY MONTHLY
-            <br/> 
+            <br/>
             <strong>FOOTPRINT
             </strong>
           </a>
@@ -69,7 +69,7 @@ while (have_posts()):the_post();
         <li>
           <a data-toggle="tab" href="#menu2">
             Share
-            <br/> 
+            <br/>
             <strong>my footprint
             </strong>
           </a>
@@ -77,7 +77,7 @@ while (have_posts()):the_post();
         <li>
           <a data-toggle="tab" href="#menu3">
             Give a
-            <br/> 
+            <br/>
             <strong>footprint
             </strong>
           </a>
@@ -119,7 +119,7 @@ while (have_posts()):the_post();
               <?php if(ICL_LANGUAGE_CODE=='es'): ?>
                 <h3>Elige cómo dejar tu huella</h3>
               <?php else:?>
-                <h3>Choose how to leave your footprint</h3>
+                <h3>SELECT HOW TO LEAVE YOUR FOOTPRINT</h3>
               <?php endif; ?>
             </header>
             <?php
@@ -148,7 +148,7 @@ while (have_posts()):the_post();
                 <a href="#modalCon-en" data-toggle="modal" data-target="#modalCon-en" >
                   <img src="<?php bloginfo('template_url');?>/img/icons/the-red-mail-en.png" alt="<?php the_title();?>">
                 </a>
-               <?php endif;?> 
+               <?php endif;?>
               </figure>
             </div>
           </div>
@@ -187,7 +187,7 @@ while (have_posts()):the_post();
               <?php if(ICL_LANGUAGE_CODE=='es'): ?>
                 <h3>Elige cómo dejar tu huella</h3>
               <?php else:?>
-                <h3>Choose how to leave your footprint</h3>
+                <h3>SELECT HOW TO LEAVE YOUR FOOTPRINT</h3>
               <?php endif; ?>
             </header>
             <?php
@@ -216,7 +216,7 @@ while (have_posts()):the_post();
                 <a href="#modalCon-en" data-toggle="modal" data-target="#modalCon-en" >
                   <img src="<?php bloginfo('template_url');?>/img/icons/the-red-mail-en.png" alt="<?php the_title();?>">
                 </a>
-               <?php endif;?> 
+               <?php endif;?>
               </figure>
             </div>
           </div>
@@ -263,7 +263,7 @@ while (have_posts()):the_post();
               <h3>WHERE YOU CAN HELP
                 <br/>AS A VOLUNTEER
               </h3>
-            <?php endif;?> 
+            <?php endif;?>
             </header>
             <ul>
               <?php
@@ -291,7 +291,7 @@ while (have_posts()):the_post();
               <h3>Enrollment
                 <br/>form
               </h3>
-              <?php endif;?> 
+              <?php endif;?>
             </header>
             <?php
             $the_form = get_field('shortcode_formulario');
@@ -307,7 +307,7 @@ while (have_posts()):the_post();
               <h3>Preguntas Frecuentes</h3>
               <?php else:?>
                 <h3>FREQUENTLY ASKED QUESTIONS</h3>
-              <?php endif;?> 
+              <?php endif;?>
             </header>
             <div class="panel-group">
               <div class="panel panel-default">
@@ -443,8 +443,8 @@ while (have_posts()):the_post();
               <?php if(ICL_LANGUAGE_CODE=='es'): ?>
                 <h3>Elige cómo dejar tu huella</h3>
               <?php else:?>
-                <h3>Choose how to leave your footprint</h3>
-              <?php endif; ?>  
+                <h3>SELECT HOW TO LEAVE YOUR FOOTPRINT</h3>
+              <?php endif; ?>
             </header>
             <?php
             $counter = 1;
@@ -472,7 +472,7 @@ while (have_posts()):the_post();
                 <a href="#modalCon-en" data-toggle="modal" data-target="#modalCon-en" >
                   <img src="<?php bloginfo('template_url');?>/img/icons/the-red-mail-en.png" alt="<?php the_title();?>">
                 </a>
-               <?php endif;?> 
+               <?php endif;?>
               </figure>
             </div>
           </div>
@@ -503,7 +503,7 @@ while (have_posts()):the_post();
         <p>
           <b>
             Puedes consignar en Bancolombia
-            Cuenta de Ahorros 
+            Cuenta de Ahorros
             <br/>No. 209 658065-20
             Fundación Pies Descalzos
           </b>

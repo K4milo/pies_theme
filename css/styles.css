@@ -2518,17 +2518,17 @@ body {
         @media (max-width: 767px) {
           body.page-template-contact-tpl .container-fluid p {
             color: #ffffff; } }
-      body.page-template-contact-tpl .container-fluid #wpcf7-f266-p269-o1 .wpcf7-form {
+      body.page-template-contact-tpl .container-fluid .wpcf7-form {
         max-width: 600px;
         margin: 1em auto;
         background-color: transparent; }
-        body.page-template-contact-tpl .container-fluid #wpcf7-f266-p269-o1 .wpcf7-form p input.wpcf7-text, body.page-template-contact-tpl .container-fluid #wpcf7-f266-p269-o1 .wpcf7-form p input.wpcf7-email {
+        body.page-template-contact-tpl .container-fluid .wpcf7-form p input.wpcf7-text, body.page-template-contact-tpl .container-fluid .wpcf7-form p input.wpcf7-email {
           padding: 1.5em;
           background-color: #f8f8f8;
           color: #3c3c3c;
           text-transform: uppercase;
           font-family: "Raleway Extra Bold"; }
-        body.page-template-contact-tpl .container-fluid #wpcf7-f266-p269-o1 .wpcf7-form p input.wpcf7-submit {
+        body.page-template-contact-tpl .container-fluid .wpcf7-form p input.wpcf7-submit {
           display: block;
           margin: 1em auto;
           border: none;
@@ -2539,9 +2539,9 @@ body {
           color: #ffffff;
           background-color: #CC0B3C;
           border-radius: 0.3em; }
-          body.page-template-contact-tpl .container-fluid #wpcf7-f266-p269-o1 .wpcf7-form p input.wpcf7-submit:hover {
+          body.page-template-contact-tpl .container-fluid .wpcf7-form p input.wpcf7-submit:hover {
             background-color: #3c3c3c; }
-        body.page-template-contact-tpl .container-fluid #wpcf7-f266-p269-o1 .wpcf7-form p .wpcf7-textarea {
+        body.page-template-contact-tpl .container-fluid .wpcf7-form p .wpcf7-textarea {
           padding: 1.5em;
           background-color: #f8f8f8;
           color: #3c3c3c;
@@ -4256,7 +4256,7 @@ body.page-template-history-tpl {
       body.page-template-history-tpl #history-slider .slick-dots li {
         position: relative;
         display: inline-block;
-        width: 75px;
+        width: 55px;
         height: inherit;
         vertical-align: bottom;
         color: white; }
@@ -4306,7 +4306,7 @@ body.page-template-history-tpl {
             display: block; }
             @media (min-width: 1200px) {
               body.page-template-history-tpl #history-slider .slick-dots li.slick-active .history-item h3 {
-                width: 183%;
+                width: 228%;
                 margin-left: -46%; } }
           body.page-template-history-tpl #history-slider .slick-dots li.slick-active .history-item h5 {
             display: none; }
@@ -5007,8 +5007,7 @@ body.page-template-what-we-do-tpl {
   body.page-template-what-we-do-tpl .gestion #cd-gestion ul.nav.nav-tabs {
     position: relative;
     border: none;
-    text-align: center;
-    margin-top: 2.625em; }
+    text-align: center; }
     @media (max-width: 767px) {
       body.page-template-what-we-do-tpl .gestion #cd-gestion ul.nav.nav-tabs {
         margin-top: 1.25em; } }

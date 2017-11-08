@@ -8,10 +8,17 @@ The Single Posts Loop
 <?php if (have_posts()):while (have_posts()):the_post();?>
     <header>
         <h2>
-            <a href="http://londonojp.com/pies-descalzos/noticias/">
+          <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+            <a href="/noticias/">
                 <span class="back-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
-            </a> 
-            <?php the_title()?></h2>
+            </a>
+          <?php else: ?>
+            <a href="/en/news/">
+                <span class="back-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+            </a>
+          <?php endif;?>
+            <?php the_title()?>
+        </h2>
     </header>
     <article role="article" id="post_<?php the_ID()?>" <?php post_class()?>>
         <section class="post-head">

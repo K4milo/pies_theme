@@ -20,7 +20,11 @@
       <div class="yellow-footer">
         <div class="footer-col col1 col-md-3">
             <div class="location-item">
+              <?php if(ICL_LANGUAGE_CODE=='es'): ?>
               <p>Calle 85 No.18-32 Of. 401 Bogotá - Colombia</p>
+              <?php else:?>
+              <p>Street 85 No.18-32 Of. 401 Bogotá - Colombia</p>
+              <?php endif;?>
               <span class="pointer"></span>
             </div>
             <div class="location-item">
@@ -36,14 +40,14 @@
             <?php if(ICL_LANGUAGE_CODE=='es'): ?>
               <a href="/contacto/">¿Tienes dudas?</a>
             <?php else: ?>
-              <a href="/en/contact-us/">any doubts?</a>  
+              <a href="/en/contact-us/">any doubts?</a>
             <?php endif;?>
         </div>
         <div class="col-md-2 col3 footer-col">
             <?php if(ICL_LANGUAGE_CODE=='es'): ?>
             <a href="/donaciones/" class="huella">Conoce nuestra huella</a>
             <?php else: ?>
-            <a href="/en/donation/" class="huella">Know our footprint</a>  
+            <a href="/en/donation/" class="huella">Know our footprint</a>
             <?php endif;?>
             <a href="mailto:webmaster@fpd.ong"><img src="<?php bloginfo( 'template_url' )?>/img/icons/mail.png"></a>
         </div>
