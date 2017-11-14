@@ -2515,14 +2515,21 @@ body {
   padding: 0; }
   body .hero-banner {
     position: relative;
-    min-height: 350px;
+    min-height: 400px;
     background-image: url("../img/hero-banner.jpg");
+    background-repeat: no-repeat;
     background-size: cover;
     background-position: center center; }
     body .hero-banner.response {
       background-image: url("../img/bg_response.jpg");
       background-position: center -53px;
-      min-height: 450px; }
+      min-height: 350px; }
+      @media (min-width: 1180px) {
+        body .hero-banner.response {
+          min-height: 500px; } }
+      @media (min-width: 1481px) {
+        body .hero-banner.response {
+          min-height: 650px; } }
     body .hero-banner h1 {
       font-family: "Raleway Extra Bold";
       font-size: 5.625em;
@@ -2552,7 +2559,7 @@ body {
       max-width: 60px;
       display: inline-block;
       vertical-align: top; }
-      @media (min-width: 1282px) {
+      @media (min-width: 1180px) {
         body .internal-copy img {
           max-width: 200px; } }
     body .internal-copy h2 {
@@ -2576,7 +2583,7 @@ body {
       content: "";
       display: table;
       clear: both; }
-    @media (min-width: 1282px) {
+    @media (min-width: 1180px) {
       body .impact-items {
         padding: 3.125em 0; } }
     body .impact-items header h2 {
@@ -2627,7 +2634,7 @@ body {
         text-transform: uppercase;
         font-size: 1em;
         font-family: "Raleway Bold"; }
-        @media (min-width: 1282px) {
+        @media (min-width: 1180px) {
           body #formGateway .form-left p label {
             display: inline-block;
             width: 30%;
@@ -2642,7 +2649,7 @@ body {
         display: block;
         width: 100%;
         border: none;
-        text-transform: uppercase;
+        text-transform: capitalize;
         margin: 0 0 1.5625em 0; }
         body #formGateway .form-left p select ::-webkit-input-placeholder,
         body #formGateway .form-left p input ::-webkit-input-placeholder {
@@ -2671,7 +2678,7 @@ body {
         body #formGateway .form-left p select[type="date"],
         body #formGateway .form-left p input[type="date"] {
           padding: 0.25em 1em; }
-        @media (min-width: 1282px) {
+        @media (min-width: 1180px) {
           body #formGateway .form-left p select,
           body #formGateway .form-left p input {
             display: inline-block; }
@@ -2702,6 +2709,20 @@ body {
             body #formGateway .form-left p select.field-7,
             body #formGateway .form-left p input.field-7 {
               width: 38%; } }
+      body #formGateway .form-left p.check-btn input {
+        width: auto;
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0; }
+      body #formGateway .form-left p.check-btn label {
+        display: inline-block;
+        vertical-align: middle;
+        text-transform: uppercase;
+        width: auto;
+        margin: 0 0 0 0.625em; }
+        body #formGateway .form-left p.check-btn label a {
+          font-family: "Raleway Extra Bold";
+          color: #3c3c3c; }
   body #formGateway .form-right {
     background-color: #FFF3DC;
     padding: 3.125em; }
@@ -2753,6 +2774,7 @@ body {
         width: 100%;
         display: block;
         border: none;
+        color: #000000;
         font-family: "Raleway Extra Bold";
         background-color: #ffffff; }
         body #formGateway .form-right .parent-radios select[type="submit"],
@@ -2763,7 +2785,7 @@ body {
           text-transform: uppercase;
           background-color: #CC0B3C;
           color: #ffffff; }
-        @media (min-width: 1282px) {
+        @media (min-width: 1180px) {
           body #formGateway .form-right .parent-radios select,
           body #formGateway .form-right .parent-radios input,
           body #formGateway .form-right p select,

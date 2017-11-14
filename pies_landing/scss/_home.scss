@@ -3,12 +3,21 @@ body {
 	//the banner
 	.hero-banner {
 		position: relative;
-		min-height: 350px;
+		min-height: 400px;
 		background-image: url('../img/hero-banner.jpg');
+		background-repeat: no-repeat;
 		&.response {
 			background-image: url('../img/bg_response.jpg');
 			background-position: center -53px;
-			min-height: 450px;
+			min-height: 350px;
+	
+			@include desktop {
+				min-height: 500px;
+			}
+
+			@include defdesktop{
+				min-height: 650px;
+			}
 		}
 		@include bgcover;
 		h1 {
@@ -159,7 +168,7 @@ body {
 					display: block;
 					width: 100%;
 					border: none;
-					text-transform: uppercase;
+					text-transform: capitalize;
 					margin: 0 0 em(25) 0;
 					@include input-placeholder{
 					    color: $grey-4;
@@ -204,6 +213,26 @@ body {
 						//----- row 4
 						&.field-7 {
 							width: 38%;
+						}
+					}
+				}
+
+				&.check-btn {
+					input {
+						width: auto;
+						display: inline-block;
+						vertical-align: middle;
+						margin: 0;
+					}
+					label {
+						display: inline-block;
+						vertical-align: middle;
+						text-transform: uppercase;
+						width: auto;
+						margin: 0 0 0 em(10);
+						a {
+							font-family: $raleebd;
+							color: $grey;
 						}
 					}
 				}
@@ -262,6 +291,7 @@ body {
 					width: 100%;
 					display: block;
 					border: none;
+					color: $black;
 					font-family: $raleebd;
 					background-color: $white;
 					&[type="submit"] {
