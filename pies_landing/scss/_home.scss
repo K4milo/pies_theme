@@ -6,17 +6,30 @@ body {
 		min-height: 400px;
 		background-image: url('../img/hero-banner.jpg');
 		background-repeat: no-repeat;
+		@include desktop {
+			min-height: 500px;
+		}
+
+		@include defdesktop{
+			min-height: 650px;
+		}
+		
 		&.response {
 			background-image: url('../img/bg_response.jpg');
 			background-position: center -53px;
 			min-height: 350px;
-	
+
 			@include desktop {
 				min-height: 500px;
 			}
 
 			@include defdesktop{
 				min-height: 650px;
+			}
+			
+
+			&.response-error {
+				background-image: url('../img/bg_error.jpg');
 			}
 		}
 		@include bgcover;
@@ -26,7 +39,7 @@ body {
 			color: white;
 			display: block;
 			float: right;
-			margin: 100px 50px 0 0;
+			margin: 100px 150px 0 0;
 			text-transform: uppercase;
 			max-width: 500px;
 			span {
@@ -48,6 +61,26 @@ body {
 		}
 	}
 
+	//Responses
+	.top-copy {
+		border-radius: 0 0 em(13) em(13);
+		padding-bottom: em(16);
+		h3 {
+			text-align: center;
+		} 
+		ul {
+			text-align: left;
+		}
+		&.error-response {
+			background-color: $lred;
+			color: $red;
+		}
+		&.success-response {
+			background-color: $lgreen;
+			color: $green;
+		}
+	}
+
 	//Copy for response pages
 	.internal-copy {
 		text-align: center;
@@ -57,23 +90,28 @@ body {
 			display: inline-block;
 			vertical-align: top;
 			@include desktop {
-				max-width: 200px;
+				max-width: 132px;
 			}
 		}
 		h2{
 			display: inline-block;
 			vertical-align: top;
-			color: $yellow;
+			color: $green;
 			font-family: $raleebd;
 			text-transform: uppercase;
 			padding: 0;
 			text-align: left;
-			font-size: em(40);
+			font-size: em(30);
 			line-height: 1.3;
-			width: 64%;
+			width: 60%;
 			@include mobile {
 				font-size: em(25);
 				width: 80%;
+			}
+		}
+		&.error-copy {
+			h2 {
+				color: $red;
 			}
 		}
 	}
@@ -140,7 +178,7 @@ body {
 					color: $yellow;
 					font-family: $raleebd;
 					text-transform: uppercase;
-					padding: em(20) 0;
+					padding: 0 0 em(20);
 					font-size: em(23);
 				}
 			}
@@ -161,22 +199,23 @@ body {
 				select,
 				input {
 					background-color: $grey-3;
-					color: $black;
+					color: $grey;
 					padding: em(12) em(16);
 					border-radius: em(7);
 					font-family: $raleebd;
 					display: block;
 					width: 100%;
+					height: 40px;
+					min-height: 40px;
 					border: none;
 					text-transform: capitalize;
 					margin: 0 0 em(25) 0;
-					@include input-placeholder{
-					    color: $grey-4;
+					@include placeholder {
+					    color: $grey;
 					    &:focus {
 					       color: $grey;
 					    }
 					}
-
 					&[type="date"] {
 						padding: em(4) em(16);
 					}
@@ -232,7 +271,7 @@ body {
 						margin: 0 0 0 em(10);
 						a {
 							font-family: $raleebd;
-							color: $grey;
+							color: $dgrey;
 						}
 					}
 				}
@@ -252,6 +291,7 @@ body {
 				&.logo-field{
 					position: relative;
 					select {
+						width: 57%;
 						@include mobile {
 							width: 70%;
 						}
@@ -262,11 +302,14 @@ body {
 						width: 100px;
 						height: 51px;
 						position: absolute;
-						right: -48px;
+						right: 52px;
 						top: 26px;
 						margin: 0 em(10) 0 0;
 						background-size: contain;
 						background-image: url('../img/logo_payu.png');
+						@include mobile {
+							right: -48px;
+						}
 					}
 				}
 
@@ -437,16 +480,16 @@ body {
 						height: 100%;
 						color: $red;
 						background-color: $white;
-						border: 3px solid;
+						border: 1px solid;
 						border-radius: 100%;
 						padding: em(16) 0;
 						i{
 							display: inline-block;
-							width: 44%;
+							width: 15%;
 							vertical-align: middle;
 							font-style: normal;
 							font-family: $ralemd;
-							font-size: em(35);
+							font-size: em(20);
 						}
 						.the-numbers {
 							display: inline-block;
@@ -458,6 +501,9 @@ body {
 								font-size: em(20);
 								display: block;
 								line-height: 1;
+								&:first-child {
+									font-size: em(29);
+								}
 							}
 						}
 						&.active {
