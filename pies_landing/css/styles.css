@@ -2529,13 +2529,26 @@ body {
     body .hero-banner.response {
       background-image: url("../img/bg_response.jpg");
       background-position: center -53px;
-      min-height: 350px; }
+      min-height: 350px;
+      text-align: center; }
       @media (min-width: 1180px) {
         body .hero-banner.response {
           min-height: 500px; } }
       @media (min-width: 1481px) {
         body .hero-banner.response {
           min-height: 650px; } }
+      body .hero-banner.response h1 {
+        font-family: "Raleway Extra Bold";
+        font-size: 5em;
+        color: #ffbb01;
+        display: inline-block;
+        margin: 0 auto;
+        max-width: auto;
+        padding-top: 200px; }
+        @media (min-width: 1180px) {
+          body .hero-banner.response h1 {
+            padding-top: 196px;
+            margin: 0 100px 0 0; } }
       body .hero-banner.response.response-error {
         background-image: url("../img/bg_error.jpg"); }
     body .hero-banner h1 {
@@ -2662,6 +2675,13 @@ body {
             display: inline-block;
             width: 30%;
             margin-right: 1%; } }
+        body #formGateway .form-left p label.error {
+          position: absolute;
+          width: 100%;
+          font-size: 0.75em;
+          color: #d0013d;
+          display: block;
+          margin: -20px 0 0 0; }
       body #formGateway .form-left p select,
       body #formGateway .form-left p input {
         background-color: #E6E6E6;
@@ -2703,6 +2723,10 @@ body {
         body #formGateway .form-left p select[type="date"],
         body #formGateway .form-left p input[type="date"] {
           padding: 0.25em 1em; }
+        body #formGateway .form-left p select.error,
+        body #formGateway .form-left p input.error {
+          border: 1px dashed #d0013d;
+          background-color: #f9e6ec; }
         @media (min-width: 1180px) {
           body #formGateway .form-left p select,
           body #formGateway .form-left p input {
@@ -2753,10 +2777,20 @@ body {
     padding: 3.125em; }
     body #formGateway .form-right .parent-radios,
     body #formGateway .form-right p {
-      margin-bottom: 1.25em; }
+      padding-bottom: 1.25em;
+      position: relative; }
       body #formGateway .form-right .parent-radios.other-value,
       body #formGateway .form-right p.other-value {
         display: none; }
+      body #formGateway .form-right .parent-radios label.error,
+      body #formGateway .form-right p label.error {
+        position: absolute;
+        width: 100%;
+        font-size: 0.75em;
+        color: #d0013d;
+        display: block;
+        margin: 0;
+        bottom: 0; }
       body #formGateway .form-right .parent-radios.logo-field,
       body #formGateway .form-right p.logo-field {
         position: relative; }
@@ -2823,6 +2857,12 @@ body {
           body #formGateway .form-right p select,
           body #formGateway .form-right p input {
             width: 80%; } }
+        body #formGateway .form-right .parent-radios select.error,
+        body #formGateway .form-right .parent-radios input.error,
+        body #formGateway .form-right p select.error,
+        body #formGateway .form-right p input.error {
+          border: 1px dashed #d0013d;
+          background-color: #f9e6ec; }
       body #formGateway .form-right .parent-radios select.field-sm,
       body #formGateway .form-right p select.field-sm {
         display: inline-block;
@@ -2927,24 +2967,24 @@ body {
           background-color: #ffffff;
           border: 1px solid;
           border-radius: 100%;
-          padding: 1em 0; }
+          padding: 0.875em 0; }
           body #formGateway .form-right .parent-radios .ammount-type label i {
             display: inline-block;
             width: 15%;
-            vertical-align: middle;
+            vertical-align: super;
             font-style: normal;
             font-family: "Raleway Medium";
             font-size: 1.25em; }
           body #formGateway .form-right .parent-radios .ammount-type label .the-numbers {
             display: inline-block;
             vertical-align: middle;
-            width: 50%; }
+            width: 55%; }
             body #formGateway .form-right .parent-radios .ammount-type label .the-numbers span {
               text-align: left;
               font-family: "Raleway Extra Bold";
               font-size: 1.25em;
               display: block;
-              line-height: 1; }
+              line-height: 1.15; }
               body #formGateway .form-right .parent-radios .ammount-type label .the-numbers span:first-child {
                 font-size: 1.8125em; }
           body #formGateway .form-right .parent-radios .ammount-type label.active {
