@@ -3,9 +3,17 @@
 <div class="container-fluid">
   <div class="row">
     <header class="page-head">
-    	<a href="http://londonojp.com/pies-descalzos/noticias/">
-	    	<span class="back-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
-		</a>
+    
+    <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+      <a href="/noticias/">
+          <span class="back-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+      </a>
+    <?php else: ?>
+      <a href="/en/news/">
+          <span class="back-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+      </a>
+    <?php endif;?>
+
     	<?php if(ICL_LANGUAGE_CODE=='es'): ?>
       <h2>Resultados de Búsqueda</h2>
     <?php else: ?>

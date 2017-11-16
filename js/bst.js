@@ -197,6 +197,7 @@
               'bgColor': 'rgba(0,0,0,0)',
               'width': 200,
               'height': 200,
+              'thickness': 0.41,
               'dynamicDraw': true
             });
 
@@ -285,14 +286,6 @@
     var heroSlider = $('#history-slider'),
         herolist = $('#history-slider li');
 
-        herolist.each(function(index, el) {
-          var $this = $(this),
-              $date = $(this).data('date'),
-              $text = $(this).data('text');
-
-          $this.append('<div class="history-content"><div class="text-cond"><p>' + $text + '</p></div><i></i></div>');
-        });
-
     heroSlider.slick({
       dots: true,
       slidesToShow: 1,
@@ -309,8 +302,8 @@
     $('#partners-container .impact-items').slick({
       dots: true,
       slidesToShow: 6,
-      slidesToScroll: 6,
-      speed: 200,
+      slidesToScroll: 1,
+      speed: 1500,
       infinite: true,
       autoplay: true,
       autoplaySpeed: 1500,
@@ -332,6 +325,14 @@
       ]
     });
 
+
+    //append soacha content
+
+    var soaES = $('body.page-template-what-we-do-tpl.page-id-236 .gestion #cd-gestion .tab-content #menu3'),
+        soaEN = $('body.page-template-what-we-do-tpl.page-id-736 .gestion #cd-gestion .tab-content #menu3');
+
+        soaES.prepend('<h4>EN EL AÑO 2015 FINALIZAMOS NUESTRA INTERVENCIÓN EN SOACHA.</h4>');
+        soaEN.prepend('<h4>IN 2015, WE FINISHED OUR INTERVENTION IN SOACHA.</h4>');
 
 
 		new WOW().init();

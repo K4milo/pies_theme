@@ -167,6 +167,7 @@ body {
 	header {
 		padding-bottom: em(45);
 		&.page-head {
+			padding: 2em 0 5em !important;
 			a {
 				width: 40px;
 				height: 40px;
