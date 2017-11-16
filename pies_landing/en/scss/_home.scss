@@ -416,6 +416,11 @@ body {
 							border-radius: em(20);
 							overflow: hidden;
 						}
+						&.en-donation {
+							label {
+								height: 110px;
+							}
+						}
 						label {
 							background-color: $white;
 							padding: em(20) em(10);
