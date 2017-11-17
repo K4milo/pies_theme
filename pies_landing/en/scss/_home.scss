@@ -16,16 +16,18 @@ body {
 
 		&.response {
 			background-image: url('../img/bg_response.jpg');
-			background-position: center -53px;
+			background-position: center top;
 			min-height: 350px;
 			text-align: center;
 
 			@include desktop {
-				min-height: 500px;
+				background-position: center -96px;
+				min-height: 370px;
 			}
 
 			@include defdesktop{
-				min-height: 650px;
+				background-position: center -96px;
+				min-height: 450px;
 			}
 
 			h1 {
@@ -35,10 +37,17 @@ body {
 				display: inline-block;
 				margin: 0 auto;
 				max-width: auto;
-				padding-top: 200px;
+				padding-top: 100px;
 				@include desktop{
-					padding-top: 196px;
+					padding-top: 100px;
 					margin: 0 100px 0 0;
+				}
+				span {
+					font-size: em(8);
+					text-transform: capitalize;
+					margin: 0;
+					line-height: 1;
+					display: block;
 				}
 			}
 
@@ -98,7 +107,7 @@ body {
 	//Copy for response pages
 	.internal-copy {
 		text-align: center;
-		padding: em(36) 0;
+		padding: em(6) 0 0;
 		img {
 			max-width: 60px;
 			display: inline-block;
@@ -115,7 +124,7 @@ body {
 			text-transform: uppercase;
 			padding: 0;
 			text-align: left;
-			font-size: em(30);
+			font-size: em(28);
 			line-height: 1.3;
 			width: 60%;
 			@include mobile {
@@ -129,6 +138,7 @@ body {
 			}
 		}
 	}
+
 
 	//Impact bs items
 	.impact-items {

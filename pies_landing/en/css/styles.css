@@ -2528,15 +2528,17 @@ body {
         min-height: 650px; } }
     body .hero-banner.response {
       background-image: url("../img/bg_response.jpg");
-      background-position: center -53px;
+      background-position: center top;
       min-height: 350px;
       text-align: center; }
       @media (min-width: 1180px) {
         body .hero-banner.response {
-          min-height: 500px; } }
+          background-position: center -96px;
+          min-height: 370px; } }
       @media (min-width: 1481px) {
         body .hero-banner.response {
-          min-height: 650px; } }
+          background-position: center -96px;
+          min-height: 450px; } }
       body .hero-banner.response h1 {
         font-family: "Raleway Extra Bold";
         font-size: 5em;
@@ -2544,11 +2546,17 @@ body {
         display: inline-block;
         margin: 0 auto;
         max-width: auto;
-        padding-top: 200px; }
+        padding-top: 100px; }
         @media (min-width: 1180px) {
           body .hero-banner.response h1 {
-            padding-top: 196px;
+            padding-top: 100px;
             margin: 0 100px 0 0; } }
+        body .hero-banner.response h1 span {
+          font-size: 0.5em;
+          text-transform: capitalize;
+          margin: 0;
+          line-height: 1;
+          display: block; }
       body .hero-banner.response.response-error {
         background-image: url("../img/bg_error.jpg"); }
     body .hero-banner h1 {
@@ -2582,13 +2590,13 @@ body {
       text-align: left; }
     body .top-copy.error-response {
       background-color: #f9e6ec;
-      color: #d0013d; }
+      color: #f3003c; }
     body .top-copy.success-response {
       background-color: #DBEED6;
       color: #377645; }
   body .internal-copy {
     text-align: center;
-    padding: 2.25em 0; }
+    padding: 0.375em 0 0; }
     body .internal-copy img {
       max-width: 60px;
       display: inline-block;
@@ -2604,7 +2612,7 @@ body {
       text-transform: uppercase;
       padding: 0;
       text-align: left;
-      font-size: 1.875em;
+      font-size: 1.75em;
       line-height: 1.3;
       width: 60%; }
       @media (max-width: 767px) {
@@ -2612,7 +2620,7 @@ body {
           font-size: 1.5625em;
           width: 80%; } }
     body .internal-copy.error-copy h2 {
-      color: #d0013d; }
+      color: #f3003c; }
   body .impact-items {
     padding: 0; }
     body .impact-items:after {
@@ -2679,7 +2687,7 @@ body {
           position: absolute;
           width: 100%;
           font-size: 0.75em;
-          color: #d0013d;
+          color: #f3003c;
           display: block;
           margin: -20px 0 0 0; }
       body #formGateway .form-left p select,
@@ -2725,7 +2733,7 @@ body {
           padding: 0.25em 1em; }
         body #formGateway .form-left p select.error,
         body #formGateway .form-left p input.error {
-          border: 1px dashed #d0013d;
+          border: 1px dashed #f3003c;
           background-color: #f9e6ec; }
         @media (min-width: 1180px) {
           body #formGateway .form-left p select,
@@ -2787,7 +2795,7 @@ body {
         position: absolute;
         width: 100%;
         font-size: 0.75em;
-        color: #d0013d;
+        color: #f3003c;
         display: block;
         margin: 0;
         bottom: 0; }
@@ -2849,7 +2857,7 @@ body {
         body #formGateway .form-right p input[type="submit"] {
           text-align: center;
           text-transform: uppercase;
-          background-color: #d0013d;
+          background-color: #f3003c;
           color: #ffffff; }
         @media (min-width: 1180px) {
           body #formGateway .form-right .parent-radios select,
@@ -2861,7 +2869,7 @@ body {
         body #formGateway .form-right .parent-radios input.error,
         body #formGateway .form-right p select.error,
         body #formGateway .form-right p input.error {
-          border: 1px dashed #d0013d;
+          border: 1px dashed #f3003c;
           background-color: #f9e6ec; }
       body #formGateway .form-right .parent-radios select.field-sm,
       body #formGateway .form-right p select.field-sm {
@@ -2925,7 +2933,7 @@ body {
               width: calc(100% - 75px); }
             body #formGateway .form-right .parent-radios.the-first .don-type label.active {
               color: #ffffff;
-              background-color: #d0013d; }
+              background-color: #f3003c; }
               body #formGateway .form-right .parent-radios.the-first .don-type label.active i {
                 background-position: 0 0; }
           body #formGateway .form-right .parent-radios.the-first .don-type:first-child label {
@@ -2965,7 +2973,7 @@ body {
           position: relative;
           width: 100%;
           height: 100%;
-          color: #d0013d;
+          color: #f3003c;
           background-color: #ffffff;
           border: 1px solid;
           border-radius: 100%;
@@ -2990,8 +2998,8 @@ body {
               body #formGateway .form-right .parent-radios .ammount-type label .the-numbers span:first-child {
                 font-size: 1.8125em; }
           body #formGateway .form-right .parent-radios .ammount-type label.active {
-            background-color: #d0013d;
-            border-color: #d0013d;
+            background-color: #f3003c;
+            border-color: #f3003c;
             color: #ffffff; }
         body #formGateway .form-right .parent-radios .ammount-type.another label {
           font-family: "Raleway Medium";
