@@ -122,22 +122,30 @@ while (have_posts()):the_post();
                 <h3>SELECT HOW TO LEAVE YOUR FOOTPRINT</h3>
               <?php endif; ?>
             </header>
-            <?php
-            $counter = 1;
-            //loop impact items
-            while (have_rows('metodos_pago')):the_row();
-            ?>
-            <div class="item logo-<?php echo $counter;?>">
-              <figure class="logo logo-<?php echo $counter;?>">
-                <a href="<?php the_sub_field('vinculo');?>" target="_blank">
-                  <img src="<?php the_sub_field('logo');?>" alt="<?php the_title();?>">
-                </a>
+            <div class="item logo-1">
+              <figure class="logo logo-1">
+                
+                <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+                  <a href="http://donaciones.fundacionpiesdescalzos.com/?plan=unico&?lang=ES" target="_blank">
+                      <img src="<?php bloginfo('template_url')?>/img/logos/payu.png" alt="Donaciones">
+                  </a>
+                <?php else:?>
+                  <a href="http://donaciones.fundacionpiesdescalzos.com/?plan=unico&?lang=EN" target="_blank">
+                      <img src="<?php bloginfo('template_url')?>/img/logos/payu.png" alt="Donaciones">
+                  </a>
+                <?php endif; ?>
+                
               </figure>
             </div>
-            <?php
-            $counter++;
-            endwhile;
-            ?>
+            <div class="item logo-2">
+              <figure class="logo logo-2">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                  <input name="cmd" type="hidden" value="_s-xclick">
+                  <input name="hosted_button_id" type="hidden" value="CCX6EF3MFC7W8">
+                  <input alt="PayPal - The safer, easier way to pay online!" class="img-btn" name="submit" src="<?php bloginfo('template_url')?>/img/logos/paypal.png" type="image"><img src="<?php bloginfo('template_url')?>/img/logos/paypal.png" alt="" width="1" height="1" border="0">
+                </form>
+              </figure>
+            </div>
             <div class="item">
               <figure class="logo logo-cons">
                 <?php if(ICL_LANGUAGE_CODE=='es'): ?>
@@ -190,22 +198,28 @@ while (have_posts()):the_post();
                 <h3>SELECT HOW TO LEAVE YOUR FOOTPRINT</h3>
               <?php endif; ?>
             </header>
-            <?php
-            $counter = 1;
-            //loop impact items
-            while (have_rows('metodos_pago')):the_row();
-            ?>
-            <div class="item">
-              <figure class="logo logo-<?php echo $counter;?>">
-                <a href="<?php the_sub_field('vinculo');?>" target="_blank">
-                  <img src="<?php the_sub_field('logo');?>" alt="<?php the_title();?>">
-                </a>
+            <div class="item logo-1">
+              <figure class="logo logo-1">
+                <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+                  <a href="http://donaciones.fundacionpiesdescalzos.com/?plan=recurrente&?lang=ES" target="_blank">
+                      <img src="<?php bloginfo('template_url')?>/img/logos/payu.png" alt="Donaciones">
+                  </a>
+                <?php else:?>
+                  <a href="http://donaciones.fundacionpiesdescalzos.com/?plan=recurrente&?lang=EN" target="_blank">
+                      <img src="<?php bloginfo('template_url')?>/img/logos/payu.png" alt="Donaciones">
+                  </a>
+                <?php endif; ?>
               </figure>
             </div>
-            <?php
-            $counter++;
-            endwhile;
-            ?>
+            <div class="item logo-2">
+              <figure class="logo logo-2">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                  <input name="cmd" type="hidden" value="_s-xclick">
+                  <input name="hosted_button_id" type="hidden" value="CCX6EF3MFC7W8">
+                  <input alt="PayPal - The safer, easier way to pay online!" class="img-btn" name="submit" src="<?php bloginfo('template_url')?>/img/logos/paypal.png" type="image"><img src="<?php bloginfo('template_url')?>/img/logos/paypal.png" alt="" width="1" height="1" border="0">
+                </form>
+              </figure>
+            </div>
             <div class="item">
               <figure class="logo logo-cons">
                 <?php if(ICL_LANGUAGE_CODE=='es'): ?>
@@ -446,22 +460,28 @@ while (have_posts()):the_post();
                 <h3>SELECT HOW TO LEAVE YOUR FOOTPRINT</h3>
               <?php endif; ?>
             </header>
-            <?php
-            $counter = 1;
-            //loop impact items
-            while (have_rows('metodos_pago')):the_row();
-            ?>
-            <div class="item logo-<?php echo $counter;?>">
-              <figure class="logo logo-<?php echo $counter;?>">
-                <a href="<?php the_sub_field('vinculo');?>" target="_blank">
-                  <img src="<?php the_sub_field('logo');?>" alt="<?php the_title();?>">
-                </a>
+            <div class="item logo-1">
+              <figure class="logo logo-1">
+                <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+                  <a href="http://donaciones.fundacionpiesdescalzos.com/?plan=unico&?lang=ES" target="_blank">
+                      <img src="<?php bloginfo('template_url')?>/img/logos/payu.png" alt="Donaciones">
+                  </a>
+                <?php else:?>
+                  <a href="http://donaciones.fundacionpiesdescalzos.com/?plan=unico&?lang=EN" target="_blank">
+                      <img src="<?php bloginfo('template_url')?>/img/logos/payu.png" alt="Donaciones">
+                  </a>
+                <?php endif; ?>
               </figure>
             </div>
-            <?php
-            $counter++;
-            endwhile;
-            ?>
+            <div class="item logo-2">
+              <figure class="logo logo-2">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                  <input name="cmd" type="hidden" value="_s-xclick">
+                  <input name="hosted_button_id" type="hidden" value="CCX6EF3MFC7W8">
+                  <input alt="PayPal - The safer, easier way to pay online!" class="img-btn" name="submit" src="<?php bloginfo('template_url')?>/img/logos/paypal.png" type="image"><img src="<?php bloginfo('template_url')?>/img/logos/paypal.png" alt="" width="1" height="1" border="0">
+                </form>
+              </figure>
+            </div>
             <div class="item">
               <figure class="logo logo-cons">
                 <?php if(ICL_LANGUAGE_CODE=='es'): ?>

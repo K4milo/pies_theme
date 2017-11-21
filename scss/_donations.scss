@@ -331,10 +331,14 @@ body{
 								margin: 30px;
 								position: relative;
 								border-radius: 100%;
+								vertical-align: top;
 								figure {
 									img {
 										display: block;
 										@include centerer;
+									}
+									.img-btn {
+										padding-top: em(56);
 									}
 								}
 							}

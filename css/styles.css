@@ -3732,13 +3732,16 @@ body.page-template-donation-tpl {
         position: relative;
         margin: 30px;
         position: relative;
-        border-radius: 100%; }
+        border-radius: 100%;
+        vertical-align: top; }
         body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item figure img {
           display: block;
           position: absolute;
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%); }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item figure .img-btn {
+          padding-top: 3.5em; }
       body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns:after {
         content: "";
         display: table;
@@ -4175,7 +4178,7 @@ body.page-template-history-tpl {
     @media (max-width: 767px) {
       body.page-template-history-tpl header.main-header {
         position: relative;
-        margin-top: 3.4375em; }
+        margin-top: 7.5em; }
         body.page-template-history-tpl header.main-header h3 {
           font-size: 2.1875em; } }
   body.page-template-history-tpl #history-slider {
@@ -4321,7 +4324,7 @@ body.page-template-history-tpl {
             @media (min-width: 1200px) {
               body.page-template-history-tpl #history-slider .slick-dots li.slick-active .history-item h3 {
                 width: 228%;
-                margin-left: -46%; } }
+                margin-left: -60%; } }
           body.page-template-history-tpl #history-slider .slick-dots li.slick-active .history-item h5 {
             display: none; }
           body.page-template-history-tpl #history-slider .slick-dots li.slick-active .history-item .text-cond {

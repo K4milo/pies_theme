@@ -34,7 +34,7 @@ body {
 				}
 				@include mobile {
 					position: relative;
-					margin-top: em(55);
+					margin-top: em(120);
 					h3 {
 						font-size: em(35);
 					}
@@ -194,7 +194,7 @@ body {
 								display: block;
 								@include desktop {
 									width: 228%;
-									margin-left: -46%;
+									margin-left: -60%;
 								}
 							}
 							h5 {
