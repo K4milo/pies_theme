@@ -139,19 +139,19 @@
             </div>
 
             <div class="parent-radios">
-              <strong>AMOUNT TO DONATE <span>(USD)<span></strong>
+              <strong>AMOUNT TO DONATE <span>(USD / EUR)<span></strong>
               <div class="ammount-type">
                 <input type="radio" name="monto_donacion" value="35000" />
                 <label for="tipo_donacion"><i>$</i>
                   <div class="the-numbers">
-                    <span>35</span><span>USD</span></label>
+                    <span>35</span></label>
                   </div>
               </div>
               <div class="ammount-type">
                 <input type="radio" name="monto_donacion" value="50000" />
                 <label for="tipo_donacion"><i>$</i>
                   <div class="the-numbers">
-                    <span>50</span><span>USD</span>
+                    <span>50</span>
                   </div>
                 </label>
               </div>
@@ -159,7 +159,7 @@
                 <input type="radio" name="monto_donacion" value="100000" />
                 <label for="tipo_donacion"><i>$</i>
                   <div class="the-numbers">
-                    <span>100</span><span>USD</span></label>
+                    <span>100</span></label>
                   </div>
               </div>
               <div class="ammount-type another">
@@ -171,6 +171,14 @@
             <p class="other-value">
               <strong>Please specify the value</strong>
               <input type="text" class="field" name="otro_valor">
+            </p>
+
+            <p>
+              <strong>Currency</strong>
+              <select class="field field-sm" name="moneda">
+                <option value="USD">USD</option>
+                <option value="EUR">EURO </option>
+              </select>
             </p>
 
             <p class="logo-field">

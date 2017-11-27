@@ -2977,11 +2977,11 @@ body {
           background-color: #ffffff;
           border: 1px solid;
           border-radius: 100%;
-          padding: 0.875em 0; }
+          padding: 1.375em 0; }
           body #formGateway .form-right .parent-radios .ammount-type label i {
             display: inline-block;
             width: 15%;
-            vertical-align: super;
+            vertical-align: bottom;
             font-style: normal;
             font-family: "Raleway Medium";
             font-size: 1.25em; }
