@@ -4241,6 +4241,9 @@ body.page-template-history-tpl {
               max-width: 100%;
               display: block;
               margin: 0 auto; }
+              @media (min-width: 1200px) {
+                body.page-template-history-tpl #history-slider .slick-track li .history-content .text-cond img {
+                  margin-top: -4em; } }
             body.page-template-history-tpl #history-slider .slick-track li .history-content .text-cond p {
               font-size: 1.1875em;
               color: #ffffff;
