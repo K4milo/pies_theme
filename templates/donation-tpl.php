@@ -531,8 +531,7 @@ while (have_posts()):the_post();
         <p>
           *No olvides enviar el comprobante
           de consignación al correo electrónico:
-          <a href="mailto:webmaster@fpd.ong">webmaster@fpd.ong
-          </a>
+          <a href="mailto:comunicaciones@fpd.ong">comunicaciones@fpd.ong</a>
         </p>
       </div>
       <div class="modal-footer">
@@ -565,8 +564,7 @@ while (have_posts()):the_post();
         </p>
         <p>
           *Do not forget to send the deposit receipt to emai:
-          <a href="mailto:webmaster@fpd.ong">webmaster@fpd.ong
-          </a>
+          <a href="mailto:comunicaciones@fpd.ong">comunicaciones@fpd.ong</a>
         </p>
       </div>
       <div class="modal-footer">
