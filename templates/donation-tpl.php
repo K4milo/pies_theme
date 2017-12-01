@@ -126,11 +126,11 @@ while (have_posts()):the_post();
               <figure class="logo logo-1">
 
                 <?php if(ICL_LANGUAGE_CODE=='es'): ?>
-                  <a href="https://donaciones.fundacionpiesdescalzos.com/?plan=unico&?lang=ES" target="_blank">
+                  <a href="https://donaciones.fundacionpiesdescalzos.com/?plan=unico&lang=ES" target="_blank">
                       <img src="<?php bloginfo('template_url')?>/img/logos/payu.png" alt="Donaciones">
                   </a>
                 <?php else:?>
-                  <a href="https://donaciones.fundacionpiesdescalzos.com/?plan=unico&?lang=EN" target="_blank">
+                  <a href="https://donaciones.fundacionpiesdescalzos.com/?plan=unico&lang=EN" target="_blank">
                       <img src="<?php bloginfo('template_url')?>/img/logos/payu.png" alt="Donaciones">
                   </a>
                 <?php endif; ?>
@@ -201,11 +201,11 @@ while (have_posts()):the_post();
             <div class="item logo-1">
               <figure class="logo logo-1">
                 <?php if(ICL_LANGUAGE_CODE=='es'): ?>
-                  <a href="https://donaciones.fundacionpiesdescalzos.com/?plan=recurrente&?lang=ES" target="_blank">
+                  <a href="https://donaciones.fundacionpiesdescalzos.com/?plan=recurrente&lang=ES" target="_blank">
                       <img src="<?php bloginfo('template_url')?>/img/logos/payu.png" alt="Donaciones">
                   </a>
                 <?php else:?>
-                  <a href="https://donaciones.fundacionpiesdescalzos.com/?plan=recurrente&?lang=EN" target="_blank">
+                  <a href="https://donaciones.fundacionpiesdescalzos.com/?plan=recurrente&lang=EN" target="_blank">
                       <img src="<?php bloginfo('template_url')?>/img/logos/payu.png" alt="Donaciones">
                   </a>
                 <?php endif; ?>
@@ -463,11 +463,11 @@ while (have_posts()):the_post();
             <div class="item logo-1">
               <figure class="logo logo-1">
                 <?php if(ICL_LANGUAGE_CODE=='es'): ?>
-                  <a href="https://donaciones.fundacionpiesdescalzos.com/?plan=unico&?lang=ES" target="_blank">
+                  <a href="https://donaciones.fundacionpiesdescalzos.com/?plan=unico&lang=ES" target="_blank">
                       <img src="<?php bloginfo('template_url')?>/img/logos/payu.png" alt="Donaciones">
                   </a>
                 <?php else:?>
-                  <a href="https://donaciones.fundacionpiesdescalzos.com/?plan=unico&?lang=EN" target="_blank">
+                  <a href="https://donaciones.fundacionpiesdescalzos.com/?plan=unico&lang=EN" target="_blank">
                       <img src="<?php bloginfo('template_url')?>/img/logos/payu.png" alt="Donaciones">
                   </a>
                 <?php endif; ?>
