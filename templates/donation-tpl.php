@@ -361,8 +361,8 @@ while (have_posts()):the_post();
                   <?php the_sub_field('encabezado');?>
                 </h3>
                 <figure class="tmb visible-xs">
-                  <img src="<?php the_sub_field('icono');?>" alt="<?php the_title();?>">
-               </figure>
+	                <img src="<?php the_sub_field('icono');?>" alt="<?php the_title();?>">
+	             </figure>
                 <?php the_sub_field('texto');?>
               </div>
             </div>
@@ -531,7 +531,7 @@ while (have_posts()):the_post();
         <p>
           *No olvides enviar el comprobante
           de consignación al correo electrónico:
-          <a href="mailto:alianzas@fpd.ong">alianzas@fpd.ong</a>
+          <a href="mailto:comunicaciones@fpd.ong">comunicaciones@fpd.ong</a>
         </p>
       </div>
       <div class="modal-footer">
@@ -564,7 +564,7 @@ while (have_posts()):the_post();
         </p>
         <p>
           *Do not forget to send the deposit receipt to emai:
-          <a href="mailto:alianzas@fpd.ong">alianzas@fpd.ong</a>
+          <a href="mailto:comunicaciones@fpd.ong">comunicaciones@fpd.ong</a>
         </p>
       </div>
       <div class="modal-footer">

@@ -157,60 +157,62 @@ body {
 }
 
 //no results
-
-&.search-results,
-&.search-no-results {
-	box-shadow: inset 0 0 40em $black;
-	background-image: url('../img/bgs/bg_16.jpg');
-	@include bgcover;
-	//cabera
-	header {
-		padding-bottom: em(45);
-		&.page-head {
-			padding: 2em 0 5em !important;
-			a {
-				width: 40px;
-				height: 40px;
-				position: absolute;
-				bottom: em(13);
-				left: 0;
-				border-radius: 100%;
-				border: 1px solid $white;
-				z-index: 50;
-				@include desktop {
-					left: 20%;
-					top: em(57);
-					bottom: em(47);
+body{
+	&.search-results,
+	&.search-no-results {
+		box-shadow: inset 0 0 40em $black;
+		background-image: url('../img/bgs/bg_16.jpg');
+		@include bgcover;
+		//cabera
+		header {
+			padding-bottom: em(45);
+			&.page-head {
+				padding: 2em 0 5em !important;
+				a {
+					width: 40px;
+					height: 40px;
+					position: absolute;
+					bottom: em(13);
+					left: 0;
+					border-radius: 100%;
+					border: 1px solid $white;
+					z-index: 50;
+					@include desktop {
+						left: 20%;
+						top: em(57);
+						bottom: em(47);
+					}
+					@include mobile {
+						left: 50%;
+						margin-left: -20px;
+					}
+					i {
+						font-size: 20px;
+						padding: 0;
+						position: relative;
+						margin: 10px 0 0 -3px;
+						display: block;
+						color: $yellow;
+					}
+					&:hover {
+						text-decoration: none;
+					}
 				}
-				@include mobile {
-					left: 50%;
-					margin-left: -20px;
-				}
-				i {
-					font-size: 20px;
-					padding: 0;
-					position: relative;
-					margin: 10px 0 0 -3px;
-					display: block;
+				h2 {
+					display: inline-block;
 					color: $yellow;
-				}
-				&:hover {
-					text-decoration: none;
-				}
-			}
-			h2 {
-				display: inline-block;
-				color: $yellow;
-				font-size: em(50);
-				font-family: $ralebk;
-				text-transform: uppercase;
-				text-shadow: 0 0 10px $black;
-				position: relative;
-				@include mobile {
-					font-size: em(35);
-					padding-bottom: 60px;
+					font-size: em(50);
+					font-family: $ralebk;
+					text-transform: uppercase;
+					text-shadow: 0 0 10px $black;
+					position: relative;
+					@include mobile {
+						font-size: em(35);
+						padding-bottom: 60px;
+					}
 				}
 			}
 		}
-	}
-} // EOF HEADER
+	} // EOF HEADER
+
+}
