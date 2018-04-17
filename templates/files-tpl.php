@@ -22,11 +22,11 @@ get_template_part('includes/header');?>
 			$the_query->the_post();// run the loop ?>
 				<article class="file-item col-md-3">
 					<div class="file-wrapper">
-						<a href="<?php the_field('archivo_anidado');?>" target="_blank">
+						<a href="<?php the_permalink();?>" target="_blank">
 							<h3><?php echo the_title();?></h3>
 						</a>
 						<div class="btn cta_file">
-							<a href="<?php the_field('archivo_anidado');?>" target="_blank">Ver Archivo</a>
+							<a href="<?php the_permalink();?>" target="_blank">Ver Archivo</a>
 						</div>
 					</div>
 				</article>
