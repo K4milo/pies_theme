@@ -63,6 +63,7 @@
   </div>
   <div class="row copyright">
     &copy; <?php echo date('Y'); ?> <a href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a>
+    - <a href="/archivos/">Documentos Dian</a>
   </div>
 </footer>
 
