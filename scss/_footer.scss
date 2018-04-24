@@ -85,7 +85,7 @@
 	}//EOF FOLLOW
 	.yellow-footer{
 		background-color: $yellow;
-		padding: 2em 0 0;
+		padding: 1em 0;
 		@include clearfix;
 		.col1{
 			.location-item{
@@ -94,7 +94,7 @@
 				text-align: center;
 				p,a {
 					text-align: right;
-					font-size: em(14);
+					font-size: 15px;
 					font-family: $openbd;
 					color: $grey;
 					display: inline-block;
@@ -123,6 +123,11 @@
 						width: 15px;
 						height: 25px;
 						background-image: url('../img/icons/sm-phone.png');
+					}
+					&.sm-docs{
+						width: 25px;
+						height: 25px;
+						background-image: url('../img/icons/sm-document.png');
 					}
 				}
 			}

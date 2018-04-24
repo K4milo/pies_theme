@@ -35,6 +35,10 @@
               <p>(571) 6358770</p>
               <span class="sm-phone"></span>
             </div>
+            <div class="location-item">
+              <p><a href="/archivos/">Requisitos Dian</a></p>
+              <span class="sm-docs"></span>
+            </div>
         </div>
         <div class="col-md-2 col2 footer-col bd-left">
             <?php if(ICL_LANGUAGE_CODE=='es'): ?>
@@ -63,7 +67,6 @@
   </div>
   <div class="row copyright">
     &copy; <?php echo date('Y'); ?> <a href="<?php echo home_url('/'); ?>"><?php bloginfo('name'); ?></a>
-    - <a href="/archivos/">Documentos Dian</a>
   </div>
 </footer>
 

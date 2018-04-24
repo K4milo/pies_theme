@@ -5466,7 +5466,7 @@ body.page-template-what-we-do-tpl {
                 background-position: -275px -32px; }
   .site-footer .yellow-footer {
     background-color: #ffbb01;
-    padding: 2em 0 0; }
+    padding: 1em 0; }
     .site-footer .yellow-footer:after {
       content: "";
       display: table;
@@ -5477,7 +5477,7 @@ body.page-template-what-we-do-tpl {
       text-align: center; }
       .site-footer .yellow-footer .col1 .location-item p, .site-footer .yellow-footer .col1 .location-item a {
         text-align: right;
-        font-size: 0.875em;
+        font-size: 15px;
         font-family: "Open Sans Bold";
         color: #3c3c3c;
         display: inline-block;
@@ -5503,6 +5503,10 @@ body.page-template-what-we-do-tpl {
           width: 15px;
           height: 25px;
           background-image: url("../img/icons/sm-phone.png"); }
+        .site-footer .yellow-footer .col1 .location-item span.sm-docs {
+          width: 25px;
+          height: 25px;
+          background-image: url("../img/icons/sm-document.png"); }
     .site-footer .yellow-footer .col2 {
       position: relative;
       border-right: 2px solid #3c3c3c; }
