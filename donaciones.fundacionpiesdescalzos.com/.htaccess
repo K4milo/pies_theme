@@ -1,0 +1,4 @@
+RewriteEngine on
+RewriteCond %{SERVER_PORT} ^80$
+RewriteCond %{HTTP_HOST} ^donaciones\.fundacionpiesdescalzos\.com$ [NC]
+RewriteRule .? https://donaciones.fundacionpiesdescalzos.com/$1 [R,L]
