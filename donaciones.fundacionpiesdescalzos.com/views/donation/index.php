@@ -125,31 +125,31 @@
                         </header>
                         <p>
                             <input type="text" name="name" placeholder="<?= $dictionary["name"]; ?>" class="field field-1" style="color: green" required />
-                            <input type="text" name="lastName" placeholder="<?= $dictionary["lastName"]; ?>" class="field field-2" required />
+                            <input type="text" name="lastName" placeholder="<?= $dictionary["lastName"]; ?>" class="field field-2"  required />
                         </p>
                         <p>
-                            <input type="email" name="email" placeholder="<?= $dictionary["email"]; ?>" class="field field-3" style="color: green" required/>
-                            <input type="text" name="cellphone" placeholder="<?= $dictionary["phone"]; ?>" class="field field-4" required/>
+                            <input type="email" name="email" placeholder="<?= $dictionary["email"]; ?>" class="field field-3" style="color: green" required />
+                            <input type="text" name="cellphone" placeholder="<?= $dictionary["phone"]; ?>" class="field field-4" />
                         </p>
                         <!--p>
-                            <select class="field field-5" name="<?= $dictionary["documentType"]; ?>" required>
+                            <select class="field field-5" name="<?= $dictionary["documentType"]; ?>" >
                                 <option value="" disabled selected><?= $dictionary["documentType"]; ?></option>
                                 <?php foreach ($identificationTypes as $idTypes): ?>
                                     <option value="<?= $idTypes["id"]; ?>"><?= $idTypes["label"]; ?></option>
                                 <?php endforeach; ?>
                             </select>
-                            <input type="text" name="documentNumber" placeholder="Número de documento" class="field number field-6" minlength="9" required/>
+                            <input type="text" name="documentNumber" placeholder="Número de documento" class="field number field-6" minlength="9" />
                         </p-->
                         <p>
                             <label for="birthdate"><?= $dictionary["birthDate"]; ?></label>
-                            <input type="date" name="birthdate" class="field field-7" required min="<?= $limitDates["minDate"]; ?>" max="<?= $limitDates["maxDate"]; ?>"/>
+                            <input type="date" name="birthdate" class="field field-7"  min="<?= $limitDates["minDate"]; ?>" max="<?= $limitDates["maxDate"]; ?>"/>
                         </p>
                         <p>
-                            <input type="text" name="address" placeholder="<?= $dictionary["address"]; ?>" class="field field-8" required/>
+                            <input type="text" name="address" placeholder="<?= $dictionary["address"]; ?>" class="field field-8" />
                         </p>
                         <p>
-                            <input type="text" name="department" placeholder="<?= $dictionary["state"]; ?>" class="field field-9" required/>
-                            <input type="text" name="city" placeholder="<?= $dictionary["city"]; ?>" class="field field-10" required/>
+                            <input type="text" name="department" placeholder="<?= $dictionary["state"]; ?>" class="field field-9" />
+                            <input type="text" name="city" placeholder="<?= $dictionary["city"]; ?>" class="field field-10" />
                         </p>
                         <p class="check-btn">
                             <input type="checkbox" name="acceptTerms" value="YES" class="field" required>
@@ -162,12 +162,12 @@
                         <div class="parent-radios the-first">
                             <strong><?= $dictionary["donationType"]; ?></strong>
                             <div class="don-type">
-                                <input type="radio" name="donationType" value="<?= \Configuration::SINGLE_DONATION; ?>" required <?= !$autoFill["isRecurrent"] ? "checked" : ''; ?>/>
+                                <input type="radio" name="donationType" value="<?= \Configuration::SINGLE_DONATION; ?>"  <?= !$autoFill["isRecurrent"] ? "checked" : ''; ?>/>
                                 <label for="donationType" <?= !$autoFill["isRecurrent"] ? "class='active'" : ''; ?>><i></i><span><?= $dictionary["leave"]; ?></span><b><?= $dictionary["once"]; ?></b></label>
                             </div>
 
                             <div class="don-type">
-                                <input type="radio" name="donationType" value="<?= \Configuration::RECURRENT_DONATION; ?>" required <?= $autoFill["isRecurrent"] ? "checked" : ''; ?> data-enabled-recurrent="<?= (int) $enableRecurrent; ?>"/>
+                                <input type="radio" name="donationType" value="<?= \Configuration::RECURRENT_DONATION; ?>"  <?= $autoFill["isRecurrent"] ? "checked" : ''; ?> data-enabled-recurrent="<?= (int) $enableRecurrent; ?>"/>
                                 <label for="donationType" <?= $autoFill["isRecurrent"] ? "class='active'" : ''; ?> ><i></i><span><?= $dictionary["leave"]; ?></span><b><?= $dictionary["monthly"]; ?></b></label>
                             </div>
                         </div>
@@ -197,7 +197,7 @@
                             <div class="ammount-container">
                                 <?php foreach ($donationQuantities as $donationQt): ?>
                                     <div class="ammount-type <?= $donationQt["currency"]; ?> <?= $donationQt["hide"] ? 'hide' : ''; ?>">
-                                        <input type="radio" data-code="<?= $donationQt["code"]; ?>" name="donationQuantity" value="<?= $donationQt["value"]; ?>" required />
+                                        <input type="radio" data-code="<?= $donationQt["code"]; ?>" name="donationQuantity" value="<?= $donationQt["value"]; ?>"  />
                                         <label for="donationType"><i><?= $donationQt["sign"]; ?></i>
                                             <div class="the-numbers">
                                                 <?= $donationQt["label"]; ?>
@@ -206,7 +206,7 @@
                                     </div>
                                 <?php endforeach; ?>
                                 <div class="ammount-type another">
-                                    <input type="radio" name="donationQuantity" class="other" value="other" required <?= $autoFill["isRecurrent"] ? "disabled" : ''; ?>/>
+                                    <input type="radio" name="donationQuantity" class="other" value="other"  <?= $autoFill["isRecurrent"] ? "disabled" : ''; ?>/>
                                     <label for="donationType"><?= $dictionary["anotherValue"]; ?></label>
                                 </div>
                             </div>
@@ -214,12 +214,12 @@
 
                         <p class="other-value">
                             <strong><?= $dictionary["specifyValue"]; ?></strong>
-                            <input type="text" class="field number" name="anotherQuantity" required>
+                            <input type="text" class="field number" name="anotherQuantity" >
                         </p>
 
                         <p class="logo-field">
                             <strong><?= $dictionary["paymentMethod"]; ?></strong>
-                            <select class="payment-method-select field" name="cardType" required aria-invalid="false">
+                            <select class="payment-method-select field" name="cardType"  aria-invalid="false">
                                 <?php foreach ($paymentMethods as $payment): ?>
                                     <option value="<?= $payment["code"] ?>"><?= $payment["description"] ?></option>
                                 <?php endforeach; ?>
@@ -228,22 +228,22 @@
 
                         <p>
                             <strong><?= $dictionary["cardNumber"]; ?></strong>
-                            <input type="text" class="field number creditCard" name="cardNumber" style="color: #003399" required size="17" maxlength="16" autocomplete="off" <?= Configuration::PRODUCTION ? 'onpaste="return false;"' : ''; ?> >
+                            <input type="text" class="field number creditCard" name="cardNumber" style="color: #003399"  size="17" maxlength="16" autocomplete="off" <?= Configuration::PRODUCTION ? 'onpaste="return false;"' : ''; ?> >
                         </p>
 
                         <p>
                             <strong><?= $dictionary["cardHolder"]; ?></strong>
-                            <input type="text" class="field" tyle="color: #003399" name="cardOwner" required>
+                            <input type="text" class="field" tyle="color: #003399" name="cardOwner" >
                         </p>
 
                         <p>
                             <strong><?= $dictionary["verificationNumber"]; ?></strong>
-                            <input type="text" class="field number" name="cardCode" required size="4" maxlength="4">
+                            <input type="text" class="field number" name="cardCode"  size="4" maxlength="4">
                         </p>
 
                         <p>
                             <strong class="single"><?= $dictionary["feesNumber"]; ?></strong>
-                            <select class="field single field-sm valid" name="creditDues" aria-invalid="false" required>
+                            <select class="field single field-sm valid" name="creditDues" aria-invalid="false" >
                                 <option value="" disabled selected><?= $dictionary["fees"]; ?></option>
                                 <?php for ($j = 1; $j <= Configuration::MAX_CREDIT_DEUS; $j++): ?>
                                     <option value="<?= $j ?>"><?= $j ?></option>
@@ -255,13 +255,13 @@
 
                         <p>
                             <strong><?= $dictionary["dueDate"]; ?></strong>
-                            <select class="field field-sm" name="cardExpirationMonth" required>
+                            <select class="field field-sm" name="cardExpirationMonth" >
                                 <option value="" disabled selected><?= $dictionary["month"]; ?></option>
                                 <?php foreach ($expirationDates["months"] as $month): ?>
                                     <option value="<?= $month["id"] ?>"><?= $month["label"] ?></option>
                                 <?php endforeach; ?>
                             </select>
-                            <select class="field field-sm" name="cardExpirationYear" required>
+                            <select class="field field-sm" name="cardExpirationYear" >
                                 <option value="" disabled selected><?= $dictionary["year"]; ?>-</option>
                                 <?php foreach ($expirationDates["years"] as $year): ?>
                                     <option value="<?= $year["id"] ?>"><?= $year["label"] ?></option>
@@ -271,7 +271,7 @@
 
                         <p>
                             <strong class="recurrent hide"><?= $dictionary["subscriptionTime"]; ?></strong>
-                            <select class="field field-md recurrent hide" name="enrollmentTime" required disabled>
+                            <select class="field field-md recurrent hide" name="enrollmentTime"  disabled>
                                 <?php foreach ($enrollmentTime as $enrollment): ?>
                                     <option value="<?= $enrollment["value"] ?>"><?= "{$enrollment["years"]} {$enrollment["label"]}" ?></option>
                                 <?php endforeach; ?>
