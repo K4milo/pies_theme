@@ -220,8 +220,8 @@ class Donation {
     private function index() {
 
         $limitDates = array(
-            "minDate" => date("Y-m-d", strtotime("-" . \Configuration::MIN_BIRTH_YEAR . " year")),
-            "maxDate" => date("Y-m-d", strtotime("-" . \Configuration::MAX_BIRTH_YEAR . " year"))
+            "minDate" => date("d-m-Y", strtotime("-" . \Configuration::MIN_BIRTH_YEAR . " year")),
+            "maxDate" => date("d-m-Y", strtotime("-" . \Configuration::MAX_BIRTH_YEAR . " year"))
         );
 
         $currencies = $this->getCurrencies();

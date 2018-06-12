@@ -142,7 +142,7 @@
                         </p-->
                         <p>
                             <label for="birthdate"><?= $dictionary["birthDate"]; ?></label>
-                            <input type="date" name="birthdate" class="field field-7"  min="<?= $limitDates["minDate"]; ?>" max="<?= $limitDates["maxDate"]; ?>"/>
+                            <input type="text" name="birthdate" class="field field-7" placeholder="dd/mm/aaaa" min="<?= $limitDates["minDate"]; ?>" max="<?= $limitDates["maxDate"]; ?>"/>
                         </p>
                         <p>
                             <input type="text" name="address" placeholder="<?= $dictionary["address"]; ?>" class="field field-8" />
