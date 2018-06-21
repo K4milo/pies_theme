@@ -228,22 +228,22 @@
 
                         <p>
                             <strong><?= $dictionary["cardNumber"]; ?></strong>
-                            <input type="text" class="field number creditCard" name="cardNumber" style="color: #003399"  size="17" maxlength="16" autocomplete="off" <?= Configuration::PRODUCTION ? 'onpaste="return false;"' : ''; ?> >
+                            <input type="text" class="field number creditCard" name="cardNumber" style="color: #003399"  size="17" maxlength="16" autocomplete="off" <?= Configuration::PRODUCTION ? 'onpaste="return false;"' : ''; ?> required>
                         </p>
 
                         <p>
                             <strong><?= $dictionary["cardHolder"]; ?></strong>
-                            <input type="text" class="field" tyle="color: #003399" name="cardOwner" >
+                            <input type="text" class="field" tyle="color: #003399" name="cardOwner" required>
                         </p>
 
                         <p>
                             <strong><?= $dictionary["verificationNumber"]; ?></strong>
-                            <input type="text" class="field number" name="cardCode"  size="4" maxlength="4">
+                            <input type="text" class="field number" name="cardCode"  size="4" maxlength="4" required>
                         </p>
 
                         <p>
                             <strong class="single"><?= $dictionary["feesNumber"]; ?></strong>
-                            <select class="field single field-sm valid" name="creditDues" aria-invalid="false" >
+                            <select class="field single field-sm valid" name="creditDues" aria-invalid="false" required>
                                 <option value="" disabled selected><?= $dictionary["fees"]; ?></option>
                                 <?php for ($j = 1; $j <= Configuration::MAX_CREDIT_DEUS; $j++): ?>
                                     <option value="<?= $j ?>"><?= $j ?></option>
@@ -255,13 +255,13 @@
 
                         <p>
                             <strong><?= $dictionary["dueDate"]; ?></strong>
-                            <select class="field field-sm" name="cardExpirationMonth" >
+                            <select class="field field-sm" name="cardExpirationMonth" required>
                                 <option value="" disabled selected><?= $dictionary["month"]; ?></option>
                                 <?php foreach ($expirationDates["months"] as $month): ?>
                                     <option value="<?= $month["id"] ?>"><?= $month["label"] ?></option>
                                 <?php endforeach; ?>
                             </select>
-                            <select class="field field-sm" name="cardExpirationYear" >
+                            <select class="field field-sm" name="cardExpirationYear" required>
                                 <option value="" disabled selected><?= $dictionary["year"]; ?>-</option>
                                 <?php foreach ($expirationDates["years"] as $year): ?>
                                     <option value="<?= $year["id"] ?>"><?= $year["label"] ?></option>
