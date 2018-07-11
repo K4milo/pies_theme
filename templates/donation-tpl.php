@@ -213,10 +213,20 @@ while (have_posts()):the_post();
             </div>
             <div class="item logo-2">
               <figure class="logo logo-2">
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
-                  <input name="cmd" type="hidden" value="_s-xclick">
-                  <input name="hosted_button_id" type="hidden" value="CCX6EF3MFC7W8">
-                  <input alt="PayPal - The safer, easier way to pay online!" class="img-btn" name="submit" src="<?php bloginfo('template_url')?>/img/logos/paypal.png" type="image"><img src="<?php bloginfo('template_url')?>/img/logos/paypal.png" alt="" width="1" height="1" border="0">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_xclick-subscriptions">
+                <input type="hidden" name="business" value="webmaster@fpd.ong">
+                <input type="hidden" name="lc" value="AL">
+                <input type="hidden" name="item_name" value="Pago mensual">
+                <input type="hidden" name="item_number" value="PMFPD001">
+                <input type="hidden" name="no_note" value="1">
+                <input type="hidden" name="src" value="1">
+                <input type="hidden" name="a3" value="35.00">
+                <input type="hidden" name="p3" value="1">
+                <input type="hidden" name="t3" value="M">
+                <input type="hidden" name="currency_code" value="USD">
+                <input type="hidden" name="bn" value="PP-SubscriptionsBF:paypal.png:NonHostedGuest">
+                <input alt="PayPal - The safer, easier way to pay online!" class="img-btn" name="submit" src="<?php bloginfo('template_url')?>/img/logos/paypal.png" type="image"><img src="<?php bloginfo('template_url')?>/img/logos/paypal.png" alt="" width="1" height="1" border="0">
                 </form>
               </figure>
             </div>
