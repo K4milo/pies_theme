@@ -211,9 +211,31 @@ while (have_posts()):the_post();
                 <?php endif; ?>
               </figure>
             </div>
-            <div class="item logo-2">
-              <figure class="logo logo-2">
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+            <div class="item form_gateway logo-2">
+              <figure class="logo">
+
+                <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+                  <form class="dummy-drop">
+                    <label>Elija el monto a donar</label>
+                    <select name="opt-dumy">
+                      <option value="30.00">$30 US</option>
+                      <option value="50.00">$50 US</option>
+                      <option value="100.00">$100 US</option>
+                    </select>
+                  </form>
+                <?php else: ?>
+                  <form class="dummy-drop">
+                    <label>Choose the amount to donate</label>
+                    <select name="opt-dumy">
+                      <option value="30.00">$30 US</option>
+                      <option value="50.00">$50 US</option>
+                      <option value="100.00">$100 US</option>
+                    </select>
+                  </form>
+
+                <?php endif; ?>
+
+                <form id="gatewayForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
                 <input type="hidden" name="cmd" value="_xclick-subscriptions">
                 <input type="hidden" name="business" value="webmaster@fpd.ong">
                 <input type="hidden" name="lc" value="AL">
@@ -221,7 +243,7 @@ while (have_posts()):the_post();
                 <input type="hidden" name="item_number" value="PMFPD001">
                 <input type="hidden" name="no_note" value="1">
                 <input type="hidden" name="src" value="1">
-                <input type="hidden" name="a3" value="35.00">
+                <input type="hidden" class="value_gateway" name="a3" value="35.00">
                 <input type="hidden" name="p3" value="1">
                 <input type="hidden" name="t3" value="M">
                 <input type="hidden" name="currency_code" value="USD">

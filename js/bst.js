@@ -32,6 +32,20 @@
       //$('.side-menu .nav-collapse').toggle("slide");
     });
 
+    // Gateway form
+    var select_opt_gateway = $('.item.form_gateway .dummy-drop select');
+    
+    if(select_opt_gateway) {
+      select_opt_gateway.on('change', function(event) {
+        event.preventDefault();
+        /* Act on the event */
+        var gateway_val = $(this).val();
+
+        $('#gatewayForm input.value_gateway').val(gateway_val);
+
+      });
+    }
+
     // Javascript to enable link to tab
     var url = document.location.toString();
     if (url.match('#')) {

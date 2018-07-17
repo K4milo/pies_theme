@@ -341,6 +341,26 @@ body{
 										padding-top: em(56);
 									}
 								}
+								&.form_gateway {
+									border: none;
+									figure {
+										.img-btn {
+											padding-top: em(10);
+										}
+									}
+									.dummy-drop {
+										label {
+											text-transform: uppercase;
+										}
+										select {
+											background-color: $lgrey2;
+											border-radius: 0;
+											option {
+												background-color: $lgrey2;
+											}
+										}
+									}
+								}
 							}
 
 							@include clearfix;

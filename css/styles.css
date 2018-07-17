@@ -3743,6 +3743,17 @@ body.page-template-donation-tpl {
           transform: translate(-50%, -50%); }
         body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item figure .img-btn {
           padding-top: 3.5em; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item.form_gateway {
+          border: none; }
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item.form_gateway figure .img-btn {
+            padding-top: 0.625em; }
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item.form_gateway .dummy-drop label {
+            text-transform: uppercase; }
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item.form_gateway .dummy-drop select {
+            background-color: #dfe3e9;
+            border-radius: 0; }
+            body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item.form_gateway .dummy-drop select option {
+              background-color: #dfe3e9; }
       body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns:after {
         content: "";
         display: table;
