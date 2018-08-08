@@ -1,4 +1,4 @@
-<?php
+ selected<?php
 /*
 Template Name: Donation
 */
@@ -218,6 +218,7 @@ while (have_posts()):the_post();
                   <form class="dummy-drop">
                     <label>Elija el monto a donar</label>
                     <select name="opt-dumy">
+                      <option value="10.00" selected>$10 US</option>
                       <option value="30.00">$30 US</option>
                       <option value="50.00">$50 US</option>
                       <option value="100.00">$100 US</option>
@@ -227,6 +228,7 @@ while (have_posts()):the_post();
                   <form class="dummy-drop">
                     <label>Choose the amount to donate</label>
                     <select name="opt-dumy">
+                      <option value="10.00" selected>$10 US</option>
                       <option value="30.00">$30 US</option>
                       <option value="50.00">$50 US</option>
                       <option value="100.00">$100 US</option>
