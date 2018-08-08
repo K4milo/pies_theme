@@ -245,7 +245,7 @@ while (have_posts()):the_post();
                 <input type="hidden" name="item_number" value="PMFPD001">
                 <input type="hidden" name="no_note" value="1">
                 <input type="hidden" name="src" value="1">
-                <input type="hidden" class="value_gateway" name="a3" value="35.00">
+                <input type="hidden" class="value_gateway" name="a3" value="10.00">
                 <input type="hidden" name="p3" value="1">
                 <input type="hidden" name="t3" value="M">
                 <input type="hidden" name="currency_code" value="USD">
