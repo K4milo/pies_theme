@@ -552,20 +552,20 @@ while (have_posts()):the_post();
       </div>
       <div class="modal-body">
         <p>
+          Consignación
           Para donaciones en efectivo
         </p>
-        <p>
+        <p> 
           <b>
             Puedes consignar en Bancolombia
             Cuenta de Ahorros
-            <br/>No. 209 658065-20
+            <br/>No. 209 658065-20 
             Fundación Pies Descalzos
           </b>
         </p>
         <p>
-          *No olvides enviar el comprobante
-          de consignación al correo electrónico:
-          <a href="mailto:comunicaciones@fpd.ong">comunicaciones@fpd.ong</a>
+          *No olvides enviar el comprobante de consignación y pagos internacionales contactar el correo:
+          <a href="mailto: tesoreria@fpd.ong"> tesoreria@fpd.ong</a>
         </p>
       </div>
       <div class="modal-footer">
@@ -597,8 +597,8 @@ while (have_posts()):the_post();
           </b>
         </p>
         <p>
-          *Do not forget to send the deposit receipt to emai:
-          <a href="mailto:comunicaciones@fpd.ong">comunicaciones@fpd.ong</a>
+          *Do not forget to send the deposit or international pay receipt to this email:
+          <a href="mailto: tesoreria@fpd.ong"> tesoreria@fpd.ong</a>
         </p>
       </div>
       <div class="modal-footer">
