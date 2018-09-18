@@ -3727,13 +3727,13 @@ body.page-template-donation-tpl {
         text-transform: uppercase; }
       body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item {
         display: inline-block;
-        width: 205px;
-        height: 205px;
+        width: 237px;
+        height: 173px;
         border: 5px solid #CC0B3C;
         position: relative;
         margin: 30px;
         position: relative;
-        border-radius: 100%;
+        border-radius: 20px;
         vertical-align: top; }
         body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item figure img {
           display: block;
