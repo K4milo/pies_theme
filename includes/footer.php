@@ -35,10 +35,6 @@
               <p>(571) 6358770</p>
               <span class="sm-phone"></span>
             </div>
-            <div class="location-item">
-              <p><a href="/archivos/">Requisitos Dian</a></p>
-              <span class="sm-docs"></span>
-            </div>
         </div>
         <div class="col-md-2 col2 footer-col bd-left">
             <?php if(ICL_LANGUAGE_CODE=='es'): ?>
