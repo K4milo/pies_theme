@@ -1,4 +1,4 @@
- selected<?php
+<?php
 /*
 Template Name: Donation
 */
