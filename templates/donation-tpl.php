@@ -126,12 +126,12 @@ while (have_posts()):the_post();
               <figure class="logo logo-1">
 
                 <?php if(ICL_LANGUAGE_CODE=='es'): ?>
-                  <a href="https://donaciones.fundacionpiesdescalzos.com/?plan=unico&lang=ES" target="_blank">
-                      <img src="<?php bloginfo('template_url')?>/img/logos/payu.png" alt="Donaciones">
+                  <a href="https://donaciones.fundacionpiesdescalzos.com/" target="_blank">
+                      <img src="<?php bloginfo('template_url')?>/img/misc/credit-es.png" alt="Donaciones">
                   </a>
                 <?php else:?>
                   <a href="https://donaciones.fundacionpiesdescalzos.com/?plan=unico&lang=EN" target="_blank">
-                      <img src="<?php bloginfo('template_url')?>/img/logos/payu.png" alt="Donaciones">
+                      <img src="<?php bloginfo('template_url')?>/img/misc/credit-en.png" alt="Donaciones">
                   </a>
                 <?php endif; ?>
 
@@ -199,11 +199,20 @@ while (have_posts()):the_post();
               <?php endif; ?>
             </header>
             <div class="item logo-1">
-              <figure class="logo logo-1">
+              <figure class="logo logo-1 inline-items">
                 <?php if(ICL_LANGUAGE_CODE=='es'): ?>
-                  <a href="https://donaciones.fundacionpiesdescalzos.com/?plan=recurrente&lang=ES" target="_blank">
-                      <img src="<?php bloginfo('template_url')?>/img/logos/payu.png" alt="Donaciones">
-                  </a>
+                  <ul>
+                    <li>
+                      <a href="https://donaciones.fundacionpiesdescalzos.com/?plan=unico&lang=ES" target="_blank">
+                        <img src="<?php bloginfo('template_url')?>/img/misc/payu-small.png" alt="Donaciones">
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://donaronline.org/fundacion-piesdescalzos-colombia/plan-huellas" target="_blank">
+                        <img src="<?php bloginfo('template_url')?>/img/misc/donar-online.png" alt="Donaciones">
+                      </a>
+                    </li>
+                  </ul>
                 <?php else:?>
                   <a href="https://donaciones.fundacionpiesdescalzos.com/?plan=recurrente&lang=EN" target="_blank">
                       <img src="<?php bloginfo('template_url')?>/img/logos/payu.png" alt="Donaciones">
@@ -213,45 +222,15 @@ while (have_posts()):the_post();
             </div>
             <div class="item form_gateway logo-2">
               <figure class="logo">
-
                 <?php if(ICL_LANGUAGE_CODE=='es'): ?>
-                  <form class="dummy-drop">
-                    <label>Elija el monto a donar</label>
-                    <select name="opt-dumy">
-                      <option value="10.00" selected>$10 US</option>
-                      <option value="30.00">$30 US</option>
-                      <option value="50.00">$50 US</option>
-                      <option value="100.00">$100 US</option>
-                    </select>
-                  </form>
+                <a href="#modaPayes" data-toggle="modal" data-target="#modaPayes" >
+                  <img src="<?php bloginfo('template_url');?>/img/logos/paypal.png" alt="<?php the_title();?>">
+                </a>
                 <?php else: ?>
-                  <form class="dummy-drop">
-                    <label>Choose the amount to donate</label>
-                    <select name="opt-dumy">
-                      <option value="10.00" selected>$10 US</option>
-                      <option value="30.00">$30 US</option>
-                      <option value="50.00">$50 US</option>
-                      <option value="100.00">$100 US</option>
-                    </select>
-                  </form>
-
-                <?php endif; ?>
-
-                <form id="gatewayForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_xclick-subscriptions">
-                <input type="hidden" name="business" value="webmaster@fpd.ong">
-                <input type="hidden" name="lc" value="AL">
-                <input type="hidden" name="item_name" value="Pago mensual">
-                <input type="hidden" name="item_number" value="PMFPD001">
-                <input type="hidden" name="no_note" value="1">
-                <input type="hidden" name="src" value="1">
-                <input type="hidden" class="value_gateway" name="a3" value="10.00">
-                <input type="hidden" name="p3" value="1">
-                <input type="hidden" name="t3" value="M">
-                <input type="hidden" name="currency_code" value="USD">
-                <input type="hidden" name="bn" value="PP-SubscriptionsBF:paypal.png:NonHostedGuest">
-                <input alt="PayPal - The safer, easier way to pay online!" class="img-btn" name="submit" src="<?php bloginfo('template_url')?>/img/logos/paypal.png" type="image"><img src="<?php bloginfo('template_url')?>/img/logos/paypal.png" alt="" width="1" height="1" border="0">
-                </form>
+                  <a href="#modaPayen" data-toggle="modal" data-target="#modaPayen" >
+                    <img src="<?php bloginfo('template_url');?>/img/logos/paypal.png" alt="<?php the_title();?>">
+                  </a>
+                <?php endif;?>  
               </figure>
             </div>
             <div class="item">
@@ -540,6 +519,100 @@ while (have_posts()):the_post();
   <!-- /.row -->
 </div>
 <!-- /.container -->
+
+<!--modal paypal-->
+
+<!-- Modal -->
+<div id="modaPayes" class="modal pay-pal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="<?php bloginfo('template_url');?>/img/icons/letter-small.png" alt="<?php the_title();?>">
+        <h4 class="modal-title">Donación Paypal
+        </h4>
+      </div>
+      <div class="modal-body">
+        
+        <form class="dummy-drop">
+          <label>Elija el monto a donar</label>
+          <select name="opt-dumy">
+            <option value="10.00" selected>$10 US</option>
+            <option value="30.00">$30 US</option>
+            <option value="50.00">$50 US</option>
+            <option value="100.00">$100 US</option>
+          </select>
+        </form>
+        <form id="gatewayForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_xclick-subscriptions">
+        <input type="hidden" name="business" value="webmaster@fpd.ong">
+        <input type="hidden" name="lc" value="AL">
+        <input type="hidden" name="item_name" value="Pago mensual">
+        <input type="hidden" name="item_number" value="PMFPD001">
+        <input type="hidden" name="no_note" value="1">
+        <input type="hidden" name="src" value="1">
+        <input type="hidden" class="value_gateway" name="a3" value="10.00">
+        <input type="hidden" name="p3" value="1">
+        <input type="hidden" name="t3" value="M">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="hidden" name="bn" value="PP-SubscriptionsBF:paypal.png:NonHostedGuest">
+        <input alt="PayPal - The safer, easier way to pay online!" class="img-btn" name="submit" src="<?php bloginfo('template_url')?>/img/misc/button-donate.png" type="image"><img src="<?php bloginfo('template_url')?>/img/misc/button-donate.png" alt="" width="1" height="1" border="0">
+        </form>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar X
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="modaPayen" class="modal pay-pal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="<?php bloginfo('template_url');?>/img/icons/letter-small.png" alt="<?php the_title();?>">
+        <h4 class="modal-title">Paypal Donation
+        </h4>
+      </div>
+      <div class="modal-body">
+        <form class="dummy-drop">
+          <label>Choose the amount to donate</label>
+          <select name="opt-dumy">
+            <option value="10.00" selected>$10 US</option>
+            <option value="30.00">$30 US</option>
+            <option value="50.00">$50 US</option>
+            <option value="100.00">$100 US</option>
+          </select>
+        </form>
+        <form id="gatewayForm" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+        <input type="hidden" name="cmd" value="_xclick-subscriptions">
+        <input type="hidden" name="business" value="webmaster@fpd.ong">
+        <input type="hidden" name="lc" value="AL">
+        <input type="hidden" name="item_name" value="Pago mensual">
+        <input type="hidden" name="item_number" value="PMFPD001">
+        <input type="hidden" name="no_note" value="1">
+        <input type="hidden" name="src" value="1">
+        <input type="hidden" class="value_gateway" name="a3" value="10.00">
+        <input type="hidden" name="p3" value="1">
+        <input type="hidden" name="t3" value="M">
+        <input type="hidden" name="currency_code" value="USD">
+        <input type="hidden" name="bn" value="PP-SubscriptionsBF:paypal.png:NonHostedGuest">
+        <input alt="PayPal - The safer, easier way to pay online!" class="img-btn" name="submit" src="<?php bloginfo('template_url')?>/img/misc/button-donate-en.png" type="image"><img src="<?php bloginfo('template_url')?>/img/misc/button-donate-en.png" alt="" width="1" height="1" border="0">
+        </form>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar X
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- Modal -->
 <div id="modalCon" class="modal fade" role="dialog">
   <div class="modal-dialog">

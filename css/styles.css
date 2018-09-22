@@ -3743,17 +3743,38 @@ body.page-template-donation-tpl {
           transform: translate(-50%, -50%); }
         body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item figure .img-btn {
           padding-top: 3.5em; }
-        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item.form_gateway {
-          border: none; }
-          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item.form_gateway figure .img-btn {
-            padding-top: 0.625em; }
-          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item.form_gateway .dummy-drop label {
-            text-transform: uppercase; }
-          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item.form_gateway .dummy-drop select {
-            background-color: #dfe3e9;
-            border-radius: 0; }
-            body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item.form_gateway .dummy-drop select option {
-              background-color: #dfe3e9; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item figure.inline-items ul {
+          padding: 0;
+          margin-top: 20%; }
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item figure.inline-items ul li {
+            display: inline-block;
+            vertical-align: middle;
+            width: 43%;
+            padding: 0 10px; }
+            body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item figure.inline-items ul li a {
+              padding: 8px;
+              border-radius: 10px;
+              display: block;
+              box-shadow: 0 0 10px #808080; }
+              body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item figure.inline-items ul li a img {
+                width: 100%;
+                position: relative;
+                transform: none;
+                top: 0;
+                left: 0; }
+            body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item figure.inline-items ul li:first-child {
+              border-right: 2px solid #CC0B3C; }
+              body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item figure.inline-items ul li:first-child a {
+                padding: 14px 8px; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item.form_gateway figure .img-btn {
+          padding-top: 0.625em; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item.form_gateway .dummy-drop label {
+          text-transform: uppercase; }
+        body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item.form_gateway .dummy-drop select {
+          background-color: #dfe3e9;
+          border-radius: 0; }
+          body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns .item.form_gateway .dummy-drop select option {
+            background-color: #dfe3e9; }
       body.page-template-donation-tpl .container-fluid > .row > .container .tab-content .pay-btns:after {
         content: "";
         display: table;

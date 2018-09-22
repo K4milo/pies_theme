@@ -340,9 +340,40 @@ body{
 									.img-btn {
 										padding-top: em(56);
 									}
+									&.inline-items {
+										ul {
+											padding: 0;
+											margin-top: 20%;
+											li {
+												display: inline-block;					
+												vertical-align: middle;
+												width: 43%;
+												padding: 0 10px;
+												a {
+													padding: 8px;
+													border-radius: 10px;
+													display: block;
+													box-shadow: 0 0 10px $grey-1;
+													img {
+														width: 100%;
+														position: relative;
+														transform: none;
+														top: 0;
+														left: 0;
+													}
+												}
+												
+												&:first-child {
+													border-right: 2px solid $red;
+													a {
+														padding: 14px 8px;
+													}
+												}
+											}
+										}
+									}
 								}
 								&.form_gateway {
-									border: none;
 									figure {
 										.img-btn {
 											padding-top: em(10);

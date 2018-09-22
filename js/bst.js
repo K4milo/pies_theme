@@ -33,7 +33,7 @@
     });
 
     // Gateway form
-    var select_opt_gateway = $('.item.form_gateway .dummy-drop select');
+    var select_opt_gateway = $('.dummy-drop select');
     
     if(select_opt_gateway) {
       select_opt_gateway.on('change', function(event) {
