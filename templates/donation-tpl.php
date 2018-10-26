@@ -208,7 +208,7 @@ while (have_posts()):the_post();
                       </a>
                     </li>
                     <li>
-                      <a href="https://donaronline.org/fundacion-piesdescalzos-colombia/plan-huellas" target="_blank">
+                      <a href="https://donaronline.org/fundacion-pies-descalzos-colombia/plan-huellas" target="_blank">
                         <img src="<?php bloginfo('template_url')?>/img/misc/donar-online.png" alt="Donaciones">
                       </a>
                     </li>
