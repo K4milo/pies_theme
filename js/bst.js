@@ -317,10 +317,10 @@
       dots: true,
       slidesToShow: 6,
       slidesToScroll: 6,
-      speed: 1500,
+      speed: 2500,
       infinite: true,
       autoplay: true,
-      autoplaySpeed: 1500,
+      autoplaySpeed: 2500,
       responsive: [
         {
           breakpoint: 600,
