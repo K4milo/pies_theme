@@ -316,7 +316,7 @@
     $('#partners-container .impact-items').slick({
       dots: true,
       slidesToShow: 6,
-      slidesToScroll: 1,
+      slidesToScroll: 6,
       speed: 1500,
       infinite: true,
       autoplay: true,
@@ -326,14 +326,16 @@
           breakpoint: 600,
           settings: {
             slidesToShow: 2,
-            slidesToScroll: 2
+            slidesToScroll: 2,
+            dots: false
           }
         },
         {
           breakpoint: 480,
           settings: {
             slidesToShow: 1,
-            slidesToScroll: 1
+            slidesToScroll: 1,
+            dots: false
           }
         }
       ]
