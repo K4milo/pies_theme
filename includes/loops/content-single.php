@@ -7,25 +7,37 @@ The Single Posts Loop
 
 <?php if (have_posts()):while (have_posts()):the_post();?>
     <header>
+      <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+        <a href="/noticias/">
+            <span class="back-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+        </a>
+      <?php else: ?>
+        <a href="/en/news/">
+            <span class="back-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+        </a>
+      <?php endif;?>
         <h2>
-          <?php if(ICL_LANGUAGE_CODE=='es'): ?>
-            <a href="/noticias/">
-                <span class="back-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
-            </a>
-          <?php else: ?>
-            <a href="/en/news/">
-                <span class="back-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
-            </a>
-          <?php endif;?>
             <?php the_title()?>
         </h2>
     </header>
     <article role="article" id="post_<?php the_ID()?>" <?php post_class()?>>
         <section class="post-head">
+
+                      <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+                        <h5>
+                          Publicado el <?php the_time('j F, Y'); ?>
+                        </h5>
+                      <?php else: ?>
+                        <h5>
+                          Posted on <?php the_time('j F, Y'); ?>
+                        </h5>
+                      <?php endif;?>
+          <hr>
+          <div class="intro">
+          	<?php the_excerpt();?>
+          </div>
 		<?php the_post_thumbnail('full');?>
-<div class="intro">
-	<?php the_excerpt();?>
-</div>
+
         </section>
         <section class="text-body">
 

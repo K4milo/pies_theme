@@ -7,24 +7,24 @@
   	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<?php wp_head(); ?>
 </head>
-<?php 
+<?php
 
 /*
 	bg image script
 */
 
-if (have_posts()):while (have_posts()):the_post(); 
+if (have_posts()):while (have_posts()):the_post();
 	$bgImage;
 
 	if(get_field('imagen_fondo')){
 		$bgImage = get_field('imagen_fondo');
 	} else {
-		$bgImage = 'https://fundacionpiesdescalzos.com/wp-content/themes/pies_theme/img/bgs/weed.jpg';
+		$bgImage = 'https://fundacionpiesdescalzos.com/wp-content/themes/pies_theme/img/bgs/bg-blog.jpg';
 	}
-			
+
 endwhile; endif; wp_reset_query();?>
 
-<body <?php body_class(); ?> style="background-image: url('<?php echo $bgImage; ?>')">
+<body <?php body_class(); ?>  style="background-image: url('<?php echo $bgImage; ?>')">
 
 <!--[if lt IE 8]>
 <div class="alert alert-warning">
@@ -84,10 +84,12 @@ endwhile; endif; wp_reset_query();?>
   </div><!-- /.navbar-collapse -->
 </nav>
 
-<div class="container">
+<div class="container-fluid">
   <div class="row">
-
-    <div class="new-singlecontent">
+		<div class="col-xs-6 col-sm-3 " id="sidebar" role="navigation">
+		<?php get_template_part('includes/sidebar'); ?>
+		</div>
+    <div class="new-singlecontent col-xs-12 col-sm-9">
       <div id="content" role="main">
 		<?php get_template_part('includes/loops/content', 'single');?>
 	  </div><!-- /#content -->
