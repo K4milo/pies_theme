@@ -2578,8 +2578,7 @@ body.open-menu .side-menu .nav-header .navbar-side-btn {
 
 body.open-menu .side-menu .nav-collapse {
   left: 0;
-  transition: all ease-in 0.3s;
-  display: flex;}
+  transition: all ease-in 0.3s;}
 
 body .the-logo {
   position: absolute;
@@ -6450,4 +6449,56 @@ body.page-template-what-we-do-tpl {
         text-decoration: none;
         border-radius: 30px;
         margin: 30px 0;
+        }
+        #FilterTop{
+          padding: inherit;
+          display: -ms-flexbox;
+          display: flex;
+          -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+          -ms-flex-pack: center;
+          justify-content: center;
+          padding: 1rem 1.2rem;
+        }
+        .wrapper-form.filter form{
+          background-color: #ffbb01;
+        }
+        .wrapper-form.filter form .form-item--select{
+          width: 20%;
+        }
+        .wrapper-form.filter form .form-item{
+          display: block;
+          margin: 1rem auto;
+        }
+        .wrapper-form.filter form .form-item select{
+          height: 60px;
+          font-size: 24px;
+          border-radius: 22px;
+        }
+        .wrapper-form.filter form .form-item--actions a, .wrapper-form.filter form .form-item--actions input{
+          display: inline-block;
+          font-family: Rubik Bold;
+          font-size: 14px;
+          color: #fff;
+          background-color: #00c3c7;
+          text-transform: uppercase;
+          text-align: center;
+          padding: 14px 22px;
+          border-radius: 0;
+          border: none;
+          cursor: pointer;
+          height: 100%;
+        }
+        .wrapper-form.filter form .form-item--actions a, .wrapper-form.filter form .form-item--actions input{
+          display: inline-block;
+          font-family: Raleway Black;
+          color: #fff;
+          background-color: #ca133f;
+          text-transform: uppercase;
+          text-align: center;
+          padding: 13px 22px;
+          border-radius: 22px;
+          border: solid #ca133f;
+          cursor: pointer;
+          font-size: 20px;
         }
