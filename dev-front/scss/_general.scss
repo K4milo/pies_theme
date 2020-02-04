@@ -1,0 +1,551 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+//media queries
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$sm-desktop-width}) {
+    @content;
+  }
+}
+
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}
+
+@mixin bdesktop {
+  @media (min-width: #{$big-desktop-width}) {
+    @content;
+  }
+}
+
+$browser-context: 16; // Default
+
+@function em($pixels, $context: $browser-context) {
+  @return #{$pixels/$context}em
+}
+
+@mixin bdesktop {
+  @media (min-width: #{$big-desktop-width}) {
+    @content;
+  }
+}
+
+// MQS
+
+@mixin mq ($consulta) {
+  
+  $media-xxs:"(min-width : 320px)";
+  $media-xs: "(min-width : 480px)";
+  $media-sm: "(min-width: 768px)"; 
+  $media-md: "(min-width: 992px)";
+  $media-lg: "(min-width: 1200px)";
+  
+  @if $consulta == xxs {
+    @media #{$media-xxs} { @content; }
+  }
+  @if $consulta == xs {
+    @media #{$media-xs} { @content; }
+  }
+  @else if $consulta == sm {
+    @media #{$media-sm} { @content; }
+  }
+  @else if $consulta == md {
+    @media #{$media-md}  { @content; }
+  }
+  @else if $consulta == lg {
+    @media #{$media-lg}  { @content; }
+  }
+}
+
+@mixin bgcover {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+@mixin coverAbsolute ($z) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $z;
+}
+
+@mixin coverFixed ($z) {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: $z;
+}
+
+
+@mixin bgparallax {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top;
+}
+
+@mixin iconBg($path, $size:100%){
+  background-image: url($path);
+  background-size: $size;
+  background-repeat: no-repeat;
+  background-position: center center;
+  text-indent: -999999px;
+  overflow: hidden;
+}
+
+// Clearfix mixin
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+// Define default font size
+@function rem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1.6rem;
+}
+
+@mixin font($size) {
+  font-size: $size;
+  font-size: rem($size);
+}
+
+// Gradients
+@mixin background-gradient($start-color, $end-color, $orientation) { 
+    background: $start-color;
+
+    @if $orientation == 'vertical' {
+      background: -webkit-linear-gradient(top, $start-color, $end-color);
+      background: linear-gradient(to bottom, $start-color, $end-color);
+    } @else if $orientation == 'horizontal' {
+      background: -webkit-linear-gradient(left, $start-color, $end-color);
+      background: linear-gradient(to right, $start-color, $end-color);
+    } @else {
+      background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+      background: radial-gradient(ellipse at center, $start-color, $end-color);
+    }
+}
+
+// Arrows
+@mixin arrow($direction, $color, $size){
+    display: block;
+    height: 0;
+    width: 0;
+    
+    @if $direction == 'top' {
+        border-left: $size solid transparent;
+      border-right: $size solid transparent;
+      border-bottom: $size solid $color;
+    } @else if $direction == 'right' {
+        border-top: $size solid transparent;
+        border-bottom: $size solid transparent;
+      border-left: $size solid $color;
+    } @else if $direction == 'bottom' {
+        border-top: $size solid $color;
+        border-right: $size solid transparent;
+        border-left: $size solid transparent;
+    } @else if $direction == 'left' {
+        border-top: $size solid transparent;
+      border-right: $size solid $color;
+      border-bottom: $size solid transparent;
+    } @else if $direction == 'top-left' {
+        border-top: $size solid $color; 
+        border-right: $size solid transparent;  
+    } @else if $direction == 'top-right' {
+        border-top: $size solid $color; 
+        border-left: $size solid transparent;
+    } @else if $direction == 'bottom-left' {
+        border-bottom: $size solid $color; 
+        border-right: $size solid transparent;  
+    } @else if $direction == 'bottom-right' {
+        border-bottom: $size solid $color; 
+        border-left: $size solid transparent;
+    }
+}
+
+// Pseudo
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+    content: $content;
+    display: $display;
+    position: $pos;
+}
+
+// Define vertical, horizontal, or both position
+@mixin center($position) {
+  position: absolute;
+  
+  @if $position == 'vertical' {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @else if $position == 'horizontal' {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  }
+  @else if $position == 'both' {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}
+
+// Placeholders
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}  
+}
+
+// Layout wrapper
+@mixin wrapper {
+  max-width: 1242px;
+  margin: 0 auto;
+}
+
+// Buttons
+@mixin defBtn($size: 17px, $font: 12px, $bg: $black, $color: $white) {
+  color: $color;
+  border: none;
+  display: inline-block;
+  border-radius: 50px;
+  padding: $size 60px;
+  background-color: $bg;
+  font-size: $font;
+  font-family: $m-bd;
+  letter-spacing: 2.4px;
+  text-transform: uppercase;
+  &:hover {
+    color: $bg;
+    background-color: $color;
+  }
+}
+
+@mixin yellowBtn($size: 16px, $font: 20px) {
+  color: $white;
+  display: inline-block;
+  padding: $size 60px;
+  background-color: $yellow;
+  font-size: $font;
+  font-family: $rg;
+  text-transform: uppercase;
+  &:hover {
+    background-color: $gray;
+  }
+}
+
+// Buttons
+@mixin grayBtn($size: 16px, $font: 20px) {
+  color: $white;
+  display: inline-block;
+  padding: $size 60px;
+  background-color: $gray;
+  font-size: $font;
+  font-family: $rg;
+  text-transform: uppercase;
+  &:hover {
+    background-color: $yellow;
+  }
+}
+
+@mixin bgcover{
+  background-size: cover;
+  background-position: center center;
+}
+
+@mixin bgparallax{
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center top;
+}
+
+@mixin defdesktop {
+  @media (max-width: #{$big-desktop-width}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+
+@mixin smdesktop {
+  @media (max-width: #{$desktop-width + 2}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile-width}) {
+    @content;
+  }
+}
+
+@mixin iphoneV {
+  @media (max-width: 323px) {
+    @content;
+  }
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin defTitle {
+  header{
+    h3{
+      color: $yellow;
+      text-align: center;
+      font-size: em(40);
+      font-family: $raleebd;
+      text-transform: uppercase;
+      margin: 1.3em 0;
+    }
+  }
+}
+
+@mixin redTitle {
+  header{
+    h3{
+      text-align: center;
+      color: $red;
+      text-transform: uppercase;
+      font-family: $raleBd;
+    }
+  }
+}
+
+@mixin thePlaceholder ($color) {
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $color;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: $color;
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    color: $color;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: $color;
+  }
+}
+
+
+@mixin fa-icon($ico,$col,$siz) {
+  font-size: $siz;
+  color: $col;
+  content: $ico;
+  font-family: FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+@mixin overlay($color,$op){
+  &::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color;
+    opacity: $op;
+    z-index: -1;
+  }
+}
+
+@mixin centerer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+body {
+	font-family: $open;
+  h1,h2,h3,strong{
+    font-family: $ralebk;
+  }
+
+  //general modal
+  .modal {
+    .modal-content {
+      .modal-body {
+        iframe {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  //General alerts
+  .alert-warning {
+    margin-top: em(60);
+  }
+
+  a {
+    transition: all 0.3s;
+  }
+  .container-fluid{
+    margin: 0;
+    padding: 0;
+    .row{
+      margin: 0;
+      padding: 0;
+      .container {
+        margin: 0 auto;
+        padding: 0;
+        @include mobile {
+          padding: 0 em(18);
+        }
+      }
+    }
+  }
+  //Gutter fix
+  .no-gutter > [class*='col-'] {
+      padding-right:0;
+      padding-left:0;
+  }
+
+  .cssanimations .cd-timeline-img.is-hidden {
+    visibility: hidden;
+  }
+  .cssanimations .cd-timeline-img.bounce-in {
+    visibility: visible;
+    animation: cd-bounce-1 0.6s;
+  }
+
+  @keyframes cd-bounce-1 {
+    0% {
+      opacity: 0;
+      transform: scale(0.5);
+    }
+
+    60% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  //contact page
+  &.page-template-contact-tpl {
+    background-image: url('../img/bgs/contaco-01.jpg');
+    @include bgcover;
+    box-shadow: inset 0 0 40em $black;
+    @include mobile {
+      background-image: url(../img/bgs/bg_contact.jpg);
+      background-size: auto 100%;
+      background-repeat: no-repeat;
+      box-shadow: none;
+      background-position: bottom left;
+      &::after {
+        display: none;
+      }
+    }
+    header{
+      &.main-header {
+        z-index: 3;
+        text-align: center;
+        width: 100%;
+        margin-top: 2.4em;
+        @include mobile {
+          padding: 9em 0 0;
+        }
+        h3 {
+          display: inline-block;
+          color: $yellow;
+          font-size: em(70);
+          font-family: $ralebk;
+          text-transform: uppercase;
+          @include mobile{
+            font-size: em(35);
+          }
+        }
+      }
+    } // EOF HEADER
+    .container-fluid {
+      padding: 0;
+      p,a,h3{
+        text-align: center;
+      }
+      h3, a { color: $yellow; font-family: $raleebd; }
+      p {color: $grey;
+        @include mobile {
+          color: $white;
+        }
+      }
+      > .row > .container >.wpcf7,
+      #wpcf7-f747-p529-o1,
+      #wpcf7-f266-p269-o1 {
+        max-width: 600px;
+        margin: 1em auto;
+        background-color: transparent;
+        p {
+          input{
+            &.wpcf7-text,
+            &.wpcf7-email {
+              padding: 1.5em;
+              background-color: $lgrey;
+              color: $grey;
+              text-transform: uppercase;
+              font-family: $raleebd;
+            }
+            &.wpcf7-submit {
+              display: block;
+              margin: 1em auto;
+              border: none;
+              padding: 0.5em 1.7em;
+              text-transform: uppercase;
+              font-size: em(18);
+              font-family: $openbd;
+              color: $white;
+              background-color: $red;
+              border-radius: 0.3em;
+              &:hover {
+                background-color: $grey;
+              }
+            }
+          }
+          .wpcf7-textarea{
+            padding: 1.5em;
+            background-color: $lgrey;
+            color: $grey;
+            text-transform: uppercase;
+            font-family: $raleebd;
+          }
+        }
+      }
+    }
+  }
+}

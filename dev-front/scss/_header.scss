@@ -1,0 +1,169 @@
+// Menu components
+
+.navbar {
+	margin: 0 0 0 0; 
+	border: none;
+	background-color: transparent;
+	width: 100%;
+
+	@include mq('sm') {
+		padding: 0 0;
+		text-align: center;
+	}
+
+	.row-header {
+		@include mq('sm') {
+			display: flex;
+			align-items: center;
+			justify-content: space-evenly;
+		}
+	}
+
+
+	// Scrolled menu styles
+	&.scroll_menu {
+		background-color: rgba(0,0,0,0.54);
+	}
+
+	&-brand {
+		height: auto;
+	}
+
+	.navbar-header {
+		@include mq('sm') {
+			display: inline-block !important;
+			vertical-align: bottom;
+			float: none;
+		}
+		.brand-image {			
+			display: inline-block;
+			@include mq('md') {
+				margin: 0 0;
+				width: rem(121px);
+				height: rem(86px);
+			}	
+		}
+	}
+
+	.navbar-collapse {
+		@include mq('sm') {
+			display: inline-block !important;
+			vertical-align: middle;
+			float: none;
+		}
+
+		
+		// Navigation wrapper
+		.navigation-menu {
+			display: block;
+			@include mq('md') {
+				display: inline-block;
+				vertical-align: middle;
+				padding: 0 rem(20px); 
+			}
+		}
+
+		// Menu
+		ul {
+			&.navbar-nav {
+				float: none;
+				clear: both;
+				> li {
+					display: block;
+					text-align: center;
+					@include mq('sm') {
+						text-align: left;
+						display: inline-block;
+						margin: 0 rem(20px);
+						vertical-align: middle;
+						float: none;
+					}
+					a {
+						padding: 0 rem(4px);
+						text-transform: uppercase;
+						color: $white;
+						&:hover,
+						&:focus {
+							background-color: transparent;
+							color: $yellow;
+						}
+					}
+					&.active {				
+						a {
+							background-color: transparent;
+						}					
+					}
+				}
+			}
+		}
+	}
+}
+
+.the-fly {
+	position: fixed;
+	right: 0;
+	top: rem(260px);
+}
+
+.follow {
+	display: none;
+	position: relative;
+	vertical-align: middle;
+	ul{
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		li{
+			display: inline-block;
+			margin: 0;
+			
+			a {
+				transition: all 0.3s;
+				&.social-icn{
+					display: block;
+					width: 32px;
+					height: 32px;
+					background-image: url('../img/icons/sprite-social.png');
+					text-indent: -9999999999em;
+					//list of social icons
+					&.fb {
+						background-position: 0 0;
+						&:hover {
+							background-position: 0 -32px;
+						}
+					}
+					&.tw {
+						background-position: -56px 0;
+						&:hover {
+							background-position: -56px -32px;
+						}
+					}
+					&.in {
+						background-position: -111px 0;
+						&:hover {
+							background-position: -111px -32px;
+						}
+					}
+					&.yt {
+						background-position: -166px 0;
+						&:hover {
+							background-position: -166px -32px;
+						}
+					}
+					&.lin {
+						background-position: -221px 0;
+						&:hover {
+							background-position: -221px -32px;
+						}
+					}
+					&.let {
+						background-position: -275px 0;
+						&:hover {
+							background-position: -275px -32px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
