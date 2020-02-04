@@ -40,7 +40,7 @@
             <?php if(ICL_LANGUAGE_CODE=='es'): ?>
               <a href="/contacto/">¿Tienes dudas?</a>
             <?php else: ?>
-              <a href="/en/contact-us/">any doubts?</a>
+              <a href="/en/contact-us/">Questions?</a>
             <?php endif;?>
         </div>
         <div class="col-md-2 col3 footer-col">

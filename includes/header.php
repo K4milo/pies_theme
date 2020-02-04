@@ -16,56 +16,58 @@
 </div>
 <![endif]-->
 
-<a class="the-logo" href="<?php echo home_url('/'); ?>">
-  <img src="<?php bloginfo('template_url'); ?>/img/logos/logo.png" class="hidden-xs" alt="Fundación Pies Descalzos" />
-  <img src="<?php bloginfo('template_url'); ?>/img/logos/logo-mobile.png" class="visible-xs" alt="Fundación Pies Descalzos" />
-</a>
+
 
 <?php if(ICL_LANGUAGE_CODE=='es'): ?>
   <a class="the-fly" href="/donaciones/">
-    <img src="<?php bloginfo('template_url')?>/img/misc/huella.png" alt="Fundación Pies Descalzos"/>
+    <img src="<?php bloginfo('template_url')?>/img/misc/Mosca-Donar.png" alt="Fundación Pies Descalzos"/>
   </a>
 <?php elseif(ICL_LANGUAGE_CODE=='en'): ?>
   <a class="the-fly" href="/en/donation/">
-    <img src="<?php bloginfo('template_url')?>/img/misc/fly-en.png" alt="Fundación Pies Descalzos"/>
+    <img src="<?php bloginfo('template_url')?>/img/misc/Mosca-Donate.png" alt="Fundación Pies Descalzos"/>
   </a>
 <?php endif; ?>
 
-<nav class="side-menu">
-  <div class="nav-header">
-    <button type="button" class="navbar-side-btn">
-      <span class="sr-only">Toggle navigation</span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-      <span class="icon-bar"></span>
-    </button>
-  </div>
-  <div class="nav-collapse" id="navbar-side">
-    <a class="navbar-brand" href="<?php echo home_url('/'); ?>">
-      <img src="<?php bloginfo('template_url')?>/img/logos/logo.png" alt="Fundación Pies Descalzos"/>
-    </a>
-    <?php
-        wp_nav_menu( array(
-            'theme_location'    => 'navbar-left',
-            'depth'             => 2,
-            'menu_class'        => 'nav navbar-nav'));
-      ?>
 
-      <div class="lang-select">
-        <?php do_action('icl_language_selector'); ?>
-      </div>
+<nav class="navbar navbar-default navbar-static-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+			<a class="the-logo" href="<?php echo home_url('/'); ?>">
+			  <img src="<?php bloginfo('template_url'); ?>/img/logos/logo.png" class="hidden-xs" alt="Fundación Pies Descalzos" />
+			  <img src="<?php bloginfo('template_url'); ?>/img/logos/logo-mobile.png" class="visible-xs" alt="Fundación Pies Descalzos" />
+			</a>    </div>
+    <div class="collapse navbar-collapse" id="navbar">
+      <?php
+            wp_nav_menu( array(
+                'theme_location'    => 'navbar-left',
+                'depth'             => 2,
+                'menu_class'        => 'nav navbar-nav',
+                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                'walker'            => new wp_bootstrap_navwalker())
+            );
+        ?>
+	<?php do_action('icl_language_selector'); ?>
+        <?php
+            wp_nav_menu( array(
+                'theme_location'    => 'navbar-right',
+                'depth'             => 2,
+                'menu_class'        => 'nav navbar-nav navbar-right',
+                'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                'walker'            => new wp_bootstrap_navwalker())
+            );
+        ?>
 
-      <div class="follow">
-        <ul>
-          <li><a href="https://www.facebook.com/fpiesdescalzos/?ref=ts" class="social-icn fb" target="_blank">Facebook</a></li>
-          <li><a href="https://twitter.com/fpiesdescalzos" class="social-icn tw" target="_blank">Twitter</a></li>
-          <li><a href="https://www.youtube.com/user/fundpiesdescalzos" class="social-icn yt" target="_blank">Youtube</a></li>
-          <li><a href="https://www.instagram.com/fpiesdescalzos/" class="social-icn in" target="_blank">Instagram</a></li>
-          <li><a href="https://www.linkedin.com/company/10414649/" class="social-icn lin" target="_blank">LinkedIn</a></li>
-          <li><a href="https://piesdescalzoslive.wordpress.com" class="social-icn let" target="_blank">LinkedIn</a></li>
-        </ul>
-      </div>
-  </div><!-- /.navbar-collapse -->
+
+
+    </div><!-- /.navbar-collapse -->
+
+  </div><!-- /.container -->
 </nav>
 
 <!--

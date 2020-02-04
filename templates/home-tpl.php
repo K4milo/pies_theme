@@ -34,8 +34,8 @@ get_template_part('includes/header');
 	    			<?php if(ICL_LANGUAGE_CODE=='es'): ?>
 	    				<a href="/que-hacemos/" class="wow bounceIn" data-wow-duration="0.5s" data-wow-delay="1s">Conoce más ></a>
 	    			<?php else:?>
-	    				<a href="/en/what-we-do/" class="wow bounceIn" data-wow-duration="0.5s" data-wow-delay="1s">Know more ></a>	
-	    			<?php endif; ?>	
+	    				<a href="/en/what-we-do/" class="wow bounceIn" data-wow-duration="0.5s" data-wow-delay="1s">Learn more ></a>
+	    			<?php endif; ?>
 	    		</div>
 	    	</div>
 	    	<div class="col-md-6 image wow slideInOut" data-wow-duration="1s" data-wow-delay="1s">
@@ -79,7 +79,9 @@ get_template_part('includes/header');
 	    </div>
 	  </div><!-- /.row -->
 	</div><!-- /.container -->
-
+	<?php
+get_template_part('includes/loops/proyects-home');
+	 ?>
 	<div class="container-fluid">
 	  <div class="row" id="impact-value-container">
 	    <div class="container">

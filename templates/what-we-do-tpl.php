@@ -4,12 +4,45 @@ Template Name: We Do
 */
 get_template_part('includes/header');
 while (have_posts()):the_post()?>
-<div class="container-fluid">
+
+<div class="container-fluid que-hacemos">
+
 	<div class="row">
 		<header class="main-header">
 			<h2><?php the_title();?></h2>
 		</header>
+		<div class="container">
+			<div class="col-md-6 infrestructura text-center">
+	<img src="https://fundacionpiesdescalzos.com/wp-content/uploads/2020/01/Infraestructura.png" alt="">
+	<img src="https://fundacionpiesdescalzos.com/wp-content/uploads/2020/01/Practicas-Efectivas.png" alt="">
+
+			</div>
+			<div class="col-md-6 practicas-efectivas text-center">
+	<img src="https://fundacionpiesdescalzos.com/wp-content/uploads/2020/01/Practicas-Efectivas.png" alt="">
+	<img src="https://fundacionpiesdescalzos.com/wp-content/uploads/2020/01/Infraestructura.png" alt="">
+
+			</div>
+		</div>
+
 		</div><!-- /.row -->
+	<div class="projects">
+			<?php //loop projcts
+				while (have_rows('proyectos')):the_row();?>
+				<div class="content-project">
+					<div class="the-icon">
+						<h4><?php the_sub_field('titulo_icono'); ?></h4>
+					</div>
+					<div class="tittle-infographics">
+						<?php the_sub_field('titulo_infografia'); ?>
+					</div>
+					<div class="infographic">
+						<img src="<?php the_sub_field('infografia'); ?>" alt="">
+					</div>
+				</div>
+
+			<?php endwhile;?>
+		</div>
+
 		<div class="row infographics">
 			<header class="main-header">
 				<?php if(ICL_LANGUAGE_CODE=='es'): ?>
@@ -41,6 +74,36 @@ while (have_posts()):the_post()?>
 							</div> <!-- cd-timeline-content -->
 							</div> <!-- cd-timeline-block -->
 						<?php endwhile;?></section>
+					</div>
+					<div class="container-fluid">
+						<div class="row">
+							<header class="main-header">
+								<?php if(ICL_LANGUAGE_CODE=='es'): ?>
+									<h2>ALIANZAS</h2>
+								<?php else: ?>
+									<h2>ALLIANCES</h2>
+								<?php endif;?>
+
+								<!--<p>Implementamos proyectos con nuestros aliados</p>-->
+							</header>
+							</div>
+						<div class="row" id="partners-container2">
+							<div class="container">
+								<div class="impact-items2 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.5s">
+									<?php
+										//Loop the value items
+										while( have_rows('alianzas')): the_row();
+									?>
+
+										<div class="item wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
+											<figure><img src="<?php the_sub_field('logo'); ?>" alt="pies descalzos partners" width="200px" height="auto"></figure>
+										</div>
+									<?php
+										endwhile;
+									?>
+								</div>
+							</div>
+						</div><!-- /.row -->
 					</div>
 					<div class="row ubication">
 						<section id="cd-ubication" class="container">
