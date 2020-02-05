@@ -66,7 +66,7 @@
           <img src="<?php bloginfo('template_url')?>/img/logos/logo.png" alt="Fundación Pies Descalzos"/>
         </a>
       </div>
-      <div class="collapse navbar-collapse" id="navbar"> 
+      <div class="collapse navbar-collapse" id="navbar">
         <?php
             wp_nav_menu( array(
                 'theme_location'    => 'navbar-left',
@@ -76,6 +76,16 @@
                 'walker'            => new wp_bootstrap_navwalker())
             );
         ?>
+				<?php do_action('icl_language_selector'); ?>
+			<?php
+					wp_nav_menu( array(
+							'theme_location'    => 'navbar-right',
+							'depth'             => 2,
+							'menu_class'        => 'nav navbar-nav navbar-right',
+							'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+							'walker'            => new wp_bootstrap_navwalker())
+					);
+			?>
         <div class="follow">
           <ul>
             <li><a href="https://www.facebook.com/fpiesdescalzos/?ref=ts" class="social-icn fb" target="_blank">Facebook</a></li>

@@ -233,7 +233,7 @@ body{
 			}
 		}
 		//impact bs
-		#impact-value-container {
+		#impact-value-container, #impact-value-container-proyects {
 			.head-body {
 				text-align: center;
 				h2 {
@@ -255,6 +255,36 @@ body{
 				}
 				p {
 					display: none;
+				}
+			}
+			.new-item-proyect{
+				text-align: -webkit-center;
+				h2{
+					padding: 180px 15% 200px 15%;
+					font-family: Raleway Regular;
+					color: white;
+					text-align: center;
+					font-weight: bold;
+					display:none;
+				}
+				img{
+					margin-top: -560px;
+					display:none;
+				}
+				&:hover{
+					h2{
+						display:block;
+						width: 100%;
+						height: 100%;
+						background-color: #ffbb01;
+						opacity: 0.8;
+						margin-top: 0px;
+						text-decoration:underline;
+					}
+					img{
+						margin-top: -360px;
+						display:block;
+					}
 				}
 			}
 			//Impact bs items
@@ -334,7 +364,7 @@ body{
 					margin: 0 auto;
 				}
 			}
-			
+
 			.slick-prev {
 				z-index: 60;
 				@include mobile {

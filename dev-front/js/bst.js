@@ -1,11 +1,36 @@
 (function($) {
 
   "use strict";
+  $(document).ready(function(){
+  	$("#lb").click(function () {
 
+  		$("#info1").css("display", "none");
+  	  $("#info2").css("display", "block");
+  		$("#ha").css("display", "none");
+  		$("#hb").css("display", "inline");
+  		$("#infra").css("color", "#fff");
+  		$("#lb").css("display", "none");
+  		$("#la").css("display", "inline");
+  		$("#pract").css("color", "#ffbb01");
+  	});
+
+  	$("#hb").click(function () {
+
+  		$("#info1").css("display", "block");
+  		$("#info2").css("display", "none");
+  		$("#ha").css("display", "inline");
+  		$("#hb").css("display", "none");
+  		$("#infra").css("color", "#ffbb01");
+  		$("#la").css("display", "none");
+  		$("#lb").css("display", "inline");
+                  $("#pract").css("color", "#fff");
+  	});
+  });
   $(document).ready(function() {
 
+
     // Scrolled menu
-    let header_el   = $('.navbar');	
+    let header_el   = $('.navbar');
 
     $(window).scroll(function() {
 
@@ -47,7 +72,7 @@
 
     // Gateway form
     var select_opt_gateway = $('.dummy-drop select');
-    
+
     if(select_opt_gateway) {
       select_opt_gateway.on('change', function(event) {
         event.preventDefault();
@@ -334,6 +359,33 @@
       infinite: true,
       autoplay: true,
       autoplaySpeed: 2500,
+      responsive: [
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2,
+            dots: false
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            dots: false
+          }
+        }
+      ]
+    });
+    $('#partners-container2 .impact-items2').slick({
+      dots: true,
+      slidesToShow: 4,
+      slidesToScroll: 4,
+      speed: 1500,
+      infinite: true,
+      autoplay: true,
+      autoplaySpeed: 1500,
       responsive: [
         {
           breakpoint: 600,

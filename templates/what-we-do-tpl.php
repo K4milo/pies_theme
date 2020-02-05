@@ -13,25 +13,40 @@ while (have_posts()):the_post()?>
 		</header>
 		<div class="container">
 			<div class="col-md-6 infrestructura text-center">
-	<img src="https://fundacionpiesdescalzos.com/wp-content/uploads/2020/01/Infraestructura.png" alt="">
-	<img src="https://fundacionpiesdescalzos.com/wp-content/uploads/2020/01/Practicas-Efectivas.png" alt="">
+<a><img id="hb" src="<?php bloginfo('template_url')?>/img/icons/herramienta-blanca.png" alt="INFRAESTRUCTURA" name="hb"></a>
+<a><img id="ha" src="<?php bloginfo('template_url')?>/img/icons/herramienta-amarilla.png" alt="INFRAESTRUCTURA"name="ha"></a>
+<div  class="the-icon">
+	<?php if(ICL_LANGUAGE_CODE=='es'): ?>
+			<h4 id="infra">INFRAESTRUCTURA</h4>
+	<?php else: ?>
+			<h4 id="infra"> INFRASTRUCTURE</h4>
+	<?php endif;?>
 
+</div>
 			</div>
 			<div class="col-md-6 practicas-efectivas text-center">
-	<img src="https://fundacionpiesdescalzos.com/wp-content/uploads/2020/01/Practicas-Efectivas.png" alt="">
-	<img src="https://fundacionpiesdescalzos.com/wp-content/uploads/2020/01/Infraestructura.png" alt="">
+<a><img id="la" src="<?php bloginfo('template_url')?>/img/icons/libro-amarillo.png" alt="EDUCACIÓN"></a>
+<a><img id="lb" src="<?php bloginfo('template_url')?>/img/icons/libro-blanco.png" alt="EDUCACIÓN"> </a>
+<div  class="the-icon">
+	<?php if(ICL_LANGUAGE_CODE=='es'): ?>
+				<h4 id="pract">PRÁCTICAS EFECTIVAS</h4>
+	<?php else: ?>
+			<h4 id="infra"> EFFECTIVE PRACTICES</h4>
+	<?php endif;?>
 
+</div>
 			</div>
 		</div>
 
 		</div><!-- /.row -->
-	<div class="projects">
+	<div class="projects container">
 			<?php //loop projcts
-				while (have_rows('proyectos')):the_row();?>
-				<div class="content-project">
-					<div class="the-icon">
-						<h4><?php the_sub_field('titulo_icono'); ?></h4>
-					</div>
+			$cont=0;
+
+				while (have_rows('proyectos')):the_row();
+				$cont++;
+				?>
+				<div id="info<?php echo $cont;?>" class="content-project">
 					<div class="tittle-infographics">
 						<?php the_sub_field('titulo_infografia'); ?>
 					</div>
@@ -42,39 +57,6 @@ while (have_posts()):the_post()?>
 
 			<?php endwhile;?>
 		</div>
-
-		<div class="row infographics">
-			<header class="main-header">
-				<?php if(ICL_LANGUAGE_CODE=='es'): ?>
-					<h3>Modelo de Intervención Integral</h3>
-				<?php else: ?>
-					<h3>OPEN DOOR SCHOOL STRATEGY</h3>
-				<?php endif;?>
-			</header>
-			<div class="the-infographics">
-				<figure>
-					<?php //loop impact items
-						while (have_rows('modelo_intervencion')):the_row();?>
-
-							<img src="<?php the_sub_field('imagen_intervencion'); ?>" alt="<?php the_title();?>" class="wow zoomIn" data-wow-duration="1.7s" data-wow-delay="1.5s" />
-
-					<?php endwhile;?>
-
-				</figure>
-			</div>
-			<section id="cd-timeline" class="container">
-				<?php //loop impact items
-				while (have_rows('items_infografia')):the_row();?>
-				<div class="cd-timeline-block">
-					<div class="cd-timeline-img">
-						<img src="<?php the_sub_field('pictograma');?>" class="color" alt="<?php the_title();?>" />
-						</div> <!-- cd-timeline-img -->
-						<div class="cd-timeline-content">
-							<?php the_sub_field('text_body');?>
-							</div> <!-- cd-timeline-content -->
-							</div> <!-- cd-timeline-block -->
-						<?php endwhile;?></section>
-					</div>
 					<div class="container-fluid">
 						<div class="row">
 							<header class="main-header">
