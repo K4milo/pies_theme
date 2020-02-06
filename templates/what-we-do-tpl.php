@@ -11,7 +11,7 @@ while (have_posts()):the_post()?>
 		<header class="main-header">
 			<h2><?php the_title();?></h2>
 		</header>
-		<div class="container">
+		<div class="container iconos">
 			<div class="col-md-6 infrestructura text-center">
 <a><img id="hb" src="<?php bloginfo('template_url')?>/img/icons/herramienta-blanca.png" alt="INFRAESTRUCTURA" name="hb"></a>
 <a><img id="ha" src="<?php bloginfo('template_url')?>/img/icons/herramienta-amarilla.png" alt="INFRAESTRUCTURA"name="ha"></a>
@@ -62,8 +62,10 @@ while (have_posts()):the_post()?>
 							<header class="main-header">
 								<?php if(ICL_LANGUAGE_CODE=='es'): ?>
 									<h2>ALIANZAS</h2>
+									<h4>Implementamos proyectos con nuestros aliados</h4>
 								<?php else: ?>
 									<h2>ALLIANCES</h2>
+									<h4>We implement projects with our allies</h4>
 								<?php endif;?>
 
 								<!--<p>Implementamos proyectos con nuestros aliados</p>-->
@@ -78,7 +80,7 @@ while (have_posts()):the_post()?>
 									?>
 
 										<div class="item wow fadeInUp" data-wow-duration="0.5s" data-wow-delay="0.5s">
-											<figure><img src="<?php the_sub_field('logo'); ?>" alt="pies descalzos partners" width="200px" height="auto"></figure>
+											<figure><img src="<?php the_sub_field('logo'); ?>" alt="pies descalzos partners" width="150px" height="auto"></figure>
 										</div>
 									<?php
 										endwhile;

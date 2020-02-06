@@ -118,9 +118,9 @@ add_action( 'widgets_init', 'bst_widgets_init' );
         <?php endwhile; ?>
         <div class="ver-mas">
           <?php if(ICL_LANGUAGE_CODE=='es'): ?>
-            <h6><a href="pies2/noticias">ver más</a></h6>
+            <h6><a href="<?php bloginfo('url')?>/noticias">ver más</a></h6>
           <?php else: ?>
-            <h6><a href="pies2/noticias">See more</a></h6> 
+            <h6><a href="<?php bloginfo('url')?>/noticias">See more</a></h6> 
           <?php endif; ?>
         </div>
 

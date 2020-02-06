@@ -1,4 +1,5 @@
 body {
+
 	#sidebar{
 		background-color: #fff9ef;
 		padding: 0 3%;
@@ -80,7 +81,6 @@ body {
 	//Styles for single page
 	&.page-template-default{
 
-
 		position: relative;
 
 		background-image: url('../img/bgs/bg_22.jpg');
@@ -124,7 +124,7 @@ body {
 	//Styles for single post
 	&.single-post {
 		position: relative;
-
+		padding-top: 113px;
 		@include bgcover;
 
 		//cabera
@@ -211,19 +211,17 @@ body {
 							}
 						}
 						&.text-body {
-							column-count: 2;
-							column-gap: em(40);
 							@include mobile{
 								column-count: 1;
 							}
 							h2,h3,h4 {
-								color: $yellow;
+								color: $black;
 							}
 							strong,b{
 								font-family: $ralesbd;
 							}
 							p {
-								color: $white;
+								color: $black;
 								font-family: $openlt;
 								font-size: em(20);
 								a {

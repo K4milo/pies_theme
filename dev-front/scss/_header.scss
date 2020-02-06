@@ -1,10 +1,22 @@
 // Menu components
 
 .navbar {
-	margin: 0 0 0 0; 
+	margin: 0 0 0 0;
 	border: none;
 	background-color: transparent;
 	width: 100%;
+
+	.wpml-ls{
+	ul{
+		li{
+			a{
+				span{
+					color: $white;
+				}
+			}
+		}
+	}
+	}
 
 	@include mq('sm') {
 		padding: 0 0;
@@ -35,31 +47,31 @@
 			vertical-align: bottom;
 			float: none;
 		}
-		.brand-image {			
+		.brand-image {
 			display: inline-block;
 			@include mq('md') {
 				margin: 0 0;
 				width: rem(121px);
 				height: rem(86px);
-			}	
+			}
 		}
 	}
 
 	.navbar-collapse {
 		@include mq('sm') {
-			display: inline-block !important;
+			display: contents !important;
 			vertical-align: middle;
 			float: none;
 		}
 
-		
+
 		// Navigation wrapper
 		.navigation-menu {
 			display: block;
 			@include mq('md') {
 				display: inline-block;
 				vertical-align: middle;
-				padding: 0 rem(20px); 
+				padding: 0 rem(20px);
 			}
 		}
 
@@ -88,10 +100,10 @@
 							color: $yellow;
 						}
 					}
-					&.active {				
+					&.active {
 						a {
 							background-color: transparent;
-						}					
+						}
 					}
 				}
 			}
@@ -102,7 +114,11 @@
 .the-fly {
 	position: fixed;
 	right: 0;
-	top: rem(260px);
+	top: rem(200px);
+	img{
+		width: 200px;
+		height: auto;
+	}
 }
 
 .follow {
@@ -116,7 +132,7 @@
 		li{
 			display: inline-block;
 			margin: 0;
-			
+
 			a {
 				transition: all 0.3s;
 				&.social-icn{
