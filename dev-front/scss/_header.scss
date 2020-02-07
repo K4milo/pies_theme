@@ -5,17 +5,22 @@
 	border: none;
 	background-color: transparent;
 	width: 100%;
-
+	background-color: rgba(0,0,0,0.54);
+	@include mq('sm') {
+		background-color: transparent;	
+	}
 	.wpml-ls{
-	ul{
-		li{
-			a{
-				span{
-					color: $white;
+		ul {
+			text-align: center;
+			li {
+				display: inline-block;
+				a{
+					span{
+						color: $white;
+					}
 				}
 			}
 		}
-	}
 	}
 
 	@include mq('sm') {
@@ -35,24 +40,39 @@
 	// Scrolled menu styles
 	&.scroll_menu {
 		background-color: rgba(0,0,0,0.54);
-	}
-
-	&-brand {
-		height: auto;
-	}
-
-	.navbar-header {
 		@include mq('sm') {
+			background-color: rgba(0,0,0,0.54);
+		}
+	}
+
+
+	&-header {
+		@include mq('sm') {
+			margin: rem(10px);
 			display: inline-block !important;
 			vertical-align: bottom;
 			float: none;
 		}
-		.brand-image {
+		.navbar-brand {
 			display: inline-block;
+			float: none;
+			width: rem(80px);
+			height: auto;
+			margin: rem(12px);
+			padding: 0 0;
 			@include mq('md') {
 				margin: 0 0;
-				width: rem(121px);
-				height: rem(86px);
+				width: rem(120px);
+			}
+			img {
+				max-width: 100%;
+			}
+		}
+		.navbar-toggle {
+			margin: rem(12px);
+			background-color: $yellow;
+			.icon-bar{
+				background-color: $black;
 			}
 		}
 	}
@@ -83,9 +103,11 @@
 				> li {
 					display: block;
 					text-align: center;
+					padding: rem(8px);
 					@include mq('sm') {
 						text-align: left;
 						display: inline-block;
+						padding: rem(16px);
 						margin: 0 rem(20px);
 						vertical-align: middle;
 						float: none;
@@ -116,8 +138,11 @@
 	right: 0;
 	top: rem(200px);
 	img{
-		width: 200px;
+		width: rem(80px);
 		height: auto;
+		@include mq('sm') {
+			width: rem(200px);
+		}
 	}
 }
 
