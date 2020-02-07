@@ -125,7 +125,7 @@ Template Name: News
 					if($cat != 'all'){
 						$args = array (
 							'post_type' => 'post',
-							'posts_per_page' => 9,
+							'posts_per_page' => 8,
 							'paged'          => $paged,
 							'category_name' => $cat,
 							'date_query' => array(
@@ -140,7 +140,7 @@ Template Name: News
 					} else {
 						$args = array (
 							'post_type' => 'post',
-							'posts_per_page' => 9,
+							'posts_per_page' => 8,
 							'paged'          => $paged,
 							'date_query' => array(
 							    array(
@@ -157,7 +157,7 @@ Template Name: News
 
 					$args = array(
 						'post_type' => 'post',
-						'posts_per_page' => 9,
+						'posts_per_page' => 8,
 						'paged'          => $paged,
 					);
 				}

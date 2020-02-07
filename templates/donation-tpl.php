@@ -40,7 +40,7 @@ while (have_posts()):the_post();
         </li>
         <li>
           <a data-toggle="tab" href="#menu3">
-            Donacion
+            Donación
             <br/>
             <strong>conmemorativa
             </strong>
@@ -176,7 +176,37 @@ while (have_posts()):the_post();
             endwhile;
             ?>
           </div>
+          <?php
+          //loop impact items
+          while (have_rows('campanas')):the_row();
+          ?>
+          <div class="campaña">
+            <header>
+              <h3>  <?php the_sub_field('titulo_campana');?></h3>
+            </header>
+            <div class="content row">
+              <div class="col-md-6">
+               <img src="<?php the_sub_field('imagen_campana');?>" alt="">
+              </div>
 
+              <div class="col-md-6 info">
+                  <?php the_sub_field('info_campana');?>
+              </div>
+            </div>
+            <div class="row progress progress-striped active">
+              <div class="progress-bar" role="progressbar"
+                   aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
+                   style="width: <?php the_sub_field('porcentaje_donacion'); ?><?php echo "%"; ?>">
+                   <p></p>
+              </div>
+            </div>
+            <div class="meta">
+              <p>$<?php the_sub_field('valor_meta'); ?> UDS</p>
+            </div>
+          </div>
+          <?php
+          endwhile;
+          ?>
         </div>
         <div id="menu1" class="tab-pane fade">
           <div class="pay-btns">
@@ -257,6 +287,37 @@ while (have_posts()):the_post();
           ?>
           </div>
           <!--/eof items impact-->
+          <?php
+          //loop impact items
+          while (have_rows('campanas')):the_row();
+          ?>
+          <div class="campaña">
+            <header>
+              <h3>  <?php the_sub_field('titulo_campana');?></h3>
+            </header>
+            <div class="content row">
+              <div class="col-md-6">
+               <img src="<?php the_sub_field('imagen_campana');?>" alt="">
+              </div>
+
+              <div class="col-md-6 info">
+                  <?php the_sub_field('info_campana');?>
+              </div>
+            </div>
+            <div class="row progress progress-striped active">
+              <div class="progress-bar" role="progressbar"
+                   aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
+                   style="width: <?php the_sub_field('porcentaje_donacion'); ?><?php echo "%"; ?>">
+                   <p></p>
+              </div>
+            </div>
+            <div class="meta">
+              <p>$<?php the_sub_field('valor_meta'); ?> UDS</p>
+            </div>
+          </div>
+          <?php
+          endwhile;
+          ?>
 
         </div>
         <div id="menu2" class="tab-pane fade">
@@ -295,6 +356,37 @@ while (have_posts()):the_post();
             ?>
           </div>
           <!--/eof impact items-->
+          <?php
+          //loop impact items
+          while (have_rows('campanas')):the_row();
+          ?>
+          <div class="campaña">
+            <header>
+              <h3>  <?php the_sub_field('titulo_campana');?></h3>
+            </header>
+            <div class="content row">
+              <div class="col-md-6">
+               <img src="<?php the_sub_field('imagen_campana');?>" alt="">
+              </div>
+
+              <div class="col-md-6 info">
+                  <?php the_sub_field('info_campana');?>
+              </div>
+            </div>
+            <div class="row progress progress-striped active">
+              <div class="progress-bar" role="progressbar"
+                   aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
+                   style="width: <?php the_sub_field('porcentaje_donacion'); ?><?php echo "%"; ?>">
+                   <p></p>
+              </div>
+            </div>
+            <div class="meta">
+              <p>$<?php the_sub_field('valor_meta'); ?> UDS</p>
+            </div>
+          </div>
+          <?php
+          endwhile;
+          ?>
         </div>
         <!--/eof tab 4-->
       </div>

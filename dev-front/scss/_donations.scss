@@ -308,6 +308,69 @@ body{
 							}
 							@include clearfix;
 						}
+						.campaña{
+							header {
+								h3 {
+									color: $yellow;
+									text-align: center;
+									font-size: em(40);
+									font-family: $raleebd;
+									text-transform: uppercase;
+									padding: 20px;
+								}
+							}
+							.content{
+								padding: 0 4em;
+								@include mobile {
+									padding: 2em 0;
+								}
+								img{
+									width: 100%;
+									height: auto;
+								}
+								.info{
+									padding: 0.5em 1em;
+									a {
+										font-weight: bold;
+										text-align: center;
+										width: 60%;
+										display: block;
+										padding: 0.5em 1.3em;
+										background-color: $red;
+										color: $white;
+										font-family: $rale;
+										font-size: em(17);
+										text-transform: uppercase;
+										border-radius: 1em;
+										&:hover{
+											background-color: $grey;
+											text-decoration: none;
+										}
+									}
+								}
+							}
+							.progress{
+								height: 30px;
+								border-radius: 6px;
+								margin: 30px 4em;
+								background-color: #333333;
+
+								.progress-bar{
+									background-color: $yellow !important;
+									text-align: end !important;
+								}
+								p{
+									color: $black;
+									padding: 5px;
+									font-weight: bold;
+								}
+							}
+							.meta{
+								text-align: end;
+								padding-right: 40px;
+								font-weight: bold;
+							}
+						}
 
 						//Pay items
 						.pay-btns {

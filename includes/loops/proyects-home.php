@@ -34,11 +34,11 @@
 				<?php
 				if ($the_query->have_posts()):while ($the_query->have_posts()):
 				$the_query->the_post();// run the loop ?>
-					<article class="new-item-proyect col-md-3" style="background-image:url(<?php the_post_thumbnail_url('full')?>);height: 600px;">
+					<article class="new-item-proyect col-md-3" style="background-image:url(<?php the_post_thumbnail_url('full')?>);">
 						<a href="<?php the_permalink() ?>">			<?php if(ICL_LANGUAGE_CODE=='es'): ?>
-										<h2>PROYECTO DESTACADO</h2>
+										<h2><?php the_field('titulo_destacado_home') ?></h2>
 										<?php else: ?>
-								    <h2>featured project</h2>
+								    <h2><?php the_field('titulo_destacado_home') ?></h2>
 									<?php endif; ?>
 </a>
 						<img src="<?php bloginfo('template_url')?>/dev-front/img/icons/ver-mas.png" alt="">
