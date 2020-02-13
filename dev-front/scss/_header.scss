@@ -116,15 +116,24 @@
 						padding: 0 rem(4px);
 						text-transform: uppercase;
 						color: $white;
+						position: relative;
+						font-weight: 600;
+						padding-bottom: rem(12px);
 						&:hover,
 						&:focus {
 							background-color: transparent;
 							color: $yellow;
-						}
+							&:after {
+								@include afterLine;
+							}
+						}						
 					}
 					&.active {
 						a {
 							background-color: transparent;
+							&:after {
+								@include afterLine;
+							}
 						}
 					}
 				}

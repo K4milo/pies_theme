@@ -387,6 +387,18 @@ $browser-context: 16; // Default
   transform: translate(-50%, -50%);
 }
 
+@mixin afterLine($width:rem(60px), $height: rem(4px), $color: $yellow) {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: $width;
+  height: $height;
+  background-color: $color;
+}
+
 body {
 	font-family: $open;
   h1,h2,h3,strong{
