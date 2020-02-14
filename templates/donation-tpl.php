@@ -356,8 +356,32 @@ while (have_posts()):the_post();
             ?>
           </div>
           <!--/eof impact items-->
+          <div class="productos-content">
+            <header>
+              <?php if(ICL_LANGUAGE_CODE=='es'): ?>
+                <h3>PRODUCTOS</h3>
+              <?php else:?>
+                <h3>PRODUCTS</h3>
+              <?php endif; ?>
+            </header>
+            <div class="productos">
+              <?php
+              //loop productos items
+              while (have_rows('producto')):the_row();
+              ?>
+              <div class="productos--item">
+                <img src="<?php the_sub_field('foto'); ?>" alt="">
+                <p> <span><?php the_sub_field('nombre'); ?></span> </p>
+                <p>$<?php the_sub_field('precio'); ?></p>
+              </div>
+              <?php
+              endwhile;
+              ?>
+            </div>
+
+          </div>
           <?php
-          //loop impact items
+          //loop campaña items
           while (have_rows('campanas')):the_row();
           ?>
           <div class="campaña">
@@ -387,6 +411,8 @@ while (have_posts()):the_post();
           <?php
           endwhile;
           ?>
+
+
         </div>
         <!--/eof tab 4-->
       </div>

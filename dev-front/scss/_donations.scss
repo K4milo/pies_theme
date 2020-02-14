@@ -371,6 +371,55 @@ body{
 								font-weight: bold;
 							}
 						}
+						.productos-content{
+							header {
+								h3 {
+									color: $yellow;
+									text-align: center;
+									font-size: em(40);
+									font-family: $raleebd;
+									text-transform: uppercase;
+									padding: 20px;
+								}
+							}
+								.productos{
+									display: block;
+									padding: rem(30px) rem(10px);
+									@include mq('md'){
+										display: flex;
+										flex-wrap: wrap;
+										padding: rem(30px) rem(110px);
+									}
+									&--item{
+										display: block;
+										text-align: left;
+										padding: rem(8px) rem(8px);
+										@include mq('md') {
+											width: 33.3%;
+											padding: rem(15px) rem(15px);
+										}
+										img {
+											border:solid $grey-1 1px;
+											width: 100%;
+											height: auto;
+											display: inline-block;
+											text-align: center;
+											margin-bottom: rem(15px) auto;
+										}
+										p{
+											text-transform: uppercase;
+											padding: 5px 0;
+											font-family: $openlt;
+									    font-size: 1.5625em;
+											span{
+												font-family: $openbd;
+												font-weight: bold;
+											}
+										}
+									}
+								}
+
+						}
 
 						//Pay items
 						.pay-btns {
