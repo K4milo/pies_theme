@@ -19,6 +19,9 @@
 						color: $white;
 					}
 				}
+				.wpml-ls-display {
+					display: none;
+				}
 			}
 		}
 	}
@@ -108,7 +111,7 @@
 						text-align: left;
 						display: inline-block;
 						padding: rem(16px) 0;
-						margin: 0 rem(20px);
+						margin: 0 rem(10px);
 						vertical-align: middle;
 						float: none;
 					}
@@ -118,13 +121,14 @@
 						color: $white;
 						position: relative;
 						font-weight: 600;
-						padding-bottom: rem(12px);
+						@include font(13px);
 						&:hover,
 						&:focus {
 							background-color: transparent;
 							color: $yellow;
 							&:after {
 								@include afterLine;
+								bottom: rem(-10px);
 							}
 						}						
 					}
@@ -133,6 +137,7 @@
 							background-color: transparent;
 							&:after {
 								@include afterLine;
+								bottom: rem(-10px);
 							}
 						}
 					}
@@ -147,10 +152,10 @@
 	right: 0;
 	top: rem(200px);
 	img{
-		width: rem(80px);
+		width: rem(60px);
 		height: auto;
 		@include mq('sm') {
-			width: rem(200px);
+			width: rem(150px);
 		}
 	}
 }
