@@ -324,7 +324,42 @@ while (have_posts()):the_post();
           <div class="first text-body">
             <?php the_field('texto_introductorio_3');?>
           </div>
-          <!--/texto intro-->
+          <?php
+          //loop campaña items
+          while (have_rows('campanas')):the_row();
+          ?>
+          <div class="campaña">
+            <header>
+              <h3>  <?php the_sub_field('titulo_campana');?></h3>
+            </header>
+            <div class="content row">
+              <div class="col-md-6">
+               <img src="<?php the_sub_field('imagen_campana');?>" alt="">
+              </div>
+
+              <div class="col-md-6 info">
+                  <?php the_sub_field('info_campana');?>
+              </div>
+            </div>
+            <div class="row progress progress-striped active">
+              <div class="progress-bar" role="progressbar"
+                   aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
+                   style="width: <?php the_sub_field('porcentaje_donacion'); ?><?php echo "%"; ?>">
+                   <p></p>
+              </div>
+            </div>
+            <div class="meta">
+              <p>$<?php the_sub_field('valor_meta'); ?> UDS</p>
+            </div>
+          </div>
+          <?php
+          endwhile;
+          ?>
+        <!--  <div class="thanks">
+            <h3> <span>GRACIAS A LA</span> </h3>
+            <h3>DONACIÒN CORPORATIVA</h3>
+          </div>
+          /texto intro-->
         </div>
         <!--/eof tab 3-->
         <div id="menu3" class="tab-pane fade">

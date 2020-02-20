@@ -9,11 +9,13 @@ The Single Posts Loop
     <header>
       <?php if(ICL_LANGUAGE_CODE=='es'): ?>
         <a href="/noticias/">
-            <span class="back-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+          <img src="https://fundacionpiesdescalzos.com/wp-content/uploads/2020/02/Recurso-34.png" alt="Smiley face">
+          <h3>volver</h3>
         </a>
       <?php else: ?>
         <a href="/en/news/">
-            <span class="back-icon"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
+          <img src="https://fundacionpiesdescalzos.com/wp-content/uploads/2020/02/Recurso-34.png" alt="Smiley face">
+          <h3>Return</h3>
         </a>
       <?php endif;?>
         <h2>

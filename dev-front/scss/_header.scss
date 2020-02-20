@@ -57,6 +57,7 @@
 			float: none;
 		}
 		.navbar-brand {
+			margin-left: 1px !important;
 			display: inline-block;
 			float: none;
 			width: rem(80px);
@@ -130,7 +131,7 @@
 								@include afterLine;
 								bottom: rem(-10px);
 							}
-						}						
+						}
 					}
 					&.active {
 						a {
