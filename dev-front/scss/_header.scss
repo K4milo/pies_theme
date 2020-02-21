@@ -1,225 +1,219 @@
 // Menu components
-
 .navbar {
-	margin: 0 0 0 0;
-	border: none;
-	background-color: transparent;
-	width: 100%;
-	background-color: rgba(0,0,0,0.54);
-	@include mq('sm') {
-		background-color: transparent;
-	}
-	.wpml-ls{
-		ul {
-			text-align: center;
-			li {
-				display: inline-block;
-				a{
-					span{
-						color: $white;
-					}
-				}
-				.wpml-ls-display {
-					display: none;
-				}
-			}
-		}
-	}
-
-	@include mq('sm') {
-		padding: 0 0;
-		text-align: center;
-	}
-
-	.row-header {
-		@include mq('sm') {
-			display: flex;
-			align-items: center;
-			justify-content: space-evenly;
-		}
-	}
-
-
-	// Scrolled menu styles
-	&.scroll_menu {
-		background-color: rgba(0,0,0,0.54);
-		@include mq('sm') {
-			background-color: rgba(0,0,0,0.54);
-		}
-	}
-
-
-	&-header {
-		@include mq('sm') {
-			margin: rem(10px);
-			display: inline-block !important;
-			vertical-align: bottom;
-			float: none;
-		}
-		.navbar-brand {
-			margin-left: 1px !important;
-			display: inline-block;
-			float: none;
-			width: rem(80px);
-			height: auto;
-			margin: rem(12px);
-			padding: 0 0;
-			@include mq('md') {
-				margin: 0 0;
-				width: rem(120px);
-			}
-			img {
-				max-width: 100%;
-			}
-		}
-		.navbar-toggle {
-			margin: rem(12px);
-			background-color: $yellow;
-			.icon-bar{
-				background-color: $black;
-			}
-		}
-	}
-
-	.navbar-collapse {
-		@include mq('sm') {
-			display: contents !important;
-			vertical-align: middle;
-			float: none;
-		}
-
-
-		// Navigation wrapper
-		.navigation-menu {
-			display: block;
-			@include mq('md') {
-				display: inline-block;
-				vertical-align: middle;
-				padding: 0 rem(20px);
-			}
-		}
-
-		// Menu
-		ul {
-			&.navbar-nav {
-				float: none;
-				clear: both;
-				> li {
-					display: block;
-					text-align: center;
-					padding: rem(8px);
-					@include mq('sm') {
-						text-align: left;
-						display: inline-block;
-						padding: rem(16px) 0;
-						margin: 0 rem(10px);
-						vertical-align: middle;
-						float: none;
-					}
-					a {
-						padding: 0 rem(4px);
-						text-transform: uppercase;
-						color: $white;
-						position: relative;
-						font-weight: 600;
-						@include font(13px);
-						&:hover,
-						&:focus {
-							background-color: transparent;
-							color: $yellow;
-							&:after {
-								@include afterLine;
-								bottom: rem(-10px);
-							}
-						}
-					}
-					&.active {
-						a {
-							background-color: transparent;
-							&:after {
-								@include afterLine;
-								bottom: rem(-10px);
-							}
-						}
-					}
-				}
-			}
-		}
-	}
+    margin: 0 0 0 0;
+    border: none;
+    background-color: transparent;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.54);
+    @include mq('sm') {
+        background-color: transparent;
+    }
+    .wpml-ls {
+        ul {
+            text-align: center;
+            li {
+                display: inline-block;
+                vertical-align: middle;
+                &:first-child {
+                    @include mq('sm') {
+                        border-right: rem(1px) solid $white;
+                    }
+                }
+                a {
+                    span {
+                        color: $white;
+                    }
+                }
+                .wpml-ls-display {
+                    display: none;
+                }
+            }
+        }
+    }
+    @include mq('sm') {
+        padding: 0 0;
+        text-align: center;
+    }
+    .row-header {
+        @include mq('sm') {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+    }
+    // Scrolled menu styles
+    &.scroll_menu {
+        background-color: rgba(0, 0, 0, 0.54);
+        @include mq('sm') {
+            background-color: rgba(0, 0, 0, 0.54);
+        }
+    }
+    &-header {
+        @include mq('sm') {
+            margin: rem(10px);
+            display: inline-block !important;
+            vertical-align: bottom;
+            float: none;
+        }
+        .navbar-brand {
+            margin-left: 1px !important;
+            display: inline-block;
+            float: none;
+            width: rem(80px);
+            height: auto;
+            margin: rem(12px);
+            padding: 0 0;
+            @include mq('md') {
+                margin: 0 0;
+                width: rem(120px);
+            }
+            img {
+                max-width: 100%;
+            }
+        }
+        .navbar-toggle {
+            margin: rem(12px);
+            background-color: $yellow;
+            .icon-bar {
+                background-color: $black;
+            }
+        }
+    }
+    .navbar-collapse {
+        @include mq('sm') {
+            display: contents !important;
+            vertical-align: middle;
+            float: none;
+        }
+        // Navigation wrapper
+        .navigation-menu {
+            display: block;
+            @include mq('md') {
+                display: inline-block;
+                vertical-align: middle;
+                padding: 0 rem(20px);
+            }
+        }
+        // Menu
+        ul {
+            &.navbar-nav {
+                float: none;
+                clear: both;
+                >li {
+                    display: block;
+                    text-align: center;
+                    padding: rem(8px);
+                    @include mq('sm') {
+                        text-align: left;
+                        display: inline-block;
+                        padding: rem(16px) 0;
+                        margin: 0 rem(10px);
+                        vertical-align: middle;
+                        float: none;
+                    }
+                    a {
+                        padding: 0 rem(4px);
+                        text-transform: uppercase;
+                        color: $white;
+                        position: relative;
+                        font-weight: 600;
+                        @include font(13px);
+                        &:hover,
+                        &:focus {
+                            background-color: transparent;
+                            color: $yellow;
+                            &:after {
+                                @include afterLine;
+                                bottom: rem(-10px);
+                            }
+                        }
+                    }
+                    &.active {
+                        a {
+                            background-color: transparent;
+                            &:after {
+                                @include afterLine;
+                                bottom: rem(-10px);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .the-fly {
-	position: fixed;
-	right: 0;
-	top: rem(200px);
-	img{
-		width: rem(60px);
-		height: auto;
-		@include mq('sm') {
-			width: rem(150px);
-		}
-	}
+    position: fixed;
+    right: 0;
+    top: rem(200px);
+    img {
+        width: rem(60px);
+        height: auto;
+        @include mq('sm') {
+            width: rem(150px);
+        }
+    }
 }
 
 .follow {
-	display: none;
-	position: relative;
-	vertical-align: middle;
-	ul{
-		padding: 0;
-		margin: 0;
-		text-align: center;
-		li{
-			display: inline-block;
-			margin: 0;
-
-			a {
-				transition: all 0.3s;
-				&.social-icn{
-					display: block;
-					width: 32px;
-					height: 32px;
-					background-image: url('../img/icons/sprite-social.png');
-					text-indent: -9999999999em;
-					//list of social icons
-					&.fb {
-						background-position: 0 0;
-						&:hover {
-							background-position: 0 -32px;
-						}
-					}
-					&.tw {
-						background-position: -56px 0;
-						&:hover {
-							background-position: -56px -32px;
-						}
-					}
-					&.in {
-						background-position: -111px 0;
-						&:hover {
-							background-position: -111px -32px;
-						}
-					}
-					&.yt {
-						background-position: -166px 0;
-						&:hover {
-							background-position: -166px -32px;
-						}
-					}
-					&.lin {
-						background-position: -221px 0;
-						&:hover {
-							background-position: -221px -32px;
-						}
-					}
-					&.let {
-						background-position: -275px 0;
-						&:hover {
-							background-position: -275px -32px;
-						}
-					}
-				}
-			}
-		}
-	}
+    display: none;
+    position: relative;
+    vertical-align: middle;
+    ul {
+        padding: 0;
+        margin: 0;
+        text-align: center;
+        li {
+            display: inline-block;
+            margin: 0;
+            a {
+                transition: all 0.3s;
+                &.social-icn {
+                    display: block;
+                    width: 32px;
+                    height: 32px;
+                    background-image: url('../img/icons/sprite-social.png');
+                    text-indent: -9999999999em;
+                    //list of social icons
+                    &.fb {
+                        background-position: 0 0;
+                        &:hover {
+                            background-position: 0 -32px;
+                        }
+                    }
+                    &.tw {
+                        background-position: -56px 0;
+                        &:hover {
+                            background-position: -56px -32px;
+                        }
+                    }
+                    &.in {
+                        background-position: -111px 0;
+                        &:hover {
+                            background-position: -111px -32px;
+                        }
+                    }
+                    &.yt {
+                        background-position: -166px 0;
+                        &:hover {
+                            background-position: -166px -32px;
+                        }
+                    }
+                    &.lin {
+                        background-position: -221px 0;
+                        &:hover {
+                            background-position: -221px -32px;
+                        }
+                    }
+                    &.let {
+                        background-position: -275px 0;
+                        &:hover {
+                            background-position: -275px -32px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

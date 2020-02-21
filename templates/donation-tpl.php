@@ -130,21 +130,14 @@ while (have_posts()):the_post();
                   <input name="hosted_button_id" type="hidden" value="CCX6EF3MFC7W8">
                   <input alt="PayPal - The safer, easier way to pay online!" class="img-btn" name="submit" src="<?php bloginfo('template_url')?>/img/logos/paypal.png" type="image"><img src="<?php bloginfo('template_url')?>/img/logos/paypal.png" alt="" width="1" height="1" border="0">
                 </form>-->
-
-
-
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-<input type="hidden" name="cmd" value="_donations" />
-<input type="hidden" name="business" value="tesoreria@fpd.ong" />
-<input type="hidden" name="item_name" value="ayudar niños" />
-<input type="hidden" name="currency_code" value="USD" />
-<input type="image" src="<?php bloginfo('template_url')?>/img/misc/pp-en.png" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
-<img alt="" border="0" src="https://www.paypal.com/en_CO/i/scr/pixel.gif" width="1" height="1" />
-</form>
-
-
-
-
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                  <input type="hidden" name="cmd" value="_donations" />
+                  <input type="hidden" name="business" value="tesoreria@fpd.ong" />
+                  <input type="hidden" name="item_name" value="ayudar niños" />
+                  <input type="hidden" name="currency_code" value="USD" />
+                  <input type="image" src="<?php bloginfo('template_url')?>/img/misc/pp-en.png" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Donate with PayPal button" />
+                  <img alt="" border="0" src="https://www.paypal.com/en_CO/i/scr/pixel.gif" width="1" height="1" />
+                </form>
               </figure>
             </div>
 
@@ -179,28 +172,37 @@ while (have_posts()):the_post();
           <?php
           //loop impact items
           while (have_rows('campanas')):the_row();
+
+            $donation_perc = get_sub_field('porcentaje_donacion');
+            $total_value = get_sub_field('valor_meta');
+            $perc_value = $total_value * $donation_perc / 100;
+
           ?>
-          <div class="campaña">
+          <div class="campaign">
             <header>
               <h3>  <?php the_sub_field('titulo_campana');?></h3>
             </header>
-            <div class="content row">
-              <div class="col-md-6">
+            <div class="content campaign--wrapper">
+              <div class="campaign--item campaign__thumb">
                <img src="<?php the_sub_field('imagen_campana');?>" alt="">
               </div>
 
-              <div class="col-md-6 info">
+              <div class="campaign--item campaign__info">
                   <?php the_sub_field('info_campana');?>
               </div>
             </div>
-            <div class="row progress progress-striped active">
+            <div class="row progress progress-striped active campaign__progress">
               <div class="progress-bar" role="progressbar"
                    aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
                    style="width: <?php the_sub_field('porcentaje_donacion'); ?><?php echo "%"; ?>">
-                   <p></p>
+                   
               </div>
             </div>
-            <div class="meta">
+            <div class="meta campaign__meta">
+              <div class="campaign__share">
+                <?php echo do_shortcode('[TheChamp-Sharing]'); ?>
+              </div>
+              <span class="current-value" style="left: <?php echo $donation_perc - 5; ?><?php echo "%"; ?>;">$<?php echo $perc_value; ?> USD</span>
               <p>$<?php the_sub_field('valor_meta'); ?> UDS</p>
             </div>
           </div>
@@ -291,27 +293,30 @@ while (have_posts()):the_post();
           //loop impact items
           while (have_rows('campanas')):the_row();
           ?>
-          <div class="campaña">
+          <div class="campaign">
             <header>
               <h3>  <?php the_sub_field('titulo_campana');?></h3>
             </header>
-            <div class="content row">
-              <div class="col-md-6">
-               <img src="<?php the_sub_field('imagen_campana');?>" alt="">
+            <div class="content campaign--wrapper">
+              <div class="campaign--item campaign__thumb">
+                <img src="<?php the_sub_field('imagen_campana');?>" alt="">
               </div>
-
-              <div class="col-md-6 info">
+              <div class="campaign--item campaign__info">
                   <?php the_sub_field('info_campana');?>
               </div>
             </div>
-            <div class="row progress progress-striped active">
+            <div class="row progress progress-striped active campaign__progress">
               <div class="progress-bar" role="progressbar"
                    aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
                    style="width: <?php the_sub_field('porcentaje_donacion'); ?><?php echo "%"; ?>">
                    <p></p>
               </div>
             </div>
-            <div class="meta">
+            <div class="meta campaign__meta">
+              <div class="campaign__share">
+                <?php echo do_shortcode('[TheChamp-Sharing]'); ?>
+              </div>
+              <span class="current-value" style="left: <?php echo $donation_perc - 5; ?><?php echo "%"; ?>;">$<?php echo $perc_value; ?> USD</span>
               <p>$<?php the_sub_field('valor_meta'); ?> UDS</p>
             </div>
           </div>
@@ -327,28 +332,35 @@ while (have_posts()):the_post();
           <?php
           //loop campaña items
           while (have_rows('campanas')):the_row();
+            $donation_perc = get_sub_field('porcentaje_donacion');
+            $total_value = get_sub_field('valor_meta');
+            $perc_value = $total_value * $donation_perc / 100;
           ?>
-          <div class="campaña">
+          <div class="campaign">
             <header>
               <h3>  <?php the_sub_field('titulo_campana');?></h3>
             </header>
-            <div class="content row">
-              <div class="col-md-6">
+            <div class="content campaign--wrapper">
+              <div class="campaign--item campaign__thumb">
                <img src="<?php the_sub_field('imagen_campana');?>" alt="">
               </div>
 
-              <div class="col-md-6 info">
+              <div class="campaign--item campaign__info">
                   <?php the_sub_field('info_campana');?>
               </div>
             </div>
-            <div class="row progress progress-striped active">
+            <div class="row progress progress-striped active campaign__progress">
               <div class="progress-bar" role="progressbar"
                    aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
                    style="width: <?php the_sub_field('porcentaje_donacion'); ?><?php echo "%"; ?>">
                    <p></p>
               </div>
             </div>
-            <div class="meta">
+            <div class="meta campaign__meta">
+              <div class="campaign__share">
+                <?php echo do_shortcode('[TheChamp-Sharing]'); ?>
+              </div>
+              <span class="current-value" style="left: <?php echo $donation_perc - 5; ?><?php echo "%"; ?>;">$<?php echo $perc_value; ?> USD</span>
               <p>$<?php the_sub_field('valor_meta'); ?> UDS</p>
             </div>
           </div>
@@ -418,28 +430,35 @@ while (have_posts()):the_post();
           <?php
           //loop campaña items
           while (have_rows('campanas')):the_row();
+            $donation_perc = get_sub_field('porcentaje_donacion');
+            $total_value = get_sub_field('valor_meta');
+            $perc_value = $total_value * $donation_perc / 100;
           ?>
-          <div class="campaña">
+          <div class="campaign">
             <header>
               <h3>  <?php the_sub_field('titulo_campana');?></h3>
             </header>
-            <div class="content row">
-              <div class="col-md-6">
+            <div class="content campaign--wrapper">
+              <div class="campaign--item campaign__thumb">
                <img src="<?php the_sub_field('imagen_campana');?>" alt="">
               </div>
 
-              <div class="col-md-6 info">
+              <div class="campaign__info campaign--item">
                   <?php the_sub_field('info_campana');?>
               </div>
             </div>
-            <div class="row progress progress-striped active">
+            <div class="row progress progress-striped active campaign__progress">
               <div class="progress-bar" role="progressbar"
                    aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
                    style="width: <?php the_sub_field('porcentaje_donacion'); ?><?php echo "%"; ?>">
                    <p></p>
               </div>
             </div>
-            <div class="meta">
+            <div class="meta campaign__meta">
+              <div class="campaign__share">
+                <?php echo do_shortcode('[TheChamp-Sharing]'); ?>
+              </div>
+              <span class="current-value" style="left: <?php echo $donation_perc - 5; ?><?php echo "%"; ?>;">$<?php echo $perc_value; ?> USD</span>
               <p>$<?php the_sub_field('valor_meta'); ?> UDS</p>
             </div>
           </div>
