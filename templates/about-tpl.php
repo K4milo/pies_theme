@@ -1,11 +1,11 @@
-<?php /* Template Name: About */ 
-get_template_part( 'includes/header'); 
+<?php /* Template Name: About */
+get_template_part( 'includes/header');
 	while (have_posts()):the_post() ?>
 
 <div class="container-fluid">
     <div class="row main-cont">
         <header class="main-header">
-            <h3><?php the_title();?></h3>
+            <h2><?php the_title();?></h2>
         </header>
         <div class="text-main">
             <?php the_content();?>
@@ -35,7 +35,7 @@ get_template_part( 'includes/header');
                     </li>
                     <li>
                         <a data-toggle="tab" href="#menu2">OUR BOARD OF DIRECTORS</a>
-                    </li>   
+                    </li>
                 <?php endif; ?>
             </ul>
 
@@ -52,7 +52,7 @@ get_template_part( 'includes/header');
                         </div>
                     </div>
                     <ul class="items-ano">
-                        <?php //loop impact items 
+                        <?php //loop impact items
                         while (have_rows( 'items_ano')):the_row(); ?>
                         <li>
                             <span class="ano-small">
@@ -69,7 +69,7 @@ get_template_part( 'includes/header');
                 <!--end of tab-->
                 <div id="menu1" class="tab-pane fade">
                     <ul class="items-photos">
-                        <?php //loop impact items 
+                        <?php //loop impact items
                         while (have_rows( 'items_equipo')):the_row(); ?>
                         <li>
                             <article class="item-carr">
@@ -88,7 +88,7 @@ get_template_part( 'includes/header');
                 <!--end of tab-->
                 <div id="menu2" class="tab-pane fade">
                     <ul class="items-photos">
-                        <?php //loop impact items 
+                        <?php //loop impact items
                         while (have_rows( 'items_junta')):the_row(); ?>
                         <li>
                             <article class="item-carr">

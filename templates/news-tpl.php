@@ -22,8 +22,8 @@ Template Name: News
 <?php get_template_part('includes/header'); ?>
 <section id="MainPost">
 	<div class="row news-list no-gutter">
-		<header class="page-head">
-			<h2><?php the_title();?></h2>
+		<header class="main-header">
+				<h2><?php the_title();?></h2>
 		</header>
 
 		<?php if(ICL_LANGUAGE_CODE=='es'): ?>

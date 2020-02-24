@@ -33,15 +33,16 @@ body {
 				@include mobile {
 					padding: 9em 0 0;
 				}
-				h3 {
+				h2 {
 					display: inline-block;
 					color: $yellow;
-					font-size: em(50);
+					font-size: em(70);
 					font-family: $ralebk;
 					text-transform: uppercase;
 					@include mobile {
-						font-size: em(35);
+						font-size: em(45);
 					}
+
 				}
 			}
 		} // EOF HEADER

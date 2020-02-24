@@ -14,54 +14,26 @@ body{
 		}
 		//top title
 		.page-head {
-			max-width: 580px;
-			margin: 6em auto;
-			@include mobile{
-				margin: 4em auto 0;
-				text-align: center;
-			}
-			h1{
-				font-family: $raleebd;
-				font-size: em(100);
-				color: white;
-				display: block;
-				@include mobile{
-					display: inline-block;
-					font-size: em(50);
-					line-height: 1;
-				}
-			}
-			p {
-				display: inline-block;
-				vertical-align: top;
-				margin: 0;
-				b {
-					font-family: $raleebd;
-					font-size: em(64);
-					color: $white;
-					@include mobile{
-						display: inline-block;
-						font-size: em(50);
-						margin-top: 12px;
-					}
-				}
-			}
-			h2{
-				display: inline-block;
-				vertical-align: top;
-				font-family: $raleebd;
-				color: $yellow;
-				font-size: em(124);
-				margin-top: 0;
-				@include mobile{
-					display: inline-block;
-					font-size: em(50);
-					margin-top: 17px;
-				}
-				@include iphoneV {
-					margin-top: 12px;
-				}
-			}
+      position: relative;
+      z-index: 3;
+      text-align: center;
+      width: 100%;
+      padding: 6em 0;
+      z-index: 2;
+      @include mobile {
+        padding: 9em 0 0;
+      }
+      h2 {
+        display: inline-block;
+        color: $yellow;
+        font-size: em(70);
+        font-family: $ralebk;
+        text-transform: uppercase;
+        @include mobile {
+          font-size: em(45);
+        }
+
+      }
 		}
 
 		.container-fluid {
