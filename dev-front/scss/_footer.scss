@@ -9,6 +9,7 @@
 		background-color: transparent !important;
 	}
 	.follow {
+		display: block;
 		text-align: center;
 		padding: 1em 0;
 		span,
@@ -177,7 +178,7 @@
 				}
 				img {
 					display: block;
-					max-width: 100%; 
+					max-width: 100%;
 				}
 			}
 		}
@@ -243,5 +244,5 @@
 			color: white;
 			font-family: $raleBd;
 		}
-	}	
+	}
 }
