@@ -52,33 +52,33 @@ while (have_posts()):the_post();
         <li class="active">
           <a data-toggle="tab" href="#home">
             <i>
-            </i>LEAVE A
+            </i>ONE-TIME
             <br/>
-            <strong>FOOTPRINT
+            <strong>DONATION
             </strong>
           </a>
         </li>
         <li>
           <a data-toggle="tab" href="#menu1">
-            LEAVE MY MONTHLY
+            MONTHLY
             <br/>
-            <strong>FOOTPRINT
+            <strong>DONATION
             </strong>
           </a>
         </li>
         <li>
           <a data-toggle="tab" href="#menu2">
-            Share
+            CORPORATE
             <br/>
-            <strong>my footprint
+            <strong>DONATION
             </strong>
           </a>
         </li>
         <li>
           <a data-toggle="tab" href="#menu3">
-            Give a
+            CONMEMORATIVE
             <br/>
-            <strong>footprint
+            <strong>DONATION
             </strong>
           </a>
         </li>
@@ -195,7 +195,7 @@ while (have_posts()):the_post();
               <div class="progress-bar" role="progressbar"
                    aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
                    style="width: <?php the_sub_field('porcentaje_donacion'); ?><?php echo "%"; ?>">
-                   
+
               </div>
             </div>
             <div class="meta campaign__meta">
@@ -329,6 +329,11 @@ while (have_posts()):the_post();
           <div class="first text-body">
             <?php the_field('texto_introductorio_3');?>
           </div>
+
+          <div class="donacion-corporativa container-fluid">
+                <img src="<?php the_field('banner_empresa') ?>" alt="" width="100%" height="auto">
+             </div>
+
           <?php
           //loop campaña items
           while (have_rows('campanas')):the_row();
@@ -367,11 +372,7 @@ while (have_posts()):the_post();
           <?php
           endwhile;
           ?>
-        <!--  <div class="thanks">
-            <h3> <span>GRACIAS A LA</span> </h3>
-            <h3>DONACIÒN CORPORATIVA</h3>
-          </div>
-          /texto intro-->
+
         </div>
         <!--/eof tab 3-->
         <div id="menu3" class="tab-pane fade">

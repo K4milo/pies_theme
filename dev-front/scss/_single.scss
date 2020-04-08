@@ -102,6 +102,9 @@ body {
 				margin: 4em auto;
 				z-index: 2;
 				background-color: $white;
+				@include mq('md'){
+					
+				}
 				header {
 					position: relative;
 					text-align: center;

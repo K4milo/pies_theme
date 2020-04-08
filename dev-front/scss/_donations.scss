@@ -180,6 +180,18 @@ body {
                         }
                     } //EOF TABS
                     .tab-content {
+                      .thanks{
+                        h3{
+                          display: inline-block;
+                          color: $yellow;
+                          font-size: 4.375em;
+                          font-family: Raleway Black;
+                          text-transform: uppercase;
+                          span{
+                            color: $black;
+                          }
+                        }
+                      }
                         //general tab elements
                         .text-body {
                             // intro text
@@ -273,6 +285,7 @@ body {
                             @include clearfix;
                         }
                         .campaign {
+
                             header {
                                 h3 {
                                     color: $yellow;
@@ -306,7 +319,7 @@ body {
                                 a {
                                     font-weight: bold;
                                     text-align: center;
-                                    width: 60%;
+                                    width: 100%;
                                     display: block;
                                     padding: 0.5em 1.3em;
                                     background-color: $red;
@@ -318,6 +331,9 @@ body {
                                     &:hover {
                                         background-color: $grey;
                                         text-decoration: none;
+                                    }
+                                    @include mq('md'){
+                                      width: 60%;
                                     }
                                 }
                             }
@@ -350,20 +366,28 @@ body {
                                         height: rem(25px);
                                         top: rem(-20px);
                                     }
-                                    color: $yellow;
                                     display: block;
                                     position: absolute;
                                     top: rem(12px);
                                 }
+                                p{
+                                  color: $yellow;
+                                }
                             }
                             .content {
+
                                 padding: 0 4em;
                                 @include mobile {
                                     padding: 2em 0;
+                                    text-align: center;
                                 }
                                 img {
-                                    width: 100%;
+                                    width: 80%;
                                     height: auto;
+                                    @include mq('md'){
+                                      width: 100%;
+                                      height: auto;
+                                    }
                                 }
                             }
                         }

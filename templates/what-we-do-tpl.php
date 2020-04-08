@@ -12,7 +12,7 @@ while (have_posts()):the_post()?>
 			<h2><?php the_title();?></h2>
 		</header>
 		<div class="container iconos">
-			<div class="col-md-6 infrestructura text-center">
+			<div class="col-md-6 col-xs-6 infrestructura text-center">
 <a><img id="hb" src="<?php bloginfo('template_url')?>/img/icons/herramienta-blanca.png" alt="INFRAESTRUCTURA" name="hb"></a>
 <a><img id="ha" src="<?php bloginfo('template_url')?>/img/icons/herramienta-amarilla.png" alt="INFRAESTRUCTURA"name="ha"></a>
 <div  class="the-icon">
@@ -24,7 +24,7 @@ while (have_posts()):the_post()?>
 
 </div>
 			</div>
-			<div class="col-md-6 practicas-efectivas text-center">
+			<div class="col-md-6 col-xs-6 practicas-efectivas text-center">
 <a><img id="la" src="<?php bloginfo('template_url')?>/img/icons/libro-amarillo.png" alt="EDUCACIÓN"></a>
 <a><img id="lb" src="<?php bloginfo('template_url')?>/img/icons/libro-blanco.png" alt="EDUCACIÓN"> </a>
 <div  class="the-icon">

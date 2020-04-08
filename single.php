@@ -24,7 +24,7 @@ if (have_posts()):while (have_posts()):the_post();
 
 endwhile; endif; wp_reset_query();?>
 
-<body <?php body_class(); ?>  style="background-image: url('<?php echo $bgImage; ?>')">
+<body <?php body_class(); ?>  style="background-color: #ffbb01">
 
 <!--[if lt IE 8]>
 <div class="alert alert-warning">
@@ -93,13 +93,14 @@ endwhile; endif; wp_reset_query();?>
 
 <div class="container-fluid">
   <div class="row">
-		<div class="col-xs-6 col-sm-3 " id="sidebar" role="navigation">
-		<?php get_template_part('includes/sidebar'); ?>
-		</div>
-    <div class="new-singlecontent col-xs-12 col-sm-9">
-      <div id="content" role="main">
+		<div class="col-md-9 col-md-push-3 " role="navigation">
+			<div id="content" role="main">
 		<?php get_template_part('includes/loops/content', 'single');?>
-	  </div><!-- /#content -->
+		</div><!-- /#content -->
+
+		</div>
+    <div id="sidebar" class="new-singlecontent col-md-3 col-md-pull-9">
+	<?php get_template_part('includes/sidebar'); ?>
     </div>
   </div><!-- /.row -->
 </div><!-- /.container -->

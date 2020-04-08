@@ -112,20 +112,36 @@
                         float: none;
                     }
                     a {
-                        padding: 0 rem(4px);
-                        text-transform: uppercase;
-                        color: $white;
-                        position: relative;
-                        font-weight: 600;
-                        @include font(13px);
-                        &:hover,
-                        &:focus {
-                            background-color: transparent;
-                            color: $yellow;
-                            &:after {
-                                @include afterLine;
-                                bottom: rem(-10px);
-                            }
+                      padding: 0 rem(2px);
+                      @include font(10px);
+                      text-transform: uppercase;
+                      color: $white;
+                      position: relative;
+                      &:hover,
+                      &:focus {
+                          background-color: transparent;
+                          color: $yellow;
+                          &:after {
+                              @include afterLine;
+                              bottom: rem(-10px);
+                          }
+                      }
+                        @include mq('md'){
+                          padding: 0 rem(4px);
+                          text-transform: uppercase;
+                          color: $white;
+                          position: relative;
+                          font-weight: 600;
+                          @include font(13px);
+                          &:hover,
+                          &:focus {
+                              background-color: transparent;
+                              color: $yellow;
+                              &:after {
+                                  @include afterLine;
+                                  bottom: rem(-10px);
+                              }
+                          }
                         }
                     }
                     &.active {
