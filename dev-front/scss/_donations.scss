@@ -37,6 +37,7 @@ body {
             //The body of tabs
             >.row {
                 >.container {
+                  padding-bottom: 20px;
                     background-color: $white;
                     .nav-tabs {
                         text-align: center;
@@ -348,13 +349,13 @@ body {
                                 }
                             }
                             &__meta {
+                              text-align: center;
                                 padding: rem(16px) 0 rem(24px);
                                 @include wrapper;
                                 max-width: rem(1058px);
                                 position: relative;
                                 font-family: $raleebd;
                                 text-transform: uppercase;
-                                text-align: right;
                                 span {
                                     &::before {
                                         content: "";
@@ -372,6 +373,11 @@ body {
                                 }
                                 p{
                                   color: $yellow;
+                                }
+                                #meta-text{
+                                  text-align: left;
+                                  font-size: 21px;
+                                  margin-top: 13px;
                                 }
                             }
                             .content {
@@ -453,14 +459,14 @@ body {
                                 }
                             }
                             .logo-2 {
-                                margin-top: -30px;
+                                margin-top: -25px;
                             }
                             .item {
-                                display: inline-block;
+                                display: inline-table;
                                 width: 237px;
                                 height: 173px;
                                 position: relative;
-                                margin: 30px;
+                                margin: 35px;
                                 position: relative;
                                 border-radius: 20px;
                                 vertical-align: top;

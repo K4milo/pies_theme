@@ -191,19 +191,28 @@ while (have_posts()):the_post();
                   <?php the_sub_field('info_campana');?>
               </div>
             </div>
-            <div class="row progress progress-striped active campaign__progress">
-              <div class="progress-bar" role="progressbar"
-                   aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
-                   style="width: <?php the_sub_field('porcentaje_donacion'); ?><?php echo "%"; ?>">
+
+            <div class="col-md-9">
+              <div class="row progress progress-striped active campaign__progress">
+                <div class="progress-bar" role="progressbar"
+                     aria-valuenow="45" aria-valuemin="0" aria-valuemax="100"
+                     style="width: <?php the_sub_field('porcentaje_donacion'); ?><?php echo "%"; ?>">
+
+                </div>
+              </div>
+              <div class="meta campaign__meta">
+
+                <span class="current-value" style="left: <?php echo $donation_perc - 12; ?><?php echo "%"; ?>;">$<?php echo $perc_value; ?> USD</span>
 
               </div>
             </div>
-            <div class="meta campaign__meta">
-              <div class="campaign__share">
-                <?php echo do_shortcode('[TheChamp-Sharing]'); ?>
+            <div class="col-md-3">
+              <div class="meta campaign__meta">
+                <p id="meta-text">Meta:  $<?php the_sub_field('valor_meta'); ?> USD</p>
               </div>
-              <span class="current-value" style="left: <?php echo $donation_perc - 5; ?><?php echo "%"; ?>;">$<?php echo $perc_value; ?> USD</span>
-              <p>$<?php the_sub_field('valor_meta'); ?> UDS</p>
+            </div>
+            <div class="campaign__share col-md-12">
+              <?php echo do_shortcode('[TheChamp-Sharing]'); ?>
             </div>
           </div>
           <?php
