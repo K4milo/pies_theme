@@ -11,9 +11,11 @@ require_once locate_template('/functions/widgets.php');
 require_once locate_template('/functions/search.php');
 require_once locate_template('/functions/post-types.php');
 require_once locate_template('/functions/feedback.php');
+require_once locate_template('/functions/ajax-questions.php');
 
 add_action('after_setup_theme', 'true_load_theme_textdomain');
 
-function true_load_theme_textdomain(){
-    load_theme_textdomain( 'bst', get_template_directory() . '/languages' );
+function true_load_theme_textdomain()
+{
+    load_theme_textdomain('bst', get_template_directory() . '/languages');
 }

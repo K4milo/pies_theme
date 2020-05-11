@@ -1,38 +1,40 @@
-(function($) {
+import buildQuestionsFilters from './filter-questions';
+
+(function ($) {
 
   "use strict";
-  $(document).ready(function(){
-  	$("#lb").click(function () {
+  $(document).ready(function () {
+    $("#lb").click(function () {
 
-  		$("#info1").css("display", "none");
-  	  $("#info2").css("display", "block");
-  		$("#ha").css("display", "none");
-  		$("#hb").css("display", "inline");
-  		$("#infra").css("color", "#fff");
-  		$("#lb").css("display", "none");
-  		$("#la").css("display", "inline");
-  		$("#pract").css("color", "#ffbb01");
-  	});
+      $("#info1").css("display", "none");
+      $("#info2").css("display", "block");
+      $("#ha").css("display", "none");
+      $("#hb").css("display", "inline");
+      $("#infra").css("color", "#fff");
+      $("#lb").css("display", "none");
+      $("#la").css("display", "inline");
+      $("#pract").css("color", "#ffbb01");
+    });
 
-  	$("#hb").click(function () {
+    $("#hb").click(function () {
 
-  		$("#info1").css("display", "block");
-  		$("#info2").css("display", "none");
-  		$("#ha").css("display", "inline");
-  		$("#hb").css("display", "none");
-  		$("#infra").css("color", "#ffbb01");
-  		$("#la").css("display", "none");
-  		$("#lb").css("display", "inline");
-                  $("#pract").css("color", "#fff");
-  	});
+      $("#info1").css("display", "block");
+      $("#info2").css("display", "none");
+      $("#ha").css("display", "inline");
+      $("#hb").css("display", "none");
+      $("#infra").css("color", "#ffbb01");
+      $("#la").css("display", "none");
+      $("#lb").css("display", "inline");
+      $("#pract").css("color", "#fff");
+    });
   });
-  $(document).ready(function() {
+  $(document).ready(function () {
 
 
     // Scrolled menu
-    let header_el   = $('.navbar');
+    let header_el = $('.navbar');
 
-    $(window).scroll(function() {
+    $(window).scroll(function () {
 
       let scroll = $(window).scrollTop();
       if (scroll >= 100) {
@@ -47,7 +49,7 @@
     $(".comment-reply-link").addClass("btn btn-default");
 
     //header
-    $('.panel-heading').click(function(event) {
+    $('.panel-heading').click(function (event) {
       /* Act on the event */
       $(this).toggleClass('active');
     });
@@ -61,7 +63,7 @@
       $('body').addClass('open-menu');
     }
 
-    $('.navbar-side-btn').on('click', function(event) {
+    $('.navbar-side-btn').on('click', function (event) {
       event.preventDefault();
       event.stopPropagation();
       /* Act on the event */
@@ -73,8 +75,8 @@
     // Gateway form
     var select_opt_gateway = $('.dummy-drop select');
 
-    if(select_opt_gateway) {
-      select_opt_gateway.on('change', function(event) {
+    if (select_opt_gateway) {
+      select_opt_gateway.on('change', function (event) {
         event.preventDefault();
         /* Act on the event */
         var gateway_val = $(this).val();
@@ -87,18 +89,18 @@
     // Javascript to enable link to tab
     var url = document.location.toString();
     if (url.match('#')) {
-        $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
+      $('.nav-tabs a[href="#' + url.split('#')[1] + '"]').tab('show');
     }
 
     // Change hash for page-reload
     $('.page-template-donation-tpl .nav-tabs a').on('shown.bs.tab', function (e) {
-        window.location.hash = e.target.hash;
+      window.location.hash = e.target.hash;
     });
 
     //add support to small slider
-    if ($(window).width() <= 760 ){
+    if ($(window).width() <= 760) {
       //Trigger slider;
-      setTimeout(function(){
+      setTimeout(function () {
         $('ul.items-photos').slick({
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -106,22 +108,22 @@
 
         });
 
-      },600);
+      }, 600);
 
-      $('.page-template-about-tpl .nav-tabs li').on('click', function(event) {
+      $('.page-template-about-tpl .nav-tabs li').on('click', function (event) {
         $('ul.items-photos .slick-next ').trigger('click');
       });
     }
 
     //counterscript
     $('body.page-template-home-tpl #impact-value-container .impact-items .item .text-body p strong').counterUp({
-        delay: 10,
-        time: 1000
+      delay: 10,
+      time: 1000
     });
 
     $('body.page-template-home-tpl #impact-value-container .impact-items .item .text-body p b').counterUp({
-        delay: 10,
-        time: 1000
+      delay: 10,
+      time: 1000
     });
 
 
@@ -132,23 +134,23 @@
     //hide timeline blocks which are outside the viewport
     hideBlocks(timelineBlocks, offset);
     //on scolling, show/animate timeline blocks when enter the viewport
-    $(window).on('scroll', function() {
+    $(window).on('scroll', function () {
       (!window.requestAnimationFrame) ?
-      setTimeout(function() {
+      setTimeout(function () {
         showBlocks(timelineBlocks, offset);
-      }, 100): window.requestAnimationFrame(function() {
+      }, 100): window.requestAnimationFrame(function () {
         showBlocks(timelineBlocks, offset);
       });
     });
 
     function hideBlocks(blocks, offset) {
-      blocks.each(function() {
+      blocks.each(function () {
         ($(this).offset().top > $(window).scrollTop() + $(window).height() * offset) && $(this).find('.cd-timeline-img, .cd-timeline-content').addClass('is-hidden');
       });
     }
 
     function showBlocks(blocks, offset) {
-      blocks.each(function() {
+      blocks.each(function () {
         ($(this).offset().top <= $(window).scrollTop() + $(window).height() * offset && $(this).find('.cd-timeline-img').hasClass('is-hidden')) && $(this).find('.cd-timeline-img, .cd-timeline-content').removeClass('is-hidden').addClass('bounce-in');
       });
     }
@@ -157,12 +159,12 @@
     var listTime = $('.gestion .nav-tabs li'),
       contentTab = $('.gestion .tab-content .tab-pane');
 
-    listTime.each(function(index, el) {
+    listTime.each(function (index, el) {
 
-      $(this).on('click', function(event) {
+      $(this).on('click', function (event) {
         event.preventDefault();
         /* Act on the event */
-          triggerKnobs(contentTab);
+        triggerKnobs(contentTab);
       });
 
       if (index == 0) {
@@ -172,7 +174,7 @@
       }
     });
 
-    contentTab.each(function(index, el) {
+    contentTab.each(function (index, el) {
       var $this = $(this);
       if (index == 0) {
         $this.addClass('active');
@@ -184,23 +186,23 @@
 
     });
 
-    function resetKnobs(){
-      $('.knob').each(function(index, el) {
-         $(this).val(0);
+    function resetKnobs() {
+      $('.knob').each(function (index, el) {
+        $(this).val(0);
       });
     }
 
-    function triggerKnobs(sel){
-        sel.each(function(index, el) {
+    function triggerKnobs(sel) {
+      sel.each(function (index, el) {
         var $knob = $(this).find('.kn-cont'),
-            $val = 0,
-            $val1 = 0,
-            $val2 = 0,
-            $the_knob,
-            $the_knob1,
-            $the_knob2;
+          $val = 0,
+          $val1 = 0,
+          $val2 = 0,
+          $the_knob,
+          $the_knob1,
+          $the_knob2;
 
-        $knob.each(function(index, el) {
+        $knob.each(function (index, el) {
 
           if (index == 0) {
 
@@ -218,10 +220,10 @@
               'dynamicDraw': true,
             });
 
-          //the function of delay
-          $the_knob.val(0).trigger('change').delay(0);
+            //the function of delay
+            $the_knob.val(0).trigger('change').delay(0);
 
-          var tmr = self.setInterval(function () {
+            var tmr = self.setInterval(function () {
               myDelay();
             }, 10);
 
@@ -243,7 +245,7 @@
 
             $the_knob1.knob({
               'min': 0,
-              'max':100,
+              'max': 100,
               'displayInput': false,
               'fgColor': '#00A2A6',
               'bgColor': 'rgba(0,0,0,0)',
@@ -254,9 +256,9 @@
             });
 
             //the function of delay
-          $the_knob1.val(0).trigger('change').delay(0);
+            $the_knob1.val(0).trigger('change').delay(0);
 
-          var tmr = self.setInterval(function () {
+            var tmr = self.setInterval(function () {
               myDelay();
             }, 10);
 
@@ -289,9 +291,9 @@
             });
 
             //the function of delay
-          $the_knob2.val(0).trigger('change').delay(0);
+            $the_knob2.val(0).trigger('change').delay(0);
 
-          var tmr = self.setInterval(function () {
+            var tmr = self.setInterval(function () {
               myDelay();
             }, 10);
 
@@ -316,14 +318,14 @@
 
     var timelineItem = $('.items-ano li, #history-slider-mobile li');
 
-    timelineItem.each(function(index, el) {
+    timelineItem.each(function (index, el) {
       var $this = $(this);
 
       if (index == 0) {
         $this.addClass('active');
       }
 
-      $this.on('click', function(e) {
+      $this.on('click', function (e) {
         e.preventDefault();
         //Reset timeline class
         timelineItem.removeClass('active');
@@ -336,15 +338,15 @@
     //Slick slider
 
     var heroSlider = $('#history-slider'),
-        herolist = $('#history-slider li');
+      herolist = $('#history-slider li');
 
     heroSlider.slick({
       dots: true,
       slidesToShow: 1,
       slidesToScroll: 1,
-      customPaging: function(slider, i) {
+      customPaging: function (slider, i) {
         var date = $(slider.$slides[i]).data('date'),
-            text = $(slider.$slides[i]).data('text');
+          text = $(slider.$slides[i]).data('text');
         return '<div class="history-item"><h3>' + date + '</h3><i></i><h5>' + date + '</h5></div>';
       },
       infinite: true
@@ -359,8 +361,7 @@
       infinite: true,
       autoplay: true,
       autoplaySpeed: 2500,
-      responsive: [
-        {
+      responsive: [{
           breakpoint: 600,
           settings: {
             slidesToShow: 2,
@@ -386,8 +387,7 @@
       infinite: true,
       autoplay: true,
       autoplaySpeed: 1500,
-      responsive: [
-        {
+      responsive: [{
           breakpoint: 600,
           settings: {
             slidesToShow: 2,
@@ -410,14 +410,19 @@
     //append soacha content
 
     var soaES = $('body.page-template-what-we-do-tpl.page-id-236 .gestion #cd-gestion .tab-content #menu3'),
-        soaEN = $('body.page-template-what-we-do-tpl.page-id-736 .gestion #cd-gestion .tab-content #menu3');
+      soaEN = $('body.page-template-what-we-do-tpl.page-id-736 .gestion #cd-gestion .tab-content #menu3');
 
-        soaES.prepend('<h4>EN EL AÑO 2015 FINALIZAMOS NUESTRA INTERVENCIÓN EN SOACHA.</h4>');
-        soaEN.prepend('<h4>IN 2015, WE FINISHED OUR INTERVENTION IN SOACHA.</h4>');
+    soaES.prepend('<h4>EN EL AÑO 2015 FINALIZAMOS NUESTRA INTERVENCIÓN EN SOACHA.</h4>');
+    soaEN.prepend('<h4>IN 2015, WE FINISHED OUR INTERVENTION IN SOACHA.</h4>');
 
 
-		new WOW().init();
+    new WOW().init();
 
   });
 
 }(jQuery));
+
+// New scripts 
+document.addEventListener('DOMContentLoaded', () => {
+  buildQuestionsFilters();
+});

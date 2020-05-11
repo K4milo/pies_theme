@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -72,6 +72,12 @@
 
 "use strict";
 
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var _filterQuestions = __webpack_require__(3);
+
+var _filterQuestions2 = _interopRequireDefault(_filterQuestions);
 
 (function ($) {
 
@@ -485,6 +491,11 @@
   });
 })(jQuery);
 
+// New scripts
+document.addEventListener('DOMContentLoaded', function () {
+  (0, _filterQuestions2["default"])();
+});
+
 /***/ }),
 /* 1 */
 /***/ (function(module, exports) {
@@ -493,6 +504,106 @@
 
 /***/ }),
 /* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, '__esModule', {
+    value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
+
+var fetchQuestions = (function () {
+    function fetchQuestions(wrapper, resultWrapper) {
+        _classCallCheck(this, fetchQuestions);
+
+        this.wrapper = wrapper;
+        this.results = resultWrapper;
+        this.bringQuestions();
+    }
+
+    _createClass(fetchQuestions, [{
+        key: 'bringQuestions',
+        value: function bringQuestions() {
+            if (this.wrapper) {
+                this.wrapper.addEventListener('submit', this.fetchResponse());
+            }
+        }
+    }, {
+        key: 'fetchResponse',
+        value: function fetchResponse() {
+
+            var serializedFrm = serialize(this.wrapper);
+            var paramsObj = {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: new Headers({
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }),
+                body: serializedFrm
+            };
+
+            fetch(ajaxSettings.ajaxurl, paramsObj).then(function (resp) {
+                return resp.json();
+            }).then(function (data) {
+                if (data.status == "success") {
+                    this.results.innerHTML = data;
+                    console.table(data);
+                }
+            })['catch'](function (error) {
+                console.log(JSON.stringify(error));
+            });
+        }
+    }]);
+
+    return fetchQuestions;
+})();
+
+exports['default'] = {
+    fetchQuestions: fetchQuestions
+};
+module.exports = exports['default'];
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, '__esModule', {
+    value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _api_questionsCalls = __webpack_require__(2);
+
+var _api_questionsCalls2 = _interopRequireDefault(_api_questionsCalls);
+
+// Fetch filters module
+var buildQuestionsFilters = function buildQuestionsFilters() {
+    var filterWrapper = document.getElementById('QuestionsFilter');
+    var resultsWrapper = document.getElementById('QuestionsResponse');
+
+    var createFilters = new _api_questionsCalls2['default'](filterWrapper, resultsWrapper);
+
+    if (filterWrapper.length > 0) {
+        createFilters();
+    }
+};
+
+exports['default'] = {
+    buildQuestionsFilters: buildQuestionsFilters
+};
+module.exports = exports['default'];
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(0);
