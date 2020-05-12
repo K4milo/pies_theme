@@ -15,8 +15,8 @@
             echo '<header><h3>Tipo pregunta</h3></header>';
             foreach ($terms as $term) :
                 echo '<div class="field-item field-item--checkbox field-item--' . $term->slug . '">';
-                echo '<span><input type="checkbox" name="' . $term->slug . '" id="' . $term->term_id . '" value="' . $term->term_id . '"></span>';
-                echo '<label for="' . $term->slug . '"> ' . $term->name . '</label>';
+                echo '<span><input type="checkbox" name="tipo-pregunta_' . $term->slug . '" id="' . $term->term_id . '" value="' . $term->term_id . '"></span>';
+                echo '<label for="tipo-pregunta"> ' . $term->name . '</label>';
                 echo '</div>';
             endforeach;
             echo '</fieldset>';
@@ -28,8 +28,8 @@
             echo '<header><h3>Materias</h3></header>';
             foreach ($terms as $term) :
                 echo '<div class="field-item field-item--checkbox field-item--' . $term->slug . '">';
-                echo '<span><input type="checkbox" name="' . $term->slug . '" id="' . $term->term_id . '" value="' . $term->term_id . '"></span>';
-                echo '<label for="' . $term->slug . '"> ' . $term->name . '</label>';
+                echo '<span><input type="checkbox" name="materia_' . $term->slug . '" id="' . $term->term_id . '" value="' . $term->term_id . '"></span>';
+                echo '<label for="materia"> ' . $term->name . '</label>';
                 echo '</div>';
             endforeach;
             echo '</fieldset>';
@@ -41,8 +41,8 @@
             echo '<header><h3>Grado</h3></header>';
             foreach ($terms as $term) :
                 echo '<div class="field-item field-item--checkbox field-item--' . $term->slug . '">';
-                echo '<span><input type="checkbox" name="' . $term->slug . '" id="' . $term->term_id . '" value="' . $term->term_id . '"></span>';
-                echo '<label for="' . $term->slug . '"> ' . $term->name . '</label>';
+                echo '<span><input type="checkbox" name="curso_' . $term->slug . '" id="' . $term->term_id . '" value="' . $term->term_id . '"></span>';
+                echo '<label for="curso"> ' . $term->name . '</label>';
                 echo '</div>';
             endforeach;
             echo '</fieldset>';

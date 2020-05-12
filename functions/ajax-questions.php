@@ -15,51 +15,33 @@ function question_filter_function()
         'posts_per_page' => '-1',
     );
 
-    // Courses loop
-    $cursos = get_terms(array('taxonomy' => 'curso'));
-    foreach ($cursos as $curso) :
-        if (isset($_POST[$curso->slug])) :
-            $args['tax_query'] = array(
-                array(
-                    'taxonomy' => 'curso',
-                    'field' => 'id',
-                    'terms' => $_POST[$curso->slug]
-                )
-            );
-        endif;
-    endforeach;
+    if ($_POST) :
 
-    // Signatures loop
-    $materias = get_terms(array('taxonomy' => 'materia'));
-    foreach ($materias as $materia) :
-        if (isset($_POST[$materia->slug])) :
-            $args['tax_query'] = array(
-                array(
-                    'taxonomy' => 'materia',
-                    'field' => 'id',
-                    'terms' => $_POST[$materia->slug]
-                )
-            );
-        endif;
-    endforeach;
+        $args['tax_query'] = array('relation' => 'OR');
 
-    // Questions Types loop
-    $tipos = get_terms(array('taxonomy' => 'tipo-pregunta'));
-    foreach ($tipos as $tipo) :
-        if (isset($_POST[$tipo->slug])) :
-            $args['tax_query'] = array(
-                array(
-                    'taxonomy' => 'tipo-pregunta',
-                    'field' => 'id',
-                    'terms' => $_POST[$tipo->slug]
-                )
-            );
-        endif;
-    endforeach;
+        // Taxonomy loop
+        foreach ($_POST as $name => $term) :
+            $taxname = '';
+
+            if ($term && $name != 'action') :
+
+                $taxname = explode("_", $name);
+
+                if ($taxname != '') :
+                    $args['tax_query'][] = array(
+                        'taxonomy' => strval(
+                            $taxname[0]
+                        ),
+                        'field' => 'id',
+                        'terms' => $term
+                    );
+                endif;
+            endif;
+        endforeach;
+    endif;
 
     // Post type query
     $query = new WP_Query($args);
-
     if ($query->have_posts()) :
         while ($query->have_posts()) : $query->the_post();
             echo '<article class="filter-questions--item">';
@@ -70,6 +52,5 @@ function question_filter_function()
     else :
         echo '<h3>No existen preguntas con tu criterio de filtro</h3>';
     endif;
-
     die();
 }
