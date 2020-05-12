@@ -49,6 +49,6 @@
         endif;
         ?>
         <button>Aplicar Filtro</button>
-        <input type="hidden" name="action" value="myfilter">
+        <input type="hidden" name="action" value="questions_filter">
     </form>
 </section>

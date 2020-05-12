@@ -66,18 +66,15 @@
 /******/ 	return __webpack_require__(__webpack_require__.s = 4);
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
 var _filterQuestions = __webpack_require__(3);
-
-var _filterQuestions2 = _interopRequireDefault(_filterQuestions);
 
 (function ($) {
 
@@ -492,18 +489,18 @@ var _filterQuestions2 = _interopRequireDefault(_filterQuestions);
 })(jQuery);
 
 // New scripts
-document.addEventListener('DOMContentLoaded', function () {
-  (0, _filterQuestions2["default"])();
-});
+(0, _filterQuestions.buildQuestionsFilters)();
 
 /***/ }),
-/* 1 */
+
+/***/ 1:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 2 */
+
+/***/ 2:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -517,27 +514,23 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
+var _utils = __webpack_require__(89);
+
 var fetchQuestions = (function () {
     function fetchQuestions(wrapper, resultWrapper) {
         _classCallCheck(this, fetchQuestions);
 
         this.wrapper = wrapper;
-        this.results = resultWrapper;
-        this.bringQuestions();
+        this.resultsDOM = resultWrapper;
+        this.fetchResponse();
     }
 
     _createClass(fetchQuestions, [{
-        key: 'bringQuestions',
-        value: function bringQuestions() {
-            if (this.wrapper) {
-                this.wrapper.addEventListener('submit', this.fetchResponse());
-            }
-        }
-    }, {
         key: 'fetchResponse',
         value: function fetchResponse() {
-
-            var serializedFrm = serialize(this.wrapper);
+            var serializedFrm = (0, _utils.serialize)(this.wrapper);
+            var ajaxUrl = this.wrapper.getAttribute("action");
+            var resultsDiv = this.resultsDOM;
             var paramsObj = {
                 method: 'POST',
                 credentials: 'same-origin',
@@ -547,15 +540,12 @@ var fetchQuestions = (function () {
                 body: serializedFrm
             };
 
-            fetch(ajaxSettings.ajaxurl, paramsObj).then(function (resp) {
-                return resp.json();
+            fetch(ajaxUrl, paramsObj).then(function (response) {
+                return response.text();
             }).then(function (data) {
-                if (data.status == "success") {
-                    this.results.innerHTML = data;
-                    console.table(data);
-                }
-            })['catch'](function (error) {
-                console.log(JSON.stringify(error));
+                data ? resultsDiv.innerHTML = data : 'No existen resultados';
+            })['catch'](function (e) {
+                return console.log('error', e);
             });
         }
     }]);
@@ -563,13 +553,11 @@ var fetchQuestions = (function () {
     return fetchQuestions;
 })();
 
-exports['default'] = {
-    fetchQuestions: fetchQuestions
-};
-module.exports = exports['default'];
+exports.fetchQuestions = fetchQuestions;
 
 /***/ }),
-/* 3 */
+
+/***/ 3:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -579,36 +567,62 @@ Object.defineProperty(exports, '__esModule', {
     value: true
 });
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
 var _api_questionsCalls = __webpack_require__(2);
-
-var _api_questionsCalls2 = _interopRequireDefault(_api_questionsCalls);
 
 // Fetch filters module
 var buildQuestionsFilters = function buildQuestionsFilters() {
     var filterWrapper = document.getElementById('QuestionsFilter');
     var resultsWrapper = document.getElementById('QuestionsResponse');
 
-    var createFilters = new _api_questionsCalls2['default'](filterWrapper, resultsWrapper);
-
     if (filterWrapper.length > 0) {
-        createFilters();
+        filterWrapper.addEventListener('input', function (e) {
+            var createFilters = new _api_questionsCalls.fetchQuestions(filterWrapper, resultsWrapper);
+            e.preventDefault();
+        });
     }
 };
 
-exports['default'] = {
-    buildQuestionsFilters: buildQuestionsFilters
-};
-module.exports = exports['default'];
+exports.buildQuestionsFilters = buildQuestionsFilters;
 
 /***/ }),
-/* 4 */
+
+/***/ 4:
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(0);
 module.exports = __webpack_require__(1);
 
 
+/***/ }),
+
+/***/ 89:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, '__esModule', {
+	value: true
+});
+var serialize = function serialize(form) {
+	var arr = [];
+	Array.prototype.slice.call(form.elements).forEach(function (field) {
+		if (!field.name || field.disabled || ['file', 'reset', 'submit', 'button'].indexOf(field.type) > -1) return;
+		if (field.type === 'select-multiple') {
+			Array.prototype.slice.call(field.options).forEach(function (option) {
+				if (!option.selected) return;
+				arr.push(encodeURIComponent(field.name) + '=' + encodeURIComponent(option.value));
+			});
+			return;
+		}
+		if (['checkbox', 'radio'].indexOf(field.type) > -1 && !field.checked) return;
+		arr.push(encodeURIComponent(field.name) + '=' + encodeURIComponent(field.value));
+	});
+	return arr.join('&');
+};
+
+exports.serialize = serialize;
+
 /***/ })
-/******/ ]);
+
+/******/ });

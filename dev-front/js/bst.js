@@ -1,4 +1,4 @@
-import buildQuestionsFilters from './filter-questions';
+import { buildQuestionsFilters } from './filter-questions';
 
 (function ($) {
 
@@ -423,6 +423,4 @@ import buildQuestionsFilters from './filter-questions';
 }(jQuery));
 
 // New scripts 
-document.addEventListener('DOMContentLoaded', () => {
-  buildQuestionsFilters();
-});
+buildQuestionsFilters();

@@ -1,17 +1,18 @@
-import fetchQuestions from './api/_questions-calls';
+import { fetchQuestions } from './api/_questions-calls';
 
 // Fetch filters module 
-const buildQuestionsFilters = () => {
+const buildQuestionsFilters = function () {
     const filterWrapper = document.getElementById('QuestionsFilter');
     const resultsWrapper = document.getElementById('QuestionsResponse');
 
-    const createFilters = new fetchQuestions(filterWrapper, resultsWrapper);
-
     if (filterWrapper.length > 0) {
-        createFilters();
+        filterWrapper.addEventListener('input', function(e) {
+            const createFilters = new fetchQuestions(filterWrapper, resultsWrapper);
+            e.preventDefault();
+        });
     }
 }
 
-export default {
+export {
     buildQuestionsFilters
 }
