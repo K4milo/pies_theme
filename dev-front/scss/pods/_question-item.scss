@@ -1,0 +1,60 @@
+.question-list--questions {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mq('md') {
+        width: 72%;
+    }
+}
+
+.filter-questions--item {
+    width: 94%;
+    position: relative;
+    margin-bottom: rem(16px) auto;
+    padding: rem(16px);
+    text-align: left;
+    border-radius: rem(20px);
+    background-color: $white;
+
+    @include mq('md') {
+        width: 30%;
+        min-height: rem(220px);
+        margin: 0 1.5% 3%;
+    }
+
+    header {
+        h3 {
+            color: $red;
+        }
+    }
+
+    &-text {
+        ul {
+            padding: rem(10px) 0;
+
+            li {
+                display: inline-block;
+                vertical-align: middle;
+
+
+                &:first-child {
+                    padding-right: rem(10px);
+                    border-right: rem(1px) solid;
+                }
+
+                &:last-child {
+                    padding-left: rem(10px);
+                }
+            }
+        }
+
+        a {
+            font-family: $ralebk;
+            @include font(18px);
+            text-transform: uppercase;
+            color: $yellow;
+            margin-top: rem(100px);
+        }
+    }
+}

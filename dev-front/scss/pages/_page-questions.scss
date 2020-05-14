@@ -1,0 +1,17 @@
+body {
+    &.page-template-answers-tpl {
+        background-color: $lgrey2;
+
+        // List of questions markup
+        .question-list {
+
+            &--wrapper {
+                @include wrapper;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-start;
+                flex-wrap: wrap;
+            }
+        }
+    }
+}

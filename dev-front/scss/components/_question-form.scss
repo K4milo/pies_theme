@@ -1,0 +1,117 @@
+.form-post {
+    &--question {
+        position: relative;
+        background-color: $yellow;
+        padding: rem(20px);
+        margin: rem(20px) auto 0;
+
+        @include mq('md') {
+            margin: rem(70px) auto 0;
+            padding: rem(70px) 0;
+        }
+
+        &-wrapper {
+            @include wrapper;
+        }
+
+        header {
+            color: $white;
+            text-align: center;
+            padding-bottom: rem(30px);
+
+            h2 {
+                text-transform: uppercase;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            fieldset {
+                width: 100%;
+
+                @include mq('md') {
+                    width: 45%;
+                }
+
+                &.full {
+                    text-align: center;
+
+                    @include mq('md') {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+
+        .form-item {
+            position: relative;
+            margin-bottom: rem(16px);
+
+            button {
+                display: inline-block;
+                padding: rem(10px) rem(20px);
+                background-color: $red;
+                border: none;
+                color: $white;
+                font-family: $rale;
+                text-transform: uppercase;
+                margin: rem(20px) 0;
+                border-radius: 1em;
+                text-align: center;
+
+                &:hover {
+                    background-color: $grey;
+                    text-decoration: none;
+                }
+            }
+
+            &--textfield {
+
+                input {
+                    width: 100%;
+                    border-radius: rem(12px);
+                    border: none;
+                    background-color: rgba($white, 0.3);
+                }
+            }
+
+            &--select {
+
+                select {
+                    width: 100%;
+                    border-radius: rem(12px);
+                    border: none;
+                    background-color: rgba($white, 0.3);
+                }
+            }
+
+            &--textarea {
+
+                textarea {
+                    width: 100%;
+                    border-radius: rem(12px);
+                    border: none;
+                    height: rem(200px);
+                    background-color: rgba($white, 0.3);
+                }
+            }
+
+            &--double {
+
+                @include mq('md') {
+                    width: 100%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+
+                    >div {
+                        width: 48%;
+                    }
+                }
+            }
+        }
+    }
+}

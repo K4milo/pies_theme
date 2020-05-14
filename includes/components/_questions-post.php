@@ -1,5 +1,9 @@
 <section class="form-post--question">
     <div class="form-post--question-wrapper">
+        <header>
+            <h2>¡Tengo una pregunta!</h2>
+            <p>Registra tus datos y haz tus preguntas, pronto te responderemos.</p>
+        </header>
         <div class="form-post--results" id="QuestionsPostResult"></div>
         <form action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" class="post-questions" method="POST" id="QuestionsPost">
             <fieldset>
@@ -47,7 +51,7 @@
                     <textarea name="the-question" id="question" placeholder="Escribe tu pregunta aquí"></textarea>
                 </div>
                 <div class="form-item form-item--file">
-                    <input type="file" id="avatar" name="the-attached" accept="image/png, image/jpeg"/>
+                    <input type="file" id="avatar" name="the-attached" accept="image/png, image/jpeg" />
                 </div>
             </fieldset>
             <fieldset class="full">
@@ -59,8 +63,8 @@
                     </div>
                 </div>
                 <div class="form-item form-item--acceptance">
-                <input type="hidden" name="action" value="questions_post">
-                    <button type="submit">Enviar Pregunta</button>
+                    <input type="hidden" name="action" value="questions_post">
+                    <button type="submit">Publicar</button>
                 </div>
             </fieldset>
         </form>

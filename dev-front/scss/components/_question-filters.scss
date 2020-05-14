@@ -1,0 +1,61 @@
+.question-list--filters {
+    width: 100%;
+    padding: rem(20px);
+    text-align: left;
+    border-radius: rem(20px);
+    background-color: $white;
+
+    @include mq('md') {
+        width: 25%;
+    }
+
+    .filter-group {
+        position: relative;
+        margin-bottom: rem(20px);
+
+        header {
+            position: relative;
+            cursor: pointer;
+            padding: rem(12px);
+            margin-bottom: rem(18px);
+            border-top: rem(1px) solid $grey-2;
+            border-bottom: rem(1px) solid $grey-2;
+
+            h3 {
+                font-family: $rale;
+                @include font(18px);
+                margin: 0 0;
+            }
+        }
+
+        .field-item {
+            &--checkbox {
+                display: block;
+                padding: rem(2px) 0;
+
+                span {
+                    display: inline-block;
+                    margin-right: rem(12px);
+                }
+            }
+        }
+    }
+
+    button {
+        display: inline-block;
+        padding: rem(10px) rem(20px);
+        background-color: $red;
+        border: none;
+        color: $white;
+        font-family: $rale;
+        text-transform: uppercase;
+        margin: rem(20px) 0;
+        border-radius: 1em;
+        text-align: center;
+
+        &:hover {
+            background-color: $grey;
+            text-decoration: none;
+        }
+    }
+}
