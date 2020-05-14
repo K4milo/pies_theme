@@ -63,7 +63,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -490,6 +490,7 @@ var _filterQuestions = __webpack_require__(3);
 
 // New scripts
 (0, _filterQuestions.buildQuestionsFilters)();
+(0, _filterQuestions.buildQuestionsPost)();
 
 /***/ }),
 
@@ -514,18 +515,18 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var _utils = __webpack_require__(89);
+var _utils = __webpack_require__(4);
 
-var fetchQuestions = (function () {
-    function fetchQuestions(wrapper, resultWrapper) {
-        _classCallCheck(this, fetchQuestions);
+var FetchQuestions = (function () {
+    function FetchQuestions(wrapper, resultWrapper) {
+        _classCallCheck(this, FetchQuestions);
 
         this.wrapper = wrapper;
         this.resultsDOM = resultWrapper;
         this.fetchResponse();
     }
 
-    _createClass(fetchQuestions, [{
+    _createClass(FetchQuestions, [{
         key: 'fetchResponse',
         value: function fetchResponse() {
             var serializedFrm = (0, _utils.serialize)(this.wrapper);
@@ -550,10 +551,10 @@ var fetchQuestions = (function () {
         }
     }]);
 
-    return fetchQuestions;
+    return FetchQuestions;
 })();
 
-exports.fetchQuestions = fetchQuestions;
+exports.FetchQuestions = FetchQuestions;
 
 /***/ }),
 
@@ -569,33 +570,42 @@ Object.defineProperty(exports, '__esModule', {
 
 var _api_questionsCalls = __webpack_require__(2);
 
+var _api_questionPost = __webpack_require__(90);
+
 // Fetch filters module
 var buildQuestionsFilters = function buildQuestionsFilters() {
     var filterWrapper = document.getElementById('QuestionsFilter');
     var resultsWrapper = document.getElementById('QuestionsResponse');
 
     if (filterWrapper.length > 0) {
-        filterWrapper.addEventListener('input', function (e) {
-            var createFilters = new _api_questionsCalls.fetchQuestions(filterWrapper, resultsWrapper);
+        filterWrapper.addEventListener('submit', function (e) {
+            var createFilters = new _api_questionsCalls.FetchQuestions(filterWrapper, resultsWrapper);
+            e.preventDefault();
+        });
+    }
+};
+
+// Build post object
+var buildQuestionsPost = function buildQuestionsPost() {
+    var formPost = document.getElementById('QuestionsPost');
+    var fileInput = document.getElementById('avatar');
+    var resultsWrapper = document.getElementById('QuestionsPostResult');
+    var successMarkup = '<div class="form-success"><h2>Tu pregunta está pendiente de ser aprobada</h2></div>';
+
+    if (formPost.length > 0) {
+        formPost.addEventListener('submit', function (e) {
+            var createPost = new _api_questionPost.PostQuestions(formPost, resultsWrapper, successMarkup, fileInput);
             e.preventDefault();
         });
     }
 };
 
 exports.buildQuestionsFilters = buildQuestionsFilters;
+exports.buildQuestionsPost = buildQuestionsPost;
 
 /***/ }),
 
 /***/ 4:
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(0);
-module.exports = __webpack_require__(1);
-
-
-/***/ }),
-
-/***/ 89:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -607,7 +617,7 @@ Object.defineProperty(exports, '__esModule', {
 var serialize = function serialize(form) {
 	var arr = [];
 	Array.prototype.slice.call(form.elements).forEach(function (field) {
-		if (!field.name || field.disabled || ['file', 'reset', 'submit', 'button'].indexOf(field.type) > -1) return;
+		if (!field.name || field.disabled || ['reset', 'submit', 'button'].indexOf(field.type) > -1) return;
 		if (field.type === 'select-multiple') {
 			Array.prototype.slice.call(field.options).forEach(function (option) {
 				if (!option.selected) return;
@@ -622,6 +632,79 @@ var serialize = function serialize(form) {
 };
 
 exports.serialize = serialize;
+
+/***/ }),
+
+/***/ 5:
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(0);
+module.exports = __webpack_require__(1);
+
+
+/***/ }),
+
+/***/ 90:
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var _utils = __webpack_require__(4);
+
+var PostQuestions = (function () {
+    function PostQuestions(wrapper, resultWrapper, markupSuccess, fileInput) {
+        _classCallCheck(this, PostQuestions);
+
+        this.wrapper = wrapper;
+        this.resultsDOM = resultWrapper;
+        this.resultMarkup = markupSuccess;
+        this.file = fileInput;
+        this.fetchResponse();
+    }
+
+    _createClass(PostQuestions, [{
+        key: "fetchResponse",
+        value: function fetchResponse() {
+            var serializedFrm = (0, _utils.serialize)(this.wrapper);
+            var ajaxUrl = this.wrapper.getAttribute("action");
+            var resultsDiv = this.resultsDOM;
+            var successHTML = this.resultMarkup;
+
+            serializedFrm.append("async-upload", this.file.files[0]);
+            serializedFrm.append("name", this.file.files[0].name);
+
+            var paramsObj = {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: new Headers({
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }),
+                body: serializedFrm
+            };
+
+            fetch(ajaxUrl, paramsObj).then(function (response) {
+                return response.text();
+            }).then(function (data) {
+                data ? resultsDiv.innerHTML = successHTML : 'No se pudo añadir el post';
+            })["catch"](function (e) {
+                return console.log('error', e);
+            });
+        }
+    }]);
+
+    return PostQuestions;
+})();
+
+exports.PostQuestions = PostQuestions;
 
 /***/ })
 

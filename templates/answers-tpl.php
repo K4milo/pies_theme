@@ -10,4 +10,6 @@ get_template_part('includes/blocks/static/_questions', 'process');
 
 get_template_part('includes/blocks/static/_questions', 'markup');
 
+get_template_part('includes/components/_questions', 'post');
+
 get_template_part('includes/footer');

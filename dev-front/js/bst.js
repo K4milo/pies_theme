@@ -1,4 +1,4 @@
-import { buildQuestionsFilters } from './filter-questions';
+import { buildQuestionsFilters, buildQuestionsPost } from './filter-questions';
 
 (function ($) {
 
@@ -424,3 +424,4 @@ import { buildQuestionsFilters } from './filter-questions';
 
 // New scripts 
 buildQuestionsFilters();
+buildQuestionsPost();
