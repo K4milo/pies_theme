@@ -1,0 +1,44 @@
+.question {
+
+    &-process {
+        position: relative;
+        text-align: center;
+        margin-top: rem(-125px);
+        z-index: 2;
+
+        @include mq('md') {
+            margin-top: rem(-195px);
+        }
+        
+        header {
+            position: relative;
+            text-align: center;
+
+            h2 {
+                color: $yellow;
+                font-size: em(40);
+                font-family: $ralebk;
+                text-transform: uppercase;
+            }
+        }
+        
+        ul {
+            @include wrapper;
+            display: block;
+            padding: rem(20px) 0;
+            text-align: center;
+
+            li {
+                display: inline-block;
+                vertical-align: middle;
+                max-width: 18%;
+                margin: 0 2%;
+
+                img {
+                    max-width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+}

@@ -63,18 +63,46 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 5);
+/******/ 	return __webpack_require__(__webpack_require__.s = 6);
 /******/ })
 /************************************************************************/
-/******/ ({
-
-/***/ 0:
+/******/ ([
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _filterQuestions = __webpack_require__(3);
+Object.defineProperty(exports, '__esModule', {
+	value: true
+});
+var serialize = function serialize(form) {
+	var arr = [];
+	Array.prototype.slice.call(form.elements).forEach(function (field) {
+		if (!field.name || field.disabled || ['reset', 'submit', 'button'].indexOf(field.type) > -1) return;
+		if (field.type === 'select-multiple') {
+			Array.prototype.slice.call(field.options).forEach(function (option) {
+				if (!option.selected) return;
+				arr.push(encodeURIComponent(field.name) + '=' + encodeURIComponent(option.value));
+			});
+			return;
+		}
+		if (['checkbox', 'radio'].indexOf(field.type) > -1 && !field.checked) return;
+		arr.push(encodeURIComponent(field.name) + '=' + encodeURIComponent(field.value));
+	});
+	return arr.join('&');
+};
+
+exports.serialize = serialize;
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _filterQuestions = __webpack_require__(5);
 
 (function ($) {
 
@@ -493,15 +521,77 @@ var _filterQuestions = __webpack_require__(3);
 (0, _filterQuestions.buildQuestionsPost)();
 
 /***/ }),
-
-/***/ 1:
+/* 2 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
 
-/***/ 2:
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var _utils = __webpack_require__(0);
+
+var PostQuestions = (function () {
+    function PostQuestions(wrapper, resultWrapper, markupSuccess, fileInput) {
+        _classCallCheck(this, PostQuestions);
+
+        this.wrapper = wrapper;
+        this.resultsDOM = resultWrapper;
+        this.resultMarkup = markupSuccess;
+        this.file = fileInput;
+        this.fetchResponse();
+    }
+
+    _createClass(PostQuestions, [{
+        key: "fetchResponse",
+        value: function fetchResponse() {
+            var serializedFrm = new FormData(this.wrapper);
+            var ajaxUrl = this.wrapper.getAttribute("action");
+            var resultsDiv = this.resultsDOM;
+            var successHTML = this.resultMarkup;
+
+            if (this.file.files[0]) {
+                console.log(this.file.files[0]);
+                serializedFrm.append("file", this.file.files[0]);
+                serializedFrm.append('name', 'question-thumb');
+                serializedFrm.append('description', 'Featured image for question');
+            }
+
+            var paramsObj = {
+                method: 'POST',
+                credentials: 'same-origin',
+                body: serializedFrm
+            };
+
+            fetch(ajaxUrl, paramsObj).then(function (response) {
+                return response.text();
+            }).then(function (data) {
+                data ? resultsDiv.innerHTML = successHTML : 'No se pudo añadir el post';
+            })["catch"](function (e) {
+                return console.log('error', e);
+            });
+        }
+    }]);
+
+    return PostQuestions;
+})();
+
+exports.PostQuestions = PostQuestions;
+
+/***/ }),
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -515,7 +605,7 @@ var _createClass = (function () { function defineProperties(target, props) { for
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var _utils = __webpack_require__(4);
+var _utils = __webpack_require__(0);
 
 var FetchQuestions = (function () {
     function FetchQuestions(wrapper, resultWrapper) {
@@ -557,8 +647,7 @@ var FetchQuestions = (function () {
 exports.FetchQuestions = FetchQuestions;
 
 /***/ }),
-
-/***/ 3:
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -568,9 +657,9 @@ Object.defineProperty(exports, '__esModule', {
     value: true
 });
 
-var _api_questionsCalls = __webpack_require__(2);
+var _api_questionsCalls = __webpack_require__(4);
 
-var _api_questionPost = __webpack_require__(90);
+var _api_questionPost = __webpack_require__(3);
 
 // Fetch filters module
 var buildQuestionsFilters = function buildQuestionsFilters() {
@@ -604,108 +693,12 @@ exports.buildQuestionsFilters = buildQuestionsFilters;
 exports.buildQuestionsPost = buildQuestionsPost;
 
 /***/ }),
-
-/***/ 4:
+/* 6 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
+__webpack_require__(1);
+module.exports = __webpack_require__(2);
 
-
-Object.defineProperty(exports, '__esModule', {
-	value: true
-});
-var serialize = function serialize(form) {
-	var arr = [];
-	Array.prototype.slice.call(form.elements).forEach(function (field) {
-		if (!field.name || field.disabled || ['reset', 'submit', 'button'].indexOf(field.type) > -1) return;
-		if (field.type === 'select-multiple') {
-			Array.prototype.slice.call(field.options).forEach(function (option) {
-				if (!option.selected) return;
-				arr.push(encodeURIComponent(field.name) + '=' + encodeURIComponent(option.value));
-			});
-			return;
-		}
-		if (['checkbox', 'radio'].indexOf(field.type) > -1 && !field.checked) return;
-		arr.push(encodeURIComponent(field.name) + '=' + encodeURIComponent(field.value));
-	});
-	return arr.join('&');
-};
-
-exports.serialize = serialize;
-
-/***/ }),
-
-/***/ 5:
-/***/ (function(module, exports, __webpack_require__) {
-
-__webpack_require__(0);
-module.exports = __webpack_require__(1);
-
-
-/***/ }),
-
-/***/ 90:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-var _utils = __webpack_require__(4);
-
-var PostQuestions = (function () {
-    function PostQuestions(wrapper, resultWrapper, markupSuccess, fileInput) {
-        _classCallCheck(this, PostQuestions);
-
-        this.wrapper = wrapper;
-        this.resultsDOM = resultWrapper;
-        this.resultMarkup = markupSuccess;
-        this.file = fileInput;
-        this.fetchResponse();
-    }
-
-    _createClass(PostQuestions, [{
-        key: "fetchResponse",
-        value: function fetchResponse() {
-            var serializedFrm = (0, _utils.serialize)(this.wrapper);
-            var ajaxUrl = this.wrapper.getAttribute("action");
-            var resultsDiv = this.resultsDOM;
-            var successHTML = this.resultMarkup;
-
-            serializedFrm.append("async-upload", this.file.files[0]);
-            serializedFrm.append("name", this.file.files[0].name);
-
-            var paramsObj = {
-                method: 'POST',
-                credentials: 'same-origin',
-                headers: new Headers({
-                    'Content-Type': 'application/x-www-form-urlencoded'
-                }),
-                body: serializedFrm
-            };
-
-            fetch(ajaxUrl, paramsObj).then(function (response) {
-                return response.text();
-            }).then(function (data) {
-                data ? resultsDiv.innerHTML = successHTML : 'No se pudo añadir el post';
-            })["catch"](function (e) {
-                return console.log('error', e);
-            });
-        }
-    }]);
-
-    return PostQuestions;
-})();
-
-exports.PostQuestions = PostQuestions;
 
 /***/ })
-
-/******/ });
+/******/ ]);

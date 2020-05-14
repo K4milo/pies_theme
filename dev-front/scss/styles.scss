@@ -9,10 +9,18 @@
 @import "_header";
 
 //components
-@import "_grid";
-
-//components
 @import "_sidebar";
+@import "_grid";
+@import "components/question-filters";
+
+//pods
+@import "pods/question-item";
+
+//banners
+@import "hero/hero-questions";
+
+//blocks
+@import "blocks/questions-process";
 
 //sections
 @import "_home";

@@ -8,10 +8,29 @@
 add_action('wp_ajax_questions_post', 'question_post_function');
 add_action('wp_ajax_nopriv_questions_post', 'questions_post_function');
 
-function question_post_function() {
 
-    if($_POST) :
+// Insert image 
+if (!function_exists('insert_attachment')) :
+    function insert_attachment($file_handler, $post_id, $setthumb = 'false')
+    {
+        if ($_FILES[$file_handler]['error'] !== UPLOAD_ERR_OK) {
+            return __return_false();
+        }
+        require_once(ABSPATH . "wp-admin" . '/includes/image.php');
+        require_once(ABSPATH . "wp-admin" . '/includes/file.php');
+        require_once(ABSPATH . "wp-admin" . '/includes/media.php');
 
+        echo $attach_id = media_handle_upload($file_handler, $post_id);
+        //set post thumbnail if setthumb is 1
+        if ($setthumb == 1) update_post_meta($post_id, '_thumbnail_id', $attach_id);
+        return $attach_id;
+    }
+endif;
+
+function question_post_function()
+{
+
+    if ($_POST) :
         // Variable array of posts
         $wpost_nuser = $_POST['the-name-user'];
         $wpost_email = $_POST['the-email'];
@@ -20,10 +39,11 @@ function question_post_function() {
         $wpost_signature = $_POST['the-signature'];
         $wpost_grade = $_POST['the-grade'];
         $wpost_question = $_POST['the-question'];
+        $wpost_file = $_FILES['the-attached'];
         $wpost_attached = $_FILES['the-attached']['tmp_name'];
 
         // Create post object
-        $my_question = array (
+        $my_question = array(
             'post_title'   => esc_html($wpost_question),
             'post_status'  => 'draft',
             'post_author'  => 3,
@@ -45,47 +65,22 @@ function question_post_function() {
         update_field('student_mail', $wpost_email, $the_post_id);
 
         // Insert image
-        if($wpost_attached) : 
+        if ($wpost_attached) :
+            $file = $wpost_file;
+            $post_id = $the_post_id;
 
-            $filename = $wpost_attached;
-
-            print_r($_FILES);
-            print_r($filename);
- 
-            // The ID of the post this attachment is for.
-            $parent_post_id = $the_post_id;
-            
-            // Check the type of file. We'll use this as the 'post_mime_type'.
-            $filetype = wp_check_filetype( basename( $filename ), null );
-            
-            // Get the path to the upload directory.
-            $wp_upload_dir = wp_upload_dir();
-            
-            // Prepare an array of post data for the attachment.
-            $attachment = array(
-                'guid'           => $wp_upload_dir['url'] . '/' . basename( $filename ), 
-                'post_mime_type' => $filetype['type'],
-                'post_title'     => preg_replace( '/\.[^.]+$/', '', basename( $filename ) ),
-                'post_content'   => '',
-                'post_status'    => 'inherit'
-            );
-            
-            // Insert the attachment.
-            $attach_id = wp_insert_attachment( $attachment, $filename, $parent_post_id );
-            
-            // Make sure that this file is included, as wp_generate_attachment_metadata() depends on it.
-            require_once( ABSPATH . 'wp-admin/includes/image.php' );
-            
-            // Generate the metadata for the attachment, and update the database record.
-            $attach_data = wp_generate_attachment_metadata( $attach_id, $filename );
-            wp_update_attachment_metadata( $attach_id, $attach_data );
-            
-            set_post_thumbnail( $parent_post_id, $attach_id );
+            array_reverse($_FILES);
+            $i = 0; //this will count the posts
+            foreach ($_FILES as $file => $array) {
+                if ($i == 0) $set_feature = 1; //if $i ==0 then we are dealing with the first post
+                else $set_feature = 0; //if $i!=0 we are not dealing with the first post
+                $newupload = insert_attachment($file, $post_id, $set_feature);
+                echo $i++; //count posts
+            }
 
         endif;
-    
+
     endif;
 
     die();
-    
 }
