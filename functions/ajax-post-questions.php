@@ -5,8 +5,8 @@
  * 
  */
 
-add_action('wp_ajax_questions_post', 'question_post_function');
-add_action('wp_ajax_nopriv_questions_post', 'questions_post_function');
+add_action('wp_ajax_questions_post', 'question_post');
+add_action('wp_ajax_nopriv_questions_post', 'questions_post');
 
 
 // Insert image 
@@ -27,7 +27,7 @@ if (!function_exists('insert_attachment')) :
     }
 endif;
 
-function question_post_function()
+function question_post()
 {
 
     if ($_POST) :

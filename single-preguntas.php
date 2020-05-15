@@ -8,6 +8,18 @@
       <h3><?php the_title(); ?></h3>
     </article>
   </section>
+  
+  <?php
+    if(has_post_thumbnail()):
+  ?>
+
+  <section class="single-question__thumb row">
+    <figure class="single-question__thumb-wrapper container">
+      <?php the_post_thumbnail('full'); ?>
+    </figure>
+  </section>
+
+  <?php endif; ?>
 
   <section class="single-question__content row">
     <article class="single-question--comments container">

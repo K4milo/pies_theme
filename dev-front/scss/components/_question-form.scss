@@ -163,8 +163,8 @@
 .form--loader {
     display: block;
     margin: rem(30px) auto;
-    width: rem(40px);
-    height: rem(90px);
+    width: rem(100px);
+    height: rem(40px);
     @include iconBg('../img/misc/loader.svg'); 
     @include center('both');
     z-index: 100; 

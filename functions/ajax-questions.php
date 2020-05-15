@@ -5,10 +5,10 @@
  * 
  */
 
-add_action('wp_ajax_questions_filter', 'question_filter_function');
-add_action('wp_ajax_nopriv_questions_filter', 'questions_filter_function');
+add_action( 'wp_ajax_nopriv_questions_filter', 'questions_filter' );
+add_action( 'wp_ajax_questions_filter', 'questions_filter' );
 
-function question_filter_function()
+function questions_filter()
 {
     $args = array(
         'post_type' => 'preguntas',
@@ -77,5 +77,5 @@ function question_filter_function()
     else :
         echo '<h3>No existen preguntas con tu criterio de filtro</h3>';
     endif;
-    die();
+    wp_die();
 }

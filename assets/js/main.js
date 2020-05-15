@@ -561,9 +561,11 @@ var PostQuestions = (function () {
             var ajaxUrl = this.wrapper.getAttribute("action");
             var resultsDiv = this.resultsDOM;
             var successHTML = this.resultMarkup;
+            var formWrapper = this.wrapper;
+            var loader = "<div class=\"form--loader\"><span>Loading..</span></div>";
+            formWrapper.innerHTML = loader;
 
             if (this.file.files[0]) {
-                console.log(this.file.files[0]);
                 serializedFrm.append("file", this.file.files[0]);
                 serializedFrm.append('name', 'question-thumb');
                 serializedFrm.append('description', 'Featured image for question');
@@ -578,6 +580,11 @@ var PostQuestions = (function () {
             fetch(ajaxUrl, paramsObj).then(function (response) {
                 return response.text();
             }).then(function (data) {
+
+                if (data) {
+                    resultsDiv.innerHTML = successHTML;
+                    formWrapper.innerHTML = '';
+                }
                 data ? resultsDiv.innerHTML = successHTML : 'No se pudo añadir el post';
             })["catch"](function (e) {
                 return console.log('error', e);
@@ -619,17 +626,9 @@ var FetchQuestions = (function () {
     _createClass(FetchQuestions, [{
         key: 'fetchResponse',
         value: function fetchResponse() {
-            var _this = this;
-
             var serializedFrm = (0, _utils.serialize)(this.wrapper);
-            var formWraper = this.wrapper;
             var ajaxUrl = this.wrapper.getAttribute("action");
             var resultsDiv = this.resultsDOM;
-            var loader = '<div class="form--loader"><span>Loading..</span></div>';
-
-            // Add loader
-            formWraperclassList.add('form--loading');
-            formWraper.innerHTML = loader;
 
             var paramsObj = {
                 method: 'POST',
@@ -640,15 +639,17 @@ var FetchQuestions = (function () {
                 body: serializedFrm
             };
 
+            // Dom events
+            var loader = '<div class="form--loader"><span>Loading..</span></div>';
+            resultsDiv.classList.add('loading');
+            resultsDiv.innerHTML = loader;
+
             fetch(ajaxUrl, paramsObj).then(function (response) {
                 return response.text();
             }).then(function (data) {
                 if (data) {
-                    console.log('data', data);
                     resultsDiv.innerHTML = data;
-                    _this.wrapper.innerHTML = '';
-                } else {
-                    _this.wrapper.innerHTML = '<h2 class="form-error"> No hemos podido añadir tu pregunta, intenta nuevamente.</h2>';
+                    resultsDiv.classList.remove('loading');
                 }
             })['catch'](function (e) {
                 return console.log('error', e);
