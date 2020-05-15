@@ -1,14 +1,23 @@
-<?php get_template_part('includes/header');?>
+<?php get_template_part('includes/header'); ?>
 
-<div class="container">
-  <div class="row">
+<div class="container-fluid single-question">
 
-    <div class="new-singlecontent">
-      <div id="content" role="main">
-		<?php the_content(); ?>
-	  </div><!-- /#content -->
-    </div>
-  </div><!-- /.row -->
+  <section class="single-question__hero row">
+    <article class="single-question__hero--text container">
+      <h2>¡Tengo una pregunta!</h2>
+      <h3><?php the_title(); ?></h3>
+    </article>
+  </section>
+
+  <section class="single-question__content row">
+    <article class="single-question--comments container">
+      <header>
+        <h3>Respuesta</h3>
+      </header>
+      <?php comments_template(); ?>
+    </article>
+  </section>
+
 </div><!-- /.container -->
 
-<?php get_template_part('includes/footer');?>
+<?php get_template_part('includes/footer'); ?>

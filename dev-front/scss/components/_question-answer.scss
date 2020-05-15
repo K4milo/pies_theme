@@ -1,0 +1,27 @@
+.single-question {
+
+    &__content {
+
+        h1,
+        h2,
+        h3 {
+            color: $red;
+        }
+
+        h3 {
+
+            &#comments {
+                display: none;
+            }
+        }
+    }
+
+    &--wrapper {
+        margin: 0 auto;
+        padding: rem(20px);
+    }
+
+    &--comments {
+        margin: rem(40px) auto;
+    }
+}
