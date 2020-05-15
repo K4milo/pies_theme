@@ -619,9 +619,18 @@ var FetchQuestions = (function () {
     _createClass(FetchQuestions, [{
         key: 'fetchResponse',
         value: function fetchResponse() {
+            var _this = this;
+
             var serializedFrm = (0, _utils.serialize)(this.wrapper);
+            var formWraper = this.wrapper;
             var ajaxUrl = this.wrapper.getAttribute("action");
             var resultsDiv = this.resultsDOM;
+            var loader = '<div class="form--loader"><span>Loading..</span></div>';
+
+            // Add loader
+            formWraperclassList.add('form--loading');
+            formWraper.innerHTML = loader;
+
             var paramsObj = {
                 method: 'POST',
                 credentials: 'same-origin',
@@ -634,7 +643,13 @@ var FetchQuestions = (function () {
             fetch(ajaxUrl, paramsObj).then(function (response) {
                 return response.text();
             }).then(function (data) {
-                data ? resultsDiv.innerHTML = data : 'No existen resultados';
+                if (data) {
+                    console.log('data', data);
+                    resultsDiv.innerHTML = data;
+                    _this.wrapper.innerHTML = '';
+                } else {
+                    _this.wrapper.innerHTML = '<h2 class="form-error"> No hemos podido añadir tu pregunta, intenta nuevamente.</h2>';
+                }
             })['catch'](function (e) {
                 return console.log('error', e);
             });
@@ -678,12 +693,12 @@ var buildQuestionsFilters = function buildQuestionsFilters() {
 var buildQuestionsPost = function buildQuestionsPost() {
     var formPost = document.getElementById('QuestionsPost');
     var fileInput = document.getElementById('avatar');
-    var resultsWrapper = document.getElementById('QuestionsPostResult');
-    var successMarkup = '<div class="form-success"><h2>Tu pregunta está pendiente de ser aprobada</h2></div>';
+    var responseWrapper = document.getElementById('QuestionsPostResult');
+    var successMarkup = '<div class="form-success"><p>Hemos recibido tu pregunta</p><span class="form-success--icon">icon</span><h4>¡Pronto te responderemos!</h4></div>';
 
     if (formPost.length > 0) {
         formPost.addEventListener('submit', function (e) {
-            var createPost = new _api_questionPost.PostQuestions(formPost, resultsWrapper, successMarkup, fileInput);
+            var createPost = new _api_questionPost.PostQuestions(formPost, responseWrapper, successMarkup, fileInput);
             e.preventDefault();
         });
     }

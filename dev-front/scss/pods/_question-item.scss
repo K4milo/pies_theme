@@ -11,7 +11,7 @@
 .filter-questions--item {
     width: 94%;
     position: relative;
-    margin-bottom: rem(16px) auto;
+    margin: rem(20px) auto;
     padding: rem(16px);
     text-align: left;
     border-radius: rem(20px);
@@ -19,11 +19,19 @@
 
     @include mq('md') {
         width: 30%;
-        min-height: rem(220px);
+        min-height: rem(350px);
         margin: 0 1.5% 3%;
     }
 
     header {
+        
+        span {
+            display: block;
+            width: rem(50px);
+            height: rem(50px);
+            @include iconBg('../img/icons/icon-question.svg');
+        }
+
         h3 {
             color: $red;
         }
@@ -51,10 +59,18 @@
 
         a {
             font-family: $ralebk;
+            display:block;
             @include font(18px);
             text-transform: uppercase;
             color: $yellow;
             margin-top: rem(100px);
+
+            @include mq('md') { 
+                position: absolute;
+                width: 90%;
+                bottom: rem(20px);
+                left: rem(20px);
+            }
         }
     }
 }

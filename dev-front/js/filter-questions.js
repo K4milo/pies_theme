@@ -18,12 +18,12 @@ const buildQuestionsFilters = function () {
 const buildQuestionsPost= function () {
     const formPost = document.getElementById('QuestionsPost');
     const fileInput = document.getElementById('avatar');
-    const resultsWrapper = document.getElementById('QuestionsPostResult');
-    const successMarkup = `<div class="form-success"><h2>Tu pregunta está pendiente de ser aprobada</h2></div>`;
+    const responseWrapper = document.getElementById('QuestionsPostResult');
+    const successMarkup = `<div class="form-success"><p>Hemos recibido tu pregunta</p><span class="form-success--icon">icon</span><h4>¡Pronto te responderemos!</h4></div>`;
 
     if (formPost.length > 0) {
         formPost.addEventListener('submit', function(e) {
-            const createPost = new PostQuestions(formPost, resultsWrapper, successMarkup, fileInput);
+            const createPost = new PostQuestions(formPost, responseWrapper, successMarkup, fileInput);
             e.preventDefault();
         });
     }

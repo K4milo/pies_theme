@@ -19,6 +19,16 @@
             text-align: center;
             padding-bottom: rem(30px);
 
+            &::before {
+                content: "";
+                display: block;
+                margin: 0 auto rem(16px);
+                width: rem(90px);
+                height: rem(90px);
+                @include iconBg('../img/icons/icon-form.svg');
+                
+            }
+
             h2 {
                 text-transform: uppercase;
             }
@@ -28,6 +38,7 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            
 
             fieldset {
                 width: 100%;
@@ -38,6 +49,11 @@
 
                 &.full {
                     text-align: center;
+
+                    a {
+                        color: $white;
+                        text-decoration: underline;
+                    }
 
                     @include mq('md') {
                         width: 100%;
@@ -74,7 +90,11 @@
                     width: 100%;
                     border-radius: rem(12px);
                     border: none;
-                    background-color: rgba($white, 0.3);
+                    background-color: rgba($white, 0.6);
+
+                    @include placeholder {
+                        color: $black;
+                    }
                 }
             }
 
@@ -84,7 +104,8 @@
                     width: 100%;
                     border-radius: rem(12px);
                     border: none;
-                    background-color: rgba($white, 0.3);
+                    background-color: rgba($white, 0.6);
+                    color: $black;
                 }
             }
 
@@ -95,7 +116,11 @@
                     border-radius: rem(12px);
                     border: none;
                     height: rem(200px);
-                    background-color: rgba($white, 0.3);
+                    background-color: rgba($white, 0.6);
+
+                    @include placeholder {
+                        color: $black;
+                    }
                 }
             }
 
@@ -114,4 +139,33 @@
             }
         }
     }
+}
+
+.form-success {
+    color: $white;
+    text-align: center;
+
+    &--icon {
+        display: block;
+        margin: rem(30px) auto;
+        width: rem(200px);
+        height: rem(200px);
+        @include iconBg('../img/icons/icon-response.svg');
+
+        @include mq('md') {
+            margin: rem(30px) auto;
+            width: rem(490px);
+            height: rem(490px);
+        }
+    }
+}
+
+.form--loader {
+    display: block;
+    margin: rem(30px) auto;
+    width: rem(40px);
+    height: rem(90px);
+    @include iconBg('../img/misc/loader.svg'); 
+    @include center('both');
+    z-index: 100; 
 }
