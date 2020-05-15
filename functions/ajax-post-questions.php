@@ -27,7 +27,7 @@ if (!function_exists('insert_attachment')) :
     }
 endif;
 
-function question_post()
+function questions_post()
 {
 
     if ($_POST) :
@@ -72,15 +72,15 @@ function question_post()
             array_reverse($_FILES);
             $i = 0; //this will count the posts
             foreach ($_FILES as $file => $array) {
-                if ($i == 0) $set_feature = 1; //if $i ==0 then we are dealing with the first post
-                else $set_feature = 0; //if $i!=0 we are not dealing with the first post
+                if ($i == 0) $set_feature = 1;
+                else $set_feature = 0;
                 $newupload = insert_attachment($file, $post_id, $set_feature);
-                echo $i++; //count posts
+                echo $i++;
             }
 
         endif;
 
     endif;
 
-    die();
+    wp_die();
 }
