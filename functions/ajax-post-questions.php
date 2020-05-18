@@ -48,10 +48,6 @@ function questions_post()
             'post_status'  => 'draft',
             'post_author'  => 3,
             'post_type'    => 'preguntas',
-            'tax_input'    => array(
-                'curso' => $wpost_grade,
-                'materia' => $wpost_signature
-            ),
         );
 
         // Insert the post into the database
@@ -63,6 +59,10 @@ function questions_post()
         update_field('student_city', $wpost_city, $the_post_id);
         update_field('student_institution', $wpost_education, $the_post_id);
         update_field('student_mail', $wpost_email, $the_post_id);
+
+        // Update taxonomy terms
+        wp_set_object_terms($the_post_id, $wpost_grade, 'curso', false);
+        wp_set_object_terms($the_post_id, $wpost_signature, 'materia', false);
 
         // Insert image
         if ($wpost_attached) :
@@ -79,7 +79,6 @@ function questions_post()
             }
 
         endif;
-
     endif;
 
     wp_die();

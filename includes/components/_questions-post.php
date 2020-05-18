@@ -24,7 +24,7 @@
                         <select id="materia" name="the-signature">
                             <option>Materia</option>
                             <?php
-                            if ($terms = get_terms(array('taxonomy' => 'materia', 'orderby' => 'name'))) :
+                            if ($terms = get_terms(array('taxonomy' => 'materia'))) :
                                 foreach ($terms as $term) :
                                     echo '<option value="' . $term->term_id . '">' . $term->name . '</option>';
                                 endforeach;
