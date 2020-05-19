@@ -26,7 +26,7 @@
                             <?php
                             if ($terms = get_terms(array('taxonomy' => 'materia'))) :
                                 foreach ($terms as $term) :
-                                    echo '<option value="' . $term->term_id . '">' . $term->name . '</option>';
+                                    echo '<option value="' . $term->name . '">' . $term->name . '</option>';
                                 endforeach;
                             endif;
                             ?>
@@ -38,7 +38,7 @@
                             <?php
                             if ($terms = get_terms(array('taxonomy' => 'curso'))) :
                                 foreach ($terms as $term) :
-                                    echo '<option value="' . $term->term_id . '">' . $term->name . '</option>';
+                                    echo '<option value="' . $term->name . '">' . $term->name . '</option>';
                                 endforeach;
                             endif;
                             ?>
@@ -59,7 +59,7 @@
                 <div class="form-item form-item--acceptance">
                     <div class="form-item form-item--checkbox">
                         <span><input type="checkbox" name="the-acceptance" id="acceptance" required></span>
-                        <label for="the-acceptance">He leído y acepto los <a href="http://" target="_blank">Términos y Condiciones</a></label>
+                        <label for="the-acceptance">He leído y acepto los <a href="https://fundacionpiesdescalzos.com/pies-descalzos/politica-de-tratamiento-de-datos/" target="_blank">Términos y Condiciones</a></label>
                     </div>
                 </div>
                 <div class="form-item form-item--acceptance">

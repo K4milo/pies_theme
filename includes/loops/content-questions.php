@@ -15,6 +15,7 @@
             $post_id = get_the_ID();
             $courses = get_the_terms($post_id, 'curso');
             $signatures = get_the_terms($post_id, 'materia');
+            $comments = $post->comment_count;
     ?>
             <article class="filter-questions--item">
                 <header>
@@ -35,7 +36,11 @@
                         endforeach;
                         ?>
                     </ul>
-                    <a href="<?php the_permalink(); ?>">Ver respuesta</a>
+                    <?php if($comments >= 1): ?>
+                        <a href="<?php the_permalink(); ?>">Ver respuesta</a>
+                    <?php else: ?>
+                        <span class="filter-questions--item__empty">Por responder</span>
+                    <?php endif; ?>
                 </div>
             </article>
     <?php

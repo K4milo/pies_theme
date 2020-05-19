@@ -27,8 +27,7 @@ if (!function_exists('insert_attachment')) :
     }
 endif;
 
-function questions_post()
-{
+function questions_post() {
 
     if ($_POST) :
         // Variable array of posts
@@ -60,10 +59,6 @@ function questions_post()
         update_field('student_institution', $wpost_education, $the_post_id);
         update_field('student_mail', $wpost_email, $the_post_id);
 
-        // Update taxonomy terms
-        wp_set_object_terms($the_post_id, $wpost_grade, 'curso', false);
-        wp_set_object_terms($the_post_id, $wpost_signature, 'materia', false);
-
         // Insert image
         if ($wpost_attached) :
             $file = $wpost_file;
@@ -77,9 +72,17 @@ function questions_post()
                 $newupload = insert_attachment($file, $post_id, $set_feature);
                 echo $i++;
             }
-
         endif;
+
+        // Update taxonomy terms
+        if($wpost_grade || $wpost_signature):
+            wp_set_object_terms($the_post_id, $wpost_grade, 'curso');
+            wp_set_object_terms($the_post_id, $wpost_signature, 'materia');
+        endif;
+
+        var_dump($the_post_id);
+
     endif;
 
-    wp_die();
+    die();
 }

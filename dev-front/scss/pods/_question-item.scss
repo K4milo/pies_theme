@@ -24,6 +24,7 @@
     text-align: left;
     border-radius: rem(20px);
     background-color: $white;
+    overflow: hidden;
 
     @include mq('md') {
         width: 30%;
@@ -42,6 +43,26 @@
 
         h3 {
             color: $red;
+        }
+    }
+
+    &__empty {
+        font-family: $ralebk;
+        display:block;
+        @include font(18px);
+        text-transform: uppercase;
+        color: $red;
+        background-color: $yellow;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: rem(100px);
+
+        @include mq('md') { 
+            position: absolute;
+            top: rem(20px);
+            margin-top: 0;
+            padding: 10px 30px 10px 10px;
+            right: rem(-10px);
         }
     }
 

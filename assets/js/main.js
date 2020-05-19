@@ -533,13 +533,13 @@ var _filterQuestions = __webpack_require__(5);
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
+Object.defineProperty(exports, '__esModule', {
     value: true
 });
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
 var _utils = __webpack_require__(0);
 
@@ -555,15 +555,16 @@ var PostQuestions = (function () {
     }
 
     _createClass(PostQuestions, [{
-        key: "fetchResponse",
+        key: 'fetchResponse',
         value: function fetchResponse() {
             var serializedFrm = new FormData(this.wrapper);
             var ajaxUrl = this.wrapper.getAttribute("action");
             var resultsDiv = this.resultsDOM;
             var successHTML = this.resultMarkup;
             var formWrapper = this.wrapper;
-            var loader = "<div class=\"form--loader\"><span>Loading..</span></div>";
+            var loader = '<div class="form--loader"><span>Loading..</span></div>';
             formWrapper.innerHTML = loader;
+            formWrapper.classList.add('form-post--question__loader');
 
             if (this.file.files[0]) {
                 serializedFrm.append("file", this.file.files[0]);
@@ -583,10 +584,11 @@ var PostQuestions = (function () {
 
                 if (data) {
                     resultsDiv.innerHTML = successHTML;
+                    formWrapper.classList.remove('form-post--question__loader');
                     formWrapper.innerHTML = '';
                 }
                 data ? resultsDiv.innerHTML = successHTML : 'No se pudo añadir el post';
-            })["catch"](function (e) {
+            })['catch'](function (e) {
                 return console.log('error', e);
             });
         }

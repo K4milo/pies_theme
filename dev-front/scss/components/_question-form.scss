@@ -4,10 +4,19 @@
         background-color: $yellow;
         padding: rem(20px);
         margin: rem(20px) auto 0;
+        transition: all 0.45s;
 
         @include mq('md') {
             margin: rem(70px) auto 0;
             padding: rem(70px) 0;
+        }
+
+        &__loader {
+            min-height: rem(420px);
+
+            .form--loader {
+                top: 70%;
+            }
         }
 
         &-wrapper {
@@ -141,9 +150,16 @@
     }
 }
 
+
 .form-success {
     color: $white;
     text-align: center;
+
+    p {
+        text-transform: uppercase;
+        font-family: $ralesbd;
+        @include font(24px);
+    }
 
     &--icon {
         display: block;
@@ -154,18 +170,17 @@
 
         @include mq('md') {
             margin: rem(30px) auto;
-            width: rem(490px);
-            height: rem(490px);
+            width: rem(300px);
+            height: rem(300px);
         }
     }
 }
 
 .form--loader {
     display: block;
-    margin: rem(30px) auto;
-    width: rem(100px);
-    height: rem(40px);
-    @include iconBg('../img/misc/loader.svg'); 
+    width: rem(184px);
+    height: rem(276px);
+    @include iconBg('../img/misc/loader.gif'); 
     @include center('both');
     z-index: 100; 
 }

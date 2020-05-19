@@ -19,6 +19,7 @@ class PostQuestions {
         const formWrapper = this.wrapper;
         const loader = `<div class="form--loader"><span>Loading..</span></div>`;
         formWrapper.innerHTML = loader; 
+        formWrapper.classList.add('form-post--question__loader');
 
         if (this.file.files[0]) {
             serializedFrm.append("file", this.file.files[0]);
@@ -38,6 +39,7 @@ class PostQuestions {
 
                 if(data) {
                     resultsDiv.innerHTML = successHTML;
+                    formWrapper.classList.remove('form-post--question__loader');
                     formWrapper.innerHTML = ''; 
                 }
                 data ? resultsDiv.innerHTML = successHTML : 'No se pudo añadir el post';

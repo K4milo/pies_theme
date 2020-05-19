@@ -2,6 +2,11 @@
     position: relative;
     background-color: $lgrey2;
     background-image: url('../img/bgs/pattern-education.svg');
+    
+    .reply,
+    #respond {
+        display: none;
+    }
 
     &__hero {
         min-height: 68vh;
@@ -30,5 +35,14 @@
                 font-family: $rale;
             }
         }
+    }
+}
+
+.single-preguntas {
+    &.logged-in {
+        .reply,
+        #respond {
+            display: block;
+        } 
     }
 }
