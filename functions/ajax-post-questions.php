@@ -37,13 +37,16 @@ function questions_post() {
         $wpost_education = $_POST['the-education'];
         $wpost_signature = $_POST['the-signature'];
         $wpost_grade = $_POST['the-grade'];
-        $wpost_question = $_POST['the-question'];
+        $wpost_question = $_POST['the-title'];
+        $wpost_who = $_POST['the-who'];
+        $wpost_content = $_POST['the-question'];
         $wpost_file = $_FILES['the-attached'];
         $wpost_attached = $_FILES['the-attached']['tmp_name'];
 
         // Create post object
         $my_question = array(
             'post_title'   => esc_html($wpost_question),
+            'post_content' => esc_html($wpost_content),
             'post_status'  => 'draft',
             'post_author'  => 3,
             'post_type'    => 'preguntas',
@@ -58,6 +61,7 @@ function questions_post() {
         update_field('student_city', $wpost_city, $the_post_id);
         update_field('student_institution', $wpost_education, $the_post_id);
         update_field('student_mail', $wpost_email, $the_post_id);
+        update_field('student_role', $wpost_who, $the_post_id);
 
         // Insert image
         if ($wpost_attached) :

@@ -13,7 +13,7 @@
         <?php
 
         // Tipo pregunta
-        if ($terms = get_terms(array('taxonomy' => 'tipo-pregunta', 'orderby' => 'name'))) :
+        if ($terms = get_terms(array('taxonomy' => 'tipo-pregunta','hide_empty' => false,  'parent' => 0))) :
             echo '<fieldset class="filter-group">';
                 echo '<header data-toggle="collapse" data-target="#QType"><h3>Tipo pregunta</h3></header>';
                 echo '<div id="QType">';
@@ -28,7 +28,7 @@
         endif;
 
         // Materias
-        if ($terms = get_terms(array('taxonomy' => 'materia', 'orderby' => 'name'))) :
+        if ($terms = get_terms(array('taxonomy' => 'materia','hide_empty' => false,  'parent' => 0))) :
             echo '<fieldset class="filter-group">';
                 echo '<header data-toggle="collapse" data-target="#QCourse"><h3>Materias</h3></header>';
                 echo '<div id="QCourse">';
@@ -43,7 +43,7 @@
         endif;
 
         // Materias
-        if ($terms = get_terms(array('taxonomy' => 'curso', 'orderby' => 'name'))) :
+        if ($terms = get_terms(array('taxonomy' => 'curso','hide_empty' => false,  'parent' => 0))) :
             echo '<fieldset class="filter-group">';
                 echo '<header data-toggle="collapse" data-target="#QGrade"><h3>Grado</h3></header>';
                 echo '<div id="QGrade">';

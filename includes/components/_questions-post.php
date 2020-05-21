@@ -1,4 +1,4 @@
-<section class="form-post--question">
+<section class="form-post--question" id="QuestionForm">
     <div class="form-post--question-wrapper">
         <header>
             <h2>¡Tengo una pregunta!</h2>
@@ -19,12 +19,21 @@
                 <div class="form-item form-item--textfield">
                     <input type="text" name="the-education" id="education" placeholder="Institución Educativa" required>
                 </div>
+                <div class="form-item form-item--select">
+                    <select id="who" name="the-who">
+                        <option>¿Quién realiza la pregunta?</option>
+                        <option value="Padre">Padre</option> 
+                        <option value="Madre">Madre </option>
+                        <option value="Cuidador">Cuidador </option>
+                        <option value="Estudiante">Estudiante </option>
+                        <option value="Docente">Docente</option>
+                    </select>
+                </div>
                 <div class="form-item form-item--double">
                     <div class="form-item form-item--select">
                         <select id="materia" name="the-signature">
-                            <option>Materia</option>
                             <?php
-                            if ($terms = get_terms(array('taxonomy' => 'materia'))) :
+                            if ($terms = get_terms(array('taxonomy' => 'materia', 'hide_empty' => false))) :
                                 foreach ($terms as $term) :
                                     echo '<option value="' . $term->name . '">' . $term->name . '</option>';
                                 endforeach;
@@ -34,9 +43,8 @@
                     </div>
                     <div class="form-item form-item--select">
                         <select id="materia" name="the-grade">
-                            <option>Grado</option>
                             <?php
-                            if ($terms = get_terms(array('taxonomy' => 'curso'))) :
+                            if ($terms = get_terms(array('taxonomy' => 'curso', 'hide_empty' => false))) :
                                 foreach ($terms as $term) :
                                     echo '<option value="' . $term->name . '">' . $term->name . '</option>';
                                 endforeach;
@@ -47,10 +55,14 @@
                 </div>
             </fieldset>
             <fieldset>
+                <div class="form-item form-item--textfield">
+                    <input type="text" name="the-title" id="the-title" placeholder="Título de pregunta" required>
+                </div>            
                 <div class="form-item form-item--textarea">
-                    <textarea name="the-question" id="question" placeholder="Escribe tu pregunta aquí"></textarea>
+                    <textarea name="the-question" id="question" placeholder="Escribe la descripción de tu pregunta aquí" required></textarea>
                 </div>
                 <div class="form-item form-item--file">
+                    <label for="the-attached">Añade una imagen que complemente tu pregunta, formatos permitidos jpeg y png</label>
                     <input type="file" id="avatar" name="the-attached" accept="image/png, image/jpeg" />
                 </div>
             </fieldset>

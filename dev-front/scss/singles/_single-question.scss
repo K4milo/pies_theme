@@ -24,15 +24,23 @@
             h2 {
                 padding: 25vh 0 0;
                 color: $white;
-                font-size: rem(40px);
+                font-size: rem(22px);
                 font-family: $ralebk;
                 text-transform: uppercase;
+
+                @include mq(md) {
+                    font-size: rem(40px);
+                }
             }
 
             h3 {
                 color: $white;
-                font-size: rem(60px);
+                font-size: rem(26px);
                 font-family: $rale;
+
+                @include mq(md) {
+                    font-size: rem(60px);
+                }
             }
         }
     }

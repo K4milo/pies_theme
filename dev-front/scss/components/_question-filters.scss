@@ -29,6 +29,11 @@
         }
 
         .field-item {
+            &--grado,
+            &--materia {
+                display: none !important;
+            }
+
             &--checkbox {
                 display: block;
                 padding: rem(2px) 0;

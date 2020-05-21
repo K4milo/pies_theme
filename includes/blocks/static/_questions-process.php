@@ -17,7 +17,7 @@ $q_processs = get_field('questions-process');
             while(have_rows('questions-process')):the_row();
                 $q_image = get_sub_field('questions-process--img');
             ?>
-                <li><img src="<?php echo $q_image; ?>" alt="Proceso pregunta"/></li>
+                <li><a href="#QuestionForm"><img src="<?php echo $q_image; ?>" alt="Proceso pregunta"/></a></li>
             <?php
             endwhile;
             ?>
