@@ -10,6 +10,7 @@
         <header>
             <h3>Filtrar Por:</h3>
         </header>
+        <?php // get_search_form(); ?>
         <?php
 
         // Tipo pregunta

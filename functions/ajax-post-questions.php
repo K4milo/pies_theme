@@ -5,7 +5,7 @@
  * 
  */
 
-add_action('wp_ajax_questions_post', 'question_post');
+add_action('wp_ajax_questions_post', 'questions_post');
 add_action('wp_ajax_nopriv_questions_post', 'questions_post');
 
 
@@ -83,8 +83,6 @@ function questions_post() {
             wp_set_object_terms($the_post_id, $wpost_grade, 'curso');
             wp_set_object_terms($the_post_id, $wpost_signature, 'materia');
         endif;
-
-        var_dump($the_post_id);
 
     endif;
 
