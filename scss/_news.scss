@@ -1,0 +1,201 @@
+//Home noticias
+body {
+	&.search-results,
+	&.search-no-results,
+	&.page-template-news-tpl {
+		box-shadow: inset 0 0 40em $black;
+		background-image: url('../img/bgs/bg_big_news.jpg');
+		@include bgcover;
+		@include mobile {
+			background-image: url('../img/bgs/bg_news.jpg');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			box-shadow: none;
+			&::after {
+				display: none;
+			}
+		}
+		//cabera
+		header {
+			&.page-head {
+				position: relative;
+				z-index: 3;
+				text-align: center;
+				width: 100%;
+				padding: 2em 0;
+				@include mobile {
+					padding: 6em 0 0;
+				}
+				h2 {
+					display: inline-block;
+					color: $yellow;
+					font-size: em(55);
+					font-family: $ralebk;
+					text-transform: uppercase;
+					@include mobile {
+						font-size: em(35);
+					}
+				}
+			}
+		} // EOF HEADER
+
+		//Search form
+		.the-search {
+			padding-bottom: 1em;
+			form {
+				margin: 0 auto;
+				width: 90%;
+				max-width: 1170px;
+				position: relative;
+				text-align: right;
+				input{
+					&[type="text"]{
+						display: inline-block;
+						max-width: 280px;
+						background-color: $opBlack;
+						border-radius: 1em;
+						color: $white;
+						@include mobile {
+							max-width: 100%;
+						}
+					}
+					&[type="submit"] {
+						position: absolute;
+						top: 0;
+						right: 0;
+						background-color: transparent;
+						border: none;
+						z-index: 1;
+					}
+				}
+				&::after {
+					@include fa-icon ("\f002", $white, em(17));
+					position: absolute; 
+					z-index:0;
+					top: 5px;
+					right: 12px; 
+				}
+			}
+		}
+
+		.news-list {
+			@include clearfix;
+			a {
+				color: $white;
+			}
+			.new-item {
+				position: relative;
+				height: 350px;
+				padding: 2em;
+				box-shadow: inset 0 0 8em $black;
+				text-align: center;
+				transition: all 0.5s;
+				z-index: 4;
+				outline: 1px solid $white;
+				@include bgcover;
+				@include overlay($black,0.2);
+				a{
+					color: $black;
+				}
+				h3 {
+					padding-top: 3em;
+					font-family: $raleBd;
+					color: $white;
+					position: relative;
+					z-index: 5;
+					font-size: em(18);
+					text-transform: uppercase;
+				}
+				p {
+					display: none;
+					color: $white;
+					position: relative;
+					z-index: 5;
+				}
+				&:hover {
+					h3{
+						color: $black;
+					}
+					p {
+						display: block;
+						color: $black;
+						@include mobile {
+							display: none;
+						}
+					}
+					@include overlay($yellow,0.7);
+				}
+			}
+		}
+		//Pagination
+		.custom-pagination{
+			clear: both;
+			width: 100%;
+			height: 50px;
+			text-align: center;
+			span,
+			a { 
+				display: inline-block;
+				color: $white;
+				font-family: $raleBd;
+				font-size: em(16);
+				margin: 1em;
+			}
+		}
+	}
+}
+
+//no results
+
+&.search-results,
+&.search-no-results {
+	box-shadow: inset 0 0 40em $black;
+	background-image: url('../img/bgs/bg_16.jpg');
+	@include bgcover;
+	//cabera
+	header {
+		&.page-head {
+			a {
+				width: 40px;
+				height: 40px;
+				position: absolute;
+				bottom: em(13);
+				left: 0;
+				border-radius: 100%;
+				border: 1px solid $white;
+				@include desktop {
+					left: 20%;
+					bottom: em(47);
+				}
+				@include mobile {
+					left: 50%;
+					margin-left: -20px;
+				}
+				i {
+					font-size: 20px;
+					padding: 0;
+					position: relative;
+					margin: 10px 0 0 -3px;
+					display: block;
+					color: $yellow;
+				}
+				&:hover {
+					text-decoration: none;
+				}
+			}
+			h2 {
+				display: inline-block;
+				color: $yellow;
+				font-size: em(50);
+				font-family: $ralebk;
+				text-transform: uppercase;
+				text-shadow: 0 0 10px $black;
+				position: relative;
+				@include mobile {
+					font-size: em(35);
+					padding-bottom: 60px;
+				}
+			}
+		}
+	} 
+} // EOF HEADER

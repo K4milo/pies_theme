@@ -8,7 +8,18 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php
+// Background fields
+  $bg_mobile = get_field('bg_mobile');
+  $bg_desktop = get_field('bg_desktop');
+  $is_mobile = wp_is_mobile();
+  $style_source = $is_mobile ? $bg_mobile : $bg_desktop;
+  $has_image = ($bg_mobile || $bg_desktop) 
+    ? 'style="background-image: url('. $style_source .'); background-size: cover;"'
+    : '';
+?>
+
+<body <?php body_class(); echo $has_image;?>>
 
 <!--[if lt IE 8]>
 <div class="alert alert-warning">

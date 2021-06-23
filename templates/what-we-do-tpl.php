@@ -12,29 +12,52 @@ while (have_posts()):the_post()?>
 			<h2><?php the_title();?></h2>
 		</header>
 		<div class="container iconos">
-			<div class="col-md-6 col-xs-6 infrestructura text-center">
-<a><img id="hb" src="<?php bloginfo('template_url')?>/img/icons/herramienta-blanca.png" alt="INFRAESTRUCTURA" name="hb"></a>
-<a><img id="ha" src="<?php bloginfo('template_url')?>/img/icons/herramienta-amarilla.png" alt="INFRAESTRUCTURA"name="ha"></a>
-<div  class="the-icon">
-	<?php if(ICL_LANGUAGE_CODE=='es'): ?>
-			<h4 id="infra">INFRAESTRUCTURA</h4>
-	<?php else: ?>
-			<h4 id="infra"> INFRASTRUCTURE</h4>
-	<?php endif;?>
+			<div class="col-md-4 col-xs-4 infrestructura text-center">
+				<a><img id="hb" 
+					class="iconos__top"
+					src="<?php bloginfo('template_url')?>/img/icons/herramienta-blanca.png" alt="INFRAESTRUCTURA" name="hb"></a>
+				<a><img id="ha" 
+					class="iconos__bottom"
+					src="<?php bloginfo('template_url')?>/img/icons/herramienta-amarilla.png" alt="INFRAESTRUCTURA"name="ha"></a>
+				<div  class="the-icon">
+					<?php if(ICL_LANGUAGE_CODE=='es'): ?>
+							<h4 id="infra">INFRAESTRUCTURA</h4>
+					<?php else: ?>
+							<h4 id="infra"> INFRASTRUCTURE</h4>
+					<?php endif;?>
 
-</div>
+				</div>
 			</div>
-			<div class="col-md-6 col-xs-6 practicas-efectivas text-center">
-<a><img id="la" src="<?php bloginfo('template_url')?>/img/icons/libro-amarillo.png" alt="EDUCACIÓN"></a>
-<a><img id="lb" src="<?php bloginfo('template_url')?>/img/icons/libro-blanco.png" alt="EDUCACIÓN"> </a>
-<div  class="the-icon">
-	<?php if(ICL_LANGUAGE_CODE=='es'): ?>
-				<h4 id="pract">PRÁCTICAS EFECTIVAS</h4>
-	<?php else: ?>
-			<h4 id="infra"> EFFECTIVE PRACTICES</h4>
-	<?php endif;?>
+			<div class="col-md-4 col-xs-4 todos-cole text-center">
+				<a><img id="tc" 
+					class="iconos__top"
+					src="<?php bloginfo('template_url')?>/img/icons/todos-al-cole.png" alt="EDUCACIÓN"></a>
+				<a><img id="tc-h" 
+					class="iconos__bottom"
+					src="<?php bloginfo('template_url')?>/img/icons/todos-al-cole-w.png" alt="EDUCACIÓN"> </a>
+				<div  class="the-icon">
+					<?php if(ICL_LANGUAGE_CODE=='es'): ?>
+						<h4 id="tc-t">TODOS AL COLE</h4>
+					<?php else: ?>
+						<h4 id="tc-t">LET'S GO TO SCHOOL</h4>
+					<?php endif;?>
+				</div>
+			</div>
+			<div class="col-md-4 col-xs-4 practicas-efectivas text-center">
+				<a><img id="la" 
+					class="iconos__top"
+					src="<?php bloginfo('template_url')?>/img/icons/libro-amarillo.png" alt="EDUCACIÓN"></a>
+				<a><img id="lb" 
+					class="iconos__bottom"
+					src="<?php bloginfo('template_url')?>/img/icons/libro-blanco.png" alt="EDUCACIÓN"> </a>
+				<div  class="the-icon">
+					<?php if(ICL_LANGUAGE_CODE=='es'): ?>
+								<h4 id="pract">PRÁCTICAS EFECTIVAS</h4>
+					<?php else: ?>
+							<h4 id="infra"> EFFECTIVE PRACTICES</h4>
+					<?php endif;?>
 
-</div>
+				</div>
 			</div>
 		</div>
 

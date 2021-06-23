@@ -108,10 +108,12 @@ var _filterQuestions = __webpack_require__(5);
 
   "use strict";
   $(document).ready(function () {
+
     $("#lb").click(function () {
 
       $("#info1").css("display", "none");
       $("#info2").css("display", "block");
+      $("#info3").css("display", "none");
       $("#ha").css("display", "none");
       $("#hb").css("display", "inline");
       $("#infra").css("color", "#fff");
@@ -124,6 +126,7 @@ var _filterQuestions = __webpack_require__(5);
 
       $("#info1").css("display", "block");
       $("#info2").css("display", "none");
+      $("#info3").css("display", "none");
       $("#ha").css("display", "inline");
       $("#hb").css("display", "none");
       $("#infra").css("color", "#ffbb01");
@@ -131,8 +134,14 @@ var _filterQuestions = __webpack_require__(5);
       $("#lb").css("display", "inline");
       $("#pract").css("color", "#fff");
     });
-  });
-  $(document).ready(function () {
+
+    $("#tc").click(function () {
+      $("#info1").css("display", "none");
+      $("#info2").css("display", "none");
+      $("#info3").css("display", "block");
+      $("#tc").css("display", "none");
+      $("#tc-t").css("color", "#ffbb01");
+    });
 
     // Scrolled menu
     var header_el = $('.navbar');

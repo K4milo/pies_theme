@@ -1,15 +1,8 @@
 //we do
 body {
-	h4{
-		font-size: 27px;
-		@include mobile {
-			font-size: 17px;
-		}
-	}
 	&.page-template-what-we-do-tpl{
 		box-shadow: inset 0 0 40em $black;
 		background-image: url('../img/bgs/bg_10.jpg');
-		background-color: $black;
 		@include bgcover;
 		@include overlay($black,0.5);
 		background-attachment: fixed;
@@ -18,15 +11,14 @@ body {
 			z-index: -1;
 		}
 		@include mobile {
+			background-image: url('../img/bgs/bg_hacemos.jpg');
 			background-size: 100% auto;
 			background-repeat: no-repeat;
 			box-shadow: none;
-			background-position: top center;
 			&::after {
 				display: none;
 			}
 		}
-
 		//cabera
 		header {
 			&.main-header {
@@ -34,7 +26,7 @@ body {
 				z-index: 3;
 				text-align: center;
 				width: 100%;
-				padding: 6em 0 0;
+				padding: 2em 0 0;
 				z-index: 2;
 				@include mobile {
 					padding: 9em 0 0;
@@ -46,83 +38,14 @@ body {
 					font-family: $ralebk;
 					text-transform: uppercase;
 					@include mobile {
-						font-size: em(45);
+						font-size: em(35);
 					}
-
-				}
-				h4{
-					color: $white;
-					padding: 30px 0 75px 0;
 				}
 			}
-
 		} // EOF HEADER
-		.container-fluid{
-			.iconos {
-				padding: 50px 0;
-				text-align: center;
-				.col-md-4 {
-					a {
-						img {
-							cursor: pointer;
-							display: inline-block;
-							width: 100%;
-							height: auto;
-							@include mq('md'){
-								width: auto;
-								height: auto;
-							}
-						}
-					}
-				}
 
-				&__top {
-					&#tc {
-						display: none;
-					}					
-				}
-
-				.todos-cole {
-					color: $white;
-				}
-			}
-		}
-
-		.que-hacemos{
-		padding-top: 50px;
-		}
-		.projects{
-			.content-project{
-				.tittle-infographics{
-					text-align: center;
-					h3 {
-						display: inline-block;
-						color: $yellow;
-						font-size: em(40);
-						font-family: $raleBd;
-						text-transform: uppercase;
-						@include mobile {
-							font-size: em(20);
-						}
-					}
-					h4{
-						color: $white;
-					}
-				}
-			}
-		}
-		#partners-container2{
-			.item{
-				img{
-					display: block;
-					margin: 0 auto;
-					background-color: $white;
-					border-radius: 50%;
-				}
-			}
-		}
 		//The infographics
-		.tittle-infographics {
+		.infographics {
 			//cabera
 			header {
 				&.main-header {
@@ -149,7 +72,7 @@ body {
 					max-width: 100%;
 					height: auto;
 					display: block;
-					margin: 0 auto;
+					margin: 1em auto 2em;
 				}
 			}
 
@@ -411,7 +334,7 @@ body {
 					margin: 1em auto;
 					max-width: 100%;
 					@include desktop {
-						margin-top: 4em;
+						margin-top: 9em;
 					}
 				}
 			}
@@ -424,9 +347,9 @@ body {
 				header {
 					&.main-header {
 						width: 100%;
-						padding: em(16) 0;
+						padding: 5em 0;
 						@include mobile {
-							padding: em(18) 0;
+							padding: 1em 0;
 						}
 						h3 {
 							display: inline-block;
@@ -458,34 +381,28 @@ body {
 						position: relative;
 						border: none;
 						text-align: center;
-						padding: em(24) 0;
-						@include mobile {
-							margin-top: em(20);
-						}
 						li {
 							position: relative;
 							border: none;
 							float: none;
 							display: inline-block;
-							width: 15%;
+							width: 20%;
 							@include mobile {
 								width: 100%;
 								display: block;
 							}
-							@include desktop {
-								&:nth-child(2),
-								&:nth-child(3),
-								&:first-child {
-									&::after{
-										content: "";
-										display: block;
-										width: 2px;
-										height: 100%;
-										background-color: $white;
-										position: absolute;
-										top: 0;
-										right: 0;
-									}
+							&:nth-child(2),
+							&:nth-child(3),
+							&:first-child {
+								&::after{
+									content: "";
+									display: block;
+									width: 2px;
+									height: 100%;
+									background-color: $white;
+									position: absolute;
+									top: 0;
+									right: 0;
 								}
 							}
 							a {
@@ -523,10 +440,6 @@ body {
 							@include mobile{
 								font-size: em(20);
 							}
-						}
-						h4{
-							color: $yellow;
-							text-align: center;
 						}
 						.text-info {
 							padding-top: 9em;

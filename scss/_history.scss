@@ -1,0 +1,270 @@
+//historia
+body {
+	&.page-template-history-tpl {
+		width: 103%;
+		overflow-x: hidden;
+		box-shadow: inset 0 0 60em $black;
+		background-image: url('../img/bgs/bg_3xs.jpg');
+		@include bgcover;
+		.the-fly{
+			display: none;
+		}
+		@include mobile {
+			background-image: url('../img/bgs/bg_historia.jpg');
+			background-size: 100% auto;
+			background-repeat: no-repeat;
+			box-shadow: none;
+			&::after {
+				display: none;
+			}
+		}
+		header{
+			&.main-header {
+				position: absolute;
+				z-index: 3;
+				text-align: center;
+				width: 100%;
+				top: 5%;
+				left: 0;
+				h3 {
+					display: inline-block;
+					color: $yellow;
+					font-size: em(70);
+					font-family: $ralebk;
+					text-transform: uppercase;
+				}
+				@include mobile {
+					position: relative;
+					margin-top: em(55);
+					h3 {
+						font-size: em(35);
+					}
+				}
+			}
+		} // EOF HEADER
+		//timeline
+		#history-slider {
+			position: relative;
+			width: 100%;
+			top: 0;
+			left: 0;
+			height: 100vh;
+			z-index:0;
+			padding: 0;
+			margin: 0;
+			@include mobile {
+				display: none;
+			}
+			.slick-track{
+				position: relative;
+				z-index: 2;
+				li {
+					display: block;
+					width: 100%;
+					min-height: 100vh;
+					height: auto;
+					@include bgcover;
+					@include overlay($black,0.5);
+					&::after{
+						background-color: rgba(0,0,0,0.2);
+						opacity: 0.1;
+						z-index: 1;
+					}
+					.history-content{
+						position: relative;
+						z-index: 2;
+						display: block;
+						width: 90%;
+						max-width: 960px;
+						margin: 13em auto 0;
+						text-align: center;
+						@include mobile {
+							margin: 51% auto 0;
+						}
+						h3 {
+							display: block;
+							width: 100%;
+							text-align: center;
+							color: $white;
+						}
+						.text-cond{
+							color: $white;
+							text-align: left;
+							p {
+								font-size: em(16);
+								color: $white;
+								margin: 0 0 em(16);
+								strong,
+								b {
+									font-family: $raleBd;
+								}
+								@include mobile {
+									font-size: em(18);
+									text-align: center;
+								}
+							}
+						}
+					}
+				}
+			}
+			.slick-dots {
+				position: absolute;
+				z-index: 3;
+				text-align: center;
+				width: 100%;
+				bottom: 7%;
+				left: 0;
+				padding: 0;
+				&::after{
+					content: "";
+					display: block;
+					position: absolute;
+					bottom: 2.7em;
+					left:0;
+					width: 100%;
+					height: 4px;
+					background-color: $yellow;
+					z-index: -1;
+				}
+				li {
+					position: relative;
+					display: inline-block;
+					width: 75px;
+					height: inherit;
+					vertical-align: bottom;
+					color: white;
+
+					i{
+						display: block;
+						width: 20px;
+						height: 20px;
+						margin: 0 auto;
+						background-color: $yellow;
+						border-radius: 100%;
+					}
+					.history-item{
+						h3{
+							display: none;
+						}
+						h5{
+							display: block;
+							width: 100%;
+							text-align: center;
+							color: $white;
+							font-size: em(11);
+						}
+						.text-cond{
+							display: none;
+							color: $white;
+							p {
+								font-size: em(18);
+								color: $white;
+							}
+							@include mobile {
+								position: absolute;
+								bottom: 17%;
+								left: 5%;
+								width: 90vw;
+							}
+						}
+					}
+					&.slick-active {
+						i{
+							width: 60px;
+							height: 60px;
+							background-color: $white;
+							border: 1em solid $yellow;
+							position: absolute;
+						    bottom: 1em;
+						    left: 50%;
+						    margin-left: -30px;
+						}
+						.history-item{
+
+							display: block;
+							width: 100%;
+							text-align: center;
+							color: $white;
+							h3 {
+								padding-bottom: 3.3em;
+								display: block;
+								@include desktop {
+									width: 183%;
+									margin-left: -46%;
+								}
+							}
+							h5 {
+								display: none;
+							}
+							.text-cond{
+								display: block;
+							}
+						}
+					}
+				}
+			}
+		}
+		//slide mobile
+		#history-slider-mobile {
+			display: none;
+			@include mobile {
+				display: block;
+				padding: 1em;
+				width: 100%;
+				position: relative;
+				&::after {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 6px;
+					left: 1.4em;
+					background-color: $white;
+					z-index: -1;
+					width: 3px;
+					height: 100%;
+				}
+				li {
+					width: 100%;
+					position: relative;
+					padding: 1em 2em 1.5em;
+					header {
+						font-family: $raleBd;
+						color: $white;
+						cursor: pointer;
+						width: 100%;
+						font-size: em(25);
+					}
+					.body-text{
+						display: none;
+						color: $white;
+					}
+					&::before {
+						content:"";
+						display: block;
+						position: absolute;
+						top: 1.3em;
+						left: 0;
+						width: 14px;
+						height: 14px;
+						border-radius: 100%;
+						background-color: $yellow;
+						margin: 0 0 0 0;
+						transition: all 0.5s;
+					}
+					&.active {
+						&::before {
+							background-color: $grey;
+							width: 24px;
+							height: 24px;
+							border: 5px solid $yellow;
+							margin: 0 0 0 -4px;
+						}
+						.body-text {
+							display: block;
+						}
+					}
+				}
+			}
+		}
+	}
+}

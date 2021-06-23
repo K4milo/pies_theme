@@ -1,0 +1,794 @@
+//donations
+body{
+	&.page-template-donation-tpl{
+		background-image: url('../img/bgs/bg_4.jpg');
+		.the-fly{
+			display: none;
+		}
+		@include bgcover;
+		@include mobile {
+			background-size: 100%;
+		}
+		//top title
+		.page-head {
+			max-width: 580px;
+			margin: 1em auto;
+			@include mobile{
+				margin: 4em auto;
+				text-align: center;
+			}
+			h1{
+				font-family: $raleebd;
+				font-size: em(100);
+				color: white;
+				display: block;
+				@include mobile{
+					display: inline-block;
+					font-size: em(50);
+				}
+			}
+			p {
+				display: inline-block;
+				vertical-align: top;
+				margin: 0;
+				b {
+					font-family: $raleebd;
+					font-size: em(64);
+					color: $white;
+					@include mobile{
+						display: inline-block;
+						font-size: em(50);
+						margin-top: 12px;
+					}
+				}
+			}
+			h2{
+				display: inline-block;
+				vertical-align: top;
+				font-family: $raleebd;
+				color: $yellow;
+				font-size: em(124);
+				margin-top: 0;
+				@include mobile{
+					display: inline-block;
+					font-size: em(50);
+					margin-top: 18px;
+				}
+			}
+		}
+
+		.container-fluid {
+			//The body of tabs
+			> .row{
+				> .container{
+					background-color: $white;
+					.nav-tabs {
+						text-align: center;
+						padding: 50px 0 0;
+						border: none;
+						@include mobile{
+							padding: em(50) 0;
+						}
+						li {
+							float: none;
+							display: inline-block;
+							text-align: center;
+							width: 23%;
+							position: relative;
+							@include mobile{
+								width: 100%;
+								display: block;
+								min-height: 65px;
+								border-bottom: 1px solid $lgrey;
+							}
+							a {
+								border: none;
+								color: $grey;
+								text-transform: uppercase;
+								font-size: em(18);
+								font-family: $ralemd;
+								line-height: 1;
+								position: relative;
+								@include mobile {
+									padding-left: 70px;
+									text-align: left;
+								}
+								strong{
+									font-family: $ralebk;
+								}
+								&::before {
+									content: "";
+									display: block;
+									margin: 1em auto;
+									width: 114px;
+									height: 114px;
+									background-image: url('../img/icons/sprite-hands.png');
+									@include mobile {
+										position: absolute;
+										top: 4px;
+										left: 0;
+										margin: 0;
+										width: 57px;
+										height: 57px;
+										background-image: url('../img/icons/sprite-hands-mobile.png');
+									}
+								}
+								&:hover {
+									background-color: transparent;
+								}
+							}
+							//Set icons
+							&:first-child {
+								a{
+									&::before {
+										background-position: 0 0;
+									}
+								}
+							}
+
+							&:nth-child(2) {
+								a {
+									&::before {
+										background-position: -232px 0;
+										@include mobile{
+											background-position: -116px 0;
+										}
+									}
+								}
+							}
+
+							&:nth-child(3) {
+								a {
+									&::before {
+										background-position: -467px 0;
+										@include mobile{
+											background-position: -233.5px 0;
+										}
+									}
+								}
+							}
+
+							&:nth-child(4) {
+								a {
+									&::before {
+										background-position: -700px 0;
+										@include mobile{
+											background-position: -350px 0;
+										}
+									}
+								}
+							}
+
+							&.active {
+								a {
+									color: $red;
+								}
+								//Set icons
+								&:first-child {
+									a {
+										&::before {
+											background-position: 0 -119px;
+											@include mobile{
+												background-position: 0 -59.5px;
+											}
+										}
+									}
+								}
+
+								&:nth-child(2) {
+									a {
+										&::before {
+											background-position: -232px -119px;
+											@include mobile{
+												background-position: -116px -59.5px;
+											}
+										}
+									}
+								}
+
+								&:nth-child(3) {
+									a {
+										&::before {
+											background-position: -467px -119px;
+											@include mobile{
+												background-position: -233.5px -59.5px;
+											}
+										}
+									}
+								}
+
+								&:nth-child(4) {
+									a {
+										&::before {
+											background-position: -700px -119px;
+											@include mobile{
+												background-position: -350px -59.5px;
+											}
+										}
+									}
+								}
+							}
+						}
+					} //EOF TABS
+
+					.tab-content{
+						//general tab elements
+						.text-body {
+							// intro text
+							&.first{
+								width: 70%;
+								padding: 50px 0 0;
+								margin: 0 auto;
+								text-align: center;
+								@include mobile {
+									width: 100%;
+								}
+								p {
+									font-family: $openlt;
+									text-align: center;
+									font-size: em(25);
+									strong, b {
+										font-family: $openbd;
+									}
+									@include mobile {
+										font-size: em(18);
+									}
+								}
+							}
+						}
+						//impact items
+						.impact-items {
+							position: relative;
+							padding: 0 4em;
+							@include mobile {
+								padding: 2em 0;
+							}
+							.item {
+								position: relative;
+								min-height: 190px;
+								@include desktop {
+									padding: em(10) em(40);
+								}
+								.tmb {
+									display: inline-block;
+									vertical-align: middle;
+									width: 30%;
+									@include mobile {
+										width: 100%;
+										img {
+											margin: 1em auto;
+										}
+									}
+									img {
+										display: block;
+										max-width: 100%;
+									}
+								}
+								.text-body {
+									display: inline-block;
+									vertical-align: middle;
+									width: 68%;
+									@include mobile {
+										width: 100%;
+										text-align: center;
+									}
+									h3 {
+										font-size: em(65);
+										text-transform: uppercase;
+										line-height: 1;
+										font-family: $raleBd;
+										text-align: left;
+										color: $yellow;
+										margin: 0;
+										@include mobile {
+											width: 100%;
+											text-align: center;
+										}
+									}
+									p {
+										font-family: $openlt;
+										text-align: left;
+										font-size: em(14);
+										@include mobile {
+											width: 100%;
+											text-align: center;
+										}
+										strong, b {
+											font-family: $openbd;
+										}
+									}
+								}
+							}
+							@include clearfix;
+						}
+
+						//Pay items
+						.pay-btns {
+							position: relative;
+							text-align: center;
+							header {
+								h3 {
+									color: $yellow;
+									text-align: center;
+									font-size: em(40);
+									font-family: $raleebd;
+									text-transform: uppercase;
+								}
+							}
+
+							.item{
+								display: inline-block;
+								width: 205px;
+								height: 205px;
+								border: 5px solid $red;
+								position: relative;
+								margin: 30px;
+								position: relative;
+								border-radius: 100%;
+								figure {
+									img {
+										display: block;
+										@include centerer;
+									}
+								}
+							}
+
+							@include clearfix;
+						}
+
+						//Third tab
+						#menu2 {
+							//intro text
+							.text-body.first {
+								h2, h3 {
+									color: $yellow;
+									text-align: center;
+									font-size: em(40);
+									font-family: $raleebd;
+									text-transform: uppercase;
+									margin: 1.3em 0;
+								}
+
+								ul {
+									text-align: left;
+									padding: 0;
+									li {
+										list-style: none;
+										line-height: 3;
+										font-size: em(25);
+										position: relative;
+										@include mobile {
+											font-size: em(16);
+											margin: 1em 0;
+											line-height: 2;
+											padding-left: 40px;
+										}
+										&::before {
+											content: "";
+											display: inline-block;
+											width: 43px;
+											height: 38px;
+											background-image: url('../img/icons/checked.png');
+											@include mobile {
+												width: 31px;
+												height: 28px;
+												background-size: contain;
+												position: absolute;
+												left: 0;
+											}
+										}
+									}
+								}
+							}
+							//voluntier
+							.voluntier-items {
+								text-align: center;
+								.item {
+									display: inline-block;
+									float: none;
+									margin: 20px;
+									position: relative;
+									@include redTitle;
+									@include desktop {
+										&:first-child,
+										&:nth-child(2){
+											header {
+												h3{
+													&::after {
+														content: "";
+														display: inline-block;
+														position: relative;
+														left: em(32);
+													}
+												}
+											}
+										}
+									}
+									.tmb {
+										position: relative;
+										margin: 0 auto;
+										width: 232px;
+										height: 232px;
+										overflow: hidden;
+										border-radius: 100%;
+										img {
+											display: block;
+											width: 100%;
+											height: 100%;
+										}
+										.text-body{
+											position: absolute;
+											top: 0;
+											left: 0;
+											padding: em(63) em(25) 0;
+											width: 100%;
+											height: 100%;
+											text-align: center;
+											color: $black;
+											background-color: $yellow;
+											opacity: 0;
+											z-index: 1;
+											transition: all 0.5s;
+										}
+									}
+									&:hover{
+										.tmb {
+											.text-body {
+												opacity: 1;
+											}
+										}
+									}
+								}
+								@include clearfix;
+							}
+							//aditional
+							.aditional {
+								position: relative;
+								text-align: center;
+								a {
+									display: inline-block;
+									padding: 0.5em 0.7em;
+									text-transform: uppercase;
+									font-size: em(18);
+									font-family: $openbd;
+									color: $white;
+									background-color: $red;
+									border-radius: 0.5em;
+								}
+								 h3 {
+									color: $yellow;
+									font-size: em(40);
+									font-family: $raleebd;
+									text-transform: uppercase;
+									margin: 1.3em 0;
+								}
+								p {
+									font-family: $openlt;
+									font-size: em(25);
+									@include desktop {
+										padding: 0 8%;
+									}
+									strong, b {
+										font-family: $openbd;
+									}
+								}
+								img{
+									display: block;
+									margin: 1em auto;
+								}
+							}
+							//Sedes
+							.ubication-lst{
+								@include defTitle;
+								ul {
+									display: block;
+									padding: 0;
+									margin: 1em 0;
+									li {
+										display: inline-block;
+										width: 30%;
+										min-height: 400px;
+										position: relative;
+										box-shadow: inset 0 0 20em $black;
+										transition: all 0.5s;
+										vertical-align: top;
+										text-align: center;
+										margin: 1%;
+										position: relative;
+										padding-bottom: 25px;
+										@include bgcover;
+										@include overlay($black,0.5);
+										@include mobile{
+											display: block;
+											margin: 1em auto;
+											width: 90%;
+										}
+										&::after {
+											z-index: 0;
+										}
+										.text-body{
+											color: $white;
+											margin: 1em auto;
+											font-size: em(18);
+											position: relative;
+											z-index: 2;
+											padding: 1em;
+											min-height: 320px;
+											h3{
+												color: $yellow;
+												text-transform: uppercase;
+											}
+											a{
+												color: $white;
+												background-color: $yellow;
+												display: block;
+												margin: 1em 0 0 -60px;
+												padding: 0.5em 1em;
+												border-radius: em(10);
+												text-transform: uppercase;
+												text-align: center;
+												font-family: $raleBd;
+												width: 120px;
+												position: absolute;
+												bottom: em(15);
+												left: 50%;
+											}
+										}
+										&:hover {
+											box-shadow: inset 0 0 5em $black;
+											@include overlay($black,0.2);
+											&::after {
+												z-index: 0;
+											}
+										}
+									}
+								}
+							}
+							//Form
+							.tab-form{
+								@include defTitle;
+								//the form design
+								.wpcf7-form{
+									max-width: 600px;
+									margin: 1em auto;
+									p{
+										select{
+											color: $grey-1;
+											background-color: $lgrey;
+											text-transform: uppercase;
+											font-family: $raleebd;
+											option {
+												color: $grey-1;
+												&:first-child {
+													color: $grey-1;
+												}
+											}
+										}
+										input {
+											&.wpcf7-text,
+											&.wpcf7-email,
+											&.wpcf7-textarea {
+												padding: 1.5em;
+												background-color: $lgrey;
+												color: $grey-1;
+												text-transform: uppercase;
+												font-family: $raleebd;
+												@include thePlaceholder($grey-1);
+
+											}
+											&.wpcf7-submit {
+												display: block;
+												margin: 1em auto;
+												padding: 0.5em 0.7em;
+												text-transform: uppercase;
+												font-size: em(18);
+												font-family: $openbd;
+												color: $white;
+												background-color: $red;
+												border-radius: 0.5em;
+											}
+										}
+									}
+								}
+							}//EOF tab FORM
+						}
+						//aqs
+						.faqs{
+							@include defTitle;
+							//the faqs
+							.panel-group{
+								.panel-default {
+									border: none;
+									.panel-heading {
+										border: none;
+										background: transparent;
+										margin: 1em 0 0;
+										@include desktop {
+											padding: 1em 6em;
+										}
+										&::before{
+											content: "";
+											display: inline-block;
+											vertical-align: top;
+											background-image: url('../img/icons/play.png');
+											width: 15px;
+											height: 18px;
+											margin: 0 1em;
+											transition: all 0.5s;
+										}
+										
+										&.active {
+											&::before{
+												transform: rotate(90deg);
+											}
+										}
+
+										.panel-title{
+											display: inline-block;
+											vertical-align: top;
+											color: $grey;
+											font-size: em(20);
+											font-family: $openbd;
+											@include mobile {
+												font-size: em(16);
+												width: 75%;
+											}
+										}
+									}
+									.panel-collapse{
+										padding: 1em 2em;
+										font-size: $openlt;
+										font-size: em(18);
+										@include desktop {
+											padding: 1em 6em;
+										}
+										@include mobile {
+											font-size: em(16);
+										}
+									}
+								}
+							}
+						}
+					} //EOF TAB CONTENTS
+				}
+				#menu3 {
+
+					.card-items,
+					.bonus-items {
+						@include clearfix;
+						.icon {
+							img {
+								max-width: 100%;
+								display: block;
+								margin: 1em auto;
+							}
+						}
+						.info{
+							h3 {
+								text-align: center;
+								font-size: em(14);
+								font-family: $ralemd;
+								text-transform: uppercase;
+							}
+							h4{
+								text-align: center;
+								font-size: em(14);
+								font-family: $ralebk;
+								color: $yellow;
+								text-transform: uppercase;
+							}
+							h5{
+								text-align: center;
+								font-size: em(14);
+								font-family: $ralemd;
+							}
+							ul{
+								padding-left: 0;
+								li {
+									list-style: none;
+									text-align: center;
+								}
+							}
+						}
+					}
+					.bonus-timeline {
+						text-align: center;
+						padding: 2em 0;
+						position: relative;
+						@include desktop {
+							&::after {
+								content: "";
+								display: block;
+								width: 62%;
+								height: 3px;
+								background-color: $red;
+								position: absolute;
+								top: 76px;
+								left: 20%;
+								z-index: 0;
+							}
+						}
+						ul{
+							padding: 0;
+							li {
+								display: inline-block;
+								list-style: none;
+								width: 20%;
+								vertical-align: top;
+								position: relative;
+								z-index: 1;
+								@include mobile {
+									padding-left: 30%;
+									width: 87%;
+									text-align: left;
+									margin-bottom: em(32);
+								}
+								img {
+									width: em(105);
+									height: em(105);
+									margin-bottom: em(12);
+									@include mobile {
+										position: absolute;
+										left: 0;
+										width: 28%;
+										height: auto;
+									}
+								}
+							}
+						}
+					}
+
+					.pay-btns {
+						.item{
+							&.logo-1,
+							&:first-child {
+								display: none;
+							}
+						}
+					}
+
+				}//EOF TAB 4
+			}
+		}
+	}
+
+	//styles in modal
+	#modalCon {
+		.modal-dialog {
+			.modal-content{
+				background-color: $yellow;
+				border-color: $yellow;
+				.modal-header,
+				.modal-body {
+					border-color: $yellow;
+					text-align: center;
+					a {
+						font-weight: bold;
+						color: $black;
+					}
+				}
+				.modal-footer {
+					border-color: $yellow;
+					button {
+						display: block;
+						margin: 1em auto;
+						border: none;
+						opacity: 0.7;
+						font-family: $raleebd;
+					}
+				}
+				@include desktop {
+					overflow: hidden;
+					border-radius: 100%;
+					height: 437px;
+					width: 437px;
+					margin: 1em auto;
+					.modal-header {
+						padding-top: em(60);
+					}
+				}
+			}
+		}
+	}
+
+}
