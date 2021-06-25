@@ -93,6 +93,12 @@ body {
 		}
 		.projects{
 			.content-project{
+
+				&__2,
+				&__3 {
+					display: none;
+				}
+
 				.tittle-infographics{
 					text-align: center;
 					h3 {

@@ -65,19 +65,73 @@ while (have_posts()):the_post()?>
 	<div class="projects container">
 			<?php //loop projcts
 			$cont=0;
+			$cont2=0;
 
 				while (have_rows('proyectos')):the_row();
 				$cont++;
 				?>
-				<div id="info<?php echo $cont;?>" class="content-project">
+				<div id="info<?php echo $cont;?>" class="content-project content-project__<?php echo $cont;?>">
 					<div class="tittle-infographics">
 						<?php the_sub_field('titulo_infografia'); ?>
 					</div>
 					<div class="infographic">
 						<img src="<?php the_sub_field('infografia'); ?>" alt="">
 					</div>
-				</div>
+					<div class="pop-ups">
+						<?php
+							while (have_rows('popup_icons')):the_row();
+								$cont2++;
+								$icon = get_sub_field('popup_icons__icon');
+								$title = get_sub_field('popup_icons__title');
+								$img_pop = get_sub_field('popup_icons__popup');
+								$text = get_sub_field('popup_icons__text');
+						?>
+							<div class="pop-ups__item">
+								<figure type="button" class="pop-ups__trigger" 
+									data-toggle="modal" 
+									data-target="#modal<?php echo $cont2; ?>">
+									<img src="<?php echo esc_url($icon['url']); ?>"
+									alt="<?php echo esc_attr($icon['alt']); ?>"
+									class="pop-ups__icon">
 
+									<figcaption class="pop-ups__caption">
+										<h4><?php echo $title; ?></h4>
+									</figcaption>
+									<i class="fa fa-plus-circle" aria-hidden="true"></i>
+								</figure>
+							</div>
+							<!-- Modal -->
+							<div class="modal fade pop-ups__modal" id="modal<?php echo $cont2; ?>" 
+							tabindex="-1" role="dialog" 
+							aria-labelledby="modal<?php echo $cont2; ?>Label" aria-hidden="true">
+								<button type="button" class="pop-ups__close close" data-dismiss="modal" aria-label="Close">
+									<span aria-hidden="true">
+										<i class="fa fa-window-close" aria-hidden="true"></i>
+									</span>
+								</button>
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="modal<?php echo $cont2; ?>"><?php echo $title; ?></h5>
+										</div>
+										<?php if ($img_pop): ?>
+											<figure class="pop-ups__image">
+												<img src="<?php echo esc_url($img_pop['url']); ?>"
+												alt="<?php echo esc_attr($img_pop['alt']); ?>"
+												class="pop-ups__source">
+											</figure>
+										<?php endif; ?>
+										<div class="modal-body">
+											<?php echo $text; ?>
+										</div>
+									</div>
+								</div>
+							</div>
+						<?php 
+							endwhile;
+						?>
+					</div>
+				</div>
 			<?php endwhile;?>
 		</div>
 					<div class="container-fluid">

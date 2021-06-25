@@ -1,0 +1,53 @@
+.pop-ups {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+    @include mq('md') {
+        flex-flow: wrap;
+    }
+
+    &__item {
+        cursor: pointer;
+        text-align: center;
+        width: 100%;
+        
+        @include mq('md') {
+            width: 33.3%;
+        }
+
+        i {
+            color: $white;
+            font-size: rem(40px);
+            opacity: 1;
+        }
+    }
+
+    &__caption {
+        h4 {
+            color: $yellow;
+            font-family: $ralebk;
+        }        
+    }
+
+    &__modal {
+        h5 {
+            color: $yellow;
+            font-family: $ralebk;
+            font-size: rem(32px);
+            text-transform: uppercase;
+        } 
+    }
+
+    &__close {
+        &.close {
+            opacity: 1;
+        }        
+
+        i {
+            color: $white;
+            font-size: rem(40px);
+            opacity: 1;
+        }
+    }
+}

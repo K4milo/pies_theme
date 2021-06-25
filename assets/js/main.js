@@ -120,6 +120,9 @@ var _filterQuestions = __webpack_require__(5);
       $("#lb").css("display", "none");
       $("#la").css("display", "inline");
       $("#pract").css("color", "#ffbb01");
+      $("#tc-h").css("display", "inline-block");
+      $("#tc").css("display", "none");
+      $("#tc-t").css("color", "#fff");
     });
 
     $("#hb").click(function () {
@@ -132,15 +135,25 @@ var _filterQuestions = __webpack_require__(5);
       $("#infra").css("color", "#ffbb01");
       $("#la").css("display", "none");
       $("#lb").css("display", "inline");
+      $("#tc-h").css("display", "inline-block");
+      $("#tc").css("display", "none");
       $("#pract").css("color", "#fff");
+      $("#tc-t").css("color", "#fff");
     });
 
-    $("#tc").click(function () {
+    $(".todos-cole").click(function () {
       $("#info1").css("display", "none");
       $("#info2").css("display", "none");
       $("#info3").css("display", "block");
-      $("#tc").css("display", "none");
+      $("#la").css("display", "none");
+      $("#lb").css("display", "inline-block");
+      $("#ha").css("display", "none");
+      $("#hb").css("display", "inline-block");
+      $("#tc").css("display", "inline-block");
+      $("#tc-h").css("display", "none");
       $("#tc-t").css("color", "#ffbb01");
+      $("#pract").css("color", "#fff");
+      $("#infra").css("color", "#fff");
     });
 
     // Scrolled menu
