@@ -13,10 +13,10 @@ while (have_posts()):the_post()?>
 		</header>
 		<div class="container iconos">
 			<div class="col-md-4 col-xs-4 infrestructura text-center">
-				<a><img id="hb" 
+				<a><img id="hb"
 					class="iconos__top"
 					src="<?php bloginfo('template_url')?>/img/icons/herramienta-blanca.png" alt="INFRAESTRUCTURA" name="hb"></a>
-				<a><img id="ha" 
+				<a><img id="ha"
 					class="iconos__bottom"
 					src="<?php bloginfo('template_url')?>/img/icons/herramienta-amarilla.png" alt="INFRAESTRUCTURA"name="ha"></a>
 				<div  class="the-icon">
@@ -29,10 +29,10 @@ while (have_posts()):the_post()?>
 				</div>
 			</div>
 			<div class="col-md-4 col-xs-4 todos-cole text-center">
-				<a><img id="tc" 
+				<a><img id="tc"
 					class="iconos__top"
 					src="<?php bloginfo('template_url')?>/img/icons/todos-al-cole.png" alt="EDUCACIÓN"></a>
-				<a><img id="tc-h" 
+				<a><img id="tc-h"
 					class="iconos__bottom"
 					src="<?php bloginfo('template_url')?>/img/icons/todos-al-cole-w.png" alt="EDUCACIÓN"> </a>
 				<div  class="the-icon">
@@ -44,10 +44,10 @@ while (have_posts()):the_post()?>
 				</div>
 			</div>
 			<div class="col-md-4 col-xs-4 practicas-efectivas text-center">
-				<a><img id="la" 
+				<a><img id="la"
 					class="iconos__top"
 					src="<?php bloginfo('template_url')?>/img/icons/libro-amarillo.png" alt="EDUCACIÓN"></a>
-				<a><img id="lb" 
+				<a><img id="lb"
 					class="iconos__bottom"
 					src="<?php bloginfo('template_url')?>/img/icons/libro-blanco.png" alt="EDUCACIÓN"> </a>
 				<div  class="the-icon">
@@ -87,8 +87,8 @@ while (have_posts()):the_post()?>
 								$text = get_sub_field('popup_icons__text');
 						?>
 							<div class="pop-ups__item">
-								<figure type="button" class="pop-ups__trigger" 
-									data-toggle="modal" 
+								<figure type="button" class="pop-ups__trigger"
+									data-toggle="modal"
 									data-target="#modal<?php echo $cont2; ?>">
 									<img src="<?php echo esc_url($icon['url']); ?>"
 									alt="<?php echo esc_attr($icon['alt']); ?>"
@@ -101,8 +101,8 @@ while (have_posts()):the_post()?>
 								</figure>
 							</div>
 							<!-- Modal -->
-							<div class="modal fade pop-ups__modal" id="modal<?php echo $cont2; ?>" 
-							tabindex="-1" role="dialog" 
+							<div class="modal fade pop-ups__modal" id="modal<?php echo $cont2; ?>"
+							tabindex="-1" role="dialog"
 							aria-labelledby="modal<?php echo $cont2; ?>Label" aria-hidden="true">
 								<button type="button" class="pop-ups__close close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">
@@ -127,7 +127,7 @@ while (have_posts()):the_post()?>
 									</div>
 								</div>
 							</div>
-						<?php 
+						<?php
 							endwhile;
 						?>
 					</div>
@@ -196,9 +196,7 @@ while (have_posts()):the_post()?>
 											<?php endwhile;?>
 										</div>
 										<div class="col-md-5 img-map hidden-xs">
-
-												<img src="<?php bloginfo('template_url')?>/img/misc/mapa-colombia.png" alt="Mapa de colombia ">
-
+											<img src="<?php the_field('mapa_colombia') ?>" alt="Mapa de colombia ">
 										</div>
 									</section>
 								</div>
